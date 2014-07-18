@@ -1,6 +1,6 @@
 //
 //  ViewModelObject.m
-//  Once In A While
+//  Kensho
 //
 //  Created by Nicholas Elliott on 7/13/14.
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
@@ -44,7 +44,7 @@
 
 - (void) triggerChangeEvent
 {
-    for(NSString<Observer>* observer in observers)
+    for(NSString<Observer>* observer in [observers copy])
     {
         [observer observableUpdated:self];
     }

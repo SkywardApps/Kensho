@@ -12,18 +12,18 @@
 // Include anything that should be included automatically in the library
 #import "UIView+Kensho.h"
 
-#import "Observables/Interfaces/Observable.h"
-#import "Observables/Interfaces/ObservableAsNumber.h"
-#import "Observables/Interfaces/ObservableAsString.h"
-#import "Observables/Interfaces/ObservableAsEnumerator.h"
+#import "Observable.h"
+#import "ObservableAsNumber.h"
+#import "ObservableAsString.h"
+#import "ObservableAsEnumerator.h"
 
-#import "Observables/Concrete/Simple/ObservableNumber.h"
-#import "Observables/Concrete/Simple/ObservableString.h"
-#import "Observables/Concrete/Simple/ObservableArray.h"
+#import "ObservableNumber.h"
+#import "ObservableString.h"
+#import "ObservableArray.h"
 
-#import "Observables/Concrete/Calculated/CalculatedObservableNumber.h"
-#import "Observables/Concrete/Calculated/CalculatedObservableString.h"
-#import "Observables/Concrete/Calculated/ProxyObservableArray.h"
+#import "CalculatedObservableNumber.h"
+#import "CalculatedObservableString.h"
+#import "ProxyObservableArray.h"
 
 @interface Kensho : NSObject
 

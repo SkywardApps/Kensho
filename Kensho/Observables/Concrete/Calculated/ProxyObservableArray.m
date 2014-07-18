@@ -1,6 +1,6 @@
 //
 //  ProxyObservableCollection.m
-//  Once In A While
+//  Kensho
 //
 //  Created by Nicholas Elliott on 7/16/14.
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.

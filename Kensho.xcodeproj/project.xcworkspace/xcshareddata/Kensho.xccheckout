@@ -5,36 +5,36 @@
 	<key>IDESourceControlProjectFavoriteDictionaryKey</key>
 	<false/>
 	<key>IDESourceControlProjectIdentifier</key>
-	<string>F25C103F-A784-4417-BFFE-D734DDF8592D</string>
+	<string>DBC3DD43-4FDB-4D7F-A299-26D4A63598EA</string>
 	<key>IDESourceControlProjectName</key>
 	<string>Kensho</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>89A5E90E-390E-4DC9-A9F8-4E7827620965</key>
-		<string>ssh://skywardapps.us/git/KnockoutOC.git</string>
+		<key>1A80D224-180C-4DBD-8406-F71F70399EFC</key>
+		<string>ssh://titus/git/Kensho</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
 	<string>Kensho.xcodeproj/project.xcworkspace</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>89A5E90E-390E-4DC9-A9F8-4E7827620965</key>
+		<key>1A80D224-180C-4DBD-8406-F71F70399EFC</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
-	<string>ssh://skywardapps.us/git/KnockoutOC.git</string>
+	<string>ssh://titus/git/Kensho</string>
 	<key>IDESourceControlProjectVersion</key>
 	<integer>110</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>89A5E90E-390E-4DC9-A9F8-4E7827620965</string>
+	<string>1A80D224-180C-4DBD-8406-F71F70399EFC</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>89A5E90E-390E-4DC9-A9F8-4E7827620965</string>
+			<string>1A80D224-180C-4DBD-8406-F71F70399EFC</string>
 			<key>IDESourceControlWCCName</key>
-			<string>KnockoutOC</string>
+			<string>Kensho</string>
 		</dict>
 	</array>
 </dict>

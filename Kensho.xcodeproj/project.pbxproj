@@ -1,0 +1,963 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 46;
+	objects = {
+
+/* Begin PBXAggregateTarget section */
+		E4CF957C19780A7B007B6494 /* Framework */ = {
+			isa = PBXAggregateTarget;
+			buildConfigurationList = E4CF957D19780A7B007B6494 /* Build configuration list for PBXAggregateTarget "Framework" */;
+			buildPhases = (
+				E4CF958219780B5A007B6494 /* Build Framework */,
+			);
+			dependencies = (
+				E4CF958119780A95007B6494 /* PBXTargetDependency */,
+			);
+			name = Framework;
+			productName = Framework;
+		};
+/* End PBXAggregateTarget section */
+
+/* Begin PBXBuildFile section */
+		E41D666E19796B9300F240D3 /* WeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E41D666C19796B9300F240D3 /* WeakProxy.h */; };
+		E41D666F19796B9300F240D3 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D666D19796B9300F240D3 /* WeakProxy.m */; };
+		E423ACAA1978204F00231A59 /* BindingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = E423AC9D1978204F00231A59 /* BindingBase.h */; };
+		E423ACAB1978204F00231A59 /* BindingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AC9E1978204F00231A59 /* BindingBase.m */; };
+		E423ACAC1978204F00231A59 /* UIButtonBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA01978204F00231A59 /* UIButtonBinding.h */; };
+		E423ACAD1978204F00231A59 /* UIButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA11978204F00231A59 /* UIButtonBinding.m */; };
+		E423ACAE1978204F00231A59 /* UILabelBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA21978204F00231A59 /* UILabelBinding.h */; };
+		E423ACAF1978204F00231A59 /* UILabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA31978204F00231A59 /* UILabelBinding.m */; };
+		E423ACB01978204F00231A59 /* UITableViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA41978204F00231A59 /* UITableViewBinding.h */; };
+		E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA51978204F00231A59 /* UITableViewBinding.m */; };
+		E423ACB21978204F00231A59 /* UIViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA61978204F00231A59 /* UIViewBinding.h */; };
+		E423ACB31978204F00231A59 /* UIViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA71978204F00231A59 /* UIViewBinding.m */; };
+		E423ACB41978204F00231A59 /* Binding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA91978204F00231A59 /* Binding.h */; };
+		E423ACCF1978207200231A59 /* ObservableBase.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACB71978207200231A59 /* ObservableBase.h */; };
+		E423ACD01978207200231A59 /* ObservableBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACB81978207200231A59 /* ObservableBase.m */; };
+		E423ACD11978207200231A59 /* CalculatedObservable.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACBB1978207200231A59 /* CalculatedObservable.h */; };
+		E423ACD21978207200231A59 /* CalculatedObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACBC1978207200231A59 /* CalculatedObservable.m */; };
+		E423ACD31978207200231A59 /* CalculatedObservableNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACBD1978207200231A59 /* CalculatedObservableNumber.h */; };
+		E423ACD41978207200231A59 /* CalculatedObservableNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACBE1978207200231A59 /* CalculatedObservableNumber.m */; };
+		E423ACD51978207200231A59 /* CalculatedObservableString.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACBF1978207200231A59 /* CalculatedObservableString.h */; };
+		E423ACD61978207200231A59 /* CalculatedObservableString.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACC01978207200231A59 /* CalculatedObservableString.m */; };
+		E423ACD71978207200231A59 /* ProxyObservableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACC11978207200231A59 /* ProxyObservableArray.h */; };
+		E423ACD81978207200231A59 /* ProxyObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACC21978207200231A59 /* ProxyObservableArray.m */; };
+		E423ACD91978207200231A59 /* ObservableArray.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACC41978207200231A59 /* ObservableArray.h */; };
+		E423ACDA1978207200231A59 /* ObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACC51978207200231A59 /* ObservableArray.m */; };
+		E423ACDB1978207200231A59 /* ObservableNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACC61978207200231A59 /* ObservableNumber.h */; };
+		E423ACDC1978207200231A59 /* ObservableNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACC71978207200231A59 /* ObservableNumber.m */; };
+		E423ACDD1978207200231A59 /* ObservableString.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACC81978207200231A59 /* ObservableString.h */; };
+		E423ACDE1978207200231A59 /* ObservableString.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACC91978207200231A59 /* ObservableString.m */; };
+		E423ACDF1978207200231A59 /* Observable.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACCB1978207200231A59 /* Observable.h */; };
+		E423ACE01978207200231A59 /* ObservableAsEnumerator.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACCC1978207200231A59 /* ObservableAsEnumerator.h */; };
+		E423ACE11978207200231A59 /* ObservableAsNumber.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACCD1978207200231A59 /* ObservableAsNumber.h */; };
+		E423ACE21978207200231A59 /* ObservableAsString.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACCE1978207200231A59 /* ObservableAsString.h */; };
+		E423ACE61978209E00231A59 /* UIView+Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACE41978209E00231A59 /* UIView+Kensho.h */; };
+		E423ACE71978209E00231A59 /* UIView+Kensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACE51978209E00231A59 /* UIView+Kensho.m */; };
+		E423ACEE1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACEC1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h */; };
+		E423ACEF1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACED1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m */; };
+		E423ACF21978292500231A59 /* CustomBindings.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACF01978292500231A59 /* CustomBindings.h */; };
+		E423ACF81978AAA500231A59 /* TestObservableBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACF71978AAA500231A59 /* TestObservableBase.m */; };
+		E423ACFC1978ADD400231A59 /* TestCalculatedObservable.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACFB1978ADD400231A59 /* TestCalculatedObservable.m */; };
+		E423ACFE1978B20200231A59 /* TestCalculatedObservableNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACFD1978B20200231A59 /* TestCalculatedObservableNumber.m */; };
+		E423AD001978B21600231A59 /* TestCalculatedObservableString.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACFF1978B21600231A59 /* TestCalculatedObservableString.m */; };
+		E423AD021978B22600231A59 /* TestProxyObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD011978B22600231A59 /* TestProxyObservableArray.m */; };
+		E423AD051978B24F00231A59 /* TestObservableArray.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD041978B24F00231A59 /* TestObservableArray.m */; };
+		E423AD071978B26200231A59 /* TestObservableNumber.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD061978B26200231A59 /* TestObservableNumber.m */; };
+		E423AD091978B27100231A59 /* TestObservableString.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD081978B27100231A59 /* TestObservableString.m */; };
+		E423AD0B1978B29500231A59 /* TestUIViewKensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD0A1978B29500231A59 /* TestUIViewKensho.m */; };
+		E423AD0F1978B2BF00231A59 /* TestBindingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD0E1978B2BF00231A59 /* TestBindingBase.m */; };
+		E423AD121978B2E800231A59 /* TestUIButtonBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD111978B2E800231A59 /* TestUIButtonBinding.m */; };
+		E423AD141978B2F700231A59 /* TestUILabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD131978B2F700231A59 /* TestUILabelBinding.m */; };
+		E423AD161978B30600231A59 /* TestUITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD151978B30600231A59 /* TestUITableViewBinding.m */; };
+		E423AD181978B31300231A59 /* TestUIViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD171978B31300231A59 /* TestUIViewBinding.m */; };
+		E4918E211978BAA400B167EA /* Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CF9558197800F5007B6494 /* Kensho.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4918E221978BAD600B167EA /* KenshoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF956F197800F5007B6494 /* KenshoTests.m */; };
+		E4918E2F1979587500B167EA /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4918E241979587500B167EA /* libOCMock.a */; };
+		E4CF9554197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
+		E4CF955B197800F5007B6494 /* Kensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF955A197800F5007B6494 /* Kensho.m */; };
+		E4CF9562197800F5007B6494 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9561197800F5007B6494 /* XCTest.framework */; };
+		E4CF9563197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
+		E4CF9565197800F5007B6494 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9564197800F5007B6494 /* UIKit.framework */; };
+		E4CF9568197800F5007B6494 /* libKensho.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9550197800F5007B6494 /* libKensho.a */; };
+		E4CF956E197800F5007B6494 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4CF956C197800F5007B6494 /* InfoPlist.strings */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		E4CF9566197800F5007B6494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4CF9548197800F5007B6494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4CF954F197800F5007B6494;
+			remoteInfo = KnockoutOC;
+		};
+		E4CF958019780A95007B6494 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = E4CF9548197800F5007B6494 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = E4CF954F197800F5007B6494;
+			remoteInfo = Kensho;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		E4CF954E197800F5007B6494 /* CopyFiles */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "include/$(PRODUCT_NAME)";
+			dstSubfolderSpec = 16;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		E41D666C19796B9300F240D3 /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
+		E41D666D19796B9300F240D3 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+		E423AC9D1978204F00231A59 /* BindingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingBase.h; sourceTree = "<group>"; };
+		E423AC9E1978204F00231A59 /* BindingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingBase.m; sourceTree = "<group>"; };
+		E423ACA01978204F00231A59 /* UIButtonBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonBinding.h; sourceTree = "<group>"; };
+		E423ACA11978204F00231A59 /* UIButtonBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIButtonBinding.m; sourceTree = "<group>"; };
+		E423ACA21978204F00231A59 /* UILabelBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UILabelBinding.h; sourceTree = "<group>"; };
+		E423ACA31978204F00231A59 /* UILabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UILabelBinding.m; sourceTree = "<group>"; };
+		E423ACA41978204F00231A59 /* UITableViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITableViewBinding.h; sourceTree = "<group>"; };
+		E423ACA51978204F00231A59 /* UITableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewBinding.m; sourceTree = "<group>"; };
+		E423ACA61978204F00231A59 /* UIViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewBinding.h; sourceTree = "<group>"; };
+		E423ACA71978204F00231A59 /* UIViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewBinding.m; sourceTree = "<group>"; };
+		E423ACA91978204F00231A59 /* Binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binding.h; sourceTree = "<group>"; };
+		E423ACB71978207200231A59 /* ObservableBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableBase.h; sourceTree = "<group>"; };
+		E423ACB81978207200231A59 /* ObservableBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableBase.m; sourceTree = "<group>"; };
+		E423ACBB1978207200231A59 /* CalculatedObservable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatedObservable.h; sourceTree = "<group>"; };
+		E423ACBC1978207200231A59 /* CalculatedObservable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatedObservable.m; sourceTree = "<group>"; };
+		E423ACBD1978207200231A59 /* CalculatedObservableNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatedObservableNumber.h; sourceTree = "<group>"; };
+		E423ACBE1978207200231A59 /* CalculatedObservableNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatedObservableNumber.m; sourceTree = "<group>"; };
+		E423ACBF1978207200231A59 /* CalculatedObservableString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = CalculatedObservableString.h; sourceTree = "<group>"; };
+		E423ACC01978207200231A59 /* CalculatedObservableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = CalculatedObservableString.m; sourceTree = "<group>"; };
+		E423ACC11978207200231A59 /* ProxyObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ProxyObservableArray.h; sourceTree = "<group>"; };
+		E423ACC21978207200231A59 /* ProxyObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ProxyObservableArray.m; sourceTree = "<group>"; };
+		E423ACC41978207200231A59 /* ObservableArray.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableArray.h; sourceTree = "<group>"; };
+		E423ACC51978207200231A59 /* ObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableArray.m; sourceTree = "<group>"; };
+		E423ACC61978207200231A59 /* ObservableNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableNumber.h; sourceTree = "<group>"; };
+		E423ACC71978207200231A59 /* ObservableNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableNumber.m; sourceTree = "<group>"; };
+		E423ACC81978207200231A59 /* ObservableString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableString.h; sourceTree = "<group>"; };
+		E423ACC91978207200231A59 /* ObservableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableString.m; sourceTree = "<group>"; };
+		E423ACCB1978207200231A59 /* Observable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Observable.h; sourceTree = "<group>"; };
+		E423ACCC1978207200231A59 /* ObservableAsEnumerator.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableAsEnumerator.h; sourceTree = "<group>"; };
+		E423ACCD1978207200231A59 /* ObservableAsNumber.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableAsNumber.h; sourceTree = "<group>"; };
+		E423ACCE1978207200231A59 /* ObservableAsString.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableAsString.h; sourceTree = "<group>"; };
+		E423ACE41978209E00231A59 /* UIView+Kensho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Kensho.h"; sourceTree = "<group>"; };
+		E423ACE51978209E00231A59 /* UIView+Kensho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Kensho.m"; sourceTree = "<group>"; };
+		E423ACEC1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UpdateAutoLayoutConstraints.h"; sourceTree = "<group>"; };
+		E423ACED1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+UpdateAutoLayoutConstraints.m"; sourceTree = "<group>"; };
+		E423ACF01978292500231A59 /* CustomBindings.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = CustomBindings.h; path = Kensho/CustomBindings.h; sourceTree = SOURCE_ROOT; };
+		E423ACF71978AAA500231A59 /* TestObservableBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestObservableBase.m; path = KenshoTests/TestObservableBase.m; sourceTree = SOURCE_ROOT; };
+		E423ACFB1978ADD400231A59 /* TestCalculatedObservable.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCalculatedObservable.m; path = KenshoTests/TestCalculatedObservable.m; sourceTree = SOURCE_ROOT; };
+		E423ACFD1978B20200231A59 /* TestCalculatedObservableNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCalculatedObservableNumber.m; path = KenshoTests/TestCalculatedObservableNumber.m; sourceTree = SOURCE_ROOT; };
+		E423ACFF1978B21600231A59 /* TestCalculatedObservableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestCalculatedObservableString.m; path = KenshoTests/TestCalculatedObservableString.m; sourceTree = SOURCE_ROOT; };
+		E423AD011978B22600231A59 /* TestProxyObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestProxyObservableArray.m; path = KenshoTests/TestProxyObservableArray.m; sourceTree = SOURCE_ROOT; };
+		E423AD041978B24F00231A59 /* TestObservableArray.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestObservableArray.m; path = KenshoTests/TestObservableArray.m; sourceTree = SOURCE_ROOT; };
+		E423AD061978B26200231A59 /* TestObservableNumber.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestObservableNumber.m; path = KenshoTests/TestObservableNumber.m; sourceTree = SOURCE_ROOT; };
+		E423AD081978B27100231A59 /* TestObservableString.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestObservableString.m; path = KenshoTests/TestObservableString.m; sourceTree = SOURCE_ROOT; };
+		E423AD0A1978B29500231A59 /* TestUIViewKensho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUIViewKensho.m; path = KenshoTests/TestUIViewKensho.m; sourceTree = SOURCE_ROOT; };
+		E423AD0E1978B2BF00231A59 /* TestBindingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestBindingBase.m; path = KenshoTests/TestBindingBase.m; sourceTree = SOURCE_ROOT; };
+		E423AD111978B2E800231A59 /* TestUIButtonBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUIButtonBinding.m; path = KenshoTests/TestUIButtonBinding.m; sourceTree = SOURCE_ROOT; };
+		E423AD131978B2F700231A59 /* TestUILabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUILabelBinding.m; path = KenshoTests/TestUILabelBinding.m; sourceTree = SOURCE_ROOT; };
+		E423AD151978B30600231A59 /* TestUITableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUITableViewBinding.m; path = KenshoTests/TestUITableViewBinding.m; sourceTree = SOURCE_ROOT; };
+		E423AD171978B31300231A59 /* TestUIViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUIViewBinding.m; path = KenshoTests/TestUIViewBinding.m; sourceTree = SOURCE_ROOT; };
+		E4918E241979587500B167EA /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = SOURCE_ROOT; };
+		E4918E261979587500B167EA /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
+		E4918E271979587500B167EA /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
+		E4918E281979587500B167EA /* OCMConstraint.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMConstraint.h; sourceTree = "<group>"; };
+		E4918E291979587500B167EA /* OCMLocation.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMLocation.h; sourceTree = "<group>"; };
+		E4918E2A1979587500B167EA /* OCMMacroState.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMMacroState.h; sourceTree = "<group>"; };
+		E4918E2B1979587500B167EA /* OCMock.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMock.h; sourceTree = "<group>"; };
+		E4918E2C1979587500B167EA /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
+		E4918E2D1979587500B167EA /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
+		E4918E2E1979587500B167EA /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		E4CF9550197800F5007B6494 /* libKensho.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKensho.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CF9553197800F5007B6494 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
+		E4CF9557197800F5007B6494 /* Kensho-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Kensho-Prefix.pch"; path = "../Kensho/Kensho-Prefix.pch"; sourceTree = "<group>"; };
+		E4CF9558197800F5007B6494 /* Kensho.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = Kensho.h; path = Kensho/Kensho.h; sourceTree = SOURCE_ROOT; };
+		E4CF955A197800F5007B6494 /* Kensho.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = Kensho.m; path = Kensho/Kensho.m; sourceTree = SOURCE_ROOT; };
+		E4CF9560197800F5007B6494 /* KenshoTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = KenshoTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		E4CF9561197800F5007B6494 /* XCTest.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XCTest.framework; path = Library/Frameworks/XCTest.framework; sourceTree = DEVELOPER_DIR; };
+		E4CF9564197800F5007B6494 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = Library/Frameworks/UIKit.framework; sourceTree = DEVELOPER_DIR; };
+		E4CF956B197800F5007B6494 /* KenshoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KenshoTests-Info.plist"; path = "../KenshoTests/KenshoTests-Info.plist"; sourceTree = "<group>"; };
+		E4CF956D197800F5007B6494 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
+		E4CF956F197800F5007B6494 /* KenshoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KenshoTests.m; path = KenshoTests/KenshoTests.m; sourceTree = SOURCE_ROOT; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		E4CF954D197800F5007B6494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF9554197800F5007B6494 /* Foundation.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CF955D197800F5007B6494 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF9562197800F5007B6494 /* XCTest.framework in Frameworks */,
+				E4CF9568197800F5007B6494 /* libKensho.a in Frameworks */,
+				E4CF9565197800F5007B6494 /* UIKit.framework in Frameworks */,
+				E4CF9563197800F5007B6494 /* Foundation.framework in Frameworks */,
+				E4918E2F1979587500B167EA /* libOCMock.a in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		E423AC9B1978204F00231A59 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				E423AC9C1978204F00231A59 /* Base */,
+				E423AC9F1978204F00231A59 /* Concrete */,
+				E423ACA81978204F00231A59 /* Interfaces */,
+			);
+			name = Bindings;
+			path = Kensho/Bindings;
+			sourceTree = SOURCE_ROOT;
+		};
+		E423AC9C1978204F00231A59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E423AC9D1978204F00231A59 /* BindingBase.h */,
+				E423AC9E1978204F00231A59 /* BindingBase.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E423AC9F1978204F00231A59 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACA01978204F00231A59 /* UIButtonBinding.h */,
+				E423ACA11978204F00231A59 /* UIButtonBinding.m */,
+				E423ACA21978204F00231A59 /* UILabelBinding.h */,
+				E423ACA31978204F00231A59 /* UILabelBinding.m */,
+				E423ACA41978204F00231A59 /* UITableViewBinding.h */,
+				E423ACA51978204F00231A59 /* UITableViewBinding.m */,
+				E423ACA61978204F00231A59 /* UIViewBinding.h */,
+				E423ACA71978204F00231A59 /* UIViewBinding.m */,
+			);
+			path = Concrete;
+			sourceTree = "<group>";
+		};
+		E423ACA81978204F00231A59 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACA91978204F00231A59 /* Binding.h */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		E423ACB51978207200231A59 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACB61978207200231A59 /* Base */,
+				E423ACB91978207200231A59 /* Concrete */,
+				E423ACCA1978207200231A59 /* Interfaces */,
+			);
+			name = Observables;
+			path = Kensho/Observables;
+			sourceTree = SOURCE_ROOT;
+		};
+		E423ACB61978207200231A59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACB71978207200231A59 /* ObservableBase.h */,
+				E423ACB81978207200231A59 /* ObservableBase.m */,
+			);
+			path = Base;
+			sourceTree = "<group>";
+		};
+		E423ACB91978207200231A59 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACC31978207200231A59 /* Simple */,
+				E423ACBA1978207200231A59 /* Calculated */,
+			);
+			path = Concrete;
+			sourceTree = "<group>";
+		};
+		E423ACBA1978207200231A59 /* Calculated */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACBB1978207200231A59 /* CalculatedObservable.h */,
+				E423ACBC1978207200231A59 /* CalculatedObservable.m */,
+				E423ACBD1978207200231A59 /* CalculatedObservableNumber.h */,
+				E423ACBE1978207200231A59 /* CalculatedObservableNumber.m */,
+				E423ACBF1978207200231A59 /* CalculatedObservableString.h */,
+				E423ACC01978207200231A59 /* CalculatedObservableString.m */,
+				E423ACC11978207200231A59 /* ProxyObservableArray.h */,
+				E423ACC21978207200231A59 /* ProxyObservableArray.m */,
+			);
+			path = Calculated;
+			sourceTree = "<group>";
+		};
+		E423ACC31978207200231A59 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACC41978207200231A59 /* ObservableArray.h */,
+				E423ACC51978207200231A59 /* ObservableArray.m */,
+				E423ACC61978207200231A59 /* ObservableNumber.h */,
+				E423ACC71978207200231A59 /* ObservableNumber.m */,
+				E423ACC81978207200231A59 /* ObservableString.h */,
+				E423ACC91978207200231A59 /* ObservableString.m */,
+			);
+			path = Simple;
+			sourceTree = "<group>";
+		};
+		E423ACCA1978207200231A59 /* Interfaces */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACCB1978207200231A59 /* Observable.h */,
+				E423ACCC1978207200231A59 /* ObservableAsEnumerator.h */,
+				E423ACCD1978207200231A59 /* ObservableAsNumber.h */,
+				E423ACCE1978207200231A59 /* ObservableAsString.h */,
+			);
+			path = Interfaces;
+			sourceTree = "<group>";
+		};
+		E423ACE31978207E00231A59 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACEC1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h */,
+				E423ACED1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m */,
+				E423ACE41978209E00231A59 /* UIView+Kensho.h */,
+				E423ACE51978209E00231A59 /* UIView+Kensho.m */,
+				E41D666C19796B9300F240D3 /* WeakProxy.h */,
+				E41D666D19796B9300F240D3 /* WeakProxy.m */,
+			);
+			name = Utilities;
+			path = Kensho/Utilities;
+			sourceTree = SOURCE_ROOT;
+		};
+		E423ACF4197898CD00231A59 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD0A1978B29500231A59 /* TestUIViewKensho.m */,
+			);
+			name = Utilities;
+			sourceTree = "<group>";
+		};
+		E423ACF5197898D200231A59 /* Observables */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACF6197898D900231A59 /* Base */,
+				E423ACF91978ADA200231A59 /* Concrete */,
+			);
+			name = Observables;
+			sourceTree = "<group>";
+		};
+		E423ACF6197898D900231A59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACF71978AAA500231A59 /* TestObservableBase.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E423ACF91978ADA200231A59 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD031978B23200231A59 /* Simple */,
+				E423ACFA1978ADB200231A59 /* Calculated */,
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		E423ACFA1978ADB200231A59 /* Calculated */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACFB1978ADD400231A59 /* TestCalculatedObservable.m */,
+				E423ACFD1978B20200231A59 /* TestCalculatedObservableNumber.m */,
+				E423ACFF1978B21600231A59 /* TestCalculatedObservableString.m */,
+				E423AD011978B22600231A59 /* TestProxyObservableArray.m */,
+			);
+			name = Calculated;
+			sourceTree = "<group>";
+		};
+		E423AD031978B23200231A59 /* Simple */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD041978B24F00231A59 /* TestObservableArray.m */,
+				E423AD061978B26200231A59 /* TestObservableNumber.m */,
+				E423AD081978B27100231A59 /* TestObservableString.m */,
+			);
+			name = Simple;
+			sourceTree = "<group>";
+		};
+		E423AD0C1978B2A400231A59 /* Bindings */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD0D1978B2AD00231A59 /* Base */,
+				E423AD101978B2CC00231A59 /* Concrete */,
+			);
+			name = Bindings;
+			sourceTree = "<group>";
+		};
+		E423AD0D1978B2AD00231A59 /* Base */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD0E1978B2BF00231A59 /* TestBindingBase.m */,
+			);
+			name = Base;
+			sourceTree = "<group>";
+		};
+		E423AD101978B2CC00231A59 /* Concrete */ = {
+			isa = PBXGroup;
+			children = (
+				E423AD111978B2E800231A59 /* TestUIButtonBinding.m */,
+				E423AD131978B2F700231A59 /* TestUILabelBinding.m */,
+				E423AD151978B30600231A59 /* TestUITableViewBinding.m */,
+				E423AD171978B31300231A59 /* TestUIViewBinding.m */,
+			);
+			name = Concrete;
+			sourceTree = "<group>";
+		};
+		E4918E231979586700B167EA /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				E4918E241979587500B167EA /* libOCMock.a */,
+				E4918E251979587500B167EA /* OCMock */,
+			);
+			name = OCMock;
+			sourceTree = "<group>";
+		};
+		E4918E251979587500B167EA /* OCMock */ = {
+			isa = PBXGroup;
+			children = (
+				E4918E261979587500B167EA /* NSNotificationCenter+OCMAdditions.h */,
+				E4918E271979587500B167EA /* OCMArg.h */,
+				E4918E281979587500B167EA /* OCMConstraint.h */,
+				E4918E291979587500B167EA /* OCMLocation.h */,
+				E4918E2A1979587500B167EA /* OCMMacroState.h */,
+				E4918E2B1979587500B167EA /* OCMock.h */,
+				E4918E2C1979587500B167EA /* OCMockObject.h */,
+				E4918E2D1979587500B167EA /* OCMRecorder.h */,
+				E4918E2E1979587500B167EA /* OCMStubRecorder.h */,
+			);
+			path = OCMock;
+			sourceTree = SOURCE_ROOT;
+		};
+		E4CF9547197800F5007B6494 = {
+			isa = PBXGroup;
+			children = (
+				E4CF9555197800F5007B6494 /* Kensho */,
+				E4CF9569197800F5007B6494 /* KenshoTests */,
+				E4CF9552197800F5007B6494 /* Frameworks */,
+				E4CF9551197800F5007B6494 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		E4CF9551197800F5007B6494 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF9550197800F5007B6494 /* libKensho.a */,
+				E4CF9560197800F5007B6494 /* KenshoTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		E4CF9552197800F5007B6494 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF9553197800F5007B6494 /* Foundation.framework */,
+				E4CF9561197800F5007B6494 /* XCTest.framework */,
+				E4CF9564197800F5007B6494 /* UIKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		E4CF9555197800F5007B6494 /* Kensho */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACE31978207E00231A59 /* Utilities */,
+				E423ACB51978207200231A59 /* Observables */,
+				E423AC9B1978204F00231A59 /* Bindings */,
+				E423ACF01978292500231A59 /* CustomBindings.h */,
+				E4CF9558197800F5007B6494 /* Kensho.h */,
+				E4CF955A197800F5007B6494 /* Kensho.m */,
+				E4CF9556197800F5007B6494 /* Supporting Files */,
+			);
+			path = Kensho;
+			sourceTree = "<group>";
+		};
+		E4CF9556197800F5007B6494 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF9557197800F5007B6494 /* Kensho-Prefix.pch */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		E4CF9569197800F5007B6494 /* KenshoTests */ = {
+			isa = PBXGroup;
+			children = (
+				E4918E231979586700B167EA /* OCMock */,
+				E423AD0C1978B2A400231A59 /* Bindings */,
+				E423ACF5197898D200231A59 /* Observables */,
+				E423ACF4197898CD00231A59 /* Utilities */,
+				E4CF956F197800F5007B6494 /* KenshoTests.m */,
+				E4CF956A197800F5007B6494 /* Supporting Files */,
+			);
+			path = KenshoTests;
+			sourceTree = "<group>";
+		};
+		E4CF956A197800F5007B6494 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				E4CF956B197800F5007B6494 /* KenshoTests-Info.plist */,
+				E4CF956C197800F5007B6494 /* InfoPlist.strings */,
+			);
+			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		E4CF95791978059D007B6494 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E423ACB01978204F00231A59 /* UITableViewBinding.h in Headers */,
+				E423ACE61978209E00231A59 /* UIView+Kensho.h in Headers */,
+				E423ACB21978204F00231A59 /* UIViewBinding.h in Headers */,
+				E423ACDD1978207200231A59 /* ObservableString.h in Headers */,
+				E423ACE01978207200231A59 /* ObservableAsEnumerator.h in Headers */,
+				E423ACE11978207200231A59 /* ObservableAsNumber.h in Headers */,
+				E41D666E19796B9300F240D3 /* WeakProxy.h in Headers */,
+				E423ACD91978207200231A59 /* ObservableArray.h in Headers */,
+				E423ACD31978207200231A59 /* CalculatedObservableNumber.h in Headers */,
+				E423ACDB1978207200231A59 /* ObservableNumber.h in Headers */,
+				E423ACDF1978207200231A59 /* Observable.h in Headers */,
+				E423ACEE1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h in Headers */,
+				E423ACAA1978204F00231A59 /* BindingBase.h in Headers */,
+				E423ACAC1978204F00231A59 /* UIButtonBinding.h in Headers */,
+				E423ACD51978207200231A59 /* CalculatedObservableString.h in Headers */,
+				E423ACB41978204F00231A59 /* Binding.h in Headers */,
+				E423ACD11978207200231A59 /* CalculatedObservable.h in Headers */,
+				E4918E211978BAA400B167EA /* Kensho.h in Headers */,
+				E423ACE21978207200231A59 /* ObservableAsString.h in Headers */,
+				E423ACCF1978207200231A59 /* ObservableBase.h in Headers */,
+				E423ACD71978207200231A59 /* ProxyObservableArray.h in Headers */,
+				E423ACAE1978204F00231A59 /* UILabelBinding.h in Headers */,
+				E423ACF21978292500231A59 /* CustomBindings.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		E4CF954F197800F5007B6494 /* Kensho */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CF9573197800F5007B6494 /* Build configuration list for PBXNativeTarget "Kensho" */;
+			buildPhases = (
+				E4CF954C197800F5007B6494 /* Sources */,
+				E4CF954D197800F5007B6494 /* Frameworks */,
+				E4CF954E197800F5007B6494 /* CopyFiles */,
+				E4CF95791978059D007B6494 /* Headers */,
+				E4CF957B197809A5007B6494 /* prepare_framework.sh */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = Kensho;
+			productName = KnockoutOC;
+			productReference = E4CF9550197800F5007B6494 /* libKensho.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		E4CF955F197800F5007B6494 /* KenshoTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = E4CF9576197800F5007B6494 /* Build configuration list for PBXNativeTarget "KenshoTests" */;
+			buildPhases = (
+				E4CF955C197800F5007B6494 /* Sources */,
+				E4CF955D197800F5007B6494 /* Frameworks */,
+				E4CF955E197800F5007B6494 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				E4CF9567197800F5007B6494 /* PBXTargetDependency */,
+			);
+			name = KenshoTests;
+			productName = KnockoutOCTests;
+			productReference = E4CF9560197800F5007B6494 /* KenshoTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		E4CF9548197800F5007B6494 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastUpgradeCheck = 0510;
+				ORGANIZATIONNAME = "Skyward App Company, LLC";
+			};
+			buildConfigurationList = E4CF954B197800F5007B6494 /* Build configuration list for PBXProject "Kensho" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = E4CF9547197800F5007B6494;
+			productRefGroup = E4CF9551197800F5007B6494 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				E4CF954F197800F5007B6494 /* Kensho */,
+				E4CF955F197800F5007B6494 /* KenshoTests */,
+				E4CF957C19780A7B007B6494 /* Framework */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		E4CF955E197800F5007B6494 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E4CF956E197800F5007B6494 /* InfoPlist.strings in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		E4CF957B197809A5007B6494 /* prepare_framework.sh */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = prepare_framework.sh;
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\n\nmkdir -p \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n\n# Link the \"Current\" version to \"A\"\n/bin/ln -sfh A \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/Current\"\n/bin/ln -sfh Versions/Current/Headers \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Headers\"\n/bin/ln -sfh \"Versions/Current/${PRODUCT_NAME}\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/${PRODUCT_NAME}\"\n\n# The -a ensures that the headers maintain the source modification date so that we don't constantly\n# cause propagating rebuilds of files that import these headers.\n/bin/cp -a \"${TARGET_BUILD_DIR}/${PUBLIC_HEADERS_FOLDER_PATH}/\" \"${BUILT_PRODUCTS_DIR}/${PRODUCT_NAME}.framework/Versions/A/Headers\"\n";
+		};
+		E4CF958219780B5A007B6494 /* Build Framework */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "Build Framework";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "set -e\nset +u\n# Avoid recursively calling this script.\nif [[ $SF_MASTER_SCRIPT_RUNNING ]]\nthen\nexit 0\nfi\nset -u\nexport SF_MASTER_SCRIPT_RUNNING=1\n\nSF_TARGET_NAME=${PROJECT_NAME}\nSF_EXECUTABLE_PATH=\"lib${SF_TARGET_NAME}.a\"\nSF_WRAPPER_NAME=\"${SF_TARGET_NAME}.framework\"\n\n# The following conditionals come from\n# https://github.com/kstenerud/iOS-Universal-Framework\n\nif [[ \"$SDK_NAME\" =~ ([A-Za-z]+) ]]\nthen\nSF_SDK_PLATFORM=${BASH_REMATCH[1]}\nelse\necho \"Could not find platform name from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SDK_NAME\" =~ ([0-9]+.*$) ]]\nthen\nSF_SDK_VERSION=${BASH_REMATCH[1]}\nelse\necho \"Could not find sdk version from SDK_NAME: $SDK_NAME\"\nexit 1\nfi\n\nif [[ \"$SF_SDK_PLATFORM\" = \"iphoneos\" ]]\nthen\nSF_OTHER_PLATFORM=iphonesimulator\nelse\nSF_OTHER_PLATFORM=iphoneos\nfi\n\nif [[ \"$BUILT_PRODUCTS_DIR\" =~ (.*)$SF_SDK_PLATFORM$ ]]\nthen\nSF_OTHER_BUILT_PRODUCTS_DIR=\"${BASH_REMATCH[1]}${SF_OTHER_PLATFORM}\"\nelse\necho \"Could not find platform name from build products directory: $BUILT_PRODUCTS_DIR\"\nexit 1\nfi\n\n# Build the other platform.\nxcrun xcodebuild -project \"${PROJECT_FILE_PATH}\" -target \"${TARGET_NAME}\" -configuration \"${CONFIGURATION}\" -sdk ${SF_OTHER_PLATFORM}${SF_SDK_VERSION} BUILD_DIR=\"${BUILD_DIR}\" OBJROOT=\"${OBJROOT}\" BUILD_ROOT=\"${BUILD_ROOT}\" SYMROOT=\"${SYMROOT}\" $ACTION\n\n# Smash the two static libraries into one fat binary and store it in the .framework\nxcrun lipo -create \"${BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_EXECUTABLE_PATH}\" -output \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n\n# Copy the binary to the other architecture folder to have a complete framework in both.\ncp -a \"${BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\" \"${SF_OTHER_BUILT_PRODUCTS_DIR}/${SF_WRAPPER_NAME}/Versions/A/${SF_TARGET_NAME}\"\n";
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		E4CF954C197800F5007B6494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E423ACD41978207200231A59 /* CalculatedObservableNumber.m in Sources */,
+				E423ACDE1978207200231A59 /* ObservableString.m in Sources */,
+				E423ACD81978207200231A59 /* ProxyObservableArray.m in Sources */,
+				E423ACD61978207200231A59 /* CalculatedObservableString.m in Sources */,
+				E423ACD21978207200231A59 /* CalculatedObservable.m in Sources */,
+				E423ACEF1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
+				E423ACDA1978207200231A59 /* ObservableArray.m in Sources */,
+				E423ACE71978209E00231A59 /* UIView+Kensho.m in Sources */,
+				E423ACD01978207200231A59 /* ObservableBase.m in Sources */,
+				E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */,
+				E423ACAF1978204F00231A59 /* UILabelBinding.m in Sources */,
+				E41D666F19796B9300F240D3 /* WeakProxy.m in Sources */,
+				E423ACAB1978204F00231A59 /* BindingBase.m in Sources */,
+				E4CF955B197800F5007B6494 /* Kensho.m in Sources */,
+				E423ACB31978204F00231A59 /* UIViewBinding.m in Sources */,
+				E423ACDC1978207200231A59 /* ObservableNumber.m in Sources */,
+				E423ACAD1978204F00231A59 /* UIButtonBinding.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E4CF955C197800F5007B6494 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				E423ACFC1978ADD400231A59 /* TestCalculatedObservable.m in Sources */,
+				E423AD091978B27100231A59 /* TestObservableString.m in Sources */,
+				E423AD001978B21600231A59 /* TestCalculatedObservableString.m in Sources */,
+				E423AD051978B24F00231A59 /* TestObservableArray.m in Sources */,
+				E423AD161978B30600231A59 /* TestUITableViewBinding.m in Sources */,
+				E423ACFE1978B20200231A59 /* TestCalculatedObservableNumber.m in Sources */,
+				E423AD181978B31300231A59 /* TestUIViewBinding.m in Sources */,
+				E423AD141978B2F700231A59 /* TestUILabelBinding.m in Sources */,
+				E423ACF81978AAA500231A59 /* TestObservableBase.m in Sources */,
+				E423AD021978B22600231A59 /* TestProxyObservableArray.m in Sources */,
+				E4918E221978BAD600B167EA /* KenshoTests.m in Sources */,
+				E423AD0B1978B29500231A59 /* TestUIViewKensho.m in Sources */,
+				E423AD121978B2E800231A59 /* TestUIButtonBinding.m in Sources */,
+				E423AD071978B26200231A59 /* TestObservableNumber.m in Sources */,
+				E423AD0F1978B2BF00231A59 /* TestBindingBase.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		E4CF9567197800F5007B6494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4CF954F197800F5007B6494 /* Kensho */;
+			targetProxy = E4CF9566197800F5007B6494 /* PBXContainerItemProxy */;
+		};
+		E4CF958119780A95007B6494 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = E4CF954F197800F5007B6494 /* Kensho */;
+			targetProxy = E4CF958019780A95007B6494 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		E4CF956C197800F5007B6494 /* InfoPlist.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				E4CF956D197800F5007B6494 /* en */,
+			);
+			name = InfoPlist.strings;
+			path = ../KenshoTests;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		E4CF9571197800F5007B6494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_SYMBOLS_PRIVATE_EXTERN = NO;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SDKROOT = iphoneos;
+				STRIP_STYLE = "non-global";
+			};
+			name = Debug;
+		};
+		E4CF9572197800F5007B6494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++0x";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEAD_CODE_STRIPPING = NO;
+				ENABLE_NS_ASSERTIONS = NO;
+				GCC_C_LANGUAGE_STANDARD = gnu99;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
+				ONLY_ACTIVE_ARCH = NO;
+				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
+				SDKROOT = iphoneos;
+				STRIP_STYLE = "non-global";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		E4CF9574197800F5007B6494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Kensho.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kensho/Kensho-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Kensho;
+				SKIP_INSTALL = YES;
+			};
+			name = Debug;
+		};
+		E4CF9575197800F5007B6494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				DSTROOT = /tmp/Kensho.dst;
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kensho/Kensho-Prefix.pch";
+				OTHER_LDFLAGS = "-ObjC";
+				PRODUCT_NAME = Kensho;
+				SKIP_INSTALL = YES;
+			};
+			name = Release;
+		};
+		E4CF9577197800F5007B6494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kensho/Kensho-Prefix.pch";
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/nelliott/Documents/Projects/KnockoutOC,
+				);
+				INFOPLIST_FILE = "KenshoTests/KenshoTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = KenshoTests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Debug;
+		};
+		E4CF9578197800F5007B6494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(SDKROOT)/Developer/Library/Frameworks",
+					"$(inherited)",
+					"$(DEVELOPER_FRAMEWORKS_DIR)",
+				);
+				GCC_PRECOMPILE_PREFIX_HEADER = YES;
+				GCC_PREFIX_HEADER = "Kensho/Kensho-Prefix.pch";
+				HEADER_SEARCH_PATHS = (
+					"$(inherited)",
+					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
+					/Users/nelliott/Documents/Projects/KnockoutOC,
+				);
+				INFOPLIST_FILE = "KenshoTests/KenshoTests-Info.plist";
+				LIBRARY_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)",
+				);
+				OTHER_LDFLAGS = (
+					"$(inherited)",
+					"-framework",
+					XCTest,
+					"-ObjC",
+				);
+				PRODUCT_NAME = KenshoTests;
+				WRAPPER_EXTENSION = xctest;
+			};
+			name = Release;
+		};
+		E4CF957E19780A7B007B6494 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Debug;
+		};
+		E4CF957F19780A7B007B6494 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				PRODUCT_NAME = "$(TARGET_NAME)";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		E4CF954B197800F5007B6494 /* Build configuration list for PBXProject "Kensho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF9571197800F5007B6494 /* Debug */,
+				E4CF9572197800F5007B6494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CF9573197800F5007B6494 /* Build configuration list for PBXNativeTarget "Kensho" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF9574197800F5007B6494 /* Debug */,
+				E4CF9575197800F5007B6494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CF9576197800F5007B6494 /* Build configuration list for PBXNativeTarget "KenshoTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF9577197800F5007B6494 /* Debug */,
+				E4CF9578197800F5007B6494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		E4CF957D19780A7B007B6494 /* Build configuration list for PBXAggregateTarget "Framework" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E4CF957E19780A7B007B6494 /* Debug */,
+				E4CF957F19780A7B007B6494 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = E4CF9548197800F5007B6494 /* Project object */;
+}

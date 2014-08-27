@@ -9,7 +9,7 @@
 #import "CalculatedObservable.h"
 #import "ObservableAsString.h"
 
-@interface CalculatedObservableString : CalculatedObservable<ObservableAsString>
+@interface CalculatedObservableString : CalculatedObservable
 
 - (id) initWithKensho:(Kensho *)ken calculator:(NSString*(^)(NSObject<Observable>*))calculatorMethod;
 

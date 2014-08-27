@@ -22,9 +22,9 @@
     if([self.bindingType isEqualToString:@"title"])
     {
         // easiest way to convert to text
-        if([self.targetValue conformsToProtocol:@protocol(ObservableAsString)])
+        if(self.targetValue.isString)
         {
-            [(UIButton*)self.targetView setTitle:[(NSObject<ObservableAsString>*)self.targetValue stringValue]
+            [self.targetView setTitle:self.targetValue.stringValue
                              forState:UIControlStateNormal];
         }
     }

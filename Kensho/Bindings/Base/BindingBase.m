@@ -17,7 +17,7 @@
     
 }
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<Observable>*)value context:(NSObject*)context
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<Observable>*)value context:(NSObject*)context parameters:(NSDictionary*)parameters
 {
     if((self = [super init]))
     {
@@ -26,8 +26,9 @@
         _bindingType = type;
         _ken = ken;
         _context = context;
+        _parameters = parameters;
         
-        [value observedBy:self];
+        [value addKenshoObserver:self];
     }
     return self;
 }
@@ -40,7 +41,7 @@
 - (void) unbind
 {
     _targetView = nil;
-    [self.targetValue unobserve:self];
+    [self.targetValue removeKenshoObserver:self];
     _targetValue = nil;
     _bindingType = nil;
     _context = nil;

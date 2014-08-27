@@ -16,9 +16,9 @@
     
 }
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject *)context
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject *)context parameters:(NSDictionary*)parameters
 {
-    if((self = [super initWithKensho:ken target:target type:type value:value context:context]))
+    if((self = [super initWithKensho:ken target:target type:type value:value context:context parameters:parameters]))
     {
         [(UITableView*)target setDataSource:self];
     }
@@ -53,7 +53,7 @@
     
     @try
     {
-        reuseIdentifier = [valueItem valueForKey:@"cellClass"];
+        reuseIdentifier = [valueItem valueForKey:@"cellClass"];//self.parameters[@"cellClass"];
     }
     @catch(NSException* exception)
     {

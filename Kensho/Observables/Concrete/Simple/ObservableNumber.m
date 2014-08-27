@@ -11,20 +11,17 @@
 
 @implementation ObservableNumber
 
-@synthesize numberValue=_value;
+- (id) initWithKensho:(Kensho *)ken value:(NSNumber*)value
+{
+    if((self = [super initWithKensho:ken value:value]))
+    {
+    }
+    return self;
+}
 
 - (void)setNumberValue:(NSNumber *)value
 {
-    _value = value;
-    // trigger the observable event
-    [self triggerChangeEvent];
-}
-
-
-- (NSNumber *)numberValue
-{
-    [self.ken observableAccessed:self];
-    return _value;
+    self.value = value;
 }
 
 @end

@@ -11,19 +11,17 @@
 
 @implementation ObservableString
 
-@synthesize stringValue=_value;
+- (id) initWithKensho:(Kensho *)ken value:(NSString*)value
+{
+    if((self = [super initWithKensho:ken value:value]))
+    {
+    }
+    return self;
+}
 
 - (void)setStringValue:(NSString *)value
 {
-    _value = value;
-    // trigger the observable event
-    [self triggerChangeEvent];
-}
-
-- (NSString *)stringValue
-{
-    [self.ken observableAccessed:self];
-    return _value;
+    self.value = value;
 }
 
 @end

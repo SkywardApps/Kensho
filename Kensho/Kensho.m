@@ -14,9 +14,11 @@
 #import "Bindings/Concrete/UITableViewBinding.h"
 #import "Bindings/Concrete/UIViewBinding.h"
 #import "Utilities/UIView+Kensho.h"
+#import "KenshoLuaWrapper.h"
+#import "Observables/Concrete/Calculated/CalculatedObservable.h"
 
 
-typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context);
+typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters);
 
 @interface Kensho ()
 {
@@ -56,34 +58,44 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
         bindingFactories = [NSMutableDictionary dictionary];
         bindingFactories[(id <NSCopying>)UIButton.class] =
         @{
-          @"title":^(UIButton* view, NSString* type, NSObject<Observable>* observable, NSObject* context)
+          @"title":^(UIButton* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters)
           {
-              return [[UIButtonBinding alloc] initWithKensho:self target:view type:type value:observable context:context];
+              return [[UIButtonBinding alloc] initWithKensho:self target:view type:type value:observable context:context parameters:parameters];
           }
           };
         
         bindingFactories[(id <NSCopying>)UILabel.class] =
         @{
-          @"text":^(UILabel* view, NSString* type, NSObject<Observable>* observable, NSObject* context)
+          @"text":^(UILabel* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters)
           {
-              return [[UILabelBinding alloc] initWithKensho:self target:view type:type value:observable context:context];
+              return [[UILabelBinding alloc] initWithKensho:self target:view type:type value:observable context:context parameters:parameters];
           }
           };
         
         bindingFactories[(id <NSCopying>)UIView.class] =
         @{
           @"height":^(
-                      UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context)
+                      UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters)
           {
-              return [[UIViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context];
+              return [[UIViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context parameters:parameters];
+          },
+          @"backgroundColor":^(
+                      UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters)
+          {
+              return [[UIViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context  parameters:parameters];
+          },
+          @"tintColor":^(
+                      UIView* view, NSString* type, NSObject<Observable>* observable, NSObject* context, NSDictionary* parameters)
+          {
+              return [[UIViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context  parameters:parameters];
           }
           };
         
         bindingFactories[(id <NSCopying>)UITableView.class] =
         @{
-          @"foreach":^(UITableView* view, NSString* type, NSObject<ObservableAsEnumerator>* observable, NSObject* context)
+          @"foreach":^(UITableView* view, NSString* type, NSObject<ObservableAsEnumerator>* observable, NSObject* context, NSDictionary* parameters)
           {
-              return [[UITableViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context];
+              return [[UITableViewBinding alloc] initWithKensho:self target:view type:type value:observable context:context  parameters:parameters];
           }
           };
         
@@ -109,9 +121,60 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
         {
             NSString* bindValue = view.ken[bindType];
             
+            // First of all, split this into the regular expression pattern
+            // that catches an optional start of
+            //   attribute
+            //   ?calculation
+            // optionally combined with a series of tokens
+            //   param:attribute ...
+            //   param:?calculation ...
+            //
+            // This allows us to do the simple case
+            //   ken.height -> viewHeight
+            //   ken.height -> ?items.count + 88
+            //   ken.foreach -> items where:includeInList
+            //   ken.foreach -> items where:?name != "include"
+            
+            // the first token may match the format (0 or 1)
+            // (^\?[^:]+[\s$])|(^[_a-zA-Z][a-zA-Z0-9._]*[\s$])
+            // Susequent tokens may match the format (0 - N)
+            // ([_a-zA-Z][_a-zA-Z0-9.]*)\s*:\s*([_a-zA-Z][_a-zA-Z0-9.]*)
+            // or
+            // ([_a-zA-Z][_a-zA-Z0-9.]*)\s*:\s*(\?[^:]+[\s$])
+            
             // figure out the bindValue referenced here
             // or do we pass that off to the factory and just provide the 'context'?
-            NSObject<Observable>* targetValue = [context valueForKeyPath:bindValue];
+            NSObject<Observable>* targetValue;
+            NSDictionary* parameters = nil;
+            
+            if([bindValue characterAtIndex:0] == '?')
+            {
+                // firstToken is now a lua script
+                KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:self context:context code:bindValue];
+                
+                // evaluate once to a) generate the initial values and b) generate the parameters
+                //id firstEval = [wrapper evaluate:bindValue];
+                parameters = wrapper.parameters;
+                NSString* token = [bindValue substringFromIndex:1];
+                
+                targetValue = [[CalculatedObservable alloc] initWithKensho:self
+                                                                      calculator:^NSObject *(NSObject<Observable> *o) {
+                                                                          return (NSObject*)[wrapper evaluate:token];
+                                                                      }];
+                
+                // Register this binding against this view
+                NSString* viewKey = [NSString stringWithFormat:@"%p", view];
+                if(assignedBindings[viewKey] == nil)
+                {
+                    assignedBindings[viewKey] = [NSMutableSet set];
+                }
+                [assignedBindings[viewKey] addObject:targetValue];
+            
+            }
+            else
+            {
+                targetValue = [context valueForKeyPath:bindValue];
+            }
             
             // Handle the special-case structural bindings
             if([bindValue isEqualToString:@"with"])
@@ -138,7 +201,7 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
                     continue;
                 }
                 
-                binding = method(view,bindType,targetValue,context);
+                binding = method(view,bindType,targetValue,context,parameters);
                 if(binding == nil)
                 {
                     continue;

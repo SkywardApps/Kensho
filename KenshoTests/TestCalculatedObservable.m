@@ -49,7 +49,7 @@
 - (void)testObserve
 {
     CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
-    [base observedBy:self];
+    [base addKenshoObserver:self];
     [base triggerChangeEvent];
     XCTAssertEqual(YES, observedChanged, @"Observer was not invoked");
 }
@@ -57,8 +57,8 @@
 - (void)testUnobserve
 {
     CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
-    [base observedBy:self];
-    [base unobserve:self];
+    [base addKenshoObserver:self];
+    [base removeKenshoObserver:self];
     [base triggerChangeEvent];
     XCTAssertEqual(NO, observedChanged, @"Observer was invoked");
 }
@@ -75,11 +75,11 @@
         {
             CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
             weakBase = base;
-            [base observedBy:self];
+            [base addKenshoObserver:self];
             [base startTracking];
             [ken observableAccessed:changer];
             [base endTracking];
-            [base unobserve:self];
+            [base removeKenshoObserver:self];
         }
         XCTAssertNil(weakBase, @"Object was not released");
     }
@@ -103,12 +103,12 @@
     observedChanged = YES;
 }
 
-- (void) observedBy:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) unobserve:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers removeObject:observer.weak];
 }

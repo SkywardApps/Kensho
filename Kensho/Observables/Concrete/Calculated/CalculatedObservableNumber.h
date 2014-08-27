@@ -9,11 +9,8 @@
 #import "CalculatedObservable.h"
 #import "ObservableAsNumber.h"
 
-@interface CalculatedObservableNumber : CalculatedObservable<ObservableAsNumber>
+@interface CalculatedObservableNumber : CalculatedObservable
 
 - (id) initWithKensho:(Kensho *)ken calculator:(NSNumber*(^)(NSObject<Observable>*))calculatorMethod;
-
-@property (nonatomic, copy) NSNumber* (^calculatorMethod)(NSObject<Observable>*);
-@property (readonly, nonatomic) NSNumber* value;
 
 @end

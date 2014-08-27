@@ -11,7 +11,9 @@
 
 @interface CalculatedObservable : ObservableBase<Observer>
 
+- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject<Observable>*))calculatorMethod;
 - (void) startTracking;
 - (void) endTracking;
+- (void) updateCalculatedValue;
 
 @end

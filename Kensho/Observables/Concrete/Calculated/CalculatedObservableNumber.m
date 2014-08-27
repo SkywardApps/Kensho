@@ -12,26 +12,10 @@
 
 - (id) initWithKensho:(Kensho *)ken calculator:(NSNumber*(^)(NSObject<Observable>*))calculatorMethod
 {
-    if((self = [super initWithKensho:ken]))
+    if((self = [super initWithKensho:ken calculator:calculatorMethod]))
     {
-        self.calculatorMethod = calculatorMethod;
     }
     return self;
 }
-
-- (NSNumber *)value
-{
-    [self startTracking];
-    NSNumber* value = self.calculatorMethod(self);
-    [self endTracking];
-    
-    return value;
-}
-
-- (NSNumber*) numberValue
-{
-    return self.value;
-}
-
 
 @end

@@ -41,20 +41,90 @@
         }
         
         // Now observe for changes
-        [proxied observedBy:self];
+        [proxied addKenshoObserver:self];
     }
     return self;
 }
 
-- (void) observedBy:(NSObject<Observer>*)observer
+- (NSUInteger)hash
+{
+    return innerArray.hash;
+}
+
+- (id)valueForKey:(NSString *)key
+{
+    if([key isEqualToString:@"count"])
+    {
+        return @(self.count);
+    }
+    return [super valueForKey:key];
+}
+
+#pragma mark - Observable protocol
+
+- (void) addKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) unobserve:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers removeObject:observer.weak];
 }
+
+
+- (id) value
+{
+    [ken observableAccessed:self];
+    return innerArray;
+}
+
+- (NSString*) stringValue
+{
+    return nil;
+}
+
+- (NSNumber*) numberValue
+{
+    return nil;
+}
+
+- (NSObject*) objectValue
+{
+    return self.value;
+}
+
+- (BOOL) isNumber
+{
+    return NO;
+}
+
+- (BOOL) isString
+{
+    return NO;
+}
+
+- (BOOL) isObject
+{
+    return NO;
+}
+
+- (BOOL) isList
+{
+    return YES;
+}
+
+- (BOOL) isMap
+{
+    return NO;
+}
+
+
+- (BOOL) isCollection
+{
+    return YES;
+}
+
 
 #pragma mark - Helpers for emitting events
 - (void) triggerChangeEvent

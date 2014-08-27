@@ -16,10 +16,12 @@
 #import "ObservableAsNumber.h"
 #import "ObservableAsString.h"
 #import "ObservableAsEnumerator.h"
+#import "ObservableAsObject.h"
 
 #import "ObservableNumber.h"
 #import "ObservableString.h"
 #import "ObservableArray.h"
+#import "ObservableObject.h"
 
 #import "CalculatedObservableNumber.h"
 #import "CalculatedObservableString.h"

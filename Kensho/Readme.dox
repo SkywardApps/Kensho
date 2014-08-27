@@ -1,0 +1,17 @@
+/**
+
+Observable -> data
+ObservableArray -> array
+ObservableMap -> dictionary
+
+CalculatedObservable -> data
+ProxyArray -> array
+ProxyMap -> dictionary
+
+LuaObservable = CalculatedObservable -> mapped parameters from lua script
+ParameterObservable = CalculatedObservable from mapped parameter -> data
+
+The lua system should
+take the text, and wrap it in a "result = { [text] }"  
+
+ */

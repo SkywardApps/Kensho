@@ -14,8 +14,8 @@
 
 - (id) initWithKensho:(Kensho*)ken;
 
-- (void) observedBy:(NSObject<Observer>*)observer;
-- (void) unobserve:(NSObject<Observer>*)observer;
+- (void) addKenshoObserver:(NSObject<Observer>*)observer;
+- (void) removeKenshoObserver:(NSObject<Observer>*)observer;
 
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;

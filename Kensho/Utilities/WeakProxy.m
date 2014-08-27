@@ -17,14 +17,18 @@
 
 @implementation WeakProxy
 
-- (id)initWithProxied:(id)object {
+- (id)initWithProxied:(id)object
+{
     // No init method in superclass
     target = object;
     return self;
 }
 
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    [anInvocation invokeWithTarget:target];
+    if(target != nil)
+    {
+        [anInvocation invokeWithTarget:target];
+    }
 }
 
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {

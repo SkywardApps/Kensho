@@ -9,6 +9,7 @@
 #import "UIViewBinding.h"
 #import "UIView+UpdateAutoLayoutConstraints.h"
 #import "ObservableAsNumber.h"
+#import "ObservableAsObject.h"
 
 @implementation UIViewBinding
 
@@ -21,26 +22,35 @@
 {
     if([self.bindingType isEqualToString:@"height"])
     {
-        NSNumber* value = [(NSObject<ObservableAsNumber>*)self.targetValue numberValue];
+        NSNumber* value = self.targetValue.numberValue;
         [self.targetView setConstraintConstant:value.floatValue forAttribute:NSLayoutAttributeHeight];
     }
     
     else if([self.bindingType isEqualToString:@"width"])
     {
-        NSNumber* value = [(NSObject<ObservableAsNumber>*)self.targetValue numberValue];
+        NSNumber* value = self.targetValue.numberValue;
         [self.targetView setConstraintConstant:value.floatValue forAttribute:NSLayoutAttributeWidth];
     }
     
     else if([self.bindingType isEqualToString:@"visible"])
     {
-        NSNumber* value = [(NSObject<ObservableAsNumber>*)self.targetValue numberValue];
+        NSNumber* value = self.targetValue.numberValue;
         [self.targetView setHidden:!value.boolValue];
     }
-    
     else if([self.bindingType isEqualToString:@"alpha"])
     {
-        NSNumber* value = [(NSObject<ObservableAsNumber>*)self.targetValue numberValue];
+        NSNumber* value = self.targetValue.numberValue;
         [self.targetView setAlpha:value.floatValue];
+    }
+    else if([self.bindingType isEqualToString:@"backgroundColor"])
+    {
+        UIColor* value = (UIColor*)self.targetValue.objectValue;
+        [self.targetView setBackgroundColor:value];
+    }
+    else if([self.bindingType isEqualToString:@"tintColor"])
+    {
+        UIColor* value = (UIColor*)self.targetValue.objectValue;
+        [self.targetView setTintColor:value];
     }
 }
 

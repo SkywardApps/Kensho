@@ -12,13 +12,11 @@
 #import "UIButtonBinding.h"
 #import "WeakProxy.h"
 
-@interface TestUIButtonBinding : XCTestCase<ObservableAsString>
+@interface TestUIButtonBinding : XCTestCase
 {
     Kensho* ken;
-    NSMutableSet* observers;
+    ObservableString* observableString;
 }
-
-@property (readonly) NSString *stringValue;
 
 @end
 
@@ -29,15 +27,14 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     ken = [[Kensho alloc] init];
-    observers = [NSMutableSet set];
-    _stringValue = @"Initial Title";
+    observableString = [[ObservableString alloc] initWithKensho:ken value:@"Initial Title"];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
+    observableString = nil;
     ken = nil;
-    observers = nil;
     [super tearDown];
 }
 
@@ -50,20 +47,20 @@
     UIButtonBinding* binding = [[UIButtonBinding alloc] initWithKensho:ken
                                                                 target:btn
                                                                   type:@"title"
-                                                                 value:self
+                                                                 value:observableString
                                                                context:context];
     
     XCTAssertEqual(ken, binding.ken, @"Kensho does not match");
     XCTAssertEqual(btn, binding.targetView, @"Views do not match");
     XCTAssertEqualObjects(@"title", binding.bindingType, @"Types do not match");
-    XCTAssertEqual(self, binding.targetValue, @"Values do not match");
+    XCTAssertEqual(observableString, binding.targetValue, @"Values do not match");
     XCTAssertEqual(context, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(binding.weak, observers.anyObject, @"Binding did not observe value");
+    XCTAssertEqual(binding.weak, observableString.observers.anyObject, @"Binding did not observe value");
     
     [binding updateValue];
     
-    OCMVerify([btn setTitle:_stringValue forState:UIControlStateNormal]);
+    OCMVerify([btn setTitle:observableString.stringValue forState:UIControlStateNormal]);
 }
 
 
@@ -76,16 +73,16 @@
     UIButtonBinding* binding = [[UIButtonBinding alloc] initWithKensho:ken
                                                         target:btn
                                                           type:@"title"
-                                                         value:self
+                                                         value:observableString
                                                        context:context];
     
     [binding updateValue];
     
-    OCMVerify([btn setTitle:_stringValue forState:UIControlStateNormal]);
+    OCMVerify([btn setTitle:observableString.stringValue forState:UIControlStateNormal]);
     
-    _stringValue = @"Title has changed!";
-    [self triggerChangeEvent];
-    OCMVerify([btn setTitle:_stringValue forState:UIControlStateNormal]);
+    observableString.stringValue = @"Title has changed!";
+    
+    OCMVerify([btn setTitle:observableString.stringValue forState:UIControlStateNormal]);
     
 }
 
@@ -97,7 +94,7 @@
     UIButtonBinding* binding = [[UIButtonBinding alloc] initWithKensho:ken
                                                         target:btn
                                                           type:@"title"
-                                                         value:self
+                                                         value:observableString
                                                        context:context];
     
     [binding updateValue];
@@ -107,7 +104,7 @@
     XCTAssertEqual((NSObject*)nil, binding.targetValue, @"Values do not match");
     XCTAssertEqual((NSObject*)nil, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(0, observers.count, @"Binding did not release value");
+    XCTAssertEqual(0, observableString.observers.count, @"Binding did not release value");
 }
 
 
@@ -116,9 +113,12 @@
     __weak UIButtonBinding* weakBinding;
     __weak UIButton* weakButton;
     __weak NSObject* weakContext;
+    __weak ObservableString* weakValue;
     
     @autoreleasepool
     {
+        weakValue = observableString;
+        
         UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         weakButton = btn;
         
@@ -128,38 +128,23 @@
         UIButtonBinding* binding = [[UIButtonBinding alloc] initWithKensho:ken
                                                             target:btn
                                                               type:@"type"
-                                                             value:self
+                                                             value:observableString
                                                            context:context];
         weakBinding = binding;
         
         [binding updateValue];
         [binding unbind];
+        observableString = nil;
     }
     
     
     XCTAssertNil(weakBinding, @"Object was not released");
     XCTAssertNil(weakContext, @"Object was not released");
     XCTAssertNil(weakButton, @"Object was not released");
+    XCTAssertNil(weakValue, @"Object was not released");
 }
 
-#pragma mark - Test Mocks
 
-- (void) observedBy:(NSObject<Observer>*)observer
-{
-    [observers addObject:observer.weak];
-}
 
-- (void) unobserve:(NSObject<Observer>*)observer
-{
-    [observers removeObject:observer.weak];
-}
-
-- (void) triggerChangeEvent
-{
-    for(NSString<Observer>* observer in observers)
-    {
-        [observer observableUpdated:self];
-    }
-}
 
 @end

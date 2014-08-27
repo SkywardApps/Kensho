@@ -11,6 +11,7 @@
 
 @interface ObservableNumber : ObservableBase<ObservableWritableNumber>
 
-@property (nonatomic) NSNumber* numberValue;
+- (id) initWithKensho:(Kensho *)ken value:(NSNumber*)value;
+@property NSNumber* numberValue;
 
 @end

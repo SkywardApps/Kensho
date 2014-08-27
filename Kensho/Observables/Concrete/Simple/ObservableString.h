@@ -11,6 +11,8 @@
 
 @interface ObservableString : ObservableBase<ObservableWritableString>
 
-@property (nonatomic) NSString* stringValue;
+- (id) initWithKensho:(Kensho *)ken value:(NSString*)value;
+
+@property NSString* stringValue;
 
 @end

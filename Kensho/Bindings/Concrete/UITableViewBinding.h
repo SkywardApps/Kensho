@@ -14,7 +14,7 @@
 
 @interface UITableViewBinding : BindingBase <UITableViewDataSource>
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject*)context;;
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject*)context parameters:(NSDictionary*)parameters;
 
 @property (weak, readonly) UITableView* targetView;
 @property (weak, readonly) NSObject<ObservableAsEnumerator>* targetValue;

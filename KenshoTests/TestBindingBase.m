@@ -126,12 +126,12 @@
 
 #pragma mark - Test Mocks
 
-- (void) observedBy:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) unobserve:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers removeObject:observer.weak];
 }

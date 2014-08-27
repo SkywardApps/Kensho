@@ -9,13 +9,7 @@
 #import <Foundation/Foundation.h>
 #import "Observable.h"
 
-@protocol ObservableAsString <Observable>
-
-- (NSString*) stringValue;
-
-@end
-
-@protocol ObservableWritableString <ObservableAsString>
+@protocol ObservableWritableString <Observable>
 
 - (void) setStringValue:(NSString*)value;
 

@@ -12,7 +12,7 @@
 #import "UILabelBinding.h"
 #import "WeakProxy.h"
 
-@interface TestUILabelBinding : XCTestCase<ObservableAsString>
+@interface TestUILabelBinding : XCTestCase<Observable>
 {
     Kensho* ken;
     NSMutableSet* observers;
@@ -147,12 +147,12 @@
 
 #pragma mark - Test Mocks
 
-- (void) observedBy:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) unobserve:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<Observer>*)observer
 {
     [observers removeObject:observer.weak];
 }

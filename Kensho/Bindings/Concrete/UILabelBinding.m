@@ -24,9 +24,9 @@
     if([self.bindingType isEqualToString:@"text"])
     {
         // easiest way to convert to text
-        if([self.targetValue conformsToProtocol:@protocol(ObservableAsString)])
+        if(self.targetValue.isString)
         {
-            [(UILabel*)self.targetView setText:[(NSObject<ObservableAsString>*)self.targetValue stringValue]];
+            [self.targetView setText:self.targetValue.stringValue];
         }
     }
 }

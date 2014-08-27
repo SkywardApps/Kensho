@@ -8,14 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-@protocol ObservableAsNumber <NSObject>
-
-- (NSNumber*) numberValue;
-
-@end
-
-
-@protocol ObservableWritableNumber <ObservableAsNumber>
+@protocol ObservableWritableNumber <Observable>
 
 - (void) setNumberValue:(NSNumber*)value;
 

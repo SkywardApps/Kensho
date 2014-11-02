@@ -12,7 +12,9 @@
 #import "UILabelBinding.h"
 #import "WeakProxy.h"
 
-@interface TestUILabelBinding : XCTestCase<IObservable>
+// Done
+
+@interface TestUILabelBinding : XCTestCase
 {
     Kensho* ken;
     Observable* observable;

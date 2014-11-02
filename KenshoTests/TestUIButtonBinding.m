@@ -12,6 +12,8 @@
 #import "UIButtonBinding.h"
 #import "WeakProxy.h"
 
+// Done
+
 @interface TestUIButtonBinding : XCTestCase
 {
     Kensho* ken;

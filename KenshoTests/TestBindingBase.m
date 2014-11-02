@@ -11,10 +11,11 @@
 #import "BindingBase.h"
 #import "WeakProxy.h"
 
-@interface TestBindingBase : XCTestCase<IObservable>
+// Done
+
+@interface TestBindingBase : XCTestCase
 {
     Kensho* ken;
-    NSMutableSet* observers;
 }
 
 
@@ -27,14 +28,12 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     ken = [[Kensho alloc] init];
-    observers = [NSMutableSet set];
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     ken = nil;
-    observers = nil;
     [super tearDown];
 }
 
@@ -43,20 +42,21 @@
 {
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     NSObject* context = [NSDictionary dictionary];
+    Observable* value = [[Observable alloc] initWithKensho:ken];
     
     BindingBase* binding = [[BindingBase alloc] initWithKensho:ken
                                                                 target:btn
                                                                   type:@"type"
-                                                                 value:self
+                                                                 value:value
                                                                context:context];
     
     XCTAssertEqual(ken, binding.ken, @"Kensho does not match");
     XCTAssertEqual(btn, binding.targetView, @"Views do not match");
-    XCTAssertEqual(self, binding.targetValue, @"Values do not match");
+    XCTAssertEqual(value, binding.targetValue, @"Values do not match");
     XCTAssertEqual(@"type", binding.bindingType, @"Types do not match");
     XCTAssertEqual(context, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(binding.weak, observers.anyObject, @"Binding did not observe value");
+    XCTAssertEqual(binding.weak, value.observers.anyObject, @"Binding did not observe value");
     
 }
 
@@ -65,11 +65,12 @@
 {
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     NSObject* context = [NSDictionary dictionary];
+    Observable* value = [[Observable alloc] initWithKensho:ken];
     
     BindingBase* binding = [[BindingBase alloc] initWithKensho:ken
                                                         target:btn
                                                           type:@"type"
-                                                         value:self
+                                                         value:value
                                                        context:context];
     XCTAssertThrowsSpecificNamed([binding updateValue], NSException, @"NotYetImplemented", @"updateValue must report an exception for not being implemented");
 }
@@ -78,11 +79,12 @@
 {
     UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
     NSObject* context = [NSDictionary dictionary];
+    Observable* value = [[Observable alloc] initWithKensho:ken];
     
     BindingBase* binding = [[BindingBase alloc] initWithKensho:ken
                                                         target:btn
                                                           type:@"type"
-                                                         value:self
+                                                         value:value
                                                        context:context];
     
     [binding unbind];
@@ -91,7 +93,7 @@
     XCTAssertEqual((NSObject*)nil, binding.targetValue, @"Values do not match");
     XCTAssertEqual((NSObject*)nil, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(0, observers.count, @"Binding did not release value");
+    XCTAssertEqual(0, value.observers.count, @"Binding did not release value");
 }
 
 
@@ -100,9 +102,12 @@
     __weak BindingBase* weakBinding;
     __weak UIButton* weakButton;
     __weak NSObject* weakContext;
+    __weak Observable* weakValue;
     
     @autoreleasepool
     {
+        Observable* value = [[Observable alloc] initWithKensho:ken];
+        
         UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         weakButton = btn;
         
@@ -112,7 +117,7 @@
         BindingBase* binding = [[BindingBase alloc] initWithKensho:ken
                                                             target:btn
                                                               type:@"type"
-                                                             value:self
+                                                             value:value
                                                            context:context];
         weakBinding = binding;
         [binding unbind];
@@ -122,18 +127,7 @@
     XCTAssertNil(weakBinding, @"Object was not released");
     XCTAssertNil(weakContext, @"Object was not released");
     XCTAssertNil(weakButton, @"Object was not released");
-}
-
-#pragma mark - Test Mocks
-
-- (void) addKenshoObserver:(NSObject<IObserver>*)observer
-{
-    [observers addObject:observer.weak];
-}
-
-- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
-{
-    [observers removeObject:observer.weak];
+    XCTAssertNil(weakValue, @"Object was not released");
 }
 
 @end

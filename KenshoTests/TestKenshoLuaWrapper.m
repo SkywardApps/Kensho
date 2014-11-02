@@ -14,6 +14,7 @@
 #import "KenshoLuaWrapper.h"
 #import <Kensho/Kensho.h>
 
+// Done
 
 @interface TestKenshoLuaWrapper : XCTestCase
 {
@@ -114,7 +115,7 @@
         NSString* loc = @"name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c3 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c3", @"Failed basic accessor");
     }
     
@@ -122,7 +123,7 @@
         NSString* loc = @"__parent.name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c3 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c2", @"Failed basic accessor");
     }
     
@@ -130,7 +131,7 @@
         NSString* loc = @"__parent.__parent.name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c3 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c1", @"Failed basic accessor");
     }
 }
@@ -149,7 +150,7 @@
         NSString* loc = @"__root.name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c1 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c1", @"Failed basic accessor");
     }
     
@@ -157,7 +158,7 @@
         NSString* loc = @"__root.name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c2 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c1", @"Failed basic accessor");
     }
     
@@ -165,7 +166,7 @@
         NSString* loc = @"__root.name";
         KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:c3 code:loc];
         
-        NSString* result = [wrapper evaluate:loc];
+        NSString* result = (NSString*)[wrapper evaluate:loc];
         XCTAssertEqualObjects(result, @"c1", @"Failed basic accessor");
     }
 }

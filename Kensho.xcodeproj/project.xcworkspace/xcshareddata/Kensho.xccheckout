@@ -10,29 +10,29 @@
 	<string>Kensho</string>
 	<key>IDESourceControlProjectOriginsDictionary</key>
 	<dict>
-		<key>1A80D224-180C-4DBD-8406-F71F70399EFC</key>
+		<key>5F2D1B16152BC3ACDAD864F3D6AFCD5E4D75144F</key>
 		<string>ssh://titus/git/Kensho</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Kensho.xcodeproj/project.xcworkspace</string>
+	<string>Kensho.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
-		<key>1A80D224-180C-4DBD-8406-F71F70399EFC</key>
+		<key>5F2D1B16152BC3ACDAD864F3D6AFCD5E4D75144F</key>
 		<string>../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://titus/git/Kensho</string>
 	<key>IDESourceControlProjectVersion</key>
-	<integer>110</integer>
+	<integer>111</integer>
 	<key>IDESourceControlProjectWCCIdentifier</key>
-	<string>1A80D224-180C-4DBD-8406-F71F70399EFC</string>
+	<string>5F2D1B16152BC3ACDAD864F3D6AFCD5E4D75144F</string>
 	<key>IDESourceControlProjectWCConfigurations</key>
 	<array>
 		<dict>
 			<key>IDESourceControlRepositoryExtensionIdentifierKey</key>
 			<string>public.vcs.git</string>
 			<key>IDESourceControlWCCIdentifierKey</key>
-			<string>1A80D224-180C-4DBD-8406-F71F70399EFC</string>
+			<string>5F2D1B16152BC3ACDAD864F3D6AFCD5E4D75144F</string>
 			<key>IDESourceControlWCCName</key>
 			<string>Kensho</string>
 		</dict>

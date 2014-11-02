@@ -7,10 +7,10 @@
 //
 
 #import <XCTest/XCTest.h>
-#import "ObservableBase.h"
+#import "Observable.h"
 #import "Kensho/Kensho.h"
 
-@interface TestObservableBase : XCTestCase<Observer>
+@interface TestObservableBase : XCTestCase<IObserver>
 {
     Kensho* ken;
     BOOL observedChanged;
@@ -37,13 +37,13 @@
 
 - (void)testConstructor
 {
-    ObservableBase* base = [[ObservableBase alloc] initWithKensho:ken];
+    Observable* base = [[Observable alloc] initWithKensho:ken];
     XCTAssertEqual(ken, base.ken, @"Kensho object not correct");
 }
 
 - (void)testObserve
 {
-    ObservableBase* base = [[ObservableBase alloc] initWithKensho:ken];
+    Observable* base = [[Observable alloc] initWithKensho:ken];
     [base addKenshoObserver:self];
     [base triggerChangeEvent];
     XCTAssertEqual(YES, observedChanged, @"Observer was not invoked");
@@ -51,7 +51,7 @@
 
 - (void)testUnobserve
 {
-    ObservableBase* base = [[ObservableBase alloc] initWithKensho:ken];
+    Observable* base = [[Observable alloc] initWithKensho:ken];
     [base addKenshoObserver:self];
     [base removeKenshoObserver:self];
     [base triggerChangeEvent];
@@ -60,10 +60,10 @@
 
 - (void) testRelease
 {
-    __weak ObservableBase* weakBase;
+    __weak Observable* weakBase;
     @autoreleasepool
     {
-        ObservableBase* base = [[ObservableBase alloc] initWithKensho:ken];
+        Observable* base = [[Observable alloc] initWithKensho:ken];
         weakBase = base;
         [base addKenshoObserver:self];
         [base removeKenshoObserver:self];
@@ -73,7 +73,7 @@
 
 #pragma mark - Test Mocks
 
-- (void) observableUpdated:(NSObject<Observable>*)observable
+- (void) observableUpdated:(NSObject<IObservable>*)observable
 {
     observedChanged = YES;
 }

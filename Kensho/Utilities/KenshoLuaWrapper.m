@@ -12,12 +12,43 @@
 #include "lauxlib.h"
 #import "Observable.h"
 
+/**
+ Test cases:
+ 
+ basic assignment of an observable:
+    text=mytext
+ 
+ assignment of a manipulation
+    height=baseHeight * 100
+ 
+ assignment of a compound object
+    style={background=colors.blue, color=colors.red}
+ 
+ multiple assignments
+    text=mytext, height=baseHeight*100, style={background=colors.blue, color=colors.red}
+ 
+ assignment within a foreach from the root, and from the parent
+    text=$parent.mytext
+    text=$root.mytext
+ 
+ The above probably means we need a KenshoContext that wraps the context object, rather than just passing the 
+ context object around bare like we do now.
+ 
+ Ok, so this is a little different because we have multiple key-values, unlike knockout which is data-bind="values"
+ So we want each binding to have two options - 
+    a single value, eg. "text" "mytext"
+    a config object, eg. "foreach" "{objects=myobjects, view=celltype}"
+ 
+ The question is, do we:
+    immediately translate all lua values full depth into NSObject versions and discard the original, or
+    create LuaWrappers for each value type that late-binds.
+    Since each value should be used, there's probably no use in late binding.
+ */
 
 @interface KenshoLuaWrapper ()
 {
-    id context;
-    NSMutableDictionary* parameters;
-    NSMutableDictionary* internalParameters;
+    // The kensho context object
+    KenshoContext* context;
     NSString* code;
     Kensho* ken;
 }
@@ -47,15 +78,22 @@ int pushValue(lua_State* L, NSObject* value)
         lua_pushstring(L, [(NSString*)value UTF8String]);
         return 1;
     }
-    else if([value conformsToProtocol:@protocol(Observable)]
-            && ![(NSObject<Observable>*)value isCollection])
+    /*else if([value conformsToProtocol:@protocol(IObservable)]
+            && ![(NSObject<IObservable>*)value isCollection])
     {
-        NSObject<Observable>* obs = (NSObject<Observable>*)value;
+        NSObject<IObservable>* obs = (NSObject<IObservable>*)value;
         NSObject* result = obs.value;
         return pushValue(L, result);
-    }
+    }*/
     else if([value isKindOfClass:NSObject.class])
     {
+        if([value conformsToProtocol:@protocol(IObservable)])
+        {
+            NSObject<IObservable>* obs = (NSObject<IObservable>*)value;
+            [obs value]; // access the value.  We don't do anything with it, but that does notify
+            // any tracking that it was accessed so this calculated wrapper knows there is a
+            // dependency
+        }
         // do something crazy here to allow key descent (view.frame.width)??
         NSObject* __weak *userdata = (NSObject* __weak *)lua_newuserdata(L, sizeof(NSObject*));
         (*userdata) = value;
@@ -119,6 +157,79 @@ int lookupKey(lua_State* L)
     return pushValue(L, value);
 }
 
+NSObject* popValue(lua_State* L, int stackLevel)
+{
+    // Now figure out the datatype of the assignement and get the data out
+    if(lua_isboolean(L, stackLevel))
+    {
+        return @(lua_toboolean(L, stackLevel));
+    }
+    else if(lua_isnumber(L, stackLevel))
+    {
+        return  @(lua_tonumber(L, stackLevel));
+    }
+    else if(lua_isstring(L, stackLevel))
+    {
+        const char* tempString = lua_tostring(L, stackLevel);
+        return [NSString stringWithUTF8String:tempString];
+    }
+    else if(lua_istable(L, stackLevel))
+    {
+        // This is a bit of a special case here.  We assume this is a wrapper for an NSObject.
+        // This could actually be a new table, in which case this will fail.
+        lua_getfield(L, stackLevel, "__self");
+        NSObject* value = (__bridge id)(lua_touserdata(L, -1));
+        if(value == nil)
+        {
+            
+            // We'll create an NSDictionary wrapper here
+            NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
+            
+            while (lua_next(L, stackLevel-1) != 0) {
+                /* uses 'key' (at index -2) and 'value' (at index -1) */
+                printf("%s\n", lua_typename(L, lua_type(L, -2)));
+                if(lua_isstring(L, -2))
+                {
+                    const char* tempString = lua_tostring(L, -2);
+                    printf("%s\n", tempString);
+                    
+                }
+                // Make sure the key is a valid string too!
+                const char* nameRequest = lua_tostring(L, -2);
+                if(nameRequest == NULL)
+                {
+                    return 0;
+                }
+                
+                NSObject* subvalue = popValue(L, -1);
+                dictionary[[NSString stringWithUTF8String:nameRequest]] = subvalue;
+                
+                /* removes 'value'; keeps 'key' for next iteration */
+                lua_pop(L, 1);
+                printf("%s\n", lua_typename(L, lua_type(L, -1)));
+                if(lua_isstring(L, -1))
+                {
+                    const char* tempString = lua_tostring(L, -1);
+                    printf("%s\n", tempString);
+                    
+                }
+            }
+            
+            value = [NSDictionary dictionaryWithDictionary:dictionary];
+        }
+        printf("%s\n", lua_typename(L, lua_type(L, -1)));
+        if(lua_isstring(L, -1))
+        {
+            const char* tempString = lua_tostring(L, -1);
+            printf("%s\n", tempString);
+            
+        }
+        return value;
+    }
+    
+    return nil;
+}
+
 /**
  *  This is executed when the LUA subsystem attempts to assign data to a new index.
  * 
@@ -156,6 +267,7 @@ int lookupNewKey(lua_State* L)
     // And then get it's __wrapper object, which points to the owning KenshoLuaWrapper.
     lua_getfield(L, -3, "__wrapper");
     id target = (__bridge id)(lua_touserdata(L, -1));
+    lua_pop(L, 1);
     if(target == nil)
     {
         return 0;
@@ -166,39 +278,14 @@ int lookupNewKey(lua_State* L)
     KenshoLuaWrapper* wrapper = target;
     NSObject* value = nil;
     
-    // Now figure out the datatype of the assignement and get the data out
-    if(lua_isboolean(L, -2))
-    {
-        value = @(lua_toboolean(L, -2));
-    }
-    else if(lua_isnumber(L, -2))
-    {
-        value = @(lua_tonumber(L, -2));
-    }
-    else if(lua_isstring(L, -2))
-    {
-        const char* tempString = lua_tostring(L, -2);
-        value = [NSString stringWithUTF8String:tempString];
-    }
-    else if(lua_istable(L, -2))
-    {
-        // This is a bit of a special case here.  We assume this is a wrapper for an NSObject.
-        // This could actually be a new table, in which case this will fail.
-        lua_getfield(L, -2, "__self");
-        value = (__bridge id)(lua_touserdata(L, -1));
-    }
-    else
-    {
-        return 0;
-    }
+    value = popValue(L, -1);
+    // Ok, we save this value to the 'parameters' object
     [wrapper.parameters setValue:value forKey:propertyName];
     
     return 1;
 }
 
 @implementation KenshoLuaWrapper
-
-@synthesize parameters=_internalParameters;
 
 - (id) initWithKensho:(Kensho *)initken context:(id)initcontext code:(NSString *)initcode
 {
@@ -207,7 +294,7 @@ int lookupNewKey(lua_State* L)
         ken = initken;
         context = initcontext;
         code = initcode;
-        parameters = [NSMutableDictionary dictionary];
+        _parameters = [[NSMutableDictionary alloc] initWithCapacity:1];
         
         [self evaluate];
     }
@@ -260,7 +347,7 @@ int lookupNewKey(lua_State* L)
         luaL_loadstring(L, embeddedString.UTF8String);
         if (0 == lua_pcall(L, 0, 1, 0))
         {
-            return parameters[@"__final"];
+            return _parameters[@"__final"];
         }
 
         return nil;
@@ -268,7 +355,7 @@ int lookupNewKey(lua_State* L)
     @finally
     {
         NSSet* tracklist = [ken endTracking];
-        for(NSObject<Observable>* trackitem in tracklist)
+        for(NSObject<IObservable>* trackitem in tracklist)
         {
             [trackitem addKenshoObserver:self];
         }
@@ -278,20 +365,20 @@ int lookupNewKey(lua_State* L)
 }
 
 
-- (void) observableUpdated:(NSObject<Observable>*)observable
+- (void) observableUpdated:(NSObject<IObservable>*)observable
 {
     [self evaluate];
 }
 
-- (void) observable:(NSObject<Observable>*)collection
-              added:(NSObject<Observable>*)item
+- (void) observable:(NSObject<IObservable>*)collection
+              added:(NSObject<IObservable>*)item
              forKey:(NSObject*)key
 {
     
 }
 
-- (void) observable:(NSObject<Observable>*)collection
-            removed:(NSObject<Observable>*)item
+- (void) observable:(NSObject<IObservable>*)collection
+            removed:(NSObject<IObservable>*)item
             fromKey:(NSObject*)key
 {
     

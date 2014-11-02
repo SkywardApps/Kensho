@@ -6,12 +6,12 @@
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
 //
 
-#import "ObservableBase.h"
+#import "Observable.h"
 
 
-@interface CalculatedObservable : ObservableBase<Observer>
+@interface Computed : Observable<IObserver>
 
-- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject<Observable>*))calculatorMethod;
+- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject<IObservable>*))calculatorMethod;
 - (void) startTracking;
 - (void) endTracking;
 - (void) updateCalculatedValue;

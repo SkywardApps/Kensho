@@ -7,8 +7,8 @@
 //
 
 #import "UIButtonBinding.h"
-#import "ObservableAsString.h"
 #import <UIKit/UIKit.h>
+#import "Kensho.h"
 
 @implementation UIButtonBinding
 
@@ -22,11 +22,7 @@
     if([self.bindingType isEqualToString:@"title"])
     {
         // easiest way to convert to text
-        if(self.targetValue.isString)
-        {
-            [self.targetView setTitle:self.targetValue.stringValue
-                             forState:UIControlStateNormal];
-        }
+        [self.targetView setTitle:self.finalValue forState:UIControlStateNormal];
     }
 }
 

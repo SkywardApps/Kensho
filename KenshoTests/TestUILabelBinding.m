@@ -12,13 +12,11 @@
 #import "UILabelBinding.h"
 #import "WeakProxy.h"
 
-@interface TestUILabelBinding : XCTestCase<Observable>
+@interface TestUILabelBinding : XCTestCase<IObservable>
 {
     Kensho* ken;
-    NSMutableSet* observers;
+    Observable* observable;
 }
-
-@property (readonly) NSString *stringValue;
 
 @end
 
@@ -29,15 +27,15 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     ken = [[Kensho alloc] init];
-    observers = [NSMutableSet set];
-    _stringValue = @"Initial Title";
+    observable = [[Observable alloc] initWithKensho:ken];
+    observable.value = @"Initial Title";
 }
 
 - (void)tearDown
 {
     // Put teardown code here. This method is called after the invocation of each test method in the class.
     ken = nil;
-    observers = nil;
+    observable = nil;
     [super tearDown];
 }
 
@@ -49,19 +47,19 @@
     UILabelBinding* binding = [[UILabelBinding alloc] initWithKensho:ken
                                                                 target:label
                                                                   type:@"text"
-                                                                 value:self
+                                                                 value:observable
                                                                context:context];
     
     XCTAssertEqual(ken, binding.ken, @"Kensho does not match");
     XCTAssertEqual(label, binding.targetView, @"Views do not match");
     XCTAssertEqualObjects(@"text", binding.bindingType, @"Types do not match");
-    XCTAssertEqual(self, binding.targetValue, @"Values do not match");
+    XCTAssertEqual(observable, binding.targetValue, @"Values do not match");
     XCTAssertEqual(context, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(binding.weak, observers.anyObject, @"Binding did not observe value");
+    XCTAssertEqual(binding.weak, observable.observers.anyObject, @"Binding did not observe value");
     
     [binding updateValue];
-    XCTAssertEqualObjects(_stringValue, label.text, @"Binding did not accept initial value");
+    XCTAssertEqualObjects(observable.value, label.text, @"Binding did not accept initial value");
 }
 
 
@@ -72,22 +70,22 @@
     UILabelBinding* binding = [[UILabelBinding alloc] initWithKensho:ken
                                                               target:label
                                                                 type:@"text"
-                                                               value:self
+                                                               value:observable
                                                              context:context];
     
     XCTAssertEqual(ken, binding.ken, @"Kensho does not match");
     XCTAssertEqual(label, binding.targetView, @"Views do not match");
     XCTAssertEqualObjects(@"text", binding.bindingType, @"Types do not match");
-    XCTAssertEqual(self, binding.targetValue, @"Values do not match");
+    XCTAssertEqual(observable, binding.targetValue, @"Values do not match");
     XCTAssertEqual(context, binding.context, @"Contexts do not match");
     
     [binding updateValue];
-    XCTAssertEqualObjects(_stringValue, label.text, @"Binding did not accept initial value");
+    XCTAssertEqualObjects(observable.value, label.text, @"Binding did not accept initial value");
     
-    _stringValue = @"Title has changed!";
-    [self triggerChangeEvent];
+    observable.value = @"Title has changed!";
+    [observable triggerChangeEvent];
     
-    XCTAssertEqualObjects(_stringValue, label.text, @"Binding did not accept updatd value");
+    XCTAssertEqualObjects(observable.value, label.text, @"Binding did not accept updatd value");
     
 }
 
@@ -100,7 +98,7 @@
     UILabelBinding* binding = [[UILabelBinding alloc] initWithKensho:ken
                                                               target:label
                                                                 type:@"text"
-                                                               value:self
+                                                               value:observable
                                                              context:context];
     
     [binding updateValue];
@@ -110,7 +108,7 @@
     XCTAssertEqual((NSObject*)nil, binding.targetValue, @"Values do not match");
     XCTAssertEqual((NSObject*)nil, binding.context, @"Contexts do not match");
     
-    XCTAssertEqual(0, observers.count, @"Binding did not release value");
+    XCTAssertEqual(0, observable.observers.count, @"Binding did not release value");
 }
 
 
@@ -125,13 +123,13 @@
         UILabel* label = [[UILabel alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         weakLabel = label;
         
-        NSObject* context = [[ObservableString alloc] initWithKensho:ken];
+        NSObject* context = [[Observable alloc] initWithKensho:ken];
         weakContext = context;
         
         UILabelBinding* binding = [[UILabelBinding alloc] initWithKensho:ken
                                                                   target:label
                                                                     type:@"text"
-                                                                   value:self
+                                                                   value:observable
                                                                  context:context];
         weakBinding = binding;
         
@@ -145,23 +143,4 @@
     XCTAssertNil(weakLabel, @"Object was not released");
 }
 
-#pragma mark - Test Mocks
-
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
-{
-    [observers addObject:observer.weak];
-}
-
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
-{
-    [observers removeObject:observer.weak];
-}
-
-- (void) triggerChangeEvent
-{
-    for(NSString<Observer>* observer in observers)
-    {
-        [observer observableUpdated:self];
-    }
-}
 @end

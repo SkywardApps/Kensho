@@ -8,10 +8,11 @@
 
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "Kensho.h"
+#import "KenshoContext.h"
 
-@interface KenshoLuaWrapper : NSObject<Observer>
+@interface KenshoLuaWrapper : NSObject<IObserver>
 
-- (id) initWithKensho:(Kensho*)ken context:(id)context code:(NSString*)code;
+- (id) initWithKensho:(Kensho*)ken context:(KenshoContext*)context code:(NSString*)code;
 - (NSObject*) evaluate:(NSString*)newCode;
 
 @property (readonly) NSDictionary* parameters;
@@ -21,7 +22,7 @@
 /**
  *  Updates when the script is rerun
  */
-@interface KenshoLuaParameterWrapper : NSObject<Observable>
+@interface KenshoLuaParameterWrapper : NSObject<IObservable>
 
 @property (readonly) KenshoLuaWrapper* wrapper;
 @property (readonly) NSString* parameterName;

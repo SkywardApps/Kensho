@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "ObservableAsEnumerator.h"
+#import "Observable.h"
 #import "Kensho.h"
 
-@interface ObservableMap : NSMutableDictionary<ObservableAsEnumerator>
+@interface ObservableMap : NSMutableDictionary<IObservable>
 
 - (id) initWithKensho:(Kensho*)ken;
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer;
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer;
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer;
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer;
 
 - (instancetype)initWithObjects:(const id [])objects forKeys:(const id<NSCopying> [])keys count:(NSUInteger)cnt;
 - (NSUInteger)count;

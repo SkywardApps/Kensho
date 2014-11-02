@@ -6,11 +6,11 @@
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
 //
 
-#import "ProxyObservableArray.h"
+#import "ComputedArray.h"
 #import "../../../Kensho.h"
 #import "WeakProxy.h"
 
-@interface ProxyObservableArray ()
+@interface ComputedArray ()
 {
     NSMutableArray* innerArray;
     NSMutableSet* observers;
@@ -19,10 +19,10 @@
 
 @end
 
-@implementation ProxyObservableArray
+@implementation ComputedArray
 
 
-- (id) initWithKensho:(Kensho*)initialKen proxying:(NSObject<ObservableAsEnumerator>*)proxied via:(ProxyMethod)proxy
+- (id) initWithKensho:(Kensho*)initialKen proxying:(NSObject<IObservable>*)proxied via:(ProxyMethod)proxy
 {
     if((self = [super init]))
     {
@@ -33,8 +33,8 @@
         _proxy = proxy;
         
         // Ok, make sure we have all the elements needed currently
-        NSEnumerator* enumerator = proxied.enumeratorValue;
-        NSObject<Observable>* item;
+        NSEnumerator* enumerator = [proxied.value objectEnumerator];
+        NSObject<IObservable>* item;
         while((item = [enumerator nextObject]))
         {
             [innerArray addObject:self.proxy(@(innerArray.count), item)];
@@ -62,12 +62,12 @@
 
 #pragma mark - Observable protocol
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers removeObject:observer.weak];
 }
@@ -77,6 +77,11 @@
 {
     [ken observableAccessed:self];
     return innerArray;
+}
+
+- (BOOL) isNull
+{
+    return self.value == nil;
 }
 
 - (NSString*) stringValue
@@ -129,31 +134,31 @@
 #pragma mark - Helpers for emitting events
 - (void) triggerChangeEvent
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         [observer observableUpdated:self];
     }
 }
 
-- (void) triggerAddEventFor:(NSObject<Observable>*)item at:(NSUInteger)index
+- (void) triggerAddEventFor:(NSObject<IObservable>*)item at:(NSUInteger)index
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         if([observer respondsToSelector:@selector(observable:added:forKey:)])
         {
-            [(NSObject<CollectionObserver>*)observer observable:self added:item forKey:@(index)];
+            [(NSObject<ICollectionObserver>*)observer observable:self added:item forKey:@(index)];
         }
     }
     
 }
 
-- (void) triggerRemoveEventFor:(NSObject<Observable>*)item at:(NSUInteger)index
+- (void) triggerRemoveEventFor:(NSObject<IObservable>*)item at:(NSUInteger)index
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         if([observer respondsToSelector:@selector(observable:removed:fromKey:)])
         {
-            [(NSObject<CollectionObserver>*)observer observable:self removed:item fromKey:@(index)];
+            [(NSObject<ICollectionObserver>*)observer observable:self removed:item fromKey:@(index)];
         }
     }
 }
@@ -186,15 +191,15 @@
 
 #pragma mark - CollectionObserver
 
-- (void) observableUpdated:(NSObject<Observable>*)observable
+- (void) observableUpdated:(NSObject<IObservable>*)observable
 {
     // relay the change
     [self triggerChangeEvent];
 }
 
-- (void) observable:(NSObject<Observable>*)observable added:(NSObject<Observable>*)item forKey:(NSObject*)key
+- (void) observable:(NSObject<IObservable>*)observable added:(NSObject<IObservable>*)item forKey:(NSObject*)key
 {
-    NSObject<Observable>* translated = self.proxy(key, item);
+    NSObject<IObservable>* translated = self.proxy(key, item);
     [innerArray insertObject:translated atIndex:[(NSNumber*)key integerValue]];
     [self triggerAddEventFor:translated at:[(NSNumber*)key integerValue]];
     
@@ -202,9 +207,9 @@
     // and we'll relay that anyway
 }
 
-- (void) observable:(NSObject<Observable>*)observable removed:(NSObject<Observable>*)item fromKey:(NSObject*)key
+- (void) observable:(NSObject<IObservable>*)observable removed:(NSObject<IObservable>*)item fromKey:(NSObject*)key
 {
-    NSObject<Observable>* oldItem = innerArray[[(NSNumber*)key integerValue]];
+    NSObject<IObservable>* oldItem = innerArray[[(NSNumber*)key integerValue]];
     [innerArray removeObjectAtIndex:[(NSNumber*)key integerValue]];
     [self triggerRemoveEventFor:oldItem at:[(NSNumber*)key integerValue]];
     

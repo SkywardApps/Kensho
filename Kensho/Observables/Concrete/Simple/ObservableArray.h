@@ -6,16 +6,16 @@
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
 //
 
-#import "ObservableAsEnumerator.h"
+#import "Observable.h"
 
 @class Kensho;
 
-@interface ObservableArray : NSMutableArray<ObservableAsEnumerator>
+@interface ObservableArray : NSMutableArray<IObservable>
 
 - (id) initWithKensho:(Kensho*)ken;
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer;
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer;
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer;
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer;
 
 - (NSUInteger)count;
 - (id)objectAtIndex:(NSUInteger)index;

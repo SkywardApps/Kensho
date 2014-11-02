@@ -6,18 +6,18 @@
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
 //
 
-#import "ObservableBase.h"
+#import "Observable.h"
 #import "../../Kensho.h"
 #import "WeakProxy.h"
 
-@interface ObservableBase ()
+@interface Observable ()
 {
     NSMutableSet* observers;
 }
 
 @end
 
-@implementation ObservableBase
+@implementation Observable
 @synthesize observers=observers, value=_value;
 
 - (id) initWithKensho:(Kensho*)ken
@@ -41,7 +41,7 @@
 
 - (void) triggerChangeEvent
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         [observer observableUpdated:self];
     }
@@ -49,12 +49,12 @@
 
 #pragma mark - Observable Protocol
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers removeObject:observer.weak];
 }
@@ -101,6 +101,11 @@
         return _value;
     }
     return nil;
+}
+
+- (BOOL) isNull
+{
+    return _value == nil;
 }
 
 - (BOOL) isNumber

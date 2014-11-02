@@ -15,7 +15,7 @@
 @interface TestUIButtonBinding : XCTestCase
 {
     Kensho* ken;
-    ObservableString* observableString;
+    Observable* observableString;
 }
 
 @end
@@ -27,7 +27,7 @@
     [super setUp];
     // Put setup code here. This method is called before the invocation of each test method in the class.
     ken = [[Kensho alloc] init];
-    observableString = [[ObservableString alloc] initWithKensho:ken value:@"Initial Title"];
+    observableString = [[Observable alloc] initWithKensho:ken value:@"Initial Title"];
 }
 
 - (void)tearDown
@@ -80,7 +80,7 @@
     
     OCMVerify([btn setTitle:observableString.stringValue forState:UIControlStateNormal]);
     
-    observableString.stringValue = @"Title has changed!";
+    observableString.value = @"Title has changed!";
     
     OCMVerify([btn setTitle:observableString.stringValue forState:UIControlStateNormal]);
     
@@ -113,7 +113,7 @@
     __weak UIButtonBinding* weakBinding;
     __weak UIButton* weakButton;
     __weak NSObject* weakContext;
-    __weak ObservableString* weakValue;
+    __weak Observable* weakValue;
     
     @autoreleasepool
     {
@@ -122,7 +122,7 @@
         UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         weakButton = btn;
         
-        NSObject* context = [[ObservableString alloc] initWithKensho:ken];
+        NSObject* context = [[Observable alloc] initWithKensho:ken];
         weakContext = context;
         
         UIButtonBinding* binding = [[UIButtonBinding alloc] initWithKensho:ken

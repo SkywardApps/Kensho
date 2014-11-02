@@ -7,7 +7,7 @@
 //
 
 #import "UITableViewBinding.h"
-#import "../../Kensho.h"
+#import "Kensho.h"
 
 @implementation UITableViewBinding
 
@@ -16,9 +16,9 @@
     
 }
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject *)context parameters:(NSDictionary*)parameters
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<IObservable>*)value context:(NSObject *)context
 {
-    if((self = [super initWithKensho:ken target:target type:type value:value context:context parameters:parameters]))
+    if((self = [super initWithKensho:ken target:target type:type value:value context:context]))
     {
         [(UITableView*)target setDataSource:self];
     }
@@ -34,30 +34,28 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [(NSObject<ObservableAsEnumerator>*)self.targetValue count];
+    return [[Kensho unwrapObservable:self.finalValue] count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
-    NSObject<ObservableAsEnumerator>* valueCollection = self.targetValue;
-    NSObject<Observable>* valueItem;
-    NSEnumerator* enumerator = valueCollection.enumeratorValue;
+    NSObject<IObservable>* valueItem;
+    NSEnumerator* enumerator = [self.finalValue objectEnumerator];
     for(int i = 0; i <= indexPath.row; ++i)
     {
         valueItem = [enumerator nextObject];
     }
     
-    
     NSString* reuseIdentifier;
     
     @try
     {
-        reuseIdentifier = [valueItem valueForKey:@"cellClass"];//self.parameters[@"cellClass"];
+        reuseIdentifier = [valueItem valueForKey:@"cellClass"];
     }
     @catch(NSException* exception)
     {
-        self.ken.errorMessage.stringValue = @"The view model does not implement the required cellClass defining the cell view type";
+        self.ken.errorMessage.value = @"The view model does not implement the required cellClass defining the cell view type";
         return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"koErrorCell"];
     }
     

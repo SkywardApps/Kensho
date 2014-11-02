@@ -6,19 +6,19 @@
 //  Copyright (c) 2014 Skyward App Company, LLC. All rights reserved.
 //
 
-#import "CalculatedObservable.h"
-#import "../../../Kensho.h"
+#import "Computed.h"
+#import "Kensho.h"
 
-@interface CalculatedObservable ()
+@interface Computed ()
 {
-    NSObject* (^_calculatorMethod)(NSObject<Observable>*);
+    NSObject* (^_calculatorMethod)(NSObject<IObservable>*);
 }
 
 @end
 
-@implementation CalculatedObservable
+@implementation Computed
 
-- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject<Observable>*))calculatorMethod
+- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject<IObservable>*))calculatorMethod
 {
     if((self = [super initWithKensho:ken]))
     {
@@ -35,7 +35,7 @@
     [self endTracking];
 }
 
-- (void) observableUpdated:(NSObject<Observable>*)observable
+- (void) observableUpdated:(NSObject<IObservable>*)observable
 {
     [self updateCalculatedValue];
     [self triggerChangeEvent];
@@ -52,7 +52,7 @@
     NSSet* newlyObserved = [self.ken endTracking];
     
     // Reference anything we accessed
-    for(NSObject<Observable>* observedInstance in newlyObserved)
+    for(NSObject<IObservable>* observedInstance in newlyObserved)
     {
         [observedInstance addKenshoObserver:self];
     }    

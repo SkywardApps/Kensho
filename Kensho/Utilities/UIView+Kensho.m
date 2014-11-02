@@ -13,6 +13,11 @@
 
 static const void *KenshoBinderHelperKey = &KenshoBinderHelperKey;
 
+/**
+ *  Find the associated dictionary for this object.
+ *
+ *  @return An editable dictionary
+ */
 - (NSMutableDictionary *) ken
 {
     NSMutableDictionary* dict = objc_getAssociatedObject(self, KenshoBinderHelperKey);

@@ -7,9 +7,8 @@
 //
 
 #import "UILabelBinding.h"
-#import "ObservableBase.h"
-#import "ObservableAsString.h"
-
+#import "IObservable.h"
+#import "Kensho.h"
 #import <UIKit/UIKit.h>
 
 @implementation UILabelBinding
@@ -23,11 +22,7 @@
 {
     if([self.bindingType isEqualToString:@"text"])
     {
-        // easiest way to convert to text
-        if(self.targetValue.isString)
-        {
-            [self.targetView setText:self.targetValue.stringValue];
-        }
+        [self.targetView setText:self.finalValue];
     }
 }
 

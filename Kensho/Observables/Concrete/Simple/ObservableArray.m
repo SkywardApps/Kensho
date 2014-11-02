@@ -7,7 +7,7 @@
 //
 
 #import "ObservableArray.h"
-#import "../../../Kensho.h"
+#import "Kensho.h"
 #import "WeakProxy.h"
 
 @interface ObservableArray ()
@@ -39,12 +39,12 @@
 
 #pragma mark - ObservableProtocol
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers removeObject:observer.weak];
 }
@@ -68,6 +68,11 @@
 - (NSObject*) objectValue
 {
     return self.value;
+}
+
+- (BOOL) isNull
+{
+    return self.value == nil;
 }
 
 - (BOOL) isNumber
@@ -113,31 +118,31 @@
 
 - (void) triggerChangeEvent
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         [observer observableUpdated:self];
     }
 }
 
-- (void) triggerAddEventFor:(NSObject<Observable>*)item at:(NSUInteger)index
+- (void) triggerAddEventFor:(NSObject<IObservable>*)item at:(NSUInteger)index
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         if([observer respondsToSelector:@selector(observable:added:forKey:)])
         {
-            [(NSObject<CollectionObserver>*)observer observable:self added:item forKey:@(index)];
+            [(NSObject<ICollectionObserver>*)observer observable:self added:item forKey:@(index)];
         }
     }
     
 }
 
-- (void) triggerRemoveEventFor:(NSObject<Observable>*)item at:(NSUInteger)index
+- (void) triggerRemoveEventFor:(NSObject<IObservable>*)item at:(NSUInteger)index
 {
-    for(NSString<Observer>* observer in [observers copy])
+    for(NSString<IObserver>* observer in [observers copy])
     {
         if([observer respondsToSelector:@selector(observable:removed:fromKey:)])
         {
-            [(NSObject<CollectionObserver>*)observer observable:self removed:item fromKey:@(index)];
+            [(NSObject<ICollectionObserver>*)observer observable:self removed:item fromKey:@(index)];
         }
     }
 }

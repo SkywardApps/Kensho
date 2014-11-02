@@ -11,7 +11,7 @@
 #import "BindingBase.h"
 #import "WeakProxy.h"
 
-@interface TestBindingBase : XCTestCase<Observable>
+@interface TestBindingBase : XCTestCase<IObservable>
 {
     Kensho* ken;
     NSMutableSet* observers;
@@ -106,7 +106,7 @@
         UIButton* btn = [[UIButton alloc] initWithFrame:CGRectMake(0, 0, 0, 0)];
         weakButton = btn;
         
-        NSObject* context = [[ObservableString alloc] initWithKensho:ken];
+        NSObject* context = [[Observable alloc] initWithKensho:ken];
         weakContext = context;
         
         BindingBase* binding = [[BindingBase alloc] initWithKensho:ken
@@ -126,12 +126,12 @@
 
 #pragma mark - Test Mocks
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers removeObject:observer.weak];
 }

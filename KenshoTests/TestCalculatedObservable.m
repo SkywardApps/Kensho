@@ -8,10 +8,10 @@
 
 #import <XCTest/XCTest.h>
 #import "Kensho/Kensho.h"
-#import "CalculatedObservable.h"
+#import "Computed.h"
 #import "WeakProxy.h"
 
-@interface TestCalculatedObservable : XCTestCase<Observer, Observable>
+@interface TestCalculatedObservable : XCTestCase<IObserver, IObservable>
 {
     Kensho* ken;
     BOOL observedChanged;
@@ -42,13 +42,13 @@
 
 - (void)testConstructor
 {
-    CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
+    Computed* base = [[Computed alloc] initWithKensho:ken];
     XCTAssertEqual(ken, base.ken, @"Kensho object not correct");
 }
 
 - (void)testObserve
 {
-    CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
+    Computed* base = [[Computed alloc] initWithKensho:ken];
     [base addKenshoObserver:self];
     [base triggerChangeEvent];
     XCTAssertEqual(YES, observedChanged, @"Observer was not invoked");
@@ -56,7 +56,7 @@
 
 - (void)testUnobserve
 {
-    CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
+    Computed* base = [[Computed alloc] initWithKensho:ken];
     [base addKenshoObserver:self];
     [base removeKenshoObserver:self];
     [base triggerChangeEvent];
@@ -65,15 +65,15 @@
 
 - (void) testRelease
 {
-    __weak ObservableBase* weakChanger;
+    __weak Observable* weakChanger;
     @autoreleasepool
     {
-        ObservableBase* changer = [[ObservableBase alloc] initWithKensho:ken];
+        Observable* changer = [[Observable alloc] initWithKensho:ken];
         weakChanger = changer;
-        __weak CalculatedObservable* weakBase;
+        __weak Computed* weakBase;
         @autoreleasepool
         {
-            CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
+            Computed* base = [[Computed alloc] initWithKensho:ken];
             weakBase = base;
             [base addKenshoObserver:self];
             [base startTracking];
@@ -88,7 +88,7 @@
 
 - (void) testTracking
 {
-    CalculatedObservable* base = [[CalculatedObservable alloc] initWithKensho:ken];
+    Computed* base = [[Computed alloc] initWithKensho:ken];
     [base startTracking];
     [ken observableAccessed:self];
     [base endTracking];
@@ -98,17 +98,17 @@
 
 #pragma mark - Test Mocks
 
-- (void) observableUpdated:(NSObject<Observable>*)observable
+- (void) observableUpdated:(NSObject<IObservable>*)observable
 {
     observedChanged = YES;
 }
 
-- (void) addKenshoObserver:(NSObject<Observer>*)observer
+- (void) addKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers addObject:observer.weak];
 }
 
-- (void) removeKenshoObserver:(NSObject<Observer>*)observer
+- (void) removeKenshoObserver:(NSObject<IObserver>*)observer
 {
     [observers removeObject:observer.weak];
 }

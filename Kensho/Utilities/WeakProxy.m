@@ -24,6 +24,11 @@
     return self;
 }
 
+/**
+ *  Pass through all invocations to the target object - so long as it still exists.
+ *
+ *  @param anInvocation <#anInvocation description#>
+ */
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
     if(target != nil)
     {
@@ -31,6 +36,13 @@
     }
 }
 
+/**
+ *  Pass through signature requests to the target object
+ *
+ *  @param aSelector The selector to query
+ *
+ *  @return A method signature
+ */
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
     return [target methodSignatureForSelector:aSelector];
 }
@@ -42,20 +54,29 @@ static const void *WeakProxyHelperKey = &WeakProxyHelperKey;
 
 @implementation NSObject (WeakProxy)
 
+/**
+ *  Find and return the weak pointer for this object.
+ *
+ *  @return A weak reference to this object
+ */
 - (id) weak
 {
-    // don't create a double-proxy
+    // don't create a double-proxy if this is already one.
     if(self.isProxy)
     {
         return self;
     }
     
+    // Get the associated weak object for this object.
     id weakProxy = objc_getAssociatedObject(self, WeakProxyHelperKey);
+    
+    // If there isn't one, create it
     if(weakProxy == nil)
     {
         weakProxy = [[WeakProxy alloc] initWithProxied:self];
         objc_setAssociatedObject(self, WeakProxyHelperKey, weakProxy, OBJC_ASSOCIATION_RETAIN);
     }
+    
     return weakProxy;
 }
 

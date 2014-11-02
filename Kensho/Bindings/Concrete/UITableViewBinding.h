@@ -8,15 +8,15 @@
 
 #import <Foundation/Foundation.h>
 #import "BindingBase.h"
-#import "ObservableAsEnumerator.h"
+#import "Observable.h"
 #import <UIKit/UIKit.h>
 
 
 @interface UITableViewBinding : BindingBase <UITableViewDataSource>
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<ObservableAsEnumerator>*)value context:(NSObject*)context parameters:(NSDictionary*)parameters;
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<IObservable>*)value context:(NSObject*)context;
 
 @property (weak, readonly) UITableView* targetView;
-@property (weak, readonly) NSObject<ObservableAsEnumerator>* targetValue;
+@property (weak, readonly) NSObject<IObservable>* targetValue;
 
 @end

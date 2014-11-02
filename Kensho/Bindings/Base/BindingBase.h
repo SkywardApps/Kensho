@@ -13,11 +13,12 @@
 
 @property (weak, readonly) Kensho* ken;
 @property (weak, readonly) UIView* targetView;
-@property (weak, readonly) NSObject<Observable>* targetValue;
+@property (weak, readonly) NSObject* targetValue;
 @property (readonly) NSString* bindingType;
 @property (weak, readonly) NSObject* context;
-@property (readonly) NSDictionary* parameters;
+@property (weak, readonly) NSObject<IObservable>* boundResultValue;
+@property (readonly) id finalValue;
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<Observable>*)value context:(NSObject*)context parameters:(NSDictionary*)parameters;
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject*)value context:(NSObject*)context;
 
 @end

@@ -1,12 +1,12 @@
 /**
+\mainpage
+ Observable = data
+ ObservableArray = array
+ ObservableMap = dictionary
 
-Observable -> data
-ObservableArray -> array
-ObservableMap -> dictionary
-
-CalculatedObservable -> data
-ProxyArray -> array
-ProxyMap -> dictionary
+CalculatedObservable = data
+ProxyArray = array
+ProxyMap = dictionary
 
 LuaObservable = CalculatedObservable -> mapped parameters from lua script
 ParameterObservable = CalculatedObservable from mapped parameter -> data

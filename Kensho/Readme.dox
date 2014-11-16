@@ -1,5 +1,35 @@
 /**
 \mainpage
+
+<h1>Kensho</h1>
+<BLOCKQUOTE>
+To see into one's own nature. The experience of enlightenment, satori.
+</BLOCKQUOTE>
+
+We want - a quick overview on Kensho, the origin of the term, the project purpose, related projects.
+Talk about the coverage (ios, android) and how it will be documented
+Roadmap
+
+<TABLE>
+    <TR>
+        <TH>Status</TH>
+        <TH>Item</TH>
+    </TR>
+    <TR>
+        <TD>Completed</TD>
+        <TD>Lua Integration</TD>
+    </TR>
+</TABLE>
+
+Talk about examples
+FAQ.
+
+
+
+
+
+-----
+
  Observable = data
  ObservableArray = array
  ObservableMap = dictionary

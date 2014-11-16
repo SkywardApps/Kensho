@@ -1,0 +1,33 @@
+<map id="luaL_checknumber" name="luaL_checknumber">
+<area shape="rect" id="node2" href="$da/d29/lauxlib_8h.html#a001e2679c64c24eefbaf478fd0c22f97" title="luaL_optnumber" alt="" coords="180,5,293,32"/>
+<area shape="rect" id="node4" href="$dc/dba/loslib_8c.html#ab2027c89bfc0320114b3cce3d77a01ed" title="os_difftime" alt="" coords="341,56,421,83"/>
+<area shape="rect" id="node5" href="$d1/d6a/lmathlib_8c.html#a9545dd3926974393ff34e33a108df628" title="math_abs" alt="" coords="197,107,277,133"/>
+<area shape="rect" id="node6" href="$d1/d6a/lmathlib_8c.html#a9f983fa3cca14d69429cebc95be4fab1" title="math_acos" alt="" coords="194,157,279,184"/>
+<area shape="rect" id="node7" href="$d1/d6a/lmathlib_8c.html#aa44ea66108bb38acbe5c8cb2ce6de33f" title="math_asin" alt="" coords="196,208,277,235"/>
+<area shape="rect" id="node8" href="$d1/d6a/lmathlib_8c.html#a70217d6c0312477f3e257a584518424c" title="math_atan" alt="" coords="195,259,278,285"/>
+<area shape="rect" id="node9" href="$d1/d6a/lmathlib_8c.html#ab2ec821a1dd788ee7d4f9a58c743cd48" title="math_atan2" alt="" coords="191,309,282,336"/>
+<area shape="rect" id="node10" href="$d1/d6a/lmathlib_8c.html#ae4f0dc771c626a9badef237db9d433da" title="math_ceil" alt="" coords="199,360,274,387"/>
+<area shape="rect" id="node11" href="$d1/d6a/lmathlib_8c.html#a5db2cf8c6e7a331d7daf259f305e057c" title="math_cos" alt="" coords="198,411,275,437"/>
+<area shape="rect" id="node12" href="$d1/d6a/lmathlib_8c.html#aacc3b89a2bdf4970574be974ccbf5e84" title="math_cosh" alt="" coords="195,461,279,488"/>
+<area shape="rect" id="node13" href="$d1/d6a/lmathlib_8c.html#ad9bd03062009a4aba15739a1630b2a25" title="math_deg" alt="" coords="197,512,276,539"/>
+<area shape="rect" id="node14" href="$d1/d6a/lmathlib_8c.html#a7c971c680cdad8e4e833f8a3db9d065d" title="math_exp" alt="" coords="197,563,276,589"/>
+<area shape="rect" id="node15" href="$d1/d6a/lmathlib_8c.html#aa063dcd93e924af13c5e311f89b18d03" title="math_floor" alt="" coords="197,613,276,640"/>
+<area shape="rect" id="node16" href="$d1/d6a/lmathlib_8c.html#a25b3f7d30cf85b8248a72de20049564e" title="math_fmod" alt="" coords="195,664,279,691"/>
+<area shape="rect" id="node17" href="$d1/d6a/lmathlib_8c.html#a13d5e8c418a554d9e4604b97a4b67b83" title="math_frexp" alt="" coords="194,715,279,741"/>
+<area shape="rect" id="node18" href="$d1/d6a/lmathlib_8c.html#adf7bb9373e68cc77ddf001273c444edf" title="math_ldexp" alt="" coords="193,765,281,792"/>
+<area shape="rect" id="node19" href="$d1/d6a/lmathlib_8c.html#a7cb92978495484adbfc9d0cb0ace2cc2" title="math_log" alt="" coords="200,816,273,843"/>
+<area shape="rect" id="node20" href="$d1/d6a/lmathlib_8c.html#a03e3b76e515f5535122c2026a9e8f445" title="math_max" alt="" coords="195,867,278,893"/>
+<area shape="rect" id="node21" href="$d1/d6a/lmathlib_8c.html#ab0a14d784b5fe2f30062e88a635db320" title="math_min" alt="" coords="199,917,275,944"/>
+<area shape="rect" id="node22" href="$d1/d6a/lmathlib_8c.html#adff369706deb34be360be3103f31d4c4" title="math_modf" alt="" coords="195,968,279,995"/>
+<area shape="rect" id="node23" href="$d1/d6a/lmathlib_8c.html#a1bd66c605ef6e69738489e6f9572370c" title="math_pow" alt="" coords="195,1019,278,1045"/>
+<area shape="rect" id="node24" href="$d1/d6a/lmathlib_8c.html#a5d8eec19cea59d1ce1012a705f70dc8d" title="math_rad" alt="" coords="199,1069,274,1096"/>
+<area shape="rect" id="node25" href="$d1/d6a/lmathlib_8c.html#aa3ad02d4204d21d35a0825281915fb22" title="math_random" alt="" coords="187,1120,286,1147"/>
+<area shape="rect" id="node26" href="$d1/d6a/lmathlib_8c.html#adb460e2b01df47afcaa823ecc1846a24" title="math_sin" alt="" coords="200,1171,273,1197"/>
+<area shape="rect" id="node27" href="$d1/d6a/lmathlib_8c.html#a54bae0fa396a6823b28ea994ebf035dc" title="math_sinh" alt="" coords="197,1221,277,1248"/>
+<area shape="rect" id="node28" href="$d1/d6a/lmathlib_8c.html#a8f4c386bafe8ae7269476ed3ed94d1d8" title="math_sqrt" alt="" coords="198,1272,275,1299"/>
+<area shape="rect" id="node29" href="$d1/d6a/lmathlib_8c.html#a06bc9b8c610e00759bb99c3db6128f18" title="math_tan" alt="" coords="199,1323,274,1349"/>
+<area shape="rect" id="node30" href="$d1/d6a/lmathlib_8c.html#a38a6a16dfdffec4c0388eb3c7aff9085" title="math_tanh" alt="" coords="195,1373,278,1400"/>
+<area shape="rect" id="node31" href="$dc/dba/loslib_8c.html#a6520f2562b500aee87a6a475995adefb" title="os_date" alt="" coords="203,1424,271,1451"/>
+<area shape="rect" id="node32" href="$dc/d77/lstrlib_8c.html#ae26a9374857058119e59d0328208c2f2" title="str_format" alt="" coords="199,1475,275,1501"/>
+<area shape="rect" id="node3" href="$de/df3/liolib_8c.html#ace5e1a23cc9e2ffe7ae6cc523e54de73" title="f_seek" alt="" coords="352,5,411,32"/>
+</map>

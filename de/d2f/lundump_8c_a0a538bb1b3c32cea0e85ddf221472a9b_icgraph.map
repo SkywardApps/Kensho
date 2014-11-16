@@ -1,0 +1,15 @@
+<map id="luaU_header" name="luaU_header">
+<area shape="rect" id="node2" href="$db/d84/ldump_8c.html#a7c7489064282d75dad1293dcd1880bfc" title="DumpHeader" alt="" coords="148,5,247,32"/>
+<area shape="rect" id="node6" href="$de/d2f/lundump_8c.html#a070311f1203a7633e63ee83a444c5168" title="LoadHeader" alt="" coords="151,56,243,83"/>
+<area shape="rect" id="node3" href="$d3/dff/lundump_8h.html#a2b9d33dfd898f6284de183d168556786" title="luaU_dump" alt="" coords="302,5,389,32"/>
+<area shape="rect" id="node4" href="$da/dd2/lua_8h.html#a29ceb6e6217ff14d061922a539c59eac" title="lua_dump" alt="" coords="444,5,523,32"/>
+<area shape="rect" id="node5" href="$dc/d77/lstrlib_8c.html#abc94e3a13f1b6ddb2c9b20c9fd89e87f" title="str_dump" alt="" coords="605,5,679,32"/>
+<area shape="rect" id="node7" href="$d3/dff/lundump_8h.html#a1d7dbb7046fdeb0977015f3bdfb414a2" title="luaU_undump" alt="" coords="295,56,396,83"/>
+<area shape="rect" id="node8" href="$d3/d08/ldo_8c.html#a14df0fa118ab124dfcc6d227bdd38ca5" title="f_parser" alt="" coords="449,56,517,83"/>
+<area shape="rect" id="node9" href="$d2/dd9/ldo_8h.html#a5dffa85d966f14d3f3464db580f5b3fa" title="luaD_protectedparser" alt="" coords="571,56,713,83"/>
+<area shape="rect" id="node10" href="$da/dd2/lua_8h.html#a3f4c1ed5e0bd437dc527d62c5768b463" title="lua_load" alt="" coords="761,56,832,83"/>
+<area shape="rect" id="node11" href="$d8/dd3/lbaselib_8c.html#a4a9a3613fcf80fe033e044f7e19bed69" title="luaB_load" alt="" coords="1050,31,1129,57"/>
+<area shape="rect" id="node12" href="$da/d29/lauxlib_8h.html#a3ab1955dd9322cf03e2d3626ebfae669" title="luaL_loadbufferx" alt="" coords="880,56,995,83"/>
+<area shape="rect" id="node13" href="$da/d29/lauxlib_8h.html#a8c38c6dcf9db7e110e525b46742bacf8" title="luaL_loadfilex" alt="" coords="888,107,987,133"/>
+<area shape="rect" id="node14" href="$d8/dd3/lbaselib_8c.html#aeb4cb83db820979bbdd7710109b52957" title="luaB_loadfile" alt="" coords="1043,107,1136,133"/>
+</map>

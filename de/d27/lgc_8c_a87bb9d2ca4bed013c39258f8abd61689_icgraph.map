@@ -1,0 +1,6 @@
+<map id="generationalcollection" name="generationalcollection">
+<area shape="rect" id="node2" href="$dc/d9c/lgc_8h.html#a19359957605d7c8eaf70803e5b77361f" title="luaC_forcestep" alt="" coords="192,31,299,57"/>
+<area shape="rect" id="node3" href="$da/dd2/lua_8h.html#a6bac487d3f900b21271e8c591bd801cd" title="lua_gc" alt="" coords="358,5,417,32"/>
+<area shape="rect" id="node5" href="$dc/d9c/lgc_8h.html#a6c71cc4b9e503c0e96c0c4ffcff93900" title="luaC_step" alt="" coords="347,56,428,83"/>
+<area shape="rect" id="node4" href="$d8/dd3/lbaselib_8c.html#a07f71966c943cc9761ab129f64d4ac80" title="luaB_collectgarbage" alt="" coords="476,5,612,32"/>
+</map>

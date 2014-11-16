@@ -1,0 +1,24 @@
+<map id="udata2finalize" name="udata2finalize">
+<area shape="rect" id="node2" href="$de/d27/lgc_8c.html#ab9ec6b56580b9e66f41743e393e7e033" title="GCTM" alt="" coords="153,347,215,373"/>
+<area shape="rect" id="node3" href="$de/d27/lgc_8c.html#a74f50e6006422d43686521fe765152dd" title="callallpendingfinalizers" alt="" coords="263,296,408,323"/>
+<area shape="rect" id="node21" href="$dc/d9c/lgc_8h.html#a19359957605d7c8eaf70803e5b77361f" title="luaC_forcestep" alt="" coords="820,296,927,323"/>
+<area shape="rect" id="node4" href="$dc/d9c/lgc_8h.html#a9aa52a500c9cc2076edb1707e6d8a045" title="luaC_freeallobjects" alt="" coords="456,220,585,247"/>
+<area shape="rect" id="node17" href="$dc/d9c/lgc_8h.html#aa0b753c3ed80e1eed0379ec58592c404" title="luaC_fullgc" alt="" coords="479,296,562,323"/>
+<area shape="rect" id="node5" href="$dd/dca/lstate_8c.html#a4940327dfa3b86df0ef008180bb3fcb3" title="close_state" alt="" coords="659,195,746,221"/>
+<area shape="rect" id="node6" href="$da/dd2/lua_8h.html#af722e4ac7fc0eba5920f59f0162c1b97" title="lua_newstate" alt="" coords="824,144,923,171"/>
+<area shape="rect" id="node15" href="$da/dd2/lua_8h.html#afe030a97e84f24dfab3afb598faa2fff" title="lua_close" alt="" coords="836,195,911,221"/>
+<area shape="rect" id="node7" href="$da/d29/lauxlib_8h.html#a7d8712fcede90ae93d5a9a7b409c586e" title="luaL_newstate" alt="" coords="975,93,1081,120"/>
+<area shape="rect" id="node14" href="$dd/dca/lstate_8c.html#a8a0fc0aca5367250347c6bb6a788f05f" title="makeseed" alt="" coords="987,144,1069,171"/>
+<area shape="rect" id="node8" href="$dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2" title="&#45;[KenshoLuaWrapper\l evaluate]" alt="" coords="1129,86,1275,127"/>
+<area shape="rect" id="node9" href="$dc/de7/interface_kensho_lua_wrapper.html#af6db46358f8858a18b55388aa3af211d" title="&#45;[KenshoLuaWrapper\l initWithKensho:context\l:code:]" alt="" coords="1323,5,1475,61"/>
+<area shape="rect" id="node10" href="$dc/de7/interface_kensho_lua_wrapper.html#a5555e0979799446611baee70104555c6" title="&#45;[KenshoLuaWrapper\l evaluate:]" alt="" coords="1326,86,1471,127"/>
+<area shape="rect" id="node13" href="$dc/de7/interface_kensho_lua_wrapper.html#a0bb5e125d727942726d707f8b59009dc" title="&#45;[KenshoLuaWrapper\l observableUpdated:]" alt="" coords="1326,151,1471,193"/>
+<area shape="rect" id="node11" href="$da/d0b/interface_kensho.html#a07b4d14db676108e1a94a1f10e100fb4" title="&#45;[Kensho bindToView\l:context:]" alt="" coords="1523,86,1667,127"/>
+<area shape="rect" id="node12" href="$da/d0b/interface_kensho.html#a1019e8223ee907bab87501ae483e609f" title="&#45;[Kensho applyBindings\l:viewModel:]" alt="" coords="1715,86,1873,127"/>
+<area shape="rect" id="node16" href="$dc/dba/loslib_8c.html#a905e81425fe3d6d0b363c10162a2a37b" title="os_exit" alt="" coords="997,195,1059,221"/>
+<area shape="rect" id="node18" href="$da/dd2/lua_8h.html#a6bac487d3f900b21271e8c591bd801cd" title="lua_gc" alt="" coords="999,245,1057,272"/>
+<area shape="rect" id="node20" href="$de/d27/lgc_8c.html#a87bb9d2ca4bed013c39258f8abd61689" title="generationalcollection" alt="" coords="633,296,772,323"/>
+<area shape="rect" id="node23" href="$d7/d3e/lmem_8h.html#ae7dc8a57fc5dbca825653a88a356a72d" title="luaM_realloc_" alt="" coords="653,347,752,373"/>
+<area shape="rect" id="node19" href="$d8/dd3/lbaselib_8c.html#a07f71966c943cc9761ab129f64d4ac80" title="luaB_collectgarbage" alt="" coords="1134,245,1270,272"/>
+<area shape="rect" id="node22" href="$dc/d9c/lgc_8h.html#a6c71cc4b9e503c0e96c0c4ffcff93900" title="luaC_step" alt="" coords="987,296,1069,323"/>
+</map>

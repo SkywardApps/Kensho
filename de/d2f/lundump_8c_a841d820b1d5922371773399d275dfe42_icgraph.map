@@ -1,0 +1,12 @@
+<map id="LoadUpvalues" name="LoadUpvalues">
+<area shape="rect" id="node2" href="$de/d2f/lundump_8c.html#a26c35541b59dce503747e776441691f2" title="LoadFunction" alt="" coords="160,5,257,32"/>
+<area shape="rect" id="node3" href="$de/d2f/lundump_8c.html#a1854dcefef99e90599873a480c49da5f" title="LoadConstants" alt="" coords="305,5,416,32"/>
+<area shape="rect" id="node4" href="$d3/dff/lundump_8h.html#a1d7dbb7046fdeb0977015f3bdfb414a2" title="luaU_undump" alt="" coords="310,56,411,83"/>
+<area shape="rect" id="node5" href="$d3/d08/ldo_8c.html#a14df0fa118ab124dfcc6d227bdd38ca5" title="f_parser" alt="" coords="464,56,532,83"/>
+<area shape="rect" id="node6" href="$d2/dd9/ldo_8h.html#a5dffa85d966f14d3f3464db580f5b3fa" title="luaD_protectedparser" alt="" coords="580,56,723,83"/>
+<area shape="rect" id="node7" href="$da/dd2/lua_8h.html#a3f4c1ed5e0bd437dc527d62c5768b463" title="lua_load" alt="" coords="771,56,841,83"/>
+<area shape="rect" id="node8" href="$d8/dd3/lbaselib_8c.html#a4a9a3613fcf80fe033e044f7e19bed69" title="luaB_load" alt="" coords="1059,31,1138,57"/>
+<area shape="rect" id="node9" href="$da/d29/lauxlib_8h.html#a3ab1955dd9322cf03e2d3626ebfae669" title="luaL_loadbufferx" alt="" coords="889,56,1004,83"/>
+<area shape="rect" id="node10" href="$da/d29/lauxlib_8h.html#a8c38c6dcf9db7e110e525b46742bacf8" title="luaL_loadfilex" alt="" coords="897,107,996,133"/>
+<area shape="rect" id="node11" href="$d8/dd3/lbaselib_8c.html#aeb4cb83db820979bbdd7710109b52957" title="luaB_loadfile" alt="" coords="1052,107,1145,133"/>
+</map>

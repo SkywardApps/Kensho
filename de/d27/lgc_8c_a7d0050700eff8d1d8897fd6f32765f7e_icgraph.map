@@ -1,0 +1,10 @@
+<map id="setpause" name="setpause">
+<area shape="rect" id="node2" href="$de/d27/lgc_8c.html#a87bb9d2ca4bed013c39258f8abd61689" title="generationalcollection" alt="" coords="260,56,399,83"/>
+<area shape="rect" id="node7" href="$de/d27/lgc_8c.html#a7515a46e25b277cbbe7febb4d06b196a" title="incstep" alt="" coords="139,5,202,32"/>
+<area shape="rect" id="node8" href="$dc/d9c/lgc_8h.html#aa0b753c3ed80e1eed0379ec58592c404" title="luaC_fullgc" alt="" coords="129,107,212,133"/>
+<area shape="rect" id="node3" href="$dc/d9c/lgc_8h.html#a19359957605d7c8eaf70803e5b77361f" title="luaC_forcestep" alt="" coords="447,56,553,83"/>
+<area shape="rect" id="node4" href="$da/dd2/lua_8h.html#a6bac487d3f900b21271e8c591bd801cd" title="lua_gc" alt="" coords="613,107,671,133"/>
+<area shape="rect" id="node6" href="$dc/d9c/lgc_8h.html#a6c71cc4b9e503c0e96c0c4ffcff93900" title="luaC_step" alt="" coords="601,56,683,83"/>
+<area shape="rect" id="node5" href="$d8/dd3/lbaselib_8c.html#a07f71966c943cc9761ab129f64d4ac80" title="luaB_collectgarbage" alt="" coords="731,107,867,133"/>
+<area shape="rect" id="node9" href="$d7/d3e/lmem_8h.html#ae7dc8a57fc5dbca825653a88a356a72d" title="luaM_realloc_" alt="" coords="280,157,379,184"/>
+</map>

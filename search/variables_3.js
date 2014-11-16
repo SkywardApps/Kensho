@@ -1,0 +1,19 @@
+var searchData=
+[
+  ['c',['c',['../db/d37/union_closure.html#ace9dac5a62b61db682ef0cd86b3b44b1',1,'Closure::c()'],['../dd/d89/struct_call_info.html#aa3c742d15c475b7030736dfc7da3f911',1,'CallInfo::c()']]],
+  ['cache',['cache',['../d6/d52/struct_proto.html#a5167cc41cf28890fb75e2c08715ddc43',1,'Proto']]],
+  ['callstatus',['callstatus',['../dd/d89/struct_call_info.html#af0b3a7a44d49819655c7864faa259198',1,'CallInfo']]],
+  ['capture',['capture',['../d7/d5a/struct_match_state.html#af305f5ac28b44a65d0a89b08e84be92c',1,'MatchState']]],
+  ['ci',['ci',['../dc/da5/structlua___state.html#a7fbb5727050853f411ad64b4be9ab5c8',1,'lua_State']]],
+  ['cl',['cl',['../dd/d00/union_g_c_object.html#a6333069bf1033586bb75a9d099781cb9',1,'GCObject']]],
+  ['closef',['closef',['../da/dec/structlua_l___stream.html#a98731a1b0b1e28336d7206798895e62f',1,'luaL_Stream']]],
+  ['closureheader',['ClosureHeader',['../da/d5b/struct_c_closure.html#a552c31467816a1fafbd719cf83ff9cba',1,'CClosure::ClosureHeader()'],['../d5/d6c/struct_l_closure.html#a6014e6d418f56b1ec866c449cab16044',1,'LClosure::ClosureHeader()']]],
+  ['co_5ffuncs',['co_funcs',['../df/d2d/lcorolib_8c.html#a3857a1be3b5aaf23b28b4e6809c7dc97',1,'lcorolib.c']]],
+  ['code',['code',['../d6/d52/struct_proto.html#a53b66e4e4ac4b612a41b67a0ace9b6a5',1,'Proto::code()'],['../dc/de7/interface_kensho_lua_wrapper.html#af864a15538891961b47e789e6085c426',1,'KenshoLuaWrapper::code()']]],
+  ['commonheader',['CommonHeader',['../d4/d6e/struct_g_cheader.html#ac85ab429b1366b93a337861ed8dcf43f',1,'GCheader::CommonHeader()'],['../d1/d12/union_t_string.html#a46677057221656f98fa80eb77089de45',1,'TString::CommonHeader()'],['../d9/dfa/union_udata.html#aaa6ffd32850e8506f6fa4c441702d374',1,'Udata::CommonHeader()'],['../d6/d52/struct_proto.html#a5b0bf6a93e383f0a873573b9c99dfb95',1,'Proto::CommonHeader()'],['../d9/d9e/struct_up_val.html#a4e31d0a4bda814a7173a9ef5ca88ba3c',1,'UpVal::CommonHeader()'],['../d5/d0d/struct_table.html#aeceeffe77c9ef26aeca656183fc50110',1,'Table::CommonHeader()'],['../dc/da5/structlua___state.html#ad5311df12c1bfa3c4e11b7a1dbecaeda',1,'lua_State::CommonHeader()']]],
+  ['context',['context',['../dc/de7/interface_kensho_lua_wrapper.html#ac105a324c6cfcd9a622cba983e151fb8',1,'KenshoLuaWrapper']]],
+  ['ctx',['ctx',['../dd/d89/struct_call_info.html#a20938adc3063c96e13ced6572fa963d0',1,'CallInfo']]],
+  ['current',['current',['../df/d26/struct_lex_state.html#ad31cc4568332a48d22d37a13c8eae006',1,'LexState']]],
+  ['currentline',['currentline',['../db/d23/structlua___debug.html#a97b3ed36cdfdc6f2c694b253a3d96da6',1,'lua_Debug']]],
+  ['currentwhite',['currentwhite',['../de/d32/structglobal___state.html#a31fbedd19538500531d49532226a001a',1,'global_State']]]
+];

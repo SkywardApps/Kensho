@@ -1,0 +1,51 @@
+<map id="luaS_resize" name="luaS_resize">
+<area shape="rect" id="node2" href="$de/d27/lgc_8c.html#aace8516e609d7409e789e7b2c190b9c2" title="checkSizes" alt="" coords="141,355,228,381"/>
+<area shape="rect" id="node14" href="$dd/dca/lstate_8c.html#ab65e96a7498fd886f7223b92e91fd830" title="f_luaopen" alt="" coords="766,253,845,280"/>
+<area shape="rect" id="node22" href="$d1/d2f/lstring_8c.html#a6e3c0fe3ba834ee00279a9df03f40fc4" title="newshrstr" alt="" coords="767,304,844,331"/>
+<area shape="rect" id="node3" href="$de/d27/lgc_8c.html#ae34e22198155f5d365fe500d3735c150" title="singlestep" alt="" coords="276,431,355,457"/>
+<area shape="rect" id="node4" href="$de/d27/lgc_8c.html#a7515a46e25b277cbbe7febb4d06b196a" title="incstep" alt="" coords="425,532,488,559"/>
+<area shape="rect" id="node8" href="$dc/d9c/lgc_8h.html#a1da32357417ce5766ed5e3ada033c32f" title="luaC_runtilstate" alt="" coords="403,431,511,457"/>
+<area shape="rect" id="node5" href="$dc/d9c/lgc_8h.html#a19359957605d7c8eaf70803e5b77361f" title="luaC_forcestep" alt="" coords="923,507,1029,533"/>
+<area shape="rect" id="node6" href="$da/dd2/lua_8h.html#a6bac487d3f900b21271e8c591bd801cd" title="lua_gc" alt="" coords="1101,405,1160,432"/>
+<area shape="rect" id="node7" href="$dc/d9c/lgc_8h.html#a6c71cc4b9e503c0e96c0c4ffcff93900" title="luaC_step" alt="" coords="1090,507,1171,533"/>
+<area shape="rect" id="node9" href="$de/d27/lgc_8c.html#a87bb9d2ca4bed013c39258f8abd61689" title="generationalcollection" alt="" coords="736,507,875,533"/>
+<area shape="rect" id="node10" href="$dc/d9c/lgc_8h.html#af016fe72ab7e564d7d55e7e4fb659041" title="luaC_changemode" alt="" coords="559,405,688,432"/>
+<area shape="rect" id="node11" href="$dc/d9c/lgc_8h.html#aa0b753c3ed80e1eed0379ec58592c404" title="luaC_fullgc" alt="" coords="582,456,665,483"/>
+<area shape="rect" id="node13" href="$d4/dfb/lstring_8h.html#a44d549eb0ace165927a896f37330e2cd" title="luaS_resize" alt="" coords="579,355,667,381"/>
+<area shape="rect" id="node12" href="$d7/d3e/lmem_8h.html#ae7dc8a57fc5dbca825653a88a356a72d" title="luaM_realloc_" alt="" coords="756,456,855,483"/>
+<area shape="rect" id="node15" href="$da/dd2/lua_8h.html#af722e4ac7fc0eba5920f59f0162c1b97" title="lua_newstate" alt="" coords="927,148,1025,175"/>
+<area shape="rect" id="node16" href="$da/d29/lauxlib_8h.html#a7d8712fcede90ae93d5a9a7b409c586e" title="luaL_newstate" alt="" coords="1077,173,1184,200"/>
+<area shape="rect" id="node21" href="$dd/dca/lstate_8c.html#a8a0fc0aca5367250347c6bb6a788f05f" title="makeseed" alt="" coords="1090,123,1171,149"/>
+<area shape="rect" id="node17" href="$dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2" title="&#45;[KenshoLuaWrapper\l evaluate]" alt="" coords="1232,86,1377,127"/>
+<area shape="rect" id="node18" href="$dc/de7/interface_kensho_lua_wrapper.html#af6db46358f8858a18b55388aa3af211d" title="&#45;[KenshoLuaWrapper\l initWithKensho:context\l:code:]" alt="" coords="1425,5,1577,61"/>
+<area shape="rect" id="node19" href="$dc/de7/interface_kensho_lua_wrapper.html#a5555e0979799446611baee70104555c6" title="&#45;[KenshoLuaWrapper\l evaluate:]" alt="" coords="1429,86,1574,127"/>
+<area shape="rect" id="node20" href="$dc/de7/interface_kensho_lua_wrapper.html#a0bb5e125d727942726d707f8b59009dc" title="&#45;[KenshoLuaWrapper\l observableUpdated:]" alt="" coords="1429,151,1574,193"/>
+<area shape="rect" id="node23" href="$d1/d2f/lstring_8c.html#a9b2c32c59a280de24f20df1c7f0433a1" title="internshrstr" alt="" coords="935,304,1017,331"/>
+<area shape="rect" id="node24" href="$d4/dfb/lstring_8h.html#a248e72694b9116b07b2e7f4a9a3a5331" title="luaS_newlstr" alt="" coords="1083,329,1178,356"/>
+<area shape="rect" id="node25" href="$da/dd2/lua_8h.html#a4ab8500ade8e1d8a87b1df1baf19b179" title="lua_pushlstring" alt="" coords="1626,228,1733,255"/>
+<area shape="rect" id="node34" href="$da/dd2/lua_8h.html#a4eba0457df5bafff4d44071d1d8080b6" title="lua_concat" alt="" coords="1460,355,1543,381"/>
+<area shape="rect" id="node40" href="$dd/d05/lcode_8h.html#a4f928250a0f4007764b4d3777651f617" title="luaK_numberK" alt="" coords="1251,456,1358,483"/>
+<area shape="rect" id="node44" href="$d8/d27/llex_8h.html#aa6e79179f823cf156f61899a09239ca6" title="luaX_newstring" alt="" coords="1251,507,1359,533"/>
+<area shape="rect" id="node46" href="$d7/d9b/lobject_8c.html#aa65db03553a5abd73e466d307bb17a37" title="pushstr" alt="" coords="1273,557,1337,584"/>
+<area shape="rect" id="node47" href="$d4/dfb/lstring_8h.html#a6929da8cfde3e74a0d51a6467909ef9d" title="luaS_new" alt="" coords="1265,152,1345,179"/>
+<area shape="rect" id="node48" href="$de/d2f/lundump_8c.html#abfe7dabe70bd14e27d54d3cedc6cb70a" title="LoadString" alt="" coords="1263,203,1346,229"/>
+<area shape="rect" id="node49" href="$d5/dcd/lvm_8h.html#abcde68a7697547dc2c7f1d0e6734e611" title="luaV_tostring" alt="" coords="1257,253,1352,280"/>
+<area shape="rect" id="node50" href="$d5/dcd/lvm_8h.html#aee84bfc563cb4bdd21a013218a289aa7" title="luaV_concat" alt="" coords="1259,405,1351,432"/>
+<area shape="rect" id="node26" href="$da/d29/lauxlib_8h.html#aac5dfab9ba0ced4f5ae3b22aa35faffe" title="luaL_pushresult" alt="" coords="1787,304,1898,331"/>
+<area shape="rect" id="node27" href="$de/df3/liolib_8c.html#ace61fce0bdea311d6d7c2206881165c7" title="test_eof" alt="" coords="1809,355,1876,381"/>
+<area shape="rect" id="node28" href="$d2/d82/loadlib_8c.html#aa1ea5ee1b54a06650a887c4ee05a8547" title="pushnexttemplate" alt="" coords="1781,51,1904,77"/>
+<area shape="rect" id="node29" href="$d2/d82/loadlib_8c.html#a91ac5b5231cf039af46226806dcc3884" title="loadfunc" alt="" coords="1808,152,1877,179"/>
+<area shape="rect" id="node30" href="$d2/d82/loadlib_8c.html#a1ec05cd98a045c271aeda9f9c6041e1c" title="searcher_Croot" alt="" coords="1952,127,2059,153"/>
+<area shape="rect" id="node31" href="$dc/d77/lstrlib_8c.html#a039b391d5f43533a0ce750c5e40d7752" title="str_sub" alt="" coords="1811,253,1875,280"/>
+<area shape="rect" id="node32" href="$dc/d77/lstrlib_8c.html#a24a14b4e6e90bac4610dd334bb0b51b6" title="push_onecapture" alt="" coords="1782,405,1903,432"/>
+<area shape="rect" id="node33" href="$dc/d77/lstrlib_8c.html#ad24cfa73e5ad25ec99a1b48f0916471e" title="add_value" alt="" coords="1964,405,2047,432"/>
+<area shape="rect" id="node35" href="$d0/d56/lauxlib_8c.html#a36c8f149b779f8c9a5c042ea9784d80a" title="findfield" alt="" coords="1648,481,1711,508"/>
+<area shape="rect" id="node36" href="$da/d29/lauxlib_8h.html#a664cc293d6c7a7dc67857fe95583a10e" title="luaL_traceback" alt="" coords="1625,279,1733,305"/>
+<area shape="rect" id="node37" href="$da/d29/lauxlib_8h.html#a994f73d7985c30672469a260d9e86ae6" title="luaL_error" alt="" coords="1641,431,1717,457"/>
+<area shape="rect" id="node38" href="$d8/dd3/lbaselib_8c.html#a2ecfa987569d0b4c1063f3e204e42dd2" title="luaB_error" alt="" coords="1640,329,1719,356"/>
+<area shape="rect" id="node39" href="$df/d2d/lcorolib_8c.html#a777abb20385a69ce4787f72bd90375a7" title="luaB_auxwrap" alt="" coords="1626,380,1733,407"/>
+<area shape="rect" id="node41" href="$d8/d7a/lcode_8c.html#a961993a449bc9612ac966652646ffad6" title="discharge2reg" alt="" coords="1451,405,1551,432"/>
+<area shape="rect" id="node42" href="$d8/d9c/lparser_8c.html#a18532c1a3a900cb8f3399b470c00daf0" title="fornum" alt="" coords="1472,456,1531,483"/>
+<area shape="rect" id="node43" href="$dd/d05/lcode_8h.html#a28ef529fcd27c07fb222181894abdf7e" title="luaK_exp2RK" alt="" coords="1450,507,1553,533"/>
+<area shape="rect" id="node45" href="$d8/d9c/lparser_8c.html#a773c2499cb8938683b25fc0234c1f017" title="anchor_token" alt="" coords="1453,557,1550,584"/>
+</map>

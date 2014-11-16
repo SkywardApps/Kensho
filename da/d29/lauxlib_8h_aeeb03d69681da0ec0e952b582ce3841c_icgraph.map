@@ -1,0 +1,18 @@
+<map id="luaL_addvalue" name="luaL_addvalue">
+<area shape="rect" id="node2" href="$dc/d77/lstrlib_8c.html#ad5f7e3fbcadc8825f7f650ecf458fc72" title="add_s" alt="" coords="174,5,233,32"/>
+<area shape="rect" id="node3" href="$dc/d77/lstrlib_8c.html#ad24cfa73e5ad25ec99a1b48f0916471e" title="add_value" alt="" coords="302,31,385,57"/>
+<area shape="rect" id="node5" href="$d0/da1/ltablib_8c.html#a4ea6cc51c099ea709c7755a49216f4d0" title="addfield" alt="" coords="171,107,236,133"/>
+<area shape="rect" id="node7" href="$d2/d82/loadlib_8c.html#aeea4101591c7cab25273f4dfe7d811d6" title="findloader" alt="" coords="166,157,241,184"/>
+<area shape="rect" id="node9" href="$d2/d82/loadlib_8c.html#a9aa5433859d896c2db1a7af366e04b65" title="searchpath" alt="" coords="160,208,247,235"/>
+<area shape="rect" id="node17" href="$dc/d77/lstrlib_8c.html#ae26a9374857058119e59d0328208c2f2" title="str_format" alt="" coords="165,259,241,285"/>
+<area shape="rect" id="node4" href="$dc/d77/lstrlib_8c.html#a42337c674d265175bcc2b2f3809c7339" title="str_gsub" alt="" coords="458,31,529,57"/>
+<area shape="rect" id="node6" href="$d0/da1/ltablib_8c.html#add6973c515a288f41265aca8e0ae6412" title="tconcat" alt="" coords="312,107,375,133"/>
+<area shape="rect" id="node8" href="$d2/d82/loadlib_8c.html#a136874f5faa236dc52fb50109281e157" title="ll_require" alt="" coords="309,157,378,184"/>
+<area shape="rect" id="node10" href="$d2/d82/loadlib_8c.html#a3e9eb01c860846336b6f50d6c77448a2" title="ll_searchpath" alt="" coords="295,208,392,235"/>
+<area shape="rect" id="node11" href="$d2/d82/loadlib_8c.html#af8f7333f1a59f3d7aab8c9b79b7a4ab2" title="findfile" alt="" coords="316,259,371,285"/>
+<area shape="rect" id="node12" href="$d2/d82/loadlib_8c.html#a8b2f1d86fe37c0829143579a6b568243" title="searcher_Lua" alt="" coords="444,208,543,235"/>
+<area shape="rect" id="node15" href="$d2/d82/loadlib_8c.html#a9a915ea950c831cee2f1e7b0a3bd9005" title="searcher_C" alt="" coords="450,259,537,285"/>
+<area shape="rect" id="node16" href="$d2/d82/loadlib_8c.html#a1ec05cd98a045c271aeda9f9c6041e1c" title="searcher_Croot" alt="" coords="440,309,547,336"/>
+<area shape="rect" id="node13" href="$d2/d82/loadlib_8c.html#a8fc66c8b852ee2960dc20797521d1d9e" title="createsearcherstable" alt="" coords="595,259,733,285"/>
+<area shape="rect" id="node14" href="$d6/d07/lualib_8h.html#a05e0befc0439f926b6152129ab4f8dea" title="luaopen_package" alt="" coords="781,259,907,285"/>
+</map>

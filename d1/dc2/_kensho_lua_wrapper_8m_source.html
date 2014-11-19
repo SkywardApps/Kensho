@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -100,9 +100,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00007"></a><span class="lineno">    7</span>&#160;<span class="comment">//</span></div>
 <div class="line"><a name="l00008"></a><span class="lineno">    8</span>&#160;</div>
 <div class="line"><a name="l00009"></a><span class="lineno">    9</span>&#160;<span class="preprocessor">#import &quot;<a class="code" href="../../da/d3a/_kensho_lua_wrapper_8h.html">KenshoLuaWrapper.h</a>&quot;</span></div>
-<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/dd2/lua_8h.html">lua.h</a>&quot;</span></div>
-<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../d6/d07/lualib_8h.html">lualib.h</a>&quot;</span></div>
-<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;<a class="code" href="../../da/d29/lauxlib_8h.html">lauxlib.h</a>&quot;</span></div>
+<div class="line"><a name="l00010"></a><span class="lineno">   10</span>&#160;<span class="preprocessor">#include &quot;lua.h&quot;</span></div>
+<div class="line"><a name="l00011"></a><span class="lineno">   11</span>&#160;<span class="preprocessor">#include &quot;lualib.h&quot;</span></div>
+<div class="line"><a name="l00012"></a><span class="lineno">   12</span>&#160;<span class="preprocessor">#include &quot;lauxlib.h&quot;</span></div>
 <div class="line"><a name="l00013"></a><span class="lineno">   13</span>&#160;<span class="preprocessor">#import &quot;<a class="code" href="../../d8/db2/_observable_8h.html">Observable.h</a>&quot;</span></div>
 <div class="line"><a name="l00014"></a><span class="lineno">   14</span>&#160;</div>
 <div class="line"><a name="l00048"></a><span class="lineno">   48</span>&#160;<span class="keyword">@interface </span><a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a> ()</div>
@@ -118,16 +118,16 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00058"></a><span class="lineno">   58</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00059"></a><span class="lineno">   59</span>&#160;</div>
 <div class="line"><a name="l00060"></a><span class="lineno">   60</span>&#160;</div>
-<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L);</div>
-<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L, <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value);</div>
+<div class="line"><a name="l00061"></a><span class="lineno">   61</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>(lua_State* L);</div>
+<div class="line"><a name="l00062"></a><span class="lineno">   62</span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a>(lua_State* L, <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value);</div>
 <div class="line"><a name="l00063"></a><span class="lineno">   63</span>&#160;</div>
 <div class="line"><a name="l00064"></a><span class="lineno">   64</span>&#160;</div>
-<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">   65</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L, <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value)</div>
+<div class="line"><a name="l00065"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">   65</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a>(lua_State* L, <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value)</div>
 <div class="line"><a name="l00066"></a><span class="lineno">   66</span>&#160;{</div>
 <div class="line"><a name="l00067"></a><span class="lineno">   67</span>&#160;    <span class="keywordflow">if</span>([value isKindOfClass:NSNumber.class])</div>
 <div class="line"><a name="l00068"></a><span class="lineno">   68</span>&#160;    {</div>
-<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a328625a03fbb5548f27b1af10f109f6a">lua_pushnumber</a>(L, [(NSNumber*)value doubleValue]);</div>
-<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../df/db6/lapi_8c.html#a99451f234bf085c9c46c3d17a5aef905">lua_isnumber</a>(L, -1))</div>
+<div class="line"><a name="l00069"></a><span class="lineno">   69</span>&#160;        lua_pushnumber(L, [(NSNumber*)value doubleValue]);</div>
+<div class="line"><a name="l00070"></a><span class="lineno">   70</span>&#160;        <span class="keywordflow">if</span>(!lua_isnumber(L, -1))</div>
 <div class="line"><a name="l00071"></a><span class="lineno">   71</span>&#160;        {</div>
 <div class="line"><a name="l00072"></a><span class="lineno">   72</span>&#160;            NSLog(<span class="stringliteral">@&quot;Stack is wrong&quot;</span>);</div>
 <div class="line"><a name="l00073"></a><span class="lineno">   73</span>&#160;        }</div>
@@ -135,7 +135,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00075"></a><span class="lineno">   75</span>&#160;    }</div>
 <div class="line"><a name="l00076"></a><span class="lineno">   76</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>([value isKindOfClass:NSString.class])</div>
 <div class="line"><a name="l00077"></a><span class="lineno">   77</span>&#160;    {</div>
-<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a771d300f2e64b2197d1df9bf31660ebf">lua_pushstring</a>(L, [(NSString*)value UTF8String]);</div>
+<div class="line"><a name="l00078"></a><span class="lineno">   78</span>&#160;        lua_pushstring(L, [(NSString*)value UTF8String]);</div>
 <div class="line"><a name="l00079"></a><span class="lineno">   79</span>&#160;        <span class="keywordflow">return</span> 1;</div>
 <div class="line"><a name="l00080"></a><span class="lineno">   80</span>&#160;    }</div>
 <div class="line"><a name="l00081"></a><span class="lineno">   81</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>([value isKindOfClass:<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>.class])</div>
@@ -148,22 +148,22 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00088"></a><span class="lineno">   88</span>&#160;            <span class="comment">// dependency</span></div>
 <div class="line"><a name="l00089"></a><span class="lineno">   89</span>&#160;        }</div>
 <div class="line"><a name="l00090"></a><span class="lineno">   90</span>&#160;        <span class="comment">// do something crazy here to allow key descent (view.frame.width)??</span></div>
-<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* __weak *userdata = (<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* __weak *)<a class="code" href="../../df/db6/lapi_8c.html#a467bb6f4780b27d6e7de6ee10a80dac5">lua_newuserdata</a>(L, <span class="keyword">sizeof</span>(<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>*));</div>
+<div class="line"><a name="l00091"></a><span class="lineno">   91</span>&#160;        <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* __weak *userdata = (<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* __weak *)lua_newuserdata(L, <span class="keyword">sizeof</span>(<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>*));</div>
 <div class="line"><a name="l00092"></a><span class="lineno">   92</span>&#160;        (*userdata) = value;</div>
 <div class="line"><a name="l00093"></a><span class="lineno">   93</span>&#160;        </div>
-<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a7f93e3baf3101cad59ec61b7744a55d8">lua_createtable</a>(L, 0, 1);</div>
-<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a85e3e3d32b068aef62426828a104b561">lua_pushlightuserdata</a>(L, (__bridge <span class="keywordtype">void</span> *)(value));</div>
-<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a3f2f542ee6728d82e51b1c302f9606df">lua_setfield</a>(L, -2, <span class="stringliteral">&quot;__self&quot;</span>);</div>
+<div class="line"><a name="l00094"></a><span class="lineno">   94</span>&#160;        lua_createtable(L, 0, 1);</div>
+<div class="line"><a name="l00095"></a><span class="lineno">   95</span>&#160;        lua_pushlightuserdata(L, (__bridge <span class="keywordtype">void</span> *)(value));</div>
+<div class="line"><a name="l00096"></a><span class="lineno">   96</span>&#160;        lua_setfield(L, -2, <span class="stringliteral">&quot;__self&quot;</span>);</div>
 <div class="line"><a name="l00097"></a><span class="lineno">   97</span>&#160;        </div>
-<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a7f93e3baf3101cad59ec61b7744a55d8">lua_createtable</a>(L, 0, 1);</div>
-<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a771d300f2e64b2197d1df9bf31660ebf">lua_pushstring</a>(L, <span class="stringliteral">&quot;__index&quot;</span>);</div>
-<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#a2e4fbbe97182bf90004379202202f2b9">lua_pushcfunction</a>(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>);</div>
-<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a4ca492cf3d2194aec9a6292708bf66c8">lua_settable</a>(L, -3);</div>
+<div class="line"><a name="l00098"></a><span class="lineno">   98</span>&#160;        lua_createtable(L, 0, 1);</div>
+<div class="line"><a name="l00099"></a><span class="lineno">   99</span>&#160;        lua_pushstring(L, <span class="stringliteral">&quot;__index&quot;</span>);</div>
+<div class="line"><a name="l00100"></a><span class="lineno">  100</span>&#160;        lua_pushcfunction(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>);</div>
+<div class="line"><a name="l00101"></a><span class="lineno">  101</span>&#160;        lua_settable(L, -3);</div>
 <div class="line"><a name="l00102"></a><span class="lineno">  102</span>&#160;        </div>
 <div class="line"><a name="l00103"></a><span class="lineno">  103</span>&#160;        <span class="comment">//-- set global index callback hook</span></div>
-<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a15719ea4119bdf5b3f2a406534431a7e">lua_setmetatable</a>(L, -2);</div>
+<div class="line"><a name="l00104"></a><span class="lineno">  104</span>&#160;        lua_setmetatable(L, -2);</div>
 <div class="line"><a name="l00105"></a><span class="lineno">  105</span>&#160;        </div>
-<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span>(!<a class="code" href="../../da/dd2/lua_8h.html#a161af51893c5f79dacc1c382416a5f27">lua_istable</a>(L, -1))</div>
+<div class="line"><a name="l00106"></a><span class="lineno">  106</span>&#160;        <span class="keywordflow">if</span>(!lua_istable(L, -1))</div>
 <div class="line"><a name="l00107"></a><span class="lineno">  107</span>&#160;        {</div>
 <div class="line"><a name="l00108"></a><span class="lineno">  108</span>&#160;            NSLog(<span class="stringliteral">@&quot;Stack is wrong&quot;</span>);</div>
 <div class="line"><a name="l00109"></a><span class="lineno">  109</span>&#160;        }</div>
@@ -173,28 +173,28 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00113"></a><span class="lineno">  113</span>&#160;    <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00114"></a><span class="lineno">  114</span>&#160;}</div>
 <div class="line"><a name="l00115"></a><span class="lineno">  115</span>&#160;</div>
-<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">  116</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L)</div>
+<div class="line"><a name="l00116"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">  116</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>(lua_State* L)</div>
 <div class="line"><a name="l00117"></a><span class="lineno">  117</span>&#160;{</div>
 <div class="line"><a name="l00118"></a><span class="lineno">  118</span>&#160;    <span class="comment">// Stack is [tabble, key]</span></div>
-<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, -1))</div>
+<div class="line"><a name="l00119"></a><span class="lineno">  119</span>&#160;    <span class="keywordflow">if</span>(!lua_isstring(L, -1))</div>
 <div class="line"><a name="l00120"></a><span class="lineno">  120</span>&#160;    {</div>
 <div class="line"><a name="l00121"></a><span class="lineno">  121</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00122"></a><span class="lineno">  122</span>&#160;    }</div>
 <div class="line"><a name="l00123"></a><span class="lineno">  123</span>&#160;    </div>
-<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../da/dd2/lua_8h.html#a161af51893c5f79dacc1c382416a5f27">lua_istable</a>(L, -2))</div>
+<div class="line"><a name="l00124"></a><span class="lineno">  124</span>&#160;    <span class="keywordflow">if</span>(!lua_istable(L, -2))</div>
 <div class="line"><a name="l00125"></a><span class="lineno">  125</span>&#160;    {</div>
 <div class="line"><a name="l00126"></a><span class="lineno">  126</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00127"></a><span class="lineno">  127</span>&#160;    }</div>
 <div class="line"><a name="l00128"></a><span class="lineno">  128</span>&#160;    </div>
 <div class="line"><a name="l00129"></a><span class="lineno">  129</span>&#160;    <span class="comment">// Get the pointer to the context object</span></div>
-<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    <a class="code" href="../../df/db6/lapi_8c.html#ae459b7c273e6b1f60149b39f8e8f4554">lua_getfield</a>(L, -2, <span class="stringliteral">&quot;__self&quot;</span>);</div>
-<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">id</span> target = (__bridge id)(<a class="code" href="../../df/db6/lapi_8c.html#a0444ddf13e5618bca969e4b3b47bc0cc">lua_touserdata</a>(L, -1));</div>
+<div class="line"><a name="l00130"></a><span class="lineno">  130</span>&#160;    lua_getfield(L, -2, <span class="stringliteral">&quot;__self&quot;</span>);</div>
+<div class="line"><a name="l00131"></a><span class="lineno">  131</span>&#160;    <span class="keywordtype">id</span> target = (__bridge id)(lua_touserdata(L, -1));</div>
 <div class="line"><a name="l00132"></a><span class="lineno">  132</span>&#160;    <span class="keywordflow">if</span>(target == nil)</div>
 <div class="line"><a name="l00133"></a><span class="lineno">  133</span>&#160;    {</div>
 <div class="line"><a name="l00134"></a><span class="lineno">  134</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00135"></a><span class="lineno">  135</span>&#160;    }</div>
 <div class="line"><a name="l00136"></a><span class="lineno">  136</span>&#160;    </div>
-<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -2);</div>
+<div class="line"><a name="l00137"></a><span class="lineno">  137</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = lua_tostring(L, -2);</div>
 <div class="line"><a name="l00138"></a><span class="lineno">  138</span>&#160;    <span class="keywordflow">if</span>(nameRequest == NULL)</div>
 <div class="line"><a name="l00139"></a><span class="lineno">  139</span>&#160;    {</div>
 <div class="line"><a name="l00140"></a><span class="lineno">  140</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -210,45 +210,45 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00150"></a><span class="lineno">  150</span>&#160;    <span class="keywordflow">return</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a>(L, value);</div>
 <div class="line"><a name="l00151"></a><span class="lineno">  151</span>&#160;}</div>
 <div class="line"><a name="l00152"></a><span class="lineno">  152</span>&#160;</div>
-<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">  153</a></span>&#160;<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">popValue</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L, <span class="keywordtype">int</span> stackLevel)</div>
+<div class="line"><a name="l00153"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">  153</a></span>&#160;<a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">popValue</a>(lua_State* L, <span class="keywordtype">int</span> stackLevel)</div>
 <div class="line"><a name="l00154"></a><span class="lineno">  154</span>&#160;{</div>
 <div class="line"><a name="l00155"></a><span class="lineno">  155</span>&#160;    <span class="comment">// Now figure out the datatype of the assignement and get the data out</span></div>
-<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span>(<a class="code" href="../../da/dd2/lua_8h.html#af4f579ead7d5ea837d8d708186033502">lua_isboolean</a>(L, stackLevel))</div>
+<div class="line"><a name="l00156"></a><span class="lineno">  156</span>&#160;    <span class="keywordflow">if</span>(lua_isboolean(L, stackLevel))</div>
 <div class="line"><a name="l00157"></a><span class="lineno">  157</span>&#160;    {</div>
-<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> @(<a class="code" href="../../df/db6/lapi_8c.html#a444aee9aa56b0b06175ee3c7bcf7927c">lua_toboolean</a>(L, stackLevel));</div>
+<div class="line"><a name="l00158"></a><span class="lineno">  158</span>&#160;        <span class="keywordflow">return</span> @(lua_toboolean(L, stackLevel));</div>
 <div class="line"><a name="l00159"></a><span class="lineno">  159</span>&#160;    }</div>
-<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="../../df/db6/lapi_8c.html#a99451f234bf085c9c46c3d17a5aef905">lua_isnumber</a>(L, stackLevel))</div>
+<div class="line"><a name="l00160"></a><span class="lineno">  160</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lua_isnumber(L, stackLevel))</div>
 <div class="line"><a name="l00161"></a><span class="lineno">  161</span>&#160;    {</div>
-<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span>  @(<a class="code" href="../../da/dd2/lua_8h.html#a3237a0507d51d772dadd4c560a75af17">lua_tonumber</a>(L, stackLevel));</div>
+<div class="line"><a name="l00162"></a><span class="lineno">  162</span>&#160;        <span class="keywordflow">return</span>  @(lua_tonumber(L, stackLevel));</div>
 <div class="line"><a name="l00163"></a><span class="lineno">  163</span>&#160;    }</div>
-<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, stackLevel))</div>
+<div class="line"><a name="l00164"></a><span class="lineno">  164</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lua_isstring(L, stackLevel))</div>
 <div class="line"><a name="l00165"></a><span class="lineno">  165</span>&#160;    {</div>
-<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, stackLevel);</div>
+<div class="line"><a name="l00166"></a><span class="lineno">  166</span>&#160;        <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = lua_tostring(L, stackLevel);</div>
 <div class="line"><a name="l00167"></a><span class="lineno">  167</span>&#160;        <span class="keywordflow">return</span> [NSString stringWithUTF8String:tempString];</div>
 <div class="line"><a name="l00168"></a><span class="lineno">  168</span>&#160;    }</div>
-<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(<a class="code" href="../../da/dd2/lua_8h.html#a161af51893c5f79dacc1c382416a5f27">lua_istable</a>(L, stackLevel))</div>
+<div class="line"><a name="l00169"></a><span class="lineno">  169</span>&#160;    <span class="keywordflow">else</span> <span class="keywordflow">if</span>(lua_istable(L, stackLevel))</div>
 <div class="line"><a name="l00170"></a><span class="lineno">  170</span>&#160;    {</div>
 <div class="line"><a name="l00171"></a><span class="lineno">  171</span>&#160;        <span class="comment">// This is a bit of a special case here.  We assume this is a wrapper for an NSObject.</span></div>
 <div class="line"><a name="l00172"></a><span class="lineno">  172</span>&#160;        <span class="comment">// This could actually be a new table, in which case this will fail.</span></div>
-<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#ae459b7c273e6b1f60149b39f8e8f4554">lua_getfield</a>(L, stackLevel, <span class="stringliteral">&quot;__self&quot;</span>);</div>
-<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value = (__bridge id)(<a class="code" href="../../df/db6/lapi_8c.html#a0444ddf13e5618bca969e4b3b47bc0cc">lua_touserdata</a>(L, -1));</div>
+<div class="line"><a name="l00173"></a><span class="lineno">  173</span>&#160;        lua_getfield(L, stackLevel, <span class="stringliteral">&quot;__self&quot;</span>);</div>
+<div class="line"><a name="l00174"></a><span class="lineno">  174</span>&#160;        <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* value = (__bridge id)(lua_touserdata(L, -1));</div>
 <div class="line"><a name="l00175"></a><span class="lineno">  175</span>&#160;        <span class="keywordflow">if</span>(value == nil)</div>
 <div class="line"><a name="l00176"></a><span class="lineno">  176</span>&#160;        {</div>
 <div class="line"><a name="l00177"></a><span class="lineno">  177</span>&#160;            </div>
 <div class="line"><a name="l00178"></a><span class="lineno">  178</span>&#160;            <span class="comment">// We&#39;ll create an NSDictionary wrapper here</span></div>
 <div class="line"><a name="l00179"></a><span class="lineno">  179</span>&#160;            <a class="code" href="../../df/dab/class_n_s_mutable_dictionary.html">NSMutableDictionary</a>* dictionary = [[<a class="code" href="../../df/dab/class_n_s_mutable_dictionary.html">NSMutableDictionary</a> alloc] init];</div>
 <div class="line"><a name="l00180"></a><span class="lineno">  180</span>&#160;            </div>
-<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">while</span> (<a class="code" href="../../df/db6/lapi_8c.html#aa8bf464b98335a075732200ad91ce1de">lua_next</a>(L, stackLevel-1) != 0) {</div>
+<div class="line"><a name="l00181"></a><span class="lineno">  181</span>&#160;            <span class="keywordflow">while</span> (lua_next(L, stackLevel-1) != 0) {</div>
 <div class="line"><a name="l00182"></a><span class="lineno">  182</span>&#160;                <span class="comment">/* uses &#39;key&#39; (at index -2) and &#39;value&#39; (at index -1) */</span></div>
-<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="../../df/db6/lapi_8c.html#a7d64f87addab440bbda96bb088816e17">lua_typename</a>(L, <a class="code" href="../../df/db6/lapi_8c.html#a652b273947f0656686f998d8e90cd3ea">lua_type</a>(L, -2)));</div>
-<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, -2))</div>
+<div class="line"><a name="l00183"></a><span class="lineno">  183</span>&#160;                printf(<span class="stringliteral">&quot;%s\n&quot;</span>, lua_typename(L, lua_type(L, -2)));</div>
+<div class="line"><a name="l00184"></a><span class="lineno">  184</span>&#160;                <span class="keywordflow">if</span>(lua_isstring(L, -2))</div>
 <div class="line"><a name="l00185"></a><span class="lineno">  185</span>&#160;                {</div>
-<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -2);</div>
+<div class="line"><a name="l00186"></a><span class="lineno">  186</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = lua_tostring(L, -2);</div>
 <div class="line"><a name="l00187"></a><span class="lineno">  187</span>&#160;                    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, tempString);</div>
 <div class="line"><a name="l00188"></a><span class="lineno">  188</span>&#160;                    </div>
 <div class="line"><a name="l00189"></a><span class="lineno">  189</span>&#160;                }</div>
 <div class="line"><a name="l00190"></a><span class="lineno">  190</span>&#160;                <span class="comment">// Make sure the key is a valid string too!</span></div>
-<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -2);</div>
+<div class="line"><a name="l00191"></a><span class="lineno">  191</span>&#160;                <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = lua_tostring(L, -2);</div>
 <div class="line"><a name="l00192"></a><span class="lineno">  192</span>&#160;                <span class="keywordflow">if</span>(nameRequest == NULL)</div>
 <div class="line"><a name="l00193"></a><span class="lineno">  193</span>&#160;                {</div>
 <div class="line"><a name="l00194"></a><span class="lineno">  194</span>&#160;                    <span class="keywordflow">return</span> 0;</div>
@@ -258,11 +258,11 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00198"></a><span class="lineno">  198</span>&#160;                dictionary[[NSString stringWithUTF8String:nameRequest]] = subvalue;</div>
 <div class="line"><a name="l00199"></a><span class="lineno">  199</span>&#160;                </div>
 <div class="line"><a name="l00200"></a><span class="lineno">  200</span>&#160;                <span class="comment">/* removes &#39;value&#39;; keeps &#39;key&#39; for next iteration */</span></div>
-<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                <a class="code" href="../../da/dd2/lua_8h.html#abb8eae2164badeafdb037bc1e03cc822">lua_pop</a>(L, 1);</div>
-<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="../../df/db6/lapi_8c.html#a7d64f87addab440bbda96bb088816e17">lua_typename</a>(L, <a class="code" href="../../df/db6/lapi_8c.html#a652b273947f0656686f998d8e90cd3ea">lua_type</a>(L, -1)));</div>
-<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keywordflow">if</span>(<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, -1))</div>
+<div class="line"><a name="l00201"></a><span class="lineno">  201</span>&#160;                lua_pop(L, 1);</div>
+<div class="line"><a name="l00202"></a><span class="lineno">  202</span>&#160;                printf(<span class="stringliteral">&quot;%s\n&quot;</span>, lua_typename(L, lua_type(L, -1)));</div>
+<div class="line"><a name="l00203"></a><span class="lineno">  203</span>&#160;                <span class="keywordflow">if</span>(lua_isstring(L, -1))</div>
 <div class="line"><a name="l00204"></a><span class="lineno">  204</span>&#160;                {</div>
-<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -1);</div>
+<div class="line"><a name="l00205"></a><span class="lineno">  205</span>&#160;                    <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = lua_tostring(L, -1);</div>
 <div class="line"><a name="l00206"></a><span class="lineno">  206</span>&#160;                    printf(<span class="stringliteral">&quot;%s\n&quot;</span>, tempString);</div>
 <div class="line"><a name="l00207"></a><span class="lineno">  207</span>&#160;                    </div>
 <div class="line"><a name="l00208"></a><span class="lineno">  208</span>&#160;                }</div>
@@ -270,10 +270,10 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00210"></a><span class="lineno">  210</span>&#160;            </div>
 <div class="line"><a name="l00211"></a><span class="lineno">  211</span>&#160;            value = [NSDictionary dictionaryWithDictionary:dictionary];</div>
 <div class="line"><a name="l00212"></a><span class="lineno">  212</span>&#160;        }</div>
-<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, <a class="code" href="../../df/db6/lapi_8c.html#a7d64f87addab440bbda96bb088816e17">lua_typename</a>(L, <a class="code" href="../../df/db6/lapi_8c.html#a652b273947f0656686f998d8e90cd3ea">lua_type</a>(L, -1)));</div>
-<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">if</span>(<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, -1))</div>
+<div class="line"><a name="l00213"></a><span class="lineno">  213</span>&#160;        printf(<span class="stringliteral">&quot;%s\n&quot;</span>, lua_typename(L, lua_type(L, -1)));</div>
+<div class="line"><a name="l00214"></a><span class="lineno">  214</span>&#160;        <span class="keywordflow">if</span>(lua_isstring(L, -1))</div>
 <div class="line"><a name="l00215"></a><span class="lineno">  215</span>&#160;        {</div>
-<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -1);</div>
+<div class="line"><a name="l00216"></a><span class="lineno">  216</span>&#160;            <span class="keyword">const</span> <span class="keywordtype">char</span>* tempString = lua_tostring(L, -1);</div>
 <div class="line"><a name="l00217"></a><span class="lineno">  217</span>&#160;            printf(<span class="stringliteral">&quot;%s\n&quot;</span>, tempString);</div>
 <div class="line"><a name="l00218"></a><span class="lineno">  218</span>&#160;            </div>
 <div class="line"><a name="l00219"></a><span class="lineno">  219</span>&#160;        }</div>
@@ -283,24 +283,24 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00223"></a><span class="lineno">  223</span>&#160;    <span class="keywordflow">return</span> nil;</div>
 <div class="line"><a name="l00224"></a><span class="lineno">  224</span>&#160;}</div>
 <div class="line"><a name="l00225"></a><span class="lineno">  225</span>&#160;</div>
-<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">  236</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a>(<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L)</div>
+<div class="line"><a name="l00236"></a><span class="lineno"><a class="line" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">  236</a></span>&#160;<span class="keywordtype">int</span> <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a>(lua_State* L)</div>
 <div class="line"><a name="l00237"></a><span class="lineno">  237</span>&#160;{</div>
 <div class="line"><a name="l00238"></a><span class="lineno">  238</span>&#160;    <span class="comment">// Stack is [table, key, value]</span></div>
 <div class="line"><a name="l00239"></a><span class="lineno">  239</span>&#160;    </div>
 <div class="line"><a name="l00240"></a><span class="lineno">  240</span>&#160;    <span class="comment">// Verify that the key is a string</span></div>
-<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a>(L, -2))</div>
+<div class="line"><a name="l00241"></a><span class="lineno">  241</span>&#160;    <span class="keywordflow">if</span>(!lua_isstring(L, -2))</div>
 <div class="line"><a name="l00242"></a><span class="lineno">  242</span>&#160;    {</div>
 <div class="line"><a name="l00243"></a><span class="lineno">  243</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00244"></a><span class="lineno">  244</span>&#160;    }</div>
 <div class="line"><a name="l00245"></a><span class="lineno">  245</span>&#160;    </div>
 <div class="line"><a name="l00246"></a><span class="lineno">  246</span>&#160;    <span class="comment">// Make sure that the context is a table.  This should actually be the global table.</span></div>
-<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span>(!<a class="code" href="../../da/dd2/lua_8h.html#a161af51893c5f79dacc1c382416a5f27">lua_istable</a>(L, -3))</div>
+<div class="line"><a name="l00247"></a><span class="lineno">  247</span>&#160;    <span class="keywordflow">if</span>(!lua_istable(L, -3))</div>
 <div class="line"><a name="l00248"></a><span class="lineno">  248</span>&#160;    {</div>
 <div class="line"><a name="l00249"></a><span class="lineno">  249</span>&#160;        <span class="keywordflow">return</span> 0;</div>
 <div class="line"><a name="l00250"></a><span class="lineno">  250</span>&#160;    }</div>
 <div class="line"><a name="l00251"></a><span class="lineno">  251</span>&#160;    </div>
 <div class="line"><a name="l00252"></a><span class="lineno">  252</span>&#160;    <span class="comment">// Make sure the key is a valid string too!</span></div>
-<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = <a class="code" href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a>(L, -2);</div>
+<div class="line"><a name="l00253"></a><span class="lineno">  253</span>&#160;    <span class="keyword">const</span> <span class="keywordtype">char</span>* nameRequest = lua_tostring(L, -2);</div>
 <div class="line"><a name="l00254"></a><span class="lineno">  254</span>&#160;    <span class="keywordflow">if</span>(nameRequest == NULL)</div>
 <div class="line"><a name="l00255"></a><span class="lineno">  255</span>&#160;    {</div>
 <div class="line"><a name="l00256"></a><span class="lineno">  256</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -308,9 +308,9 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00258"></a><span class="lineno">  258</span>&#160;    </div>
 <div class="line"><a name="l00259"></a><span class="lineno">  259</span>&#160;    <span class="comment">// Get the pointer to the context table (the global table here)</span></div>
 <div class="line"><a name="l00260"></a><span class="lineno">  260</span>&#160;    <span class="comment">// And then get it&#39;s __wrapper object, which points to the owning KenshoLuaWrapper.</span></div>
-<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    <a class="code" href="../../df/db6/lapi_8c.html#ae459b7c273e6b1f60149b39f8e8f4554">lua_getfield</a>(L, -3, <span class="stringliteral">&quot;__wrapper&quot;</span>);</div>
-<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">id</span> target = (__bridge id)(<a class="code" href="../../df/db6/lapi_8c.html#a0444ddf13e5618bca969e4b3b47bc0cc">lua_touserdata</a>(L, -1));</div>
-<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    <a class="code" href="../../da/dd2/lua_8h.html#abb8eae2164badeafdb037bc1e03cc822">lua_pop</a>(L, 1);</div>
+<div class="line"><a name="l00261"></a><span class="lineno">  261</span>&#160;    lua_getfield(L, -3, <span class="stringliteral">&quot;__wrapper&quot;</span>);</div>
+<div class="line"><a name="l00262"></a><span class="lineno">  262</span>&#160;    <span class="keywordtype">id</span> target = (__bridge id)(lua_touserdata(L, -1));</div>
+<div class="line"><a name="l00263"></a><span class="lineno">  263</span>&#160;    lua_pop(L, 1);</div>
 <div class="line"><a name="l00264"></a><span class="lineno">  264</span>&#160;    <span class="keywordflow">if</span>(target == nil)</div>
 <div class="line"><a name="l00265"></a><span class="lineno">  265</span>&#160;    {</div>
 <div class="line"><a name="l00266"></a><span class="lineno">  266</span>&#160;        <span class="keywordflow">return</span> 0;</div>
@@ -356,39 +356,39 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00306"></a><span class="lineno">  306</span>&#160;    </div>
 <div class="line"><a name="l00307"></a><span class="lineno">  307</span>&#160;    <span class="keywordflow">@try</span></div>
 <div class="line"><a name="l00308"></a><span class="lineno">  308</span>&#160;    {</div>
-<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        <a class="code" href="../../dc/da5/structlua___state.html">lua_State</a>* L = (<a class="code" href="../../dc/da5/structlua___state.html">lua_State</a> *) <a class="code" href="../../d0/d56/lauxlib_8c.html#aac01e11c3aeeec5ca26b28f285eadb9e">luaL_newstate</a>();</div>
-<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        <a class="code" href="../../da/ded/linit_8c.html#a975e179a76941267d2fa773a703d6199">luaL_openlibs</a>(L);</div>
+<div class="line"><a name="l00309"></a><span class="lineno">  309</span>&#160;        lua_State* L = (lua_State *) luaL_newstate();</div>
+<div class="line"><a name="l00310"></a><span class="lineno">  310</span>&#160;        luaL_openlibs(L);</div>
 <div class="line"><a name="l00311"></a><span class="lineno">  311</span>&#160;        </div>
-<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a85e3e3d32b068aef62426828a104b561">lua_pushlightuserdata</a>(L, (__bridge <span class="keywordtype">void</span> *)(<a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html#ac105a324c6cfcd9a622cba983e151fb8">context</a>));</div>
-<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a622d21825d8aa881e8420b3036ccad2c">lua_setglobal</a>(L, <span class="stringliteral">&quot;__self&quot;</span>);</div>
+<div class="line"><a name="l00312"></a><span class="lineno">  312</span>&#160;        lua_pushlightuserdata(L, (__bridge <span class="keywordtype">void</span> *)(<a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html#ac105a324c6cfcd9a622cba983e151fb8">context</a>));</div>
+<div class="line"><a name="l00313"></a><span class="lineno">  313</span>&#160;        lua_setglobal(L, <span class="stringliteral">&quot;__self&quot;</span>);</div>
 <div class="line"><a name="l00314"></a><span class="lineno">  314</span>&#160;        </div>
-<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a85e3e3d32b068aef62426828a104b561">lua_pushlightuserdata</a>(L, (__bridge <span class="keywordtype">void</span> *)(<span class="keyword">self</span>));</div>
-<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a622d21825d8aa881e8420b3036ccad2c">lua_setglobal</a>(L, <span class="stringliteral">&quot;__wrapper&quot;</span>);</div>
+<div class="line"><a name="l00315"></a><span class="lineno">  315</span>&#160;        lua_pushlightuserdata(L, (__bridge <span class="keywordtype">void</span> *)(<span class="keyword">self</span>));</div>
+<div class="line"><a name="l00316"></a><span class="lineno">  316</span>&#160;        lua_setglobal(L, <span class="stringliteral">&quot;__wrapper&quot;</span>);</div>
 <div class="line"><a name="l00317"></a><span class="lineno">  317</span>&#160;        </div>
 <div class="line"><a name="l00318"></a><span class="lineno">  318</span>&#160;        <span class="comment">//-- get global environment table from registry</span></div>
-<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#abf88c897458bd9848010301cb46ade18">lua_pushglobaltable</a>(L);</div>
+<div class="line"><a name="l00319"></a><span class="lineno">  319</span>&#160;        lua_pushglobaltable(L);</div>
 <div class="line"><a name="l00320"></a><span class="lineno">  320</span>&#160;        </div>
 <div class="line"><a name="l00321"></a><span class="lineno">  321</span>&#160;        <span class="comment">//-- create table containing the hook details</span></div>
-<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#aa59db6b784aa1ec954599a44168c7761">lua_newtable</a>(L);</div>
-<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a771d300f2e64b2197d1df9bf31660ebf">lua_pushstring</a>(L, <span class="stringliteral">&quot;__index&quot;</span>);</div>
-<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#a2e4fbbe97182bf90004379202202f2b9">lua_pushcfunction</a>(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>);</div>
-<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a4ca492cf3d2194aec9a6292708bf66c8">lua_settable</a>(L, -3);</div>
+<div class="line"><a name="l00322"></a><span class="lineno">  322</span>&#160;        lua_newtable(L);</div>
+<div class="line"><a name="l00323"></a><span class="lineno">  323</span>&#160;        lua_pushstring(L, <span class="stringliteral">&quot;__index&quot;</span>);</div>
+<div class="line"><a name="l00324"></a><span class="lineno">  324</span>&#160;        lua_pushcfunction(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a>);</div>
+<div class="line"><a name="l00325"></a><span class="lineno">  325</span>&#160;        lua_settable(L, -3);</div>
 <div class="line"><a name="l00326"></a><span class="lineno">  326</span>&#160;        </div>
-<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a771d300f2e64b2197d1df9bf31660ebf">lua_pushstring</a>(L, <span class="stringliteral">&quot;__newindex&quot;</span>);</div>
-<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#a2e4fbbe97182bf90004379202202f2b9">lua_pushcfunction</a>(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a>);</div>
-<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a4ca492cf3d2194aec9a6292708bf66c8">lua_settable</a>(L, -3);</div>
+<div class="line"><a name="l00327"></a><span class="lineno">  327</span>&#160;        lua_pushstring(L, <span class="stringliteral">&quot;__newindex&quot;</span>);</div>
+<div class="line"><a name="l00328"></a><span class="lineno">  328</span>&#160;        lua_pushcfunction(L, <a class="code" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a>);</div>
+<div class="line"><a name="l00329"></a><span class="lineno">  329</span>&#160;        lua_settable(L, -3);</div>
 <div class="line"><a name="l00330"></a><span class="lineno">  330</span>&#160;        </div>
 <div class="line"><a name="l00331"></a><span class="lineno">  331</span>&#160;        <span class="comment">//-- set global index callback hook</span></div>
-<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        <a class="code" href="../../df/db6/lapi_8c.html#a15719ea4119bdf5b3f2a406534431a7e">lua_setmetatable</a>(L, -2);</div>
+<div class="line"><a name="l00332"></a><span class="lineno">  332</span>&#160;        lua_setmetatable(L, -2);</div>
 <div class="line"><a name="l00333"></a><span class="lineno">  333</span>&#160;        </div>
 <div class="line"><a name="l00334"></a><span class="lineno">  334</span>&#160;        <span class="comment">//-- remove the global environment table from the stack</span></div>
-<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        <a class="code" href="../../da/dd2/lua_8h.html#abb8eae2164badeafdb037bc1e03cc822">lua_pop</a>(L, 1);</div>
+<div class="line"><a name="l00335"></a><span class="lineno">  335</span>&#160;        lua_pop(L, 1);</div>
 <div class="line"><a name="l00336"></a><span class="lineno">  336</span>&#160;        </div>
 <div class="line"><a name="l00337"></a><span class="lineno">  337</span>&#160;        NSString* embeddedString = [NSString stringWithFormat:@&quot;__final = %@;&quot;, code];</div>
 <div class="line"><a name="l00338"></a><span class="lineno">  338</span>&#160;        </div>
 <div class="line"><a name="l00339"></a><span class="lineno">  339</span>&#160;        <span class="comment">/* run the test script */</span></div>
-<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        <a class="code" href="../../d0/d56/lauxlib_8c.html#ac1503e3f7db09148f426164834c37a57">luaL_loadstring</a>(L, embeddedString.UTF8String);</div>
-<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">if</span> (0 == <a class="code" href="../../da/dd2/lua_8h.html#a589d7e3fd4c388d64056c88bf4672431">lua_pcall</a>(L, 0, 1, 0))</div>
+<div class="line"><a name="l00340"></a><span class="lineno">  340</span>&#160;        luaL_loadstring(L, embeddedString.UTF8String);</div>
+<div class="line"><a name="l00341"></a><span class="lineno">  341</span>&#160;        <span class="keywordflow">if</span> (0 == lua_pcall(L, 0, 1, 0))</div>
 <div class="line"><a name="l00342"></a><span class="lineno">  342</span>&#160;        {</div>
 <div class="line"><a name="l00343"></a><span class="lineno">  343</span>&#160;            <span class="keywordflow">return</span> _parameters[@&quot;__final&quot;];</div>
 <div class="line"><a name="l00344"></a><span class="lineno">  344</span>&#160;        }</div>
@@ -428,63 +428,30 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00378"></a><span class="lineno">  378</span>&#160;}</div>
 <div class="line"><a name="l00379"></a><span class="lineno">  379</span>&#160;</div>
 <div class="line"><a name="l00380"></a><span class="lineno">  380</span>&#160;<span class="keyword">@end</span></div>
-<div class="ttc" id="lapi_8c_html_a9f20233199a414b04c1c4b43f5d040f3"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a9f20233199a414b04c1c4b43f5d040f3">lua_isstring</a></div><div class="ttdeci">LUA_API int lua_isstring(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00274">lapi.c:274</a></div></div>
 <div class="ttc" id="_kensho_lua_wrapper_8m_html_a659a5a25271d0c7e4f5478f828a93b41"><div class="ttname"><a href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">popValue</a></div><div class="ttdeci">NSObject * popValue(lua_State *L, int stackLevel)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00153">KenshoLuaWrapper.m:153</a></div></div>
 <div class="ttc" id="class_n_s_object_html"><div class="ttname"><a href="../../d7/dc4/class_n_s_object.html">NSObject</a></div></div>
-<div class="ttc" id="lua_8h_html_a2e4fbbe97182bf90004379202202f2b9"><div class="ttname"><a href="../../da/dd2/lua_8h.html#a2e4fbbe97182bf90004379202202f2b9">lua_pushcfunction</a></div><div class="ttdeci">#define lua_pushcfunction(L, f)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00329">lua.h:329</a></div></div>
-<div class="ttc" id="lapi_8c_html_a99451f234bf085c9c46c3d17a5aef905"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a99451f234bf085c9c46c3d17a5aef905">lua_isnumber</a></div><div class="ttdeci">LUA_API int lua_isnumber(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00267">lapi.c:267</a></div></div>
-<div class="ttc" id="lapi_8c_html_a467bb6f4780b27d6e7de6ee10a80dac5"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a467bb6f4780b27d6e7de6ee10a80dac5">lua_newuserdata</a></div><div class="ttdeci">LUA_API void * lua_newuserdata(lua_State *L, size_t size)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l01175">lapi.c:1175</a></div></div>
-<div class="ttc" id="lapi_8c_html_a15719ea4119bdf5b3f2a406534431a7e"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a15719ea4119bdf5b3f2a406534431a7e">lua_setmetatable</a></div><div class="ttdeci">LUA_API int lua_setmetatable(lua_State *L, int objindex)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00812">lapi.c:812</a></div></div>
-<div class="ttc" id="lapi_8c_html_a444aee9aa56b0b06175ee3c7bcf7927c"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a444aee9aa56b0b06175ee3c7bcf7927c">lua_toboolean</a></div><div class="ttdeci">LUA_API int lua_toboolean(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00383">lapi.c:383</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00013">KenshoLuaWrapper.h:13</a></div></div>
-<div class="ttc" id="lapi_8c_html_a0444ddf13e5618bca969e4b3b47bc0cc"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a0444ddf13e5618bca969e4b3b47bc0cc">lua_touserdata</a></div><div class="ttdeci">LUA_API void * lua_touserdata(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00427">lapi.c:427</a></div></div>
-<div class="ttc" id="lauxlib_8c_html_ac1503e3f7db09148f426164834c37a57"><div class="ttname"><a href="../../d0/d56/lauxlib_8c.html#ac1503e3f7db09148f426164834c37a57">luaL_loadstring</a></div><div class="ttdeci">LUALIB_API int luaL_loadstring(lua_State *L, const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d56/lauxlib_8c_source.html#l00691">lauxlib.c:691</a></div></div>
 <div class="ttc" id="_kensho_lua_wrapper_8m_html_ac812f3eb3f83c6ada24f2dadeced6d68"><div class="ttname"><a href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a></div><div class="ttdeci">int pushValue(lua_State *L, NSObject *value)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00065">KenshoLuaWrapper.m:65</a></div></div>
-<div class="ttc" id="lapi_8c_html_a3f2f542ee6728d82e51b1c302f9606df"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a3f2f542ee6728d82e51b1c302f9606df">lua_setfield</a></div><div class="ttdeci">LUA_API void lua_setfield(lua_State *L, int idx, const char *k)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00758">lapi.c:758</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_af864a15538891961b47e789e6085c426"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#af864a15538891961b47e789e6085c426">KenshoLuaWrapper::code</a></div><div class="ttdeci">NSString * code</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00052">KenshoLuaWrapper.m:52</a></div></div>
-<div class="ttc" id="lua_8h_html_a3237a0507d51d772dadd4c560a75af17"><div class="ttname"><a href="../../da/dd2/lua_8h.html#a3237a0507d51d772dadd4c560a75af17">lua_tonumber</a></div><div class="ttdeci">#define lua_tonumber(L, i)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00319">lua.h:319</a></div></div>
-<div class="ttc" id="lapi_8c_html_a622d21825d8aa881e8420b3036ccad2c"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a622d21825d8aa881e8420b3036ccad2c">lua_setglobal</a></div><div class="ttdeci">LUA_API void lua_setglobal(lua_State *L, const char *var)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00734">lapi.c:734</a></div></div>
 <div class="ttc" id="_kensho_lua_wrapper_8h_html"><div class="ttname"><a href="../../da/d3a/_kensho_lua_wrapper_8h.html">KenshoLuaWrapper.h</a></div></div>
-<div class="ttc" id="lapi_8c_html_a771d300f2e64b2197d1df9bf31660ebf"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a771d300f2e64b2197d1df9bf31660ebf">lua_pushstring</a></div><div class="ttdeci">LUA_API const char * lua_pushstring(lua_State *L, const char *s)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00513">lapi.c:513</a></div></div>
-<div class="ttc" id="structlua___state_html"><div class="ttname"><a href="../../dc/da5/structlua___state.html">lua_State</a></div><div class="ttdef"><b>Definition:</b> <a href="../../d3/dfc/lstate_8h_source.html#l00154">lstate.h:154</a></div></div>
 <div class="ttc" id="interface_kensho_html"><div class="ttname"><a href="../../da/d0b/interface_kensho.html">Kensho</a></div><div class="ttdoc">The core object for binding and updating. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df5/_kensho_8h_source.html#l00027">Kensho.h:27</a></div></div>
-<div class="ttc" id="lua_8h_html_abb8eae2164badeafdb037bc1e03cc822"><div class="ttname"><a href="../../da/dd2/lua_8h.html#abb8eae2164badeafdb037bc1e03cc822">lua_pop</a></div><div class="ttdeci">#define lua_pop(L, n)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00323">lua.h:323</a></div></div>
-<div class="ttc" id="lapi_8c_html_ae459b7c273e6b1f60149b39f8e8f4554"><div class="ttname"><a href="../../df/db6/lapi_8c.html#ae459b7c273e6b1f60149b39f8e8f4554">lua_getfield</a></div><div class="ttdeci">LUA_API void lua_getfield(lua_State *L, int idx, const char *k)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00628">lapi.c:628</a></div></div>
-<div class="ttc" id="lua_8h_html_a589d7e3fd4c388d64056c88bf4672431"><div class="ttname"><a href="../../da/dd2/lua_8h.html#a589d7e3fd4c388d64056c88bf4672431">lua_pcall</a></div><div class="ttdeci">#define lua_pcall(L, n, r, f)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00259">lua.h:259</a></div></div>
-<div class="ttc" id="linit_8c_html_a975e179a76941267d2fa773a703d6199"><div class="ttname"><a href="../../da/ded/linit_8c.html#a975e179a76941267d2fa773a703d6199">luaL_openlibs</a></div><div class="ttdeci">LUALIB_API void luaL_openlibs(lua_State *L)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/ded/linit_8c_source.html#l00052">linit.c:52</a></div></div>
-<div class="ttc" id="lapi_8c_html_a4ca492cf3d2194aec9a6292708bf66c8"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a4ca492cf3d2194aec9a6292708bf66c8">lua_settable</a></div><div class="ttdeci">LUA_API void lua_settable(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00747">lapi.c:747</a></div></div>
-<div class="ttc" id="lua_8h_html_abf88c897458bd9848010301cb46ade18"><div class="ttname"><a href="../../da/dd2/lua_8h.html#abf88c897458bd9848010301cb46ade18">lua_pushglobaltable</a></div><div class="ttdeci">#define lua_pushglobaltable(L)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00343">lua.h:343</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_a8bd4cd174397f8f4987c5e90f10346c0"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#a8bd4cd174397f8f4987c5e90f10346c0">KenshoLuaWrapper::parameters</a></div><div class="ttdeci">NSDictionary * parameters</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00018">KenshoLuaWrapper.h:18</a></div></div>
 <div class="ttc" id="interface_kensho_context_html"><div class="ttname"><a href="../../d1/d10/interface_kensho_context.html">KenshoContext</a></div><div class="ttdoc">A wrapper for a &#39;context&#39; for binding. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d20/_kensho_context_8h_source.html#l00016">KenshoContext.h:16</a></div></div>
-<div class="ttc" id="lauxlib_8h_html"><div class="ttname"><a href="../../da/d29/lauxlib_8h.html">lauxlib.h</a></div></div>
-<div class="ttc" id="lua_8h_html_aa59db6b784aa1ec954599a44168c7761"><div class="ttname"><a href="../../da/dd2/lua_8h.html#aa59db6b784aa1ec954599a44168c7761">lua_newtable</a></div><div class="ttdeci">#define lua_newtable(L)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00325">lua.h:325</a></div></div>
-<div class="ttc" id="lua_8h_html"><div class="ttname"><a href="../../da/dd2/lua_8h.html">lua.h</a></div></div>
-<div class="ttc" id="lua_8h_html_af4f579ead7d5ea837d8d708186033502"><div class="ttname"><a href="../../da/dd2/lua_8h.html#af4f579ead7d5ea837d8d708186033502">lua_isboolean</a></div><div class="ttdeci">#define lua_isboolean(L, n)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00335">lua.h:335</a></div></div>
-<div class="ttc" id="lualib_8h_html"><div class="ttname"><a href="../../d6/d07/lualib_8h.html">lualib.h</a></div></div>
 <div class="ttc" id="_observable_8h_html"><div class="ttname"><a href="../../d8/db2/_observable_8h.html">Observable.h</a></div></div>
 <div class="ttc" id="class_n_s_mutable_dictionary_html"><div class="ttname"><a href="../../df/dab/class_n_s_mutable_dictionary.html">NSMutableDictionary</a></div></div>
-<div class="ttc" id="lapi_8c_html_aa8bf464b98335a075732200ad91ce1de"><div class="ttname"><a href="../../df/db6/lapi_8c.html#aa8bf464b98335a075732200ad91ce1de">lua_next</a></div><div class="ttdeci">LUA_API int lua_next(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l01114">lapi.c:1114</a></div></div>
 <div class="ttc" id="_kensho_lua_wrapper_8m_html_a05954c02378e1c67ec00d4d5fc118d07"><div class="ttname"><a href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a></div><div class="ttdeci">int lookupNewKey(lua_State *L)</div><div class="ttdoc">This is executed when the LUA subsystem attempts to assign data to a new index. </div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00236">KenshoLuaWrapper.m:236</a></div></div>
 <div class="ttc" id="protocol_i_observable-p_html"><div class="ttname"><a href="../../da/dd9/protocol_i_observable-p.html">IObservable-p</a></div><div class="ttdoc">The IObservable protocol allows any object to be &#39;observed&#39; in the Kensho system. ...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d93/_i_observable_8h_source.html#l00041">IObservable.h:41</a></div></div>
-<div class="ttc" id="lapi_8c_html_a652b273947f0656686f998d8e90cd3ea"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a652b273947f0656686f998d8e90cd3ea">lua_type</a></div><div class="ttdeci">LUA_API int lua_type(lua_State *L, int idx)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00249">lapi.c:249</a></div></div>
-<div class="ttc" id="lapi_8c_html_a7f93e3baf3101cad59ec61b7744a55d8"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a7f93e3baf3101cad59ec61b7744a55d8">lua_createtable</a></div><div class="ttdeci">LUA_API void lua_createtable(lua_State *L, int narray, int nrec)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00673">lapi.c:673</a></div></div>
-<div class="ttc" id="lua_8h_html_ac813fc3bc1886ba17c363d5b4c6e7ef1"><div class="ttname"><a href="../../da/dd2/lua_8h.html#ac813fc3bc1886ba17c363d5b4c6e7ef1">lua_tostring</a></div><div class="ttdeci">#define lua_tostring(L, i)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00346">lua.h:346</a></div></div>
 <div class="ttc" id="interface_kensho_html_a1e941526c80c386e0b871a1ac922391f"><div class="ttname"><a href="../../da/d0b/interface_kensho.html#a1e941526c80c386e0b871a1ac922391f">-[Kensho startTracking]</a></div><div class="ttdeci">void startTracking()</div><div class="ttdoc">Used internally to track which observables are read from to create the dependancy tree...</div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d18/_kensho_8m_source.html#l00043">Kensho.m:43</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_afbdeba778809e7ec1fb40fd54832427f"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#afbdeba778809e7ec1fb40fd54832427f">KenshoLuaWrapper::ken</a></div><div class="ttdeci">Kensho * ken</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00053">KenshoLuaWrapper.m:53</a></div></div>
-<div class="ttc" id="lapi_8c_html_a85e3e3d32b068aef62426828a104b561"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a85e3e3d32b068aef62426828a104b561">lua_pushlightuserdata</a></div><div class="ttdeci">LUA_API void lua_pushlightuserdata(lua_State *L, void *p)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00585">lapi.c:585</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_a7d10aa0242861cdd109d3da9383882a2"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2">-[KenshoLuaWrapper evaluate]</a></div><div class="ttdeci">NSObject * evaluate()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00303">KenshoLuaWrapper.m:303</a></div></div>
-<div class="ttc" id="lua_8h_html_a161af51893c5f79dacc1c382416a5f27"><div class="ttname"><a href="../../da/dd2/lua_8h.html#a161af51893c5f79dacc1c382416a5f27">lua_istable</a></div><div class="ttdeci">#define lua_istable(L, n)</div><div class="ttdef"><b>Definition:</b> <a href="../../da/dd2/lua_8h_source.html#l00332">lua.h:332</a></div></div>
-<div class="ttc" id="lauxlib_8c_html_aac01e11c3aeeec5ca26b28f285eadb9e"><div class="ttname"><a href="../../d0/d56/lauxlib_8c.html#aac01e11c3aeeec5ca26b28f285eadb9e">luaL_newstate</a></div><div class="ttdeci">LUALIB_API lua_State * luaL_newstate(void)</div><div class="ttdef"><b>Definition:</b> <a href="../../d0/d56/lauxlib_8c_source.html#l00937">lauxlib.c:937</a></div></div>
 <div class="ttc" id="interface_kensho_html_afbed7bd0fa88dba99296dd37565ddcf9"><div class="ttname"><a href="../../da/d0b/interface_kensho.html#afbed7bd0fa88dba99296dd37565ddcf9">-[Kensho endTracking]</a></div><div class="ttdeci">NSSet * endTracking()</div><div class="ttdoc">Used internally to end tracking observables. </div><div class="ttdef"><b>Definition:</b> <a href="../../d4/d18/_kensho_8m_source.html#l00054">Kensho.m:54</a></div></div>
 <div class="ttc" id="_kensho_lua_wrapper_8m_html_ad10bf0ff4feac9642e7477e282be41fe"><div class="ttname"><a href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a></div><div class="ttdeci">int lookupKey(lua_State *L)</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00116">KenshoLuaWrapper.m:116</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_ac105a324c6cfcd9a622cba983e151fb8"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#ac105a324c6cfcd9a622cba983e151fb8">KenshoLuaWrapper::context</a></div><div class="ttdeci">KenshoContext * context</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00051">KenshoLuaWrapper.m:51</a></div></div>
-<div class="ttc" id="lapi_8c_html_a328625a03fbb5548f27b1af10f109f6a"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a328625a03fbb5548f27b1af10f109f6a">lua_pushnumber</a></div><div class="ttdeci">LUA_API void lua_pushnumber(lua_State *L, lua_Number n)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00473">lapi.c:473</a></div></div>
-<div class="ttc" id="lapi_8c_html_a7d64f87addab440bbda96bb088816e17"><div class="ttname"><a href="../../df/db6/lapi_8c.html#a7d64f87addab440bbda96bb088816e17">lua_typename</a></div><div class="ttdeci">LUA_API const char * lua_typename(lua_State *L, int t)</div><div class="ttdef"><b>Definition:</b> <a href="../../df/db6/lapi_8c_source.html#l00255">lapi.c:255</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 20:00:47 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 23:31:14 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -1,0 +1,8 @@
+<map id="&#45;[BindingBase unbind]" name="&#45;[BindingBase unbind]">
+<area shape="rect" id="node2" href="$d6/df6/interface_test_binding_base.html#adcb920cd5d09a1ae4d4e7060fc17353b" title="&#45;[TestBindingBase testRelease]" alt="" coords="200,5,400,32"/>
+<area shape="rect" id="node3" href="$db/dab/interface_test_u_i_button_binding.html#ab6dc622c980bc4abb5cf660d486aa91d" title="&#45;[TestUIButtonBinding\l testRelease]" alt="" coords="229,57,371,98"/>
+<area shape="rect" id="node4" href="$db/dc1/interface_test_u_i_label_binding.html#ad569ef4984d1f5e1d70df6712cd6958b" title="&#45;[TestUILabelBinding\l testRelease]" alt="" coords="231,122,369,163"/>
+<area shape="rect" id="node5" href="$d6/df6/interface_test_binding_base.html#a71549fa8e2552f2c2137543df9dc09e5" title="&#45;[TestBindingBase testUnbind]" alt="" coords="204,188,396,215"/>
+<area shape="rect" id="node6" href="$db/dc1/interface_test_u_i_label_binding.html#a6f08557d8e087a5cb65006bc03390043" title="&#45;[TestUILabelBinding\l testUnbind]" alt="" coords="231,239,369,281"/>
+<area shape="rect" id="node7" href="$db/dab/interface_test_u_i_button_binding.html#a43b37ecf506b313913831f42d28bde56" title="&#45;[TestUIButtonBinding\l testUnbind]" alt="" coords="229,305,371,346"/>
+</map>

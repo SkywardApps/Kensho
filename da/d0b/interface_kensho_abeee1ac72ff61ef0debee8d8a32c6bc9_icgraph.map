@@ -1,18 +1,18 @@
 <map id="&#45;[Kensho observableAccessed:]" name="&#45;[Kensho observableAccessed:]">
-<area shape="rect" id="node2" href="$d3/dd6/interface_observable_array.html#a79d487d2510f57a2125e86d8f4b3e6f6" title="&#45;[ObservableArray count]" alt="" coords="298,5,467,33"/>
-<area shape="rect" id="node3" href="$de/d54/interface_observable_map.html#acadd340d4fad6e5bde2ba05140691400" title="&#45;[ObservableMap count]" alt="" coords="301,57,464,85"/>
-<area shape="rect" id="node5" href="$de/d3c/interface_computed_array.html#a5a16c99ec2904413b1517e6a06546d13" title="&#45;[ComputedArray count]" alt="" coords="301,109,464,137"/>
-<area shape="rect" id="node6" href="$de/d54/interface_observable_map.html#ae87f81c5c3b6d1ea446a179023aafca3" title="&#45;[ObservableMap enumerator\lValue]" alt="" coords="285,161,480,205"/>
-<area shape="rect" id="node7" href="$d3/dd6/interface_observable_array.html#a58701366b93ed8f6fc6d66a1891d0456" title="&#45;[ObservableArray enumerator\lValue]" alt="" coords="282,229,483,273"/>
-<area shape="rect" id="node8" href="$de/d54/interface_observable_map.html#adf3123dc81a66987060f2f0099db6316" title="&#45;[ObservableMap keyEnumerator]" alt="" coords="272,297,493,325"/>
-<area shape="rect" id="node9" href="$d3/dd6/interface_observable_array.html#a0e9613fe8a5b091b1ce809247e31b7af" title="&#45;[ObservableArray object\lAtIndex:]" alt="" coords="298,349,467,393"/>
-<area shape="rect" id="node10" href="$de/d3c/interface_computed_array.html#ace748f3304d0c00eb0206694a2e1c717" title="&#45;[ComputedArray objectAt\lIndex:]" alt="" coords="295,417,470,461"/>
-<area shape="rect" id="node11" href="$d3/dd6/interface_observable_array.html#ad7ec82522f73f5ddaec6673565152d32" title="&#45;[ObservableArray object\lEnumerator]" alt="" coords="298,485,467,529"/>
-<area shape="rect" id="node12" href="$de/d3c/interface_computed_array.html#a2e627982e835aaeabe01d1736b6f982c" title="&#45;[ComputedArray objectEnumerator]" alt="" coords="265,553,500,581"/>
-<area shape="rect" id="node14" href="$de/d54/interface_observable_map.html#aede3a45af4f4f65b25225dc89ac943a0" title="&#45;[ObservableMap objectFor\lKey:]" alt="" coords="291,605,474,649"/>
-<area shape="rect" id="node15" href="$de/d54/interface_observable_map.html#a13538719a455e7b44c9d265ff1fcf805" title="&#45;[ObservableMap value]" alt="" coords="301,673,464,701"/>
-<area shape="rect" id="node16" href="$d3/dd6/interface_observable_array.html#aecc95c6214da5e8ee972dea0c612d794" title="&#45;[ObservableArray value]" alt="" coords="298,725,467,753"/>
-<area shape="rect" id="node17" href="$de/d3c/interface_computed_array.html#aa7867c546404d79950bb369eec7f6b1a" title="&#45;[ComputedArray value]" alt="" coords="302,777,464,805"/>
-<area shape="rect" id="node4" href="$de/d54/interface_observable_map.html#a3aec3b5152545d6e0e49318181d54466" title="&#45;[ObservableMap initWith\lKensho:objects:forKeys\l:count:]" alt="" coords="561,41,732,101"/>
-<area shape="rect" id="node13" href="$de/d3c/interface_computed_array.html#a604210e0f6152275502ab84226497958" title="&#45;[ComputedArray enumerator\lValue]" alt="" coords="549,545,744,589"/>
+<area shape="rect" id="node2" href="$d3/dd6/interface_observable_array.html#a79d487d2510f57a2125e86d8f4b3e6f6" title="&#45;[ObservableArray count]" alt="" coords="285,5,449,32"/>
+<area shape="rect" id="node3" href="$de/d54/interface_observable_map.html#acadd340d4fad6e5bde2ba05140691400" title="&#45;[ObservableMap count]" alt="" coords="287,56,448,83"/>
+<area shape="rect" id="node5" href="$de/d3c/interface_computed_array.html#a5a16c99ec2904413b1517e6a06546d13" title="&#45;[ComputedArray count]" alt="" coords="290,107,445,133"/>
+<area shape="rect" id="node6" href="$de/d54/interface_observable_map.html#ae87f81c5c3b6d1ea446a179023aafca3" title="&#45;[ObservableMap enumerator\lValue]" alt="" coords="272,158,463,199"/>
+<area shape="rect" id="node7" href="$d3/dd6/interface_observable_array.html#a58701366b93ed8f6fc6d66a1891d0456" title="&#45;[ObservableArray enumerator\lValue]" alt="" coords="271,223,464,265"/>
+<area shape="rect" id="node8" href="$de/d54/interface_observable_map.html#adf3123dc81a66987060f2f0099db6316" title="&#45;[ObservableMap keyEnumerator]" alt="" coords="260,289,475,316"/>
+<area shape="rect" id="node9" href="$d3/dd6/interface_observable_array.html#a0e9613fe8a5b091b1ce809247e31b7af" title="&#45;[ObservableArray object\lAtIndex:]" alt="" coords="285,341,450,382"/>
+<area shape="rect" id="node10" href="$de/d3c/interface_computed_array.html#ace748f3304d0c00eb0206694a2e1c717" title="&#45;[ComputedArray objectAt\lIndex:]" alt="" coords="283,406,451,447"/>
+<area shape="rect" id="node11" href="$d3/dd6/interface_observable_array.html#ad7ec82522f73f5ddaec6673565152d32" title="&#45;[ObservableArray object\lEnumerator]" alt="" coords="285,471,450,513"/>
+<area shape="rect" id="node12" href="$de/d3c/interface_computed_array.html#a2e627982e835aaeabe01d1736b6f982c" title="&#45;[ComputedArray objectEnumerator]" alt="" coords="256,537,479,564"/>
+<area shape="rect" id="node14" href="$de/d54/interface_observable_map.html#aede3a45af4f4f65b25225dc89ac943a0" title="&#45;[ObservableMap objectFor\lKey:]" alt="" coords="278,589,457,630"/>
+<area shape="rect" id="node15" href="$de/d54/interface_observable_map.html#a13538719a455e7b44c9d265ff1fcf805" title="&#45;[ObservableMap value]" alt="" coords="286,655,449,681"/>
+<area shape="rect" id="node16" href="$d3/dd6/interface_observable_array.html#aecc95c6214da5e8ee972dea0c612d794" title="&#45;[ObservableArray value]" alt="" coords="285,705,450,732"/>
+<area shape="rect" id="node17" href="$de/d3c/interface_computed_array.html#aa7867c546404d79950bb369eec7f6b1a" title="&#45;[ComputedArray value]" alt="" coords="289,756,445,783"/>
+<area shape="rect" id="node4" href="$de/d54/interface_observable_map.html#a3aec3b5152545d6e0e49318181d54466" title="&#45;[ObservableMap initWith\lKensho:objects:forKeys\l:count:]" alt="" coords="535,41,702,97"/>
+<area shape="rect" id="node13" href="$de/d3c/interface_computed_array.html#a604210e0f6152275502ab84226497958" title="&#45;[ComputedArray enumerator\lValue]" alt="" coords="527,530,711,571"/>
 </map>

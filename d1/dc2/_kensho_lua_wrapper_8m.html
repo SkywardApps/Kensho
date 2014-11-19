@@ -72,7 +72,7 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
      onmouseover="return searchBox.OnSearchSelectShow()"
      onmouseout="return searchBox.OnSearchSelectHide()"
      onkeydown="return searchBox.OnSearchSelectKey(event)">
-<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Enumerations</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Enumerator</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(8)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(9)"><span class="SelectionMark">&#160;</span>Macros</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(10)"><span class="SelectionMark">&#160;</span>Pages</a></div>
+<a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(0)"><span class="SelectionMark">&#160;</span>All</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(1)"><span class="SelectionMark">&#160;</span>Classes</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(2)"><span class="SelectionMark">&#160;</span>Files</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(3)"><span class="SelectionMark">&#160;</span>Functions</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(4)"><span class="SelectionMark">&#160;</span>Variables</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(5)"><span class="SelectionMark">&#160;</span>Typedefs</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(6)"><span class="SelectionMark">&#160;</span>Properties</a><a class="SelectItem" href="javascript:void(0)" onclick="searchBox.OnSelectItem(7)"><span class="SelectionMark">&#160;</span>Pages</a></div>
 
 <!-- iframe showing the search results (closed by default) -->
 <div id="MSearchResultsWindow">
@@ -95,22 +95,22 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><code>#import &quot;<a class="el" href="../../da/d3a/_kensho_lua_wrapper_8h_source.html">KenshoLuaWrapper.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/dd2/lua_8h_source.html">lua.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../d6/d07/lualib_8h_source.html">lualib.h</a>&quot;</code><br />
-<code>#include &quot;<a class="el" href="../../da/d29/lauxlib_8h_source.html">lauxlib.h</a>&quot;</code><br />
+<code>#include &quot;lua.h&quot;</code><br />
+<code>#include &quot;lualib.h&quot;</code><br />
+<code>#include &quot;lauxlib.h&quot;</code><br />
 <code>#import &quot;<a class="el" href="../../d8/db2/_observable_8h_source.html">Observable.h</a>&quot;</code><br />
 </div>
 <p><a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html">Go to the source code of this file.</a></p>
 <table class="memberdecls">
 <tr class="heading"><td colspan="2"><h2 class="groupheader"><a name="func-members"></a>
 Functions</h2></td></tr>
-<tr class="memitem:ad10bf0ff4feac9642e7477e282be41fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a> (<a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *L)</td></tr>
+<tr class="memitem:ad10bf0ff4feac9642e7477e282be41fe"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe">lookupKey</a> (lua_State *L)</td></tr>
 <tr class="separator:ad10bf0ff4feac9642e7477e282be41fe"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:ac812f3eb3f83c6ada24f2dadeced6d68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a> (<a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *L, <a class="el" href="../../d7/dc4/class_n_s_object.html">NSObject</a> *value)</td></tr>
+<tr class="memitem:ac812f3eb3f83c6ada24f2dadeced6d68"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68">pushValue</a> (lua_State *L, <a class="el" href="../../d7/dc4/class_n_s_object.html">NSObject</a> *value)</td></tr>
 <tr class="separator:ac812f3eb3f83c6ada24f2dadeced6d68"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a659a5a25271d0c7e4f5478f828a93b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dc4/class_n_s_object.html">NSObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">popValue</a> (<a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *L, int stackLevel)</td></tr>
+<tr class="memitem:a659a5a25271d0c7e4f5478f828a93b41"><td class="memItemLeft" align="right" valign="top"><a class="el" href="../../d7/dc4/class_n_s_object.html">NSObject</a> *&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41">popValue</a> (lua_State *L, int stackLevel)</td></tr>
 <tr class="separator:a659a5a25271d0c7e4f5478f828a93b41"><td class="memSeparator" colspan="2">&#160;</td></tr>
-<tr class="memitem:a05954c02378e1c67ec00d4d5fc118d07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a> (<a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *L)</td></tr>
+<tr class="memitem:a05954c02378e1c67ec00d4d5fc118d07"><td class="memItemLeft" align="right" valign="top">int&#160;</td><td class="memItemRight" valign="bottom"><a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m.html#a05954c02378e1c67ec00d4d5fc118d07">lookupNewKey</a> (lua_State *L)</td></tr>
 <tr class="memdesc:a05954c02378e1c67ec00d4d5fc118d07"><td class="mdescLeft">&#160;</td><td class="mdescRight">This is executed when the LUA subsystem attempts to assign data to a new index.  <a href="#a05954c02378e1c67ec00d4d5fc118d07">More...</a><br /></td></tr>
 <tr class="separator:a05954c02378e1c67ec00d4d5fc118d07"><td class="memSeparator" colspan="2">&#160;</td></tr>
 </table>
@@ -122,7 +122,7 @@ Functions</h2></td></tr>
         <tr>
           <td class="memname">int lookupKey </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *&#160;</td>
+          <td class="paramtype">lua_State *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -131,7 +131,7 @@ Functions</h2></td></tr>
 
 <p>Definition at line <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00116">116</a> of file <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html">KenshoLuaWrapper.m</a>.</p>
 
-<p>References <a class="el" href="../../df/db6/lapi_8c_source.html#l00628">lua_getfield()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00274">lua_isstring()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00332">lua_istable</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00346">lua_tostring</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00427">lua_touserdata()</a>, and <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00065">pushValue()</a>.</p>
+<p>References <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00065">pushValue()</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00303">KenshoLuaWrapper::evaluate</a>, and <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00065">pushValue()</a>.</p>
 
@@ -151,7 +151,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int lookupNewKey </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *&#160;</td>
+          <td class="paramtype">lua_State *&#160;</td>
           <td class="paramname"><em>L</em></td><td>)</td>
           <td></td>
         </tr>
@@ -170,7 +170,7 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00236">236</a> of file <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html">KenshoLuaWrapper.m</a>.</p>
 
-<p>References <a class="el" href="../../df/db6/lapi_8c_source.html#l00628">lua_getfield()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00274">lua_isstring()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00332">lua_istable</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00323">lua_pop</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00346">lua_tostring</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00427">lua_touserdata()</a>, and <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00153">popValue()</a>.</p>
+<p>References <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00153">popValue()</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00303">KenshoLuaWrapper::evaluate</a>.</p>
 
@@ -190,7 +190,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname"><a class="el" href="../../d7/dc4/class_n_s_object.html">NSObject</a>* popValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *&#160;</td>
+          <td class="paramtype">lua_State *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
@@ -208,8 +208,6 @@ Here is the caller graph for this function:</div>
 </div><div class="memdoc">
 
 <p>Definition at line <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00153">153</a> of file <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html">KenshoLuaWrapper.m</a>.</p>
-
-<p>References <a class="el" href="../../df/db6/lapi_8c_source.html#l00628">lua_getfield()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00335">lua_isboolean</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00267">lua_isnumber()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00274">lua_isstring()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00332">lua_istable</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l01114">lua_next()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00323">lua_pop</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00383">lua_toboolean()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00319">lua_tonumber</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00346">lua_tostring</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00427">lua_touserdata()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00249">lua_type()</a>, and <a class="el" href="../../df/db6/lapi_8c_source.html#l00255">lua_typename()</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00236">lookupNewKey()</a>.</p>
 
@@ -229,7 +227,7 @@ Here is the caller graph for this function:</div>
         <tr>
           <td class="memname">int pushValue </td>
           <td>(</td>
-          <td class="paramtype"><a class="el" href="../../dc/da5/structlua___state.html">lua_State</a> *&#160;</td>
+          <td class="paramtype">lua_State *&#160;</td>
           <td class="paramname"><em>L</em>, </td>
         </tr>
         <tr>
@@ -248,7 +246,7 @@ Here is the caller graph for this function:</div>
 
 <p>Definition at line <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00065">65</a> of file <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html">KenshoLuaWrapper.m</a>.</p>
 
-<p>References <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00116">lookupKey()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00673">lua_createtable()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00267">lua_isnumber()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00332">lua_istable</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l01175">lua_newuserdata()</a>, <a class="el" href="../../da/dd2/lua_8h_source.html#l00329">lua_pushcfunction</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00585">lua_pushlightuserdata()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00473">lua_pushnumber()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00513">lua_pushstring()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00758">lua_setfield()</a>, <a class="el" href="../../df/db6/lapi_8c_source.html#l00812">lua_setmetatable()</a>, and <a class="el" href="../../df/db6/lapi_8c_source.html#l00747">lua_settable()</a>.</p>
+<p>References <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00116">lookupKey()</a>.</p>
 
 <p>Referenced by <a class="el" href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00116">lookupKey()</a>.</p>
 
@@ -265,7 +263,7 @@ Here is the caller graph for this function:</div>
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Nov 18 2014 20:00:50 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 23:31:14 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['kensho_20documentation',['Kensho Documentation',['../index.html',1,'']]]
+  ['frequently_20asked_20questions',['Frequently Asked Questions',['../d3/d2d/faq.html',1,'']]]
 ];

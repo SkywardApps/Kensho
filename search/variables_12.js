@@ -24,6 +24,7 @@ var searchData=
   ['strip',['strip',['../d3/dc8/struct_dump_state.html#afd4b1bbfc1bd094919b8eca23a268391',1,'DumpState']]],
   ['strlib',['strlib',['../dc/d77/lstrlib_8c.html#aea7d99046a1869e17a061706511f770c',1,'lstrlib.c']]],
   ['strt',['strt',['../de/d32/structglobal___state.html#a8cdea736db8d268e488aa9e9fa5c992c',1,'global_State']]],
+  ['stubs',['stubs',['../d6/dfd/interface_o_c_mock_object.html#aaf15c44a254e2320f7db839e20315d84',1,'OCMockObject']]],
   ['sweepfin',['sweepfin',['../de/d32/structglobal___state.html#afb1fd13995bb5c224beec29689bff713',1,'global_State']]],
   ['sweepgc',['sweepgc',['../de/d32/structglobal___state.html#a357ff5a5981fc6c64825508c7718fbbc',1,'global_State']]],
   ['sweepstrgc',['sweepstrgc',['../de/d32/structglobal___state.html#a3ed87bf66fdfcaa467c0a1f49078885e',1,'global_State']]],

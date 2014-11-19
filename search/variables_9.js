@@ -11,9 +11,13 @@ var searchData=
   ['innerarray',['innerArray',['../de/d3c/interface_computed_array.html#a71fe361666ab2e99b840aa2e2d042e8a',1,'ComputedArray::innerArray()'],['../d3/dd6/interface_observable_array.html#ad84f779721a9b0a2bfb141cd88acd9db',1,'ObservableArray::innerArray()']]],
   ['innermap',['innerMap',['../de/d54/interface_observable_map.html#a76f7576ba9ed6472915451d6f1a3efdf',1,'ObservableMap']]],
   ['instack',['instack',['../d3/d60/struct_upvaldesc.html#a1e5182ac7b8b72848ed71b7b4844e3d1',1,'Upvaldesc']]],
+  ['invocation',['invocation',['../de/d52/interface_o_c_m_invocation_constraint.html#ad0f23ce73855bae0937fa75870460c3a',1,'OCMInvocationConstraint']]],
+  ['invocationmatcher',['invocationMatcher',['../da/d23/interface_o_c_m_recorder.html#a75b0db7ee1a5d080d5808d6ff5092504',1,'OCMRecorder']]],
+  ['invocations',['invocations',['../d6/dfd/interface_o_c_mock_object.html#a145b2dfdde6516602ea9e9d035b0aada',1,'OCMockObject']]],
   ['iolib',['iolib',['../de/df3/liolib_8c.html#a8fe96dd62a007daad3a18e43dd136a29',1,'liolib.c']]],
   ['is_5fvararg',['is_vararg',['../d6/d52/struct_proto.html#a82302f2e9040b681d5b34c1239dcd673',1,'Proto']]],
   ['isloop',['isloop',['../da/db4/struct_block_cnt.html#a6434a0c8f9724248c839b6e9e6d9ec00',1,'BlockCnt']]],
+  ['isnice',['isNice',['../d6/dfd/interface_o_c_mock_object.html#a827893c2c87f69a6b068d027423a1770',1,'OCMockObject']]],
   ['istailcall',['istailcall',['../db/d23/structlua___debug.html#a08e9cf647790ffeb068db293c7572260',1,'lua_Debug']]],
   ['isvararg',['isvararg',['../db/d23/structlua___debug.html#a943220c57a4dd46dcc1bcd1198cfea88',1,'lua_Debug']]]
 ];

@@ -6,6 +6,18 @@
       <Path>index.html</Path>
       <Subnodes>
        <Node>
+        <Name>Kensho Documentation</Name>
+        <Path>index.html</Path>
+       </Node>
+       <Node>
+        <Name>Tutorials</Name>
+        <Path>d2/dd8/_tutorials.html</Path>
+       </Node>
+       <Node>
+        <Name>Internals</Name>
+        <Path>d9/d1d/_internals.html</Path>
+       </Node>
+       <Node>
         <Name>Todo List</Name>
         <Path>dd/da0/todo.html</Path>
        </Node>
@@ -1197,22 +1209,6 @@
               <Name>root</Name>
               <Path>d1/d10/interface_kensho_context.html</Path>
               <Anchor>a37582a2de2e207475a96dbc8a199ce87</Anchor>
-             </Node>
-            </Subnodes>
-           </Node>
-           <Node>
-            <Name>KenshoLuaParameterWrapper</Name>
-            <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-            <Subnodes>
-             <Node>
-              <Name>parameterName</Name>
-              <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-              <Anchor>a245776e1ea6c6213d1c4570e5ad6c9bd</Anchor>
-             </Node>
-             <Node>
-              <Name>wrapper</Name>
-              <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-              <Anchor>a149c76789ee5b5d0fde729a78408b5a8</Anchor>
              </Node>
             </Subnodes>
            </Node>
@@ -3257,10 +3253,6 @@
               <Path>d1/d10/interface_kensho_context.html</Path>
              </Node>
              <Node>
-              <Name>KenshoLuaParameterWrapper</Name>
-              <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-             </Node>
-             <Node>
               <Name>KenshoLuaWrapper</Name>
               <Path>dc/de7/interface_kensho_lua_wrapper.html</Path>
              </Node>
@@ -3301,10 +3293,6 @@
                   <Path>d2/d8f/interface_observable.html</Path>
                  </Node>
                 </Subnodes>
-               </Node>
-               <Node>
-                <Name>KenshoLuaParameterWrapper</Name>
-                <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
                </Node>
                <Node>
                 <Name>ObservableArray</Name>
@@ -4853,22 +4841,6 @@
                     <Name>parameters</Name>
                     <Path>dc/de7/interface_kensho_lua_wrapper.html</Path>
                     <Anchor>a8bd4cd174397f8f4987c5e90f10346c0</Anchor>
-                   </Node>
-                  </Subnodes>
-                 </Node>
-                 <Node>
-                  <Name>KenshoLuaParameterWrapper</Name>
-                  <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-                  <Subnodes>
-                   <Node>
-                    <Name>parameterName</Name>
-                    <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-                    <Anchor>a245776e1ea6c6213d1c4570e5ad6c9bd</Anchor>
-                   </Node>
-                   <Node>
-                    <Name>wrapper</Name>
-                    <Path>d9/dba/interface_kensho_lua_parameter_wrapper.html</Path>
-                    <Anchor>a149c76789ee5b5d0fde729a78408b5a8</Anchor>
                    </Node>
                   </Subnodes>
                  </Node>

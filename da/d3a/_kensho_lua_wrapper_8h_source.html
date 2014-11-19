@@ -15,7 +15,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="../../doxygen.css" rel="stylesheet" type="text/css" />
-<link href="../../doxygen.css" rel="stylesheet" type="text/css"/>
+<link href="../../custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -23,6 +23,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="../../KenshoLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Kensho
    </div>
@@ -111,30 +112,20 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 <div class="line"><a name="l00019"></a><span class="lineno">   19</span>&#160;</div>
 <div class="line"><a name="l00020"></a><span class="lineno">   20</span>&#160;<span class="keyword">@end</span></div>
 <div class="line"><a name="l00021"></a><span class="lineno">   21</span>&#160;</div>
-<div class="line"><a name="l00025"></a><span class="lineno"><a class="line" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html">   25</a></span>&#160;<span class="keyword">@interface </span><a class="code" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html">KenshoLuaParameterWrapper</a> : <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a>&lt;<a class="code" href="../../da/dd9/protocol_i_observable-p.html">IObservable</a>&gt;</div>
-<div class="line"><a name="l00026"></a><span class="lineno">   26</span>&#160;</div>
-<div class="line"><a name="l00027"></a><span class="lineno"><a class="line" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a149c76789ee5b5d0fde729a78408b5a8">   27</a></span>&#160;<span class="keyword">@property</span> (readonly) <a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a>* <a class="code" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a149c76789ee5b5d0fde729a78408b5a8">wrapper</a>;</div>
-<div class="line"><a name="l00028"></a><span class="lineno"><a class="line" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a245776e1ea6c6213d1c4570e5ad6c9bd">   28</a></span>&#160;<span class="keyword">@property</span> (readonly) NSString* <a class="code" href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a245776e1ea6c6213d1c4570e5ad6c9bd">parameterName</a>;</div>
-<div class="line"><a name="l00029"></a><span class="lineno">   29</span>&#160;</div>
-<div class="line"><a name="l00030"></a><span class="lineno">   30</span>&#160;<span class="keyword">@end</span></div>
 <div class="ttc" id="class_n_s_object_html"><div class="ttname"><a href="../../d7/dc4/class_n_s_object.html">NSObject</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a></div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00013">KenshoLuaWrapper.h:13</a></div></div>
 <div class="ttc" id="interface_kensho_html"><div class="ttname"><a href="../../da/d0b/interface_kensho.html">Kensho</a></div><div class="ttdoc">The core object for binding and updating. </div><div class="ttdef"><b>Definition:</b> <a href="../../d5/df5/_kensho_8h_source.html#l00027">Kensho.h:27</a></div></div>
-<div class="ttc" id="interface_kensho_lua_parameter_wrapper_html_a149c76789ee5b5d0fde729a78408b5a8"><div class="ttname"><a href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a149c76789ee5b5d0fde729a78408b5a8">KenshoLuaParameterWrapper::wrapper</a></div><div class="ttdeci">KenshoLuaWrapper * wrapper</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00027">KenshoLuaWrapper.h:27</a></div></div>
 <div class="ttc" id="_kensho_8h_html"><div class="ttname"><a href="../../d5/df5/_kensho_8h.html">Kensho.h</a></div></div>
 <div class="ttc" id="protocol_i_observer-p_html"><div class="ttname"><a href="../../d4/d36/protocol_i_observer-p.html">IObserver-p</a></div><div class="ttdef"><b>Definition:</b> <a href="../../db/d93/_i_observable_8h_source.html#l00014">IObservable.h:14</a></div></div>
 <div class="ttc" id="interface_kensho_lua_wrapper_html_a8bd4cd174397f8f4987c5e90f10346c0"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#a8bd4cd174397f8f4987c5e90f10346c0">KenshoLuaWrapper::parameters</a></div><div class="ttdeci">NSDictionary * parameters</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00018">KenshoLuaWrapper.h:18</a></div></div>
 <div class="ttc" id="interface_kensho_context_html"><div class="ttname"><a href="../../d1/d10/interface_kensho_context.html">KenshoContext</a></div><div class="ttdoc">A wrapper for a &#39;context&#39; for binding. </div><div class="ttdef"><b>Definition:</b> <a href="../../d2/d20/_kensho_context_8h_source.html#l00016">KenshoContext.h:16</a></div></div>
-<div class="ttc" id="protocol_i_observable-p_html"><div class="ttname"><a href="../../da/dd9/protocol_i_observable-p.html">IObservable-p</a></div><div class="ttdoc">The IObservable protocol allows any object to be &#39;observed&#39; in the Kensho system. ...</div><div class="ttdef"><b>Definition:</b> <a href="../../db/d93/_i_observable_8h_source.html#l00041">IObservable.h:41</a></div></div>
-<div class="ttc" id="interface_kensho_lua_parameter_wrapper_html"><div class="ttname"><a href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html">KenshoLuaParameterWrapper</a></div><div class="ttdoc">Updates when the script is rerun. </div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00025">KenshoLuaWrapper.h:25</a></div></div>
-<div class="ttc" id="interface_kensho_lua_wrapper_html_a7d10aa0242861cdd109d3da9383882a2"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2">-[KenshoLuaWrapper evaluate]</a></div><div class="ttdeci">NSObject * evaluate()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00310">KenshoLuaWrapper.m:310</a></div></div>
-<div class="ttc" id="interface_kensho_lua_parameter_wrapper_html_a245776e1ea6c6213d1c4570e5ad6c9bd"><div class="ttname"><a href="../../d9/dba/interface_kensho_lua_parameter_wrapper.html#a245776e1ea6c6213d1c4570e5ad6c9bd">KenshoLuaParameterWrapper::parameterName</a></div><div class="ttdeci">NSString * parameterName</div><div class="ttdef"><b>Definition:</b> <a href="../../da/d3a/_kensho_lua_wrapper_8h_source.html#l00028">KenshoLuaWrapper.h:28</a></div></div>
+<div class="ttc" id="interface_kensho_lua_wrapper_html_a7d10aa0242861cdd109d3da9383882a2"><div class="ttname"><a href="../../dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2">-[KenshoLuaWrapper evaluate]</a></div><div class="ttdeci">NSObject * evaluate()</div><div class="ttdef"><b>Definition:</b> <a href="../../d1/dc2/_kensho_lua_wrapper_8m_source.html#l00303">KenshoLuaWrapper.m:303</a></div></div>
 <div class="ttc" id="_kensho_context_8h_html"><div class="ttname"><a href="../../d2/d20/_kensho_context_8h.html">KenshoContext.h</a></div></div>
 </div><!-- fragment --></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 15 2014 20:54:15 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 20:00:47 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

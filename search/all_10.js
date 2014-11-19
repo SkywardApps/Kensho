@@ -5,7 +5,6 @@ var searchData=
   ['pack',['pack',['../d0/da1/ltablib_8c.html#a46a372295cbd1692b06bdbac4ca58881',1,'ltablib.c']]],
   ['pairsmeta',['pairsmeta',['../d8/dd3/lbaselib_8c.html#a8f5df6d3f89389dd27da5cfeceee1f34',1,'lbaselib.c']]],
   ['panic',['panic',['../de/d32/structglobal___state.html#aa925f5bcdedf55e5353e37cfe9e5d6d0',1,'global_State::panic()'],['../d0/d56/lauxlib_8c.html#aa9ed62d0906c6d69ad16bd1b018d660b',1,'panic():&#160;lauxlib.c']]],
-  ['parametername',['parameterName',['../d9/dba/interface_kensho_lua_parameter_wrapper.html#a245776e1ea6c6213d1c4570e5ad6c9bd',1,'KenshoLuaParameterWrapper']]],
   ['parameters',['parameters',['../dc/de7/interface_kensho_lua_wrapper.html#a8bd4cd174397f8f4987c5e90f10346c0',1,'KenshoLuaWrapper']]],
   ['parent',['parent',['../d1/d10/interface_kensho_context.html#a45738c18d358dd974a0e9b555bad3ac7',1,'KenshoContext']]],
   ['parlist',['parlist',['../d8/d9c/lparser_8c.html#adc6c3bb5079c197371a6ddcdbc574de6',1,'lparser.c']]],

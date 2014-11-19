@@ -11,6 +11,5 @@ var searchData=
   ['white1bit',['WHITE1BIT',['../dc/d9c/lgc_8h.html#a7de7885f3d09155a2c530154ec045d72',1,'lgc.h']]],
   ['white2gray',['white2gray',['../de/d27/lgc_8c.html#aa598e08eb28253fce9f1ebec51a6a739',1,'lgc.c']]],
   ['whitebits',['WHITEBITS',['../dc/d9c/lgc_8h.html#a0acb34c1b3d1234f11ee9fdc34df3f71',1,'lgc.h']]],
-  ['wrapper',['wrapper',['../d9/dba/interface_kensho_lua_parameter_wrapper.html#a149c76789ee5b5d0fde729a78408b5a8',1,'KenshoLuaParameterWrapper']]],
   ['writer',['writer',['../d3/dc8/struct_dump_state.html#ac92b1985689ee766e53540b21702e7dc',1,'DumpState::writer()'],['../dc/d77/lstrlib_8c.html#ae67cb3a8aef2fe1be04d689cddf5d587',1,'writer():&#160;lstrlib.c']]]
 ];

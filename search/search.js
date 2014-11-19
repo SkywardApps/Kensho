@@ -15,9 +15,9 @@ var indexSectionsWithContent =
   5: "bcdefgilmnpstuvz",
   6: "beortu",
   7: "iotv",
-  8: "bcefiknoprstvw",
+  8: "bcefiknoprstv",
   9: "_abcdefghiklmnoprstuvwz",
-  10: "t"
+  10: "kt"
 };
 
 var indexSectionNames =

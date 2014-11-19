@@ -1,0 +1,10 @@
+@font-face {
+    font-family:"ArtBreweryRegular";
+    src: url("ArtBrewery.ttf") /* TTF file for CSS3 browsers */
+}
+
+
+#projectname {
+	font-family:ArtBreweryRegular;
+	font-size:400%;
+}

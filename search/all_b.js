@@ -1,5 +1,6 @@
 var searchData=
 [
+  ['kensho_20documentation',['Kensho Documentation',['../index.html',1,'']]],
   ['k',['k',['../d6/d52/struct_proto.html#ae292fb0c0558679704933824ce96eac2',1,'Proto::k()'],['../df/dfe/structexpdesc.html#ae74b3577aad7833518986edca3db242c',1,'expdesc::k()'],['../dd/d89/struct_call_info.html#a43f31484c93236a47c193ebfc9824c97',1,'CallInfo::k()']]],
   ['kbx',['KBx',['../dd/d4a/lvm_8c.html#ae691958903f692936bb97a9ce2a65d0d',1,'lvm.c']]],
   ['keepinvariant',['keepinvariant',['../dc/d9c/lgc_8h.html#a40b40242e96f45f8d04dcf4feb1475ae',1,'lgc.h']]],
@@ -12,7 +13,6 @@ var searchData=
   ['kenshocontext',['KenshoContext',['../d1/d10/interface_kensho_context.html',1,'']]],
   ['kenshocontext_2eh',['KenshoContext.h',['../d2/d20/_kensho_context_8h.html',1,'']]],
   ['kenshocontext_2em',['KenshoContext.m',['../dd/d1c/_kensho_context_8m.html',1,'']]],
-  ['kensholuaparameterwrapper',['KenshoLuaParameterWrapper',['../d9/dba/interface_kensho_lua_parameter_wrapper.html',1,'']]],
   ['kensholuawrapper',['KenshoLuaWrapper',['../dc/de7/interface_kensho_lua_wrapper.html',1,'']]],
   ['kensholuawrapper_2eh',['KenshoLuaWrapper.h',['../da/d3a/_kensho_lua_wrapper_8h.html',1,'']]],
   ['kensholuawrapper_2em',['KenshoLuaWrapper.m',['../d1/dc2/_kensho_lua_wrapper_8m.html',1,'']]],

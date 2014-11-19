@@ -5,7 +5,7 @@
 <meta http-equiv="Content-Type" content="text/xhtml;charset=UTF-8"/>
 <meta http-equiv="X-UA-Compatible" content="IE=9"/>
 <meta name="generator" content="Doxygen 1.8.7"/>
-<title>Kensho: Main Page</title>
+<title>Kensho: Kensho Documentation</title>
 <link href="tabs.css" rel="stylesheet" type="text/css"/>
 <script type="text/javascript" src="jquery.js"></script>
 <script type="text/javascript" src="dynsections.js"></script>
@@ -15,7 +15,7 @@
   $(document).ready(function() { searchBox.OnSelectItem(0); });
 </script>
 <link href="doxygen.css" rel="stylesheet" type="text/css" />
-<link href="doxygen.css" rel="stylesheet" type="text/css"/>
+<link href="custom.css" rel="stylesheet" type="text/css"/>
 </head>
 <body>
 <div id="top"><!-- do not remove this div, it is closed by doxygen! -->
@@ -23,6 +23,7 @@
 <table cellspacing="0" cellpadding="0">
  <tbody>
  <tr style="height: 56px;">
+  <td id="projectlogo"><img alt="Logo" src="KenshoLogo.png"/></td>
   <td style="padding-left: 0.5em;">
    <div id="projectname">Kensho
    </div>
@@ -77,7 +78,7 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 
 <div class="header">
   <div class="headertitle">
-<div class="title">Kensho Documentation</div>  </div>
+<div class="title"><a class="el" href="da/d0b/interface_kensho.html" title="The core object for binding and updating. ">Kensho</a> Documentation </div>  </div>
 </div><!--header-->
 <div class="contents">
 <div class="textblock"><h1><a class="el" href="da/d0b/interface_kensho.html" title="The core object for binding and updating. ">Kensho</a></h1>
@@ -85,36 +86,51 @@ var searchBox = new SearchBox("searchBox", "search",false,'Search');
 <p>To see into one's own nature. The experience of enlightenment, satori. </p>
 </blockquote>
 <p>We want - a quick overview on <a class="el" href="da/d0b/interface_kensho.html" title="The core object for binding and updating. ">Kensho</a>, the origin of the term, the project purpose, related projects. Talk about the coverage (ios, android) and how it will be documented Roadmap</p>
+<h3>iOS Progress</h3>
 <table class="doxtable">
 <tr>
 <th>Status </th><th>Item  </th></tr>
 <tr>
 <td>Completed </td><td>Lua Integration  </td></tr>
+<tr>
+<td>Completed </td><td><a class="el" href="d2/d8f/interface_observable.html" title="Our base, concrete observable class. ">Observable</a> Values  </td></tr>
+<tr>
+<td>Completed </td><td><a class="el" href="de/d66/interface_computed.html">Computed</a> Values  </td></tr>
+<tr>
+<td>In Progress </td><td><a class="el" href="d3/dd6/interface_observable_array.html">ObservableArray</a>  </td></tr>
+<tr>
+<td>Todo </td><td><a class="el" href="de/d54/interface_observable_map.html">ObservableMap</a>  </td></tr>
+<tr>
+<td>Todo </td><td>Bi-directional binding  </td></tr>
 </table>
-<p>Talk about examples FAQ.</p>
+<p>Talk about examples FAQ. <a class="el" href="d2/dd8/_tutorials.html">Tutorials</a> </p><hr/>
+<h2>Key Concepts</h2>
+<table class="doxtable">
+<tr>
+<td><h3>Declarative Bindings</h3>
+<p class="endtd">Easily associate DOM elements with model data using a concise, readable syntax  </p>
+</td><td><h3>Automatic UI Refresh</h3>
+<p class="endtd">When your data model's state changes, your UI updates automatically  </p>
+</td><td><h3>Dependency Tracking</h3>
+<p class="endtd">Implicitly set up chains of relationships between model data, to transform and combine it   </p>
+</td></tr>
+</table>
+<h2>Introduction</h2>
+<p>Knockout is a JavaScript library that helps you to create rich, responsive display and editor user interfaces with a clean underlying data model. Any time you have sections of UI that update dynamically (e.g., changing depending on the user’s actions or when an external data source changes), KO can help you implement it more simply and maintainably. </p>
+<h3>Headline features:</h3>
+<ul>
+<li>Elegant dependency tracking - automatically updates the right parts of your UI whenever your data model changes. Declarative bindings - a simple and obvious way to connect parts of your UI to your data model. You can construct a complex dynamic UIs easily using arbitrarily nested binding contexts. Trivially extensible - implement custom behaviors as new declarative bindings for easy reuse in just a few lines of code.</li>
+</ul>
+<h3>Additional benefits:</h3>
+<ul>
+<li>Pure JavaScript library - works with any server or client-side technology Can be added on top of your existing web application without requiring major architectural changes Compact - around 13kb after gzipping Works on any mainstream browser (IE 6+, Firefox 2+, Chrome, Safari, others) Comprehensive suite of specifications (developed BDD-style) means its correct functioning can easily be verified on new browsers and platforms</li>
+</ul>
 <hr/>
-<p><a class="el" href="d2/d8f/interface_observable.html" title="Our base, concrete observable class. ">Observable</a> = data <a class="el" href="d3/dd6/interface_observable_array.html">ObservableArray</a> = array <a class="el" href="de/d54/interface_observable_map.html">ObservableMap</a> = dictionary</p>
-<p>CalculatedObservable = data ProxyArray = array ProxyMap = dictionary</p>
-<p>LuaObservable = CalculatedObservable -&gt; mapped parameters from lua script ParameterObservable = CalculatedObservable from mapped parameter -&gt; data</p>
-<dl class="todo"><dt><b><a class="el" href="dd/da0/todo.html#_todo000001">Todo:</a></b></dt><dd><p class="startdd">Simplify <a class="el" href="d2/d8f/interface_observable.html" title="Our base, concrete observable class. ">Observable</a> (No need for number, string, etc?) [Done] </p>
-<p>Create a <a class="el" href="d1/d10/interface_kensho_context.html" title="A wrapper for a &#39;context&#39; for binding. ">KenshoContext</a> to track __parent and __root [Done] </p>
-<p>Make LuaWrapper basically independant, and processing bindings should create a Calculated. [Mostly Done] </p>
-<p>Rename CalculatedObservable to <a class="el" href="de/d66/interface_computed.html">Computed</a> [Done] </p>
-<p>LuaWrapper must handle tables -&gt; dictionaries [Done] </p>
-<p>Bindings should take a simple variable to bind to, or a complex config object [Mostly Done] </p>
-<p>LuaWrapper should handle __parent and __root in bindings [Done] </p>
-<p>Remove unneeded tests </p>
-<p>Update and add test coverage </p>
-<p>Events? Particularly post-render events for 'foreach', or the like? </p>
-<p>Clean up <a class="el" href="d3/dd6/interface_observable_array.html">ObservableArray</a>, ProxyObservableArray, and Map variations. Maybe just rename <a class="el" href="de/d3c/interface_computed_array.html" title="A ComputedArray is an array that proxies another. ">ComputedArray</a> too. </p>
-<p class="enddd">Bindings need to get a computed (the luawrapper) and then handle the result as either a value or an observable in and of itself</p>
-</dd></dl>
-<dl class="todo"><dt><b><a class="el" href="dd/da0/todo.html#_todo000002">Todo:</a></b></dt><dd>Figure out how arrays are handled when they could be in an observablearray, an array in an observable, a result of a computed, or a <a class="el" href="de/d3c/interface_computed_array.html" title="A ComputedArray is an array that proxies another. ">ComputedArray</a>. For example, tableview foreach binding is a good use case. It needs to track the events of the array, so it expects an observablearray. However, coming from the LuaWrapper evaluation, it is just a regular <a class="el" href="de/d66/interface_computed.html">Computed</a>, so it doesn't expose the same events. How can we pass through those events? We could assign attached data to each object, like 'observableowner', and then for any value see if we can get an obserbableowner and bind to that instead. However, that's still only true in the case of a real pass-through. To get a generalized solution, we may need to have Observables / <a class="el" href="de/d66/interface_computed.html">Computed</a> values check the prior array value vs the new array value and generate add / remove / move events. In this scenario, we wouldn't necessarly need ObservableArrays? Maybe see how knockout does it... because they do have observable arrays and their pattern generally matches our own. Although they may not worry about it with a foreach?? May need a way to specify a key identifier situation...</dd></dl>
-</div></div><!-- contents -->
+ </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Sat Nov 15 2014 20:54:23 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Nov 18 2014 20:00:55 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="doxygen.png" alt="doxygen"/>
 </a> 1.8.7
 </small></address>

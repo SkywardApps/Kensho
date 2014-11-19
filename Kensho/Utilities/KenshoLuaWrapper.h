@@ -19,12 +19,3 @@
 
 @end
 
-/**
- *  Updates when the script is rerun
- */
-@interface KenshoLuaParameterWrapper : NSObject<IObservable>
-
-@property (readonly) KenshoLuaWrapper* wrapper;
-@property (readonly) NSString* parameterName;
-
-@end

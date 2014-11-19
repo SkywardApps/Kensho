@@ -78,13 +78,6 @@ int pushValue(lua_State* L, NSObject* value)
         lua_pushstring(L, [(NSString*)value UTF8String]);
         return 1;
     }
-    /*else if([value conformsToProtocol:@protocol(IObservable)]
-            && ![(NSObject<IObservable>*)value isCollection])
-    {
-        NSObject<IObservable>* obs = (NSObject<IObservable>*)value;
-        NSObject* result = obs.value;
-        return pushValue(L, result);
-    }*/
     else if([value isKindOfClass:NSObject.class])
     {
         if([value conformsToProtocol:@protocol(IObservable)])

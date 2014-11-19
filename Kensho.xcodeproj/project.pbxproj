@@ -273,7 +273,7 @@
 		E4918E2C1979587500B167EA /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		E4918E2D1979587500B167EA /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
 		E4918E2E1979587500B167EA /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
-		E4AF11AE19AE6A600015C5A1 /* Readme.dox */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Readme.dox; sourceTree = "<group>"; };
+		E4AF11AE19AE6A600015C5A1 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
 		E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenshoContext.h; sourceTree = "<group>"; };
 		E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenshoContext.m; sourceTree = "<group>"; };
 		E4CF9550197800F5007B6494 /* libKensho.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKensho.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -642,7 +642,7 @@
 		E4CF9555197800F5007B6494 /* Kensho */ = {
 			isa = PBXGroup;
 			children = (
-				E4AF11AE19AE6A600015C5A1 /* Readme.dox */,
+				E4AF11AE19AE6A600015C5A1 /* Readme.md */,
 				E40EF7CB197C8E6300BEEC3F /* lua-5.2.3 */,
 				E423ACE31978207E00231A59 /* Utilities */,
 				E423ACB51978207200231A59 /* Observables */,

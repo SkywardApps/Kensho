@@ -123,6 +123,13 @@
 		E4918E211978BAA400B167EA /* Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CF9558197800F5007B6494 /* Kensho.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4918E221978BAD600B167EA /* KenshoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF956F197800F5007B6494 /* KenshoTests.m */; };
 		E4918E2F1979587500B167EA /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4918E241979587500B167EA /* libOCMock.a */; };
+		E4A30D0C1A1C4EB200A15F1A /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D0B1A1C4EB200A15F1A /* Readme.md */; };
+		E4A30D221A1C544C00A15F1A /* FAQ.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1C1A1C544C00A15F1A /* FAQ.md */; };
+		E4A30D231A1C544C00A15F1A /* Internals.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1D1A1C544C00A15F1A /* Internals.md */; };
+		E4A30D241A1C544C00A15F1A /* Introduction.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1E1A1C544C00A15F1A /* Introduction.md */; };
+		E4A30D251A1C544C00A15F1A /* QuickStart.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1F1A1C544C00A15F1A /* QuickStart.md */; };
+		E4A30D261A1C544C00A15F1A /* Roadmap.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D201A1C544C00A15F1A /* Roadmap.md */; };
+		E4A30D271A1C544C00A15F1A /* Tutorials.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D211A1C544C00A15F1A /* Tutorials.md */; };
 		E4AF11B219AEA5B50015C5A1 /* KenshoContext.h in Headers */ = {isa = PBXBuildFile; fileRef = E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */; };
 		E4AF11B319AEA5B50015C5A1 /* KenshoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */; };
 		E4CF9554197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
@@ -273,7 +280,13 @@
 		E4918E2C1979587500B167EA /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		E4918E2D1979587500B167EA /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
 		E4918E2E1979587500B167EA /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
-		E4AF11AE19AE6A600015C5A1 /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = "<group>"; };
+		E4A30D0B1A1C4EB200A15F1A /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
+		E4A30D1C1A1C544C00A15F1A /* FAQ.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = FAQ.md; sourceTree = "<group>"; };
+		E4A30D1D1A1C544C00A15F1A /* Internals.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Internals.md; sourceTree = "<group>"; };
+		E4A30D1E1A1C544C00A15F1A /* Introduction.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Introduction.md; sourceTree = "<group>"; };
+		E4A30D1F1A1C544C00A15F1A /* QuickStart.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = QuickStart.md; sourceTree = "<group>"; };
+		E4A30D201A1C544C00A15F1A /* Roadmap.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Roadmap.md; sourceTree = "<group>"; };
+		E4A30D211A1C544C00A15F1A /* Tutorials.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Tutorials.md; sourceTree = "<group>"; };
 		E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenshoContext.h; sourceTree = "<group>"; };
 		E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenshoContext.m; sourceTree = "<group>"; };
 		E4CF9550197800F5007B6494 /* libKensho.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKensho.a; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -601,6 +614,20 @@
 			path = OCMock;
 			sourceTree = SOURCE_ROOT;
 		};
+		E4A30D0F1A1C4FBE00A15F1A /* Documentation */ = {
+			isa = PBXGroup;
+			children = (
+				E4A30D1C1A1C544C00A15F1A /* FAQ.md */,
+				E4A30D1D1A1C544C00A15F1A /* Internals.md */,
+				E4A30D1E1A1C544C00A15F1A /* Introduction.md */,
+				E4A30D1F1A1C544C00A15F1A /* QuickStart.md */,
+				E4A30D201A1C544C00A15F1A /* Roadmap.md */,
+				E4A30D211A1C544C00A15F1A /* Tutorials.md */,
+			);
+			name = Documentation;
+			path = doc;
+			sourceTree = SOURCE_ROOT;
+		};
 		E4AF11AF19AEA5A10015C5A1 /* Context */ = {
 			isa = PBXGroup;
 			children = (
@@ -642,7 +669,8 @@
 		E4CF9555197800F5007B6494 /* Kensho */ = {
 			isa = PBXGroup;
 			children = (
-				E4AF11AE19AE6A600015C5A1 /* Readme.md */,
+				E4A30D0B1A1C4EB200A15F1A /* Readme.md */,
+				E4A30D0F1A1C4FBE00A15F1A /* Documentation */,
 				E40EF7CB197C8E6300BEEC3F /* lua-5.2.3 */,
 				E423ACE31978207E00231A59 /* Utilities */,
 				E423ACB51978207200231A59 /* Observables */,
@@ -862,6 +890,7 @@
 				E40EF819197C8E6300BEEC3F /* lfunc.c in Sources */,
 				E423ACD81978207200231A59 /* ComputedArray.m in Sources */,
 				E40EF82D197C8E6300BEEC3F /* lstate.c in Sources */,
+				E4A30D231A1C544C00A15F1A /* Internals.md in Sources */,
 				E423ACD21978207200231A59 /* Computed.m in Sources */,
 				E40EF834197C8E6300BEEC3F /* ltablib.c in Sources */,
 				E40EF80C197C8E6300BEEC3F /* lbaselib.c in Sources */,
@@ -869,6 +898,7 @@
 				E40EF808197C8E6300BEEC3F /* lapi.c in Sources */,
 				E423ACEF1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.m in Sources */,
 				E40EF82A197C8E6300BEEC3F /* loslib.c in Sources */,
+				E4A30D0C1A1C4EB200A15F1A /* Readme.md in Sources */,
 				E40EF828197C8E6300BEEC3F /* lopcodes.c in Sources */,
 				E40EF81B197C8E6300BEEC3F /* lgc.c in Sources */,
 				E40EF83D197C8E6300BEEC3F /* lundump.c in Sources */,
@@ -879,16 +909,21 @@
 				E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */,
 				E40EF7C8197C269500BEEC3F /* KenshoLuaWrapper.m in Sources */,
 				E4684F5E1981C993005DF046 /* ObservableMap.m in Sources */,
+				E4A30D221A1C544C00A15F1A /* FAQ.md in Sources */,
 				E40EF81D197C8E6300BEEC3F /* linit.c in Sources */,
 				E40EF831197C8E6300BEEC3F /* lstrlib.c in Sources */,
 				E40EF832197C8E6300BEEC3F /* ltable.c in Sources */,
+				E4A30D271A1C544C00A15F1A /* Tutorials.md in Sources */,
 				E423ACAF1978204F00231A59 /* UILabelBinding.m in Sources */,
 				E40EF822197C8E6300BEEC3F /* lmathlib.c in Sources */,
+				E4A30D241A1C544C00A15F1A /* Introduction.md in Sources */,
 				E40EF81F197C8E6300BEEC3F /* llex.c in Sources */,
 				E40EF82F197C8E6300BEEC3F /* lstring.c in Sources */,
 				E40EF80E197C8E6300BEEC3F /* lcode.c in Sources */,
 				E40EF81E197C8E6300BEEC3F /* liolib.c in Sources */,
+				E4A30D251A1C544C00A15F1A /* QuickStart.md in Sources */,
 				E40EF825197C8E6300BEEC3F /* loadlib.c in Sources */,
+				E4A30D261A1C544C00A15F1A /* Roadmap.md in Sources */,
 				E40EF823197C8E6300BEEC3F /* lmem.c in Sources */,
 				E40EF813197C8E6300BEEC3F /* ldblib.c in Sources */,
 				E40EF826197C8E6300BEEC3F /* lobject.c in Sources */,

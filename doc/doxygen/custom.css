@@ -8,3 +8,31 @@
 	font-family:ArtBreweryRegular;
 	font-size:400%;
 }
+
+.tabs, .tabs2, .tabs3, .tablist li {
+	background: #b42359 !important;
+}
+
+.tablist li :hover {
+	background: #e24e5c !important;
+}
+
+.tablist a {
+	color:#ffffff !important;
+	text-shadow: 0px 1px 1px #4c163e !important;
+}
+
+.tablist li.current a {
+	background: #4c163e !important;
+}
+
+a {
+	color: #6c2052 !important;
+}
+
+/* color="#f6d8a8" cream */
+/* color="#e24e5c" orange */
+/* color="#b42359" pink */
+/* color="#822a67" */
+/* color="#6c2052" */
+/* color="#4c163e" */

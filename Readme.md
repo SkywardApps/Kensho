@@ -4,70 +4,38 @@ Kensho Documentation    {#mainpage}
 # Kensho
 > To see into one's own nature. The experience of enlightenment, satori.
 
+## Key Concepts
+<table>
+<tr>
+<td>
+<h3>Declarative Bindings</h3>
+Easily associate DOM elements with model data using a concise, readable syntax
+</td>
+<td>
+<h3>Automatic UI Refresh</h3>
+When your data model's state changes, your UI updates automatically
+</td>
+<td>
+<h3>Dependency Tracking</h3>
+Implicitly set up chains of relationships between model data, to transform and combine it
+</td>
+</tr>
+</table>
 
 We want - a quick overview on Kensho, the origin of the term, the project purpose, related projects.
 Talk about the coverage (ios, android) and how it will be documented
-Roadmap
 
-### iOS Progress
-<TABLE>
-    <TR>
-        <TH>Status</TH>
-        <TH>Item</TH>
-    </TR>
-    <TR>
-        <TD>Completed</TD>
-        <TD>Lua Integration</TD>
-    </TR>
-    <TR>
-        <TD>Completed</TD>
-        <TD>Observable Values</TD>
-    </TR>
-    <TR>
-        <TD>Completed</TD>
-        <TD>Computed Values</TD>
-    </TR>
-    <TR>
-        <TD>In Progress</TD>
-        <TD>ObservableArray</TD>
-    </TR>
-    <TR>
-        <TD>Todo</TD>
-        <TD>ObservableMap</TD>
-    </TR>
-    <TR>
-        <TD>Todo</TD>
-        <TD>Bi-directional binding</TD>
-    </TR>
-</TABLE>
+[Introduction](@ref introduction)
+[QuickStart](@ref quickstart)
+[Tutorials](@ref tutorials)
+[Frequently Asked Questions](@ref faq)
+[Roadmap](@ref roadmap)
+[Internals](@ref internals)
 
-Talk about examples
-FAQ.
-\ref Tutorials
 
-----
-
-## Key Concepts
-<table>
-    <tr>
-        <td>
-            <h3>Declarative Bindings</h3>
-            Easily associate DOM elements with model data using a concise, readable syntax
-        </td>
-        <td>
-            <h3>Automatic UI Refresh</h3>
-            When your data model's state changes, your UI updates automatically
-        </td>
-        <td>
-            <h3>Dependency Tracking</h3>
-            Implicitly set up chains of relationships between model data, to transform and combine it
-        </td>
-    </tr>
-</table>
 
 ## Introduction
-<p>
-Knockout is a JavaScript library that helps you to create rich, responsive display and editor user interfaces with a clean underlying data model. Any time you have sections of UI that update dynamically (e.g., changing depending on the user’s actions or when an external data source changes), KO can help you implement it more simply and maintainably. </p>
+Knockout is a JavaScript library that helps you to create rich, responsive display and editor user interfaces with a clean underlying data model. Any time you have sections of UI that update dynamically (e.g., changing depending on the user’s actions or when an external data source changes), KO can help you implement it more simply and maintainably. 
 
 ### Headline features:
 - Elegant dependency tracking - automatically updates the right parts of your UI whenever your data model changes.
@@ -81,24 +49,6 @@ Knockout is a JavaScript library that helps you to create rich, responsive displ
     Compact - around 13kb after gzipping
     Works on any mainstream browser (IE 6+, Firefox 2+, Chrome, Safari, others)
     Comprehensive suite of specifications (developed BDD-style) means its correct functioning can easily be verified on new browsers and platforms
-
-
----
-
-\page Tutorials
-
-<h2>Tutorials</h2>
-
-
-
-\page Internals
-
-Attached dictionary for binding to values in interface builder
-Lua for scripting computed values.
-Dependencies tracked by evaluating computed while tracking is on. This means you can circumvent if you aren't careful.
-Arrays are observables with additional support for collection tracking.  Try to abstract both arrays and dictionaries as
- key -> value
-Bindings are done by class and 'name'.
 
 
 -----

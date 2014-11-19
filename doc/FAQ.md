@@ -1,4 +1,4 @@
-Frequently Asked Questions    {#faq}
+FAQ {#FAQ}
 ============
 
 Faqs

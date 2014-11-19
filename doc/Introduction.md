@@ -1,4 +1,4 @@
-Introduction {#introduction}
+Introduction {#Introduction}
 ============
 
 An Introduction

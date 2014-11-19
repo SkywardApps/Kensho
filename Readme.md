@@ -25,12 +25,18 @@ Implicitly set up chains of relationships between model data, to transform and c
 We want - a quick overview on Kensho, the origin of the term, the project purpose, related projects.
 Talk about the coverage (ios, android) and how it will be documented
 
-[Introduction](@ref introduction)
+[Introduction](doc/Introduction.md)
+
 [QuickStart](@ref quickstart)
+
 [Tutorials](@ref tutorials)
-[Frequently Asked Questions](@ref faq)
+
+[Frequently Asked Questions](@ref FAQ)
+
 [Roadmap](@ref roadmap)
+
 [Internals](@ref internals)
+
 
 
 
@@ -39,16 +45,16 @@ Knockout is a JavaScript library that helps you to create rich, responsive displ
 
 ### Headline features:
 - Elegant dependency tracking - automatically updates the right parts of your UI whenever your data model changes.
-    Declarative bindings - a simple and obvious way to connect parts of your UI to your data model. You can construct a complex dynamic UIs easily using arbitrarily nested binding contexts.
-    Trivially extensible - implement custom behaviors as new declarative bindings for easy reuse in just a few lines of code.
+- Declarative bindings - a simple and obvious way to connect parts of your UI to your data model. You can construct a complex dynamic UIs easily using arbitrarily nested binding contexts.
+- Trivially extensible - implement custom behaviors as new declarative bindings for easy reuse in just a few lines of code.
 
 ### Additional benefits:
 
 - Pure JavaScript library - works with any server or client-side technology
-    Can be added on top of your existing web application without requiring major architectural changes
-    Compact - around 13kb after gzipping
-    Works on any mainstream browser (IE 6+, Firefox 2+, Chrome, Safari, others)
-    Comprehensive suite of specifications (developed BDD-style) means its correct functioning can easily be verified on new browsers and platforms
+- Can be added on top of your existing web application without requiring major architectural changes
+- Compact - around 13kb after gzipping
+- Works on any mainstream browser (IE 6+, Firefox 2+, Chrome, Safari, others)
+- Comprehensive suite of specifications (developed BDD-style) means its correct functioning can easily be verified on new browsers and platforms
 
 
 -----

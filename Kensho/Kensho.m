@@ -25,6 +25,7 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
     NSMutableDictionary* bindingFactories;
     NSMutableArray* trackings;
     NSMutableDictionary* assignedBindings;
+    NSMutableArray* directAccessTrackings;
 }
 
 @end
@@ -55,6 +56,28 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
 {
     NSMutableSet* set = trackings.lastObject;
     [trackings removeLastObject];
+    return set;
+}
+
+
+- (void) startTrackingDirectAccess
+{
+    [directAccessTrackings addObject:[NSMutableDictionary dictionary]];
+}
+
+- (void) key:(NSString*)key accessedOn:(NSObject*)target
+{
+    if(directAccessTrackings.lastObject[key] == nil)
+    {
+        directAccessTrackings.lastObject[key] = [NSHashTable hashTableWithOptions:NSPointerFunctionsWeakMemory];
+    }
+    [directAccessTrackings.lastObject[key] addObject:target];
+}
+
+- (NSDictionary*) endTrackingDirectAccess
+{
+    NSMutableDictionary* set = directAccessTrackings.lastObject;
+    [directAccessTrackings removeLastObject];
     return set;
 }
 
@@ -109,6 +132,7 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
           };
         
         trackings = [NSMutableArray array];
+        directAccessTrackings = [NSMutableArray array];
         assignedBindings = [NSMutableDictionary dictionary];
     }
     return self;

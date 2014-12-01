@@ -81,5 +81,8 @@
  */
 - (NSSet*) endTracking;
 
+- (void) startTrackingDirectAccess;
+- (void) key:(NSString*)key accessedOn:(NSObject*)target;
+- (NSDictionary*) endTrackingDirectAccess;
 
 @end

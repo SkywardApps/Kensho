@@ -27,15 +27,15 @@ Talk about the coverage (ios, android) and how it will be documented
 
 [Introduction](doc/Introduction.md)
 
-[QuickStart](@ref quickstart)
+[QuickStart](doc/QuickStart.md)
 
-[Tutorials](@ref tutorials)
+[Tutorials](doc/Tutorials.md)
 
-[Frequently Asked Questions](@ref FAQ)
+[Frequently Asked Questions](doc/FAQ.md)
 
-[Roadmap](@ref roadmap)
+[Roadmap](doc/Roadmap.md)
 
-[Internals](@ref internals)
+[Internals](doc/Internals.md)
 
 
 

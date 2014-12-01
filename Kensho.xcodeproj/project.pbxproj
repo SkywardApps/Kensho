@@ -123,6 +123,14 @@
 		E4918E211978BAA400B167EA /* Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CF9558197800F5007B6494 /* Kensho.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4918E221978BAD600B167EA /* KenshoTests.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF956F197800F5007B6494 /* KenshoTests.m */; };
 		E4918E2F1979587500B167EA /* libOCMock.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4918E241979587500B167EA /* libOCMock.a */; };
+		E49707551A2653B9001B75DF /* KenModel.h in Headers */ = {isa = PBXBuildFile; fileRef = E49707531A2653B9001B75DF /* KenModel.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E49707561A2653B9001B75DF /* KenModel.m in Sources */ = {isa = PBXBuildFile; fileRef = E49707541A2653B9001B75DF /* KenModel.m */; };
+		E49707591A265612001B75DF /* ObservableProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E49707571A265612001B75DF /* ObservableProxy.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E497075A1A265612001B75DF /* ObservableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E49707581A265612001B75DF /* ObservableProxy.m */; };
+		E497075C1A265C28001B75DF /* TestObservableProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E497075B1A265C28001B75DF /* TestObservableProxy.m */; };
+		E49707601A2671D3001B75DF /* KenComputed.h in Headers */ = {isa = PBXBuildFile; fileRef = E497075E1A2671D3001B75DF /* KenComputed.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E49707611A2671D3001B75DF /* KenComputed.m in Sources */ = {isa = PBXBuildFile; fileRef = E497075F1A2671D3001B75DF /* KenComputed.m */; };
+		E49707631A267621001B75DF /* TestKenComputed.m in Sources */ = {isa = PBXBuildFile; fileRef = E49707621A267621001B75DF /* TestKenComputed.m */; };
 		E4A30D0C1A1C4EB200A15F1A /* Readme.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D0B1A1C4EB200A15F1A /* Readme.md */; };
 		E4A30D221A1C544C00A15F1A /* FAQ.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1C1A1C544C00A15F1A /* FAQ.md */; };
 		E4A30D231A1C544C00A15F1A /* Internals.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D1D1A1C544C00A15F1A /* Internals.md */; };
@@ -280,6 +288,14 @@
 		E4918E2C1979587500B167EA /* OCMockObject.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMockObject.h; sourceTree = "<group>"; };
 		E4918E2D1979587500B167EA /* OCMRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMRecorder.h; sourceTree = "<group>"; };
 		E4918E2E1979587500B167EA /* OCMStubRecorder.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMStubRecorder.h; sourceTree = "<group>"; };
+		E49707531A2653B9001B75DF /* KenModel.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KenModel.h; path = Base/KenModel.h; sourceTree = "<group>"; };
+		E49707541A2653B9001B75DF /* KenModel.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KenModel.m; path = Base/KenModel.m; sourceTree = "<group>"; };
+		E49707571A265612001B75DF /* ObservableProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = ObservableProxy.h; path = ../Utilities/ObservableProxy.h; sourceTree = "<group>"; };
+		E49707581A265612001B75DF /* ObservableProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = ObservableProxy.m; path = ../Utilities/ObservableProxy.m; sourceTree = "<group>"; };
+		E497075B1A265C28001B75DF /* TestObservableProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestObservableProxy.m; sourceTree = "<group>"; };
+		E497075E1A2671D3001B75DF /* KenComputed.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenComputed.h; sourceTree = "<group>"; };
+		E497075F1A2671D3001B75DF /* KenComputed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenComputed.m; sourceTree = "<group>"; };
+		E49707621A267621001B75DF /* TestKenComputed.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKenComputed.m; sourceTree = "<group>"; };
 		E4A30D0B1A1C4EB200A15F1A /* Readme.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Readme.md; sourceTree = SOURCE_ROOT; };
 		E4A30D1C1A1C544C00A15F1A /* FAQ.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = FAQ.md; sourceTree = "<group>"; };
 		E4A30D1D1A1C544C00A15F1A /* Internals.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Internals.md; sourceTree = "<group>"; };
@@ -437,6 +453,7 @@
 		E423ACB51978207200231A59 /* Observables */ = {
 			isa = PBXGroup;
 			children = (
+				E497075D1A2671B0001B75DF /* KVO */,
 				E423ACB61978207200231A59 /* Base */,
 				E423ACB91978207200231A59 /* Concrete */,
 				E423ACCA1978207200231A59 /* Interfaces */,
@@ -531,6 +548,8 @@
 			isa = PBXGroup;
 			children = (
 				E423ACF71978AAA500231A59 /* TestObservableBase.m */,
+				E497075B1A265C28001B75DF /* TestObservableProxy.m */,
+				E49707621A267621001B75DF /* TestKenComputed.m */,
 			);
 			name = Base;
 			sourceTree = "<group>";
@@ -613,6 +632,19 @@
 			);
 			path = OCMock;
 			sourceTree = SOURCE_ROOT;
+		};
+		E497075D1A2671B0001B75DF /* KVO */ = {
+			isa = PBXGroup;
+			children = (
+				E49707531A2653B9001B75DF /* KenModel.h */,
+				E49707541A2653B9001B75DF /* KenModel.m */,
+				E49707571A265612001B75DF /* ObservableProxy.h */,
+				E49707581A265612001B75DF /* ObservableProxy.m */,
+				E497075E1A2671D3001B75DF /* KenComputed.h */,
+				E497075F1A2671D3001B75DF /* KenComputed.m */,
+			);
+			name = KVO;
+			sourceTree = "<group>";
 		};
 		E4A30D0F1A1C4FBE00A15F1A /* Documentation */ = {
 			isa = PBXGroup;
@@ -740,12 +772,15 @@
 				E423ACD91978207200231A59 /* ObservableArray.h in Headers */,
 				E40EF824197C8E6300BEEC3F /* lmem.h in Headers */,
 				E423ACDF1978207200231A59 /* IObservable.h in Headers */,
+				E49707551A2653B9001B75DF /* KenModel.h in Headers */,
 				E423ACEE1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h in Headers */,
+				E49707601A2671D3001B75DF /* KenComputed.h in Headers */,
 				E40EF830197C8E6300BEEC3F /* lstring.h in Headers */,
 				E423ACAA1978204F00231A59 /* BindingBase.h in Headers */,
 				E40EF82C197C8E6300BEEC3F /* lparser.h in Headers */,
 				E423ACAC1978204F00231A59 /* UIButtonBinding.h in Headers */,
 				E40EF81C197C8E6300BEEC3F /* lgc.h in Headers */,
+				E49707591A265612001B75DF /* ObservableProxy.h in Headers */,
 				E40EF80F197C8E6300BEEC3F /* lcode.h in Headers */,
 				E40EF842197C8E6300BEEC3F /* lzio.h in Headers */,
 				E423ACB41978204F00231A59 /* Binding.h in Headers */,
@@ -906,11 +941,13 @@
 				E40EF83F197C8E6300BEEC3F /* lvm.c in Sources */,
 				E423ACE71978209E00231A59 /* UIView+Kensho.m in Sources */,
 				E423ACD01978207200231A59 /* Observable.m in Sources */,
+				E49707611A2671D3001B75DF /* KenComputed.m in Sources */,
 				E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */,
 				E40EF7C8197C269500BEEC3F /* KenshoLuaWrapper.m in Sources */,
 				E4684F5E1981C993005DF046 /* ObservableMap.m in Sources */,
 				E4A30D221A1C544C00A15F1A /* FAQ.md in Sources */,
 				E40EF81D197C8E6300BEEC3F /* linit.c in Sources */,
+				E49707561A2653B9001B75DF /* KenModel.m in Sources */,
 				E40EF831197C8E6300BEEC3F /* lstrlib.c in Sources */,
 				E40EF832197C8E6300BEEC3F /* ltable.c in Sources */,
 				E4A30D271A1C544C00A15F1A /* Tutorials.md in Sources */,
@@ -937,6 +974,7 @@
 				E40EF82B197C8E6300BEEC3F /* lparser.c in Sources */,
 				E423ACB31978204F00231A59 /* UIViewBinding.m in Sources */,
 				E40EF816197C8E6300BEEC3F /* ldo.c in Sources */,
+				E497075A1A265612001B75DF /* ObservableProxy.m in Sources */,
 				E423ACAD1978204F00231A59 /* UIButtonBinding.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -948,6 +986,7 @@
 				E423ACFC1978ADD400231A59 /* TestCalculatedObservable.m in Sources */,
 				E423AD051978B24F00231A59 /* TestObservableArray.m in Sources */,
 				E423AD161978B30600231A59 /* TestUITableViewBinding.m in Sources */,
+				E497075C1A265C28001B75DF /* TestObservableProxy.m in Sources */,
 				E423AD181978B31300231A59 /* TestUIViewBinding.m in Sources */,
 				E423AD141978B2F700231A59 /* TestUILabelBinding.m in Sources */,
 				E423ACF81978AAA500231A59 /* TestObservableBase.m in Sources */,
@@ -956,6 +995,7 @@
 				E4918E221978BAD600B167EA /* KenshoTests.m in Sources */,
 				E423AD121978B2E800231A59 /* TestUIButtonBinding.m in Sources */,
 				E423AD0F1978B2BF00231A59 /* TestBindingBase.m in Sources */,
+				E49707631A267621001B75DF /* TestKenComputed.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

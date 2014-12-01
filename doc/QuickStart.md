@@ -1,4 +1,4 @@
-Quick Start    {#quickstart}
+Quick Start    {#QuickStart}
 ============
 
 How to get started

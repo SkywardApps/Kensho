@@ -5,22 +5,11 @@ Kensho Documentation    {#mainpage}
 > To see into one's own nature. The experience of enlightenment, satori.
 
 ## Key Concepts
-<table>
-<tr>
-<td>
-<h3>Declarative Bindings</h3>
-Easily associate DOM elements with model data using a concise, readable syntax
-</td>
-<td>
-<h3>Automatic UI Refresh</h3>
-When your data model's state changes, your UI updates automatically
-</td>
-<td>
-<h3>Dependency Tracking</h3>
-Implicitly set up chains of relationships between model data, to transform and combine it
-</td>
-</tr>
-</table>
+
+Declarative Bindings | Automatic UI Refresh | Dependency Tracking | 
+:-|:-|:-|
+Easily *associate view elements with model data* using a concise, readable syntax | When your data model's state changes, your *UI updates automatically* | Implicitly set up *chains of relationships* between model data, to transform and combine it |
+
 
 We want - a quick overview on Kensho, the origin of the term, the project purpose, related projects.
 Talk about the coverage (ios, android) and how it will be documented

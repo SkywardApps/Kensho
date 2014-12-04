@@ -7,22 +7,31 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Observable.h"
 
 @class UIView;
+@class Kensho;
+@protocol KenshoValueParameters;
 
-@protocol Binding <IObserver> 
+@protocol Binding
 
-+ (void) registerFactoriesTo:(NSMutableDictionary*)dictionary;
++ (void) registerFactoriesTo:(Kensho*)ken;
 
 @property (weak, readonly) Kensho* ken;
 @property (weak, readonly) UIView* targetView;
-@property (weak, readonly) NSObject* targetValue;
+@property (weak, readonly) NSObject<KenshoValueParameters>* observedValue;
+
+
 @property (readonly) NSString* bindingType;
 @property (weak, readonly) NSObject* context;
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<IObservable>*)value context:(NSObject*)context;
+- (id) initWithKensho:(Kensho*)ken
+               target:(UIView*)target
+                 type:(NSString*)type
+                value:(NSObject<KenshoValueParameters>*)value
+              context:(NSObject*)context;
+
 - (void) updateValue;
+
 - (void) unbind;
 
 @end

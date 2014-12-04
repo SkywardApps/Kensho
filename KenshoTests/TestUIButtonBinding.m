@@ -13,7 +13,7 @@
 #import "WeakProxy.h"
 
 // Done
-
+/*
 @interface TestUIButtonBinding : XCTestCase
 {
     Kensho* ken;
@@ -147,6 +147,6 @@
 }
 
 
-
-
-@end
+ @end
+ 
+ */

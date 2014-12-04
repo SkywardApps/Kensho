@@ -41,7 +41,8 @@
  *  @return Initialized WeakProxy
  */
 - (id)initWithProxied:(id)object;
-- (id)initWithUnretained:(id)object;
+
+- (id) unsafe;
 
 - (id) strong;
 

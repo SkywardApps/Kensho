@@ -9,13 +9,16 @@
 #import <JavaScriptCore/JavaScriptCore.h>
 #import "Kensho.h"
 #import "KenshoContext.h"
+#import "KenComputed.h"
+#import "IObservable.h"
 
-@interface KenshoLuaWrapper : NSObject<IObserver>
+@interface KenshoLuaWrapper : KenComputed<KenshoValueParameters>
 
 - (id) initWithKensho:(Kensho*)ken context:(KenshoContext*)context code:(NSString*)code;
 - (NSObject*) evaluate:(NSString*)newCode;
 
-@property (readonly) NSDictionary* parameters;
+@property (nonatomic, readonly) NSDictionary* parameters;
+@property (nonatomic, readonly) NSString* code;
 
 @end
 

@@ -10,7 +10,8 @@
 #include "lua.h"
 #include "lualib.h"
 #include "lauxlib.h"
-#import "Observable.h"
+#import "IObservable.h"
+#import "NSObject+Observable.h"
 
 /**
  Test cases:
@@ -49,11 +50,11 @@
 {
     // The kensho context object
     KenshoContext* context;
-    NSString* code;
     Kensho* ken;
 }
 
 @property (readwrite) NSMutableDictionary* parameters;
+@property (atomic, strong) NSString* code;
 
 @end
 
@@ -80,13 +81,13 @@ int pushValue(lua_State* L, NSObject* value)
     }
     else if([value isKindOfClass:NSObject.class])
     {
-        if([value conformsToProtocol:@protocol(IObservable)])
+        /*if([value conformsToProtocol:@protocol(IObservable)])
         {
             NSObject<IObservable>* obs = (NSObject<IObservable>*)value;
-            [obs value]; // access the value.  We don't do anything with it, but that does notify
+            //[obs value]; // access the value.  We don't do anything with it, but that does notify
             // any tracking that it was accessed so this calculated wrapper knows there is a
             // dependency
-        }
+        }*/
         // do something crazy here to allow key descent (view.frame.width)??
         NSObject* __weak *userdata = (NSObject* __weak *)lua_newuserdata(L, sizeof(NSObject*));
         (*userdata) = value;
@@ -282,99 +283,96 @@ int lookupNewKey(lua_State* L)
 
 - (id) initWithKensho:(Kensho *)initken context:(id)initcontext code:(NSString *)initcode
 {
-    if((self = [super init]))
+    if((self = [super initWithKensho:initken calculator:^NSObject *(NSObject * wrapper) {
+        return [(KenshoLuaWrapper*)wrapper finalValue];
+    }]))
     {
         ken = initken;
         context = initcontext;
-        code = initcode;
         _parameters = [[NSMutableDictionary alloc] initWithCapacity:1];
-        
-        [self evaluate];
+        self.code = initcode;
     }
     return self;
 }
 
 - (NSObject*) evaluate:(NSString*)newCode
 {
-    code = newCode;
-    return [self evaluate];
+    self.code = newCode;
+    return self.currentValue;
 }
 
-- (NSObject*) evaluate
+- (NSDictionary *)parameters
 {
-    [ken startTracking];
-    
-    @try
-    {
-        lua_State* L = (lua_State *) luaL_newstate();
-        luaL_openlibs(L);
-        
-        lua_pushlightuserdata(L, (__bridge void *)(context));
-        lua_setglobal(L, "__self");
-        
-        lua_pushlightuserdata(L, (__bridge void *)(self));
-        lua_setglobal(L, "__wrapper");
-        
-        //-- get global environment table from registry
-        lua_pushglobaltable(L);
-        
-        //-- create table containing the hook details
-        lua_newtable(L);
-        lua_pushstring(L, "__index");
-        lua_pushcfunction(L, lookupKey);
-        lua_settable(L, -3);
-        
-        lua_pushstring(L, "__newindex");
-        lua_pushcfunction(L, lookupNewKey);
-        lua_settable(L, -3);
-        
-        //-- set global index callback hook
-        lua_setmetatable(L, -2);
-        
-        //-- remove the global environment table from the stack
-        lua_pop(L, 1);
-        
-        NSString* embeddedString = [NSString stringWithFormat:@"__final = %@;", code];
-        
-        /* run the test script */
-        luaL_loadstring(L, embeddedString.UTF8String);
-        if (0 == lua_pcall(L, 0, 1, 0))
-        {
-            return _parameters[@"__final"];
-        }
+    // Update the values
+    return _parameters;
+}
 
+- (NSObject*) finalValue
+{
+    if(self.code == nil || [self.code isEqualToString:@""])
+    {
         return nil;
     }
-    @finally
+    
+    lua_State* L = (lua_State *) luaL_newstate();
+    luaL_openlibs(L);
+    
+    lua_pushlightuserdata(L, (__bridge void *)(context));
+    lua_setglobal(L, "__self");
+    
+    lua_pushlightuserdata(L, (__bridge void *)(self));
+    lua_setglobal(L, "__wrapper");
+    
+    //-- get global environment table from registry
+    lua_pushglobaltable(L);
+    
+    //-- create table containing the hook details
+    lua_newtable(L);
+    lua_pushstring(L, "__index");
+    lua_pushcfunction(L, lookupKey);
+    lua_settable(L, -3);
+    
+    lua_pushstring(L, "__newindex");
+    lua_pushcfunction(L, lookupNewKey);
+    lua_settable(L, -3);
+    
+    //-- set global index callback hook
+    lua_setmetatable(L, -2);
+    
+    //-- remove the global environment table from the stack
+    lua_pop(L, 1);
+    
+    NSString* embeddedString = [NSString stringWithFormat:@"__final = %@;", self.code];
+    
+    /* run the test script */
+    luaL_loadstring(L, embeddedString.UTF8String);
+    int resultCode = lua_pcall(L, 0, 1, 0);
+    if (0 == resultCode)
     {
-        NSSet* tracklist = [ken endTracking];
-        for(NSObject<IObservable>* trackitem in tracklist)
-        {
-            [trackitem addKenshoObserver:self];
-        }
-        
-        // now update all of our parameters / observables
+        return _parameters[@"__final"];
     }
-}
+    /* 
+     LUA_ERRRUN: a runtime error.
+     LUA_ERRMEM: memory allocation error. For such errors, Lua does not call the error handler function.
+     LUA_ERRERR: error while running the error handler function.
+    */
+    else switch(resultCode)
+    {
+        case LUA_ERRRUN:
+            NSLog(@"Runtime error: %s\n%@", lua_tostring(L, -1), _code);
+            break;
+        case LUA_ERRMEM:
+            NSLog(@"Memory allocation error: %s\n%@", lua_tostring(L, -1), _code);
+            break;
+        case LUA_ERRSYNTAX:
+            NSLog(@"Syntax error: %s\n%@", lua_tostring(L, -1), _code);
+            break;
+        case LUA_ERRERR:
+            NSLog(@"Error handler error: %s\n%@", lua_tostring(L, -1), _code);
+            break;
+    }
 
-
-- (void) observableUpdated:(NSObject<IObservable>*)observable
-{
-    [self evaluate];
-}
-
-- (void) observable:(NSObject<IObservable>*)collection
-              added:(NSObject<IObservable>*)item
-             forKey:(NSObject*)key
-{
-    
-}
-
-- (void) observable:(NSObject<IObservable>*)collection
-            removed:(NSObject<IObservable>*)item
-            fromKey:(NSObject*)key
-{
-    
+    return nil;
 }
 
 @end

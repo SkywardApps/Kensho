@@ -9,10 +9,13 @@
 #import <Foundation/Foundation.h>
 
 @class Kensho;
-@interface KenComputed : NSObject
+@protocol IObserver;
+
+@interface KenComputed : NSObject<IObserver>
 
 - (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject*))calculatorMethod;
 
-@property (readonly) NSObject* currentValue;
+@property (copy, nonatomic) NSObject*(^calculatorMethod)(NSObject*);
+@property (readonly, nonatomic) NSObject* currentValue;
 
 @end

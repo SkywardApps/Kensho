@@ -8,6 +8,9 @@
 
 #import <Foundation/Foundation.h>
 
+@class Kensho;
 @interface KenModel : NSObject
+
+- (id) initWithKensho:(Kensho*)ken;
 
 @end

@@ -8,6 +8,8 @@
 
 #import "KenComputed.h"
 #import "Kensho.h"
+#import "NSObject+Observable.h"
+#import "KenObservationTracking.h"
 
 @interface KenComputed ()
 {
@@ -17,11 +19,12 @@
     NSDictionary* observing;
 }
 
+@property (readonly, nonatomic) NSObject* liveValue;
+@property (strong, nonatomic) NSObject* currentValue;
+
 @end
 
 @implementation KenComputed
-
-@synthesize currentValue=_currentValue;
 
 - (id) initWithKensho:(Kensho *)initialken
            calculator:(NSObject*(^)(NSObject*))calculatorMethod
@@ -30,89 +33,34 @@
     {
         _calculatorMethod = [calculatorMethod copy];
         ken = initialken;
-        [self updateCalculatedValue];
+        [self observe:ken];
+        
+        // But now, implement an observation on ourself!
+        [self addObserver:self attribute:@"liveValue" context:@"currentValue"];
+        
+        // set our initial value
+        _currentValue = self.liveValue;
     }
     return self;
 }
 
-- (NSObject *)currentValue
+- (NSObject*) liveValue
 {
-    [ken key:@"currentValue" accessedOn:self];
-    return _currentValue;
+    return self.calculatorMethod(self);
 }
 
-- (void) updateCalculatedValue
-{
-    [self startTracking];
-    NSObject* newValue = _calculatorMethod(self);
-    // @todo verify the value has even changed
-    [self willChangeValueForKey:@"currentValue"];
-    _currentValue = newValue;
-    [self endTracking];
-    [self didChangeValueForKey:@"currentValue"];
-}
 
-- (void)unobserveAll
+- (void)observable:(NSObject *)observableOwner updated:(NSString *)attributeName context:(NSString *)context
 {
-    for(NSString* attribute in observing.allKeys)
+    // When our live value updates, assign it to the 'cached' property.
+    // This allows for situations where expensive calls don't have to be invoked each time.
+    if([attributeName isEqualToString:@"liveValue"] && [context isEqualToString:@"currentValue"])
     {
-        for(NSObject* target in observing[attribute])
-        {
-            if(target == nil)
-            {
-                continue;
-            }
-            
-            [target removeObserver:self
-                        forKeyPath:attribute];
-        }
+        self.currentValue = self.liveValue;
     }
-    observing = nil;
 }
 
-- (void) startTracking
-{
-    [ken key:@"currentValue" accessedOn:self];
-    [self unobserveAll];
-    [ken startTrackingDirectAccess];
-}
-
-- (void) endTracking
-{
-    NSDictionary* newlyObserved = [ken endTrackingDirectAccess];
-    
-    // Reference anything we accessed
-    for(NSString* attribute in newlyObserved.allKeys)
-    {
-        for(NSObject* target in newlyObserved[attribute])
-        {
-            if(target == nil)
-            {
-                continue;
-            }
-            
-            [target addObserver:self
-                     forKeyPath:attribute
-                        options:NSKeyValueObservingOptionNew
-                        context:nil];
-        }
-    }
-    observing = newlyObserved;
-}
-
-- (void)observeValueForKeyPath:(NSString *)keyPath
-                      ofObject:(id)object
-                        change:(NSDictionary *)change
-                       context:(void *)context
-{
-    [self updateCalculatedValue];
-}
-
-
-- (void)dealloc
-{
-    [self unobserveAll];
-}
-
+- (void)observableDeallocated:(NSObject *)observableOwner context:(NSString *)context
+{}
 
 @end

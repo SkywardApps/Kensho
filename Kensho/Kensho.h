@@ -11,12 +11,10 @@
 
 // Include anything that should be included automatically in the library
 #import "UIView+Kensho.h"
-
-#import "Observable.h"
-#import "ObservableArray.h"
-
-#import "Computed.h"
-#import "ComputedArray.h"
+#import "IObservable.h"
+#import "NSObject+Observable.h"
+#import "KenModel.h"
+#import "KenComputed.h"
 
 /**
  *  The core object for binding and updating.
@@ -27,21 +25,9 @@
 @interface Kensho : NSObject
 
 /**
- *  A helper method to 'unwrap' a value from an observable or value.
- *
- *  If the passed in object is a value type, it simply returns it.  If it implements the IObservable protocol, it will
- *  return the observed value.
- *
- *  @param object An object to get the value from.
- *
- *  @return The value of the object or its observed value.
- */
-+ (id) unwrapObservable:(id)object;
-
-/**
  *  A basic observable for error tracking
  */
-@property (readonly) NSObject<IWritableObservable>* errorMessage;
+@property (readonly) NSObject<IObservable>* errorMessage;
 
 /**
  *  Apply binding to a view tree starting at the view model for context.
@@ -80,9 +66,12 @@
  *  @return The set of observables that have been accessed since startTracking was called.
  */
 - (NSSet*) endTracking;
-
-- (void) startTrackingDirectAccess;
 - (void) key:(NSString*)key accessedOn:(NSObject*)target;
-- (NSDictionary*) endTrackingDirectAccess;
+
+@property (readonly, strong) NSMutableDictionary* bindingFactories;
+
++ (void) addFactoryNamed:(NSString*)name
+            bindingClass:(Class)bindingClass
+             targetClass:(Class)targetClass;
 
 @end

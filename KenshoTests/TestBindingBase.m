@@ -12,7 +12,7 @@
 #import "WeakProxy.h"
 
 // Done
-
+/*
 @interface TestBindingBase : XCTestCase
 {
     Kensho* ken;
@@ -129,5 +129,5 @@
     XCTAssertNil(weakButton, @"Object was not released");
     XCTAssertNil(weakValue, @"Object was not released");
 }
-
-@end
+ @end
+ */

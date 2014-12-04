@@ -13,7 +13,7 @@
 #import "WeakProxy.h"
 
 // Done
-
+/*
 @interface TestUILabelBinding : XCTestCase
 {
     Kensho* ken;
@@ -144,5 +144,5 @@
     XCTAssertNil(weakContext, @"Object was not released");
     XCTAssertNil(weakLabel, @"Object was not released");
 }
-
-@end
+ @end
+ */

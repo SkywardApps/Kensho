@@ -11,12 +11,19 @@
 
 @implementation UITableViewBinding
 
-+ (void) registerFactoriesTo:(NSMutableDictionary*)dictionary
++ (void) registerFactoriesTo:(Kensho*)ken
 {
     
+    [BindingBase addFactoryNamed:@"foreach"
+                           class:UITableView.class
+                      collection:ken.bindingFactories
+                          method:^(UITableView* view, NSString* type, NSObject<KenshoValueParameters>* observable, NSObject* context)
+     {
+         return [[UITableViewBinding alloc] initWithKensho:ken target:view type:type value:observable context:context];
+     }];
 }
 
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<IObservable>*)value context:(NSObject *)context
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<KenshoValueParameters>*)value context:(NSObject *)context
 {
     if((self = [super initWithKensho:ken target:target type:type value:value context:context]))
     {
@@ -34,14 +41,14 @@
 
 - (NSInteger)tableView:(UITableView *)tableView numberOfRowsInSection:(NSInteger)section
 {
-    return [[Kensho unwrapObservable:self.finalValue] count];
+    return [self.resultValue count];
 }
 
 
 - (UITableViewCell *)tableView:(UITableView *)tableView cellForRowAtIndexPath:(NSIndexPath *)indexPath
 {
     NSObject<IObservable>* valueItem;
-    NSEnumerator* enumerator = [self.finalValue objectEnumerator];
+    NSEnumerator* enumerator = [self.resultValue objectEnumerator];
     for(int i = 0; i <= indexPath.row; ++i)
     {
         valueItem = [enumerator nextObject];
@@ -55,8 +62,12 @@
     }
     @catch(NSException* exception)
     {
-        self.ken.errorMessage.value = @"The view model does not implement the required cellClass defining the cell view type";
-        return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"koErrorCell"];
+        //self.ken.errorMessage.value = @"The view model does not implement the required cellClass defining the cell view type";
+        reuseIdentifier = self.observedValue.parameters[@"cellClass"];
+        if(reuseIdentifier == nil)
+        {
+            return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"koErrorCell"];
+        }
     }
     
     UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];

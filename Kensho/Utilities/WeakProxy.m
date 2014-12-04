@@ -11,7 +11,7 @@
 
 @interface WeakProxy ()
 {
-    __weak id weakTarget;
+    __weak id target;
     __unsafe_unretained id unsafeTarget;
 }
 @end
@@ -21,15 +21,8 @@
 - (id)initWithProxied:(id)object
 {
     // No init method in superclass
-    weakTarget = object;
-    unsafeTarget = nil;
-    return self;
-}
-
-- (id)initWithUnretained:(id)object
-{
+    target = object;
     unsafeTarget = object;
-    weakTarget = object;
     return self;
 }
 
@@ -39,12 +32,6 @@
  *  @param anInvocation <#anInvocation description#>
  */
 - (void)forwardInvocation:(NSInvocation *)anInvocation {
-    id target = weakTarget;
-    if(target == nil)
-    {
-        target = unsafeTarget;
-    }
-    
     if(target != nil)
     {
         [anInvocation invokeWithTarget:target];
@@ -62,17 +49,17 @@
  *  @return A method signature
  */
 - (NSMethodSignature *)methodSignatureForSelector:(SEL)aSelector {
-    id target = weakTarget;
-    if(target == nil)
-    {
-        target = unsafeTarget;
-    }
     return [target methodSignatureForSelector:aSelector];
 }
 
 - (id) strong
 {
-    return weakTarget;
+    return target;
+}
+
+- (id) unsafe
+{
+    return unsafeTarget;
 }
 
 @end
@@ -109,28 +96,12 @@ static const void *UnsafeProxyHelperKey = &UnsafeProxyHelperKey;
     return weakProxy;
 }
 
-- (id) unsafe
+- (id) strong
 {
-    // don't create a double-proxy if this is already one.
-    if(self.isProxy)
-    {
-        return self;
-    }
-    
-    // Get the associated weak object for this object.
-    id unsafeProxy = objc_getAssociatedObject(self, UnsafeProxyHelperKey);
-    
-    // If there isn't one, create it
-    if(unsafeProxy == nil)
-    {
-        unsafeProxy = [[WeakProxy alloc] initWithUnretained:self];
-        objc_setAssociatedObject(self, UnsafeProxyHelperKey, unsafeProxy, OBJC_ASSOCIATION_RETAIN);
-    }
-    
-    return unsafeProxy;
+    return self;
 }
 
-- (id) strong
+- (id) unsafe
 {
     return self;
 }

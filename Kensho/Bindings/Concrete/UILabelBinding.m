@@ -13,16 +13,22 @@
 
 @implementation UILabelBinding
 
-+ (void) registerFactoriesTo:(NSMutableDictionary*)dictionary
++ (void) registerFactoriesTo:(Kensho*)ken;
 {
-    
+    [BindingBase addFactoryNamed:@"text"
+                           class:UILabel.class
+                      collection:ken.bindingFactories
+                          method:^(UILabel* view, NSString* type, NSObject<KenshoValueParameters>* observable, NSObject* context)
+     {
+         return [[UILabelBinding alloc] initWithKensho:ken target:view type:type value:observable context:context];
+     }];
 }
 
 - (void) updateValue
 {
     if([self.bindingType isEqualToString:@"text"])
     {
-        [self.targetView setText:self.finalValue];
+        [self.targetView setText:self.resultValue];
     }
 }
 

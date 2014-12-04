@@ -8,15 +8,13 @@
 
 #import "BindingBase.h"
 #import <UIKit/UIKit.h>
+#import "KenComputed.h"
+#import "IObservable.h"
+#import "KenshoLuaWrapper.h"
+#import "NSObject+Observable.h"
 
 @implementation BindingBase
-
-
-+ (void) registerFactoriesTo:(NSMutableDictionary*)dictionary
-{
-    
-}
-
+@dynamic resultValue;
 /**
  *  Interesting issue here
  *  We may get a binding of '42'
@@ -26,89 +24,37 @@
  *  returns a value or observable.
  *  So we need to test for all three cases!?!?!
  */
-- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject*)value context:(NSObject*)context
+- (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<KenshoValueParameters>*)value context:(NSObject*)context
 {
     if((self = [super init]))
     {
         _targetView = target;
-        _targetValue = value;
+        _observedValue = value;
         _bindingType = type;
         _ken = ken;
         _context = context;
         
-        if([value conformsToProtocol:@protocol(IObservable) ])
+        [self observe:_ken];
+        
+        if([_observedValue conformsToProtocol:@protocol(IObservable) ])
         {
-            [(NSObject<IObservable>*)value addKenshoObserver:self];
+            [_observedValue addObserver:self attribute:@"currentValue" context:@"baseValue"];
+            [_observedValue addObserver:self attribute:@"parameters" context:@"parameterValue"];
         }
-        [self bindToResultsIfNeeded];
+        
+        [self updateValue];
     }
     return self;
 }
 
-- (id) finalValue
+- (id)resultValue
 {
-    // If we're bound to a result value, return it's value
-    if(_boundResultValue)
-    {
-        return _boundResultValue.value;
-    }
-    // Other if we're bound to an observable, return it's value
-    if([_targetValue conformsToProtocol:@protocol(IObservable) ])
-    {
-        return [(NSObject<IObservable>*)_targetValue value];
-    }
-    
-    return _targetValue;
+    return self.observedValue.currentValue;
 }
 
-- (void) bindToResultsIfNeeded
+- (void)observable:(NSObject *)observableOwner updated:(NSString *)attributeName context:(NSString *)context
 {
-    if([_targetValue conformsToProtocol:@protocol(IObservable) ])
-    {
-        NSObject<IObservable>* toBindTo = nil;
-        // evaluate the result, see if we need to bind to it as well!
-        NSObject* resultingValue = [(NSObject<IObservable>*)_targetValue objectValue];
-        if([resultingValue conformsToProtocol:@protocol(IObservable)])
-        {
-            toBindTo = (NSObject<IObservable>*)resultingValue;
-        }
-        
-        // If this has changed, update our bindings
-        if(_boundResultValue != toBindTo)
-        {
-            if(_boundResultValue != nil)
-            {
-                [_boundResultValue removeKenshoObserver:self];
-            }
-            
-            _boundResultValue = toBindTo;
-            
-            if(toBindTo != nil)
-            {
-                [_boundResultValue addKenshoObserver:self];
-            }
-        
-        }
-    }
-}
-
-- (void) observableUpdated:(NSObject<IObservable>*)observable
-{
-    [self bindToResultsIfNeeded];
     [self updateValue];
-}
-
-- (void) unbind
-{
-    _targetView = nil;
-    
-    if([self.targetValue conformsToProtocol:@protocol(IObservable) ])
-    {
-        [(NSObject<IObservable>*)self.targetValue removeKenshoObserver:self];
-    }
-    _targetValue = nil;
-    _bindingType = nil;
-    _context = nil;
 }
 
 - (void) updateValue
@@ -116,6 +62,20 @@
     @throw [NSException exceptionWithName:@"NotYetImplemented"
                                    reason:[NSString stringWithFormat:@"Class %@ must overload and implement updateValue", NSStringFromClass(self.class)]
                                  userInfo:nil];
+}
+
++ (void) addFactoryNamed:(NSString*)name
+                   class:(Class)class
+              collection:(NSMutableDictionary*)bindingFactories
+                  method:(id)method
+{
+    id<NSCopying> classKey = (id)class;
+    if(bindingFactories[classKey] == nil)
+    {
+        bindingFactories[classKey] = [NSMutableDictionary dictionary];
+    }
+    
+    bindingFactories[classKey][name] = method;
 }
 
 @end

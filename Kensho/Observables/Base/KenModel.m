@@ -8,14 +8,14 @@
 
 #import "KenModel.h"
 #import "Kensho.h"
-#import "ObservableProxy.h";
+#import "NSObject+Observable.h";
 
 @implementation KenModel
 
 - (id) initWithKensho:(Kensho*)ken
 {
     // automatically wrap as a proxy!
-    return [[super init] observableBy:ken];
+    return [[super init] observe:ken];
 }
 
 @end

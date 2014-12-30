@@ -7,16 +7,17 @@
 //
 
 #import "Kensho.h"
-#import "Bindings/Interfaces/Binding.h"
-#import "Utilities/UIView+Kensho.h"
+#import "IBinding.h"
+#import "UIView+Kensho.h"
 #import "KenshoContext.h"
 #import "KenshoLuaWrapper.h"
 #import "KenComputed.h"
 #import <objc/runtime.h>
 #import "WeakProxy.h"
+#import "Kensho+Protected.h"
 
 
-typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type, NSObject<KenshoValueParameters>* observable, NSObject* context);
+typedef NSObject<IBinding>* (^bindingFactoryMethod)(UIView* view, NSString* type, NSObject<KenshoValueParameters>* observable, NSObject* context);
 
 @interface Kensho ()
 {
@@ -56,8 +57,6 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
 {
     if((self = [super init]))
     {
-        //_errorMessage = [[Observable alloc] initWithKensho:self];
-        
         _bindingFactories = [NSMutableDictionary dictionary];
         
         int classCount = 0;
@@ -87,6 +86,10 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
         
         trackings = [NSMutableArray array];
         assignedBindings = [NSMutableDictionary dictionary];
+        
+        
+        // Create any observables last after we're initialized
+        _errorMessage = [[ObservableValue alloc] initWithKensho:self];
     }
     return self;
 }
@@ -128,7 +131,7 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
                 continue;
             }
             
-            NSObject<Binding>* binding = nil;
+            NSObject<IBinding>* binding = nil;
             
             // iterate through classes and their parents
             Class viewClass = nil;
@@ -186,7 +189,7 @@ typedef NSObject<Binding>* (^bindingFactoryMethod)(UIView* view, NSString* type,
 {
     NSString* viewKey = [NSString stringWithFormat:@"%p", view];
     
-    for(NSObject<Binding>* binding in assignedBindings[viewKey])
+    for(NSObject<IBinding>* binding in assignedBindings[viewKey])
     {
         [binding unbind];
     }

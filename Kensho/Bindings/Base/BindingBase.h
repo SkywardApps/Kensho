@@ -7,10 +7,10 @@
 //
 
 #import <Foundation/Foundation.h>
-#import "Binding.h"
+#import "IBinding.h"
 #import "IObservable.h"
 
-@interface BindingBase : NSObject<Binding, IObserver>
+@interface BindingBase : NSObject<IBinding, IObserver>
 
 @property (weak, readonly) Kensho* ken;
 @property (weak, readonly) UIView* targetView;

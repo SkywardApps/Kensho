@@ -8,7 +8,7 @@
 
 #import "KenModel.h"
 #import "Kensho.h"
-#import "NSObject+Observable.h";
+#import "NSObject+Observable.h"
 
 @implementation KenModel
 

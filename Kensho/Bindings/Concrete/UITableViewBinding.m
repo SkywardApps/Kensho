@@ -8,6 +8,8 @@
 
 #import "UITableViewBinding.h"
 #import "Kensho.h"
+#import "KenshoContext.h"
+#import "Kensho+Protected.h"
 
 @implementation UITableViewBinding
 
@@ -62,10 +64,10 @@
     }
     @catch(NSException* exception)
     {
-        //self.ken.errorMessage.value = @"The view model does not implement the required cellClass defining the cell view type";
         reuseIdentifier = self.observedValue.parameters[@"cellClass"];
         if(reuseIdentifier == nil)
         {
+            self.ken.errorMessage.value = @"The view model does not implement the required cellClass defining the cell view type";
             return [[UITableViewCell alloc] initWithStyle:UITableViewCellStyleDefault reuseIdentifier:@"koErrorCell"];
         }
     }
@@ -87,8 +89,10 @@
     }
     
     cell.backgroundColor = [UIColor clearColor];
+    
     // apply bindings here
-    [self.ken applyBindings:cell viewModel:valueItem];
+    KenshoContext* rootContext = [[KenshoContext alloc] initWithContext:valueItem parent:self.context];
+    [self.ken bindToView:cell context:rootContext];
     
     return cell;
 }

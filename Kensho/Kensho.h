@@ -9,12 +9,13 @@
 #import <Foundation/Foundation.h>
 #import <UIKit/UIKit.h>
 
-// Include anything that should be included automatically in the library
+// Include anything that should be included automatically in the user's project
 #import "UIView+Kensho.h"
 #import "IObservable.h"
 #import "NSObject+Observable.h"
 #import "KenModel.h"
 #import "KenComputed.h"
+#import "ObservableValue.h"
 
 /**
  *  The core object for binding and updating.
@@ -27,7 +28,7 @@
 /**
  *  A basic observable for error tracking
  */
-@property (readonly) NSObject<IObservable>* errorMessage;
+@property (readonly) ObservableValue* errorMessage;
 
 /**
  *  Apply binding to a view tree starting at the view model for context.

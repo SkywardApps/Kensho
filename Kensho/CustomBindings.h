@@ -8,5 +8,5 @@
 
 #import <Foundation/Foundation.h>
 #import "Kensho.h"
-#import "Binding.h"
+#import "IBinding.h"
 #import "BindingBase.h"

@@ -12,7 +12,7 @@
 @class Kensho;
 @protocol KenshoValueParameters;
 
-@protocol Binding
+@protocol IBinding
 
 + (void) registerFactoriesTo:(Kensho*)ken;
 

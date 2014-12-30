@@ -95,7 +95,7 @@
 		E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA51978204F00231A59 /* UITableViewBinding.m */; };
 		E423ACB21978204F00231A59 /* UIViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA61978204F00231A59 /* UIViewBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E423ACB31978204F00231A59 /* UIViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACA71978204F00231A59 /* UIViewBinding.m */; };
-		E423ACB41978204F00231A59 /* Binding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA91978204F00231A59 /* Binding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E423ACB41978204F00231A59 /* IBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA91978204F00231A59 /* IBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E423ACE61978209E00231A59 /* UIView+Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACE41978209E00231A59 /* UIView+Kensho.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E423ACE71978209E00231A59 /* UIView+Kensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E423ACE51978209E00231A59 /* UIView+Kensho.m */; };
 		E423ACEE1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACEC1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h */; };
@@ -106,6 +106,9 @@
 		E423AD141978B2F700231A59 /* TestUILabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD131978B2F700231A59 /* TestUILabelBinding.m */; };
 		E423AD161978B30600231A59 /* TestUITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD151978B30600231A59 /* TestUITableViewBinding.m */; };
 		E423AD181978B31300231A59 /* TestUIViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD171978B31300231A59 /* TestUIViewBinding.m */; };
+		E4638C471A30F5910092DFB8 /* ObservableValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E4638C451A30F5910092DFB8 /* ObservableValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4638C481A30F5910092DFB8 /* ObservableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E4638C461A30F5910092DFB8 /* ObservableValue.m */; };
+		E4638C4D1A31102F0092DFB8 /* Kensho+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E4638C4B1A31102F0092DFB8 /* Kensho+Protected.h */; };
 		E48DB9ED1A2E6A8200CF61E3 /* KenObservationTracking.h in Headers */ = {isa = PBXBuildFile; fileRef = E48DB9EB1A2E6A8200CF61E3 /* KenObservationTracking.h */; };
 		E48DB9EE1A2E6A8200CF61E3 /* KenObservationTracking.m in Sources */ = {isa = PBXBuildFile; fileRef = E48DB9EC1A2E6A8200CF61E3 /* KenObservationTracking.m */; };
 		E4918E211978BAA400B167EA /* Kensho.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CF9558197800F5007B6494 /* Kensho.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -167,8 +170,8 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		E40EF7C5197C269400BEEC3F /* KenshoLuaWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenshoLuaWrapper.h; sourceTree = "<group>"; };
-		E40EF7C6197C269400BEEC3F /* KenshoLuaWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenshoLuaWrapper.m; sourceTree = "<group>"; };
+		E40EF7C5197C269400BEEC3F /* KenshoLuaWrapper.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KenshoLuaWrapper.h; path = Utilities/KenshoLuaWrapper.h; sourceTree = "<group>"; };
+		E40EF7C6197C269400BEEC3F /* KenshoLuaWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KenshoLuaWrapper.m; path = Utilities/KenshoLuaWrapper.m; sourceTree = "<group>"; };
 		E40EF7C9197C26F200BEEC3F /* TestKenshoLuaWrapper.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = TestKenshoLuaWrapper.m; sourceTree = "<group>"; };
 		E40EF7CC197C8E6300BEEC3F /* lapi.c */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.c; path = lapi.c; sourceTree = "<group>"; };
 		E40EF7CD197C8E6300BEEC3F /* lapi.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = lapi.h; sourceTree = "<group>"; };
@@ -241,7 +244,7 @@
 		E423ACA51978204F00231A59 /* UITableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITableViewBinding.m; sourceTree = "<group>"; };
 		E423ACA61978204F00231A59 /* UIViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIViewBinding.h; sourceTree = "<group>"; };
 		E423ACA71978204F00231A59 /* UIViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIViewBinding.m; sourceTree = "<group>"; };
-		E423ACA91978204F00231A59 /* Binding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Binding.h; sourceTree = "<group>"; };
+		E423ACA91978204F00231A59 /* IBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IBinding.h; sourceTree = "<group>"; };
 		E423ACE41978209E00231A59 /* UIView+Kensho.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+Kensho.h"; sourceTree = "<group>"; };
 		E423ACE51978209E00231A59 /* UIView+Kensho.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIView+Kensho.m"; sourceTree = "<group>"; };
 		E423ACEC1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "UIView+UpdateAutoLayoutConstraints.h"; sourceTree = "<group>"; };
@@ -252,8 +255,11 @@
 		E423AD131978B2F700231A59 /* TestUILabelBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUILabelBinding.m; path = KenshoTests/TestUILabelBinding.m; sourceTree = SOURCE_ROOT; };
 		E423AD151978B30600231A59 /* TestUITableViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUITableViewBinding.m; path = KenshoTests/TestUITableViewBinding.m; sourceTree = SOURCE_ROOT; };
 		E423AD171978B31300231A59 /* TestUIViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUIViewBinding.m; path = KenshoTests/TestUIViewBinding.m; sourceTree = SOURCE_ROOT; };
-		E48DB9EB1A2E6A8200CF61E3 /* KenObservationTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenObservationTracking.h; sourceTree = "<group>"; };
-		E48DB9EC1A2E6A8200CF61E3 /* KenObservationTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenObservationTracking.m; sourceTree = "<group>"; };
+		E4638C451A30F5910092DFB8 /* ObservableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableValue.h; sourceTree = "<group>"; };
+		E4638C461A30F5910092DFB8 /* ObservableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableValue.m; sourceTree = "<group>"; };
+		E4638C4B1A31102F0092DFB8 /* Kensho+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kensho+Protected.h"; sourceTree = "<group>"; };
+		E48DB9EB1A2E6A8200CF61E3 /* KenObservationTracking.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = KenObservationTracking.h; path = Observables/KenObservationTracking.h; sourceTree = "<group>"; };
+		E48DB9EC1A2E6A8200CF61E3 /* KenObservationTracking.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = KenObservationTracking.m; path = Observables/KenObservationTracking.m; sourceTree = "<group>"; };
 		E4918E241979587500B167EA /* libOCMock.a */ = {isa = PBXFileReference; lastKnownFileType = archive.ar; path = libOCMock.a; sourceTree = SOURCE_ROOT; };
 		E4918E261979587500B167EA /* NSNotificationCenter+OCMAdditions.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "NSNotificationCenter+OCMAdditions.h"; sourceTree = "<group>"; };
 		E4918E271979587500B167EA /* OCMArg.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = OCMArg.h; sourceTree = "<group>"; };
@@ -386,9 +392,9 @@
 		E423AC9B1978204F00231A59 /* Bindings */ = {
 			isa = PBXGroup;
 			children = (
+				E423ACA81978204F00231A59 /* Interfaces */,
 				E423AC9C1978204F00231A59 /* Base */,
 				E423AC9F1978204F00231A59 /* Concrete */,
-				E423ACA81978204F00231A59 /* Interfaces */,
 			);
 			name = Bindings;
 			path = Kensho/Bindings;
@@ -421,7 +427,7 @@
 		E423ACA81978204F00231A59 /* Interfaces */ = {
 			isa = PBXGroup;
 			children = (
-				E423ACA91978204F00231A59 /* Binding.h */,
+				E423ACA91978204F00231A59 /* IBinding.h */,
 			);
 			path = Interfaces;
 			sourceTree = "<group>";
@@ -430,14 +436,14 @@
 			isa = PBXGroup;
 			children = (
 				E415BBBC1A2F86A2002A661B /* IObservable.h */,
+				E4638C451A30F5910092DFB8 /* ObservableValue.h */,
+				E4638C461A30F5910092DFB8 /* ObservableValue.m */,
 				E49707531A2653B9001B75DF /* KenModel.h */,
 				E49707541A2653B9001B75DF /* KenModel.m */,
 				E49707571A265612001B75DF /* NSObject+Observable.h */,
 				E49707581A265612001B75DF /* NSObject+Observable.m */,
 				E497075E1A2671D3001B75DF /* KenComputed.h */,
 				E497075F1A2671D3001B75DF /* KenComputed.m */,
-				E48DB9EB1A2E6A8200CF61E3 /* KenObservationTracking.h */,
-				E48DB9EC1A2E6A8200CF61E3 /* KenObservationTracking.m */,
 			);
 			name = Observables;
 			path = Kensho/Observables;
@@ -452,8 +458,6 @@
 				E423ACE51978209E00231A59 /* UIView+Kensho.m */,
 				E41D666C19796B9300F240D3 /* WeakProxy.h */,
 				E41D666D19796B9300F240D3 /* WeakProxy.m */,
-				E40EF7C5197C269400BEEC3F /* KenshoLuaWrapper.h */,
-				E40EF7C6197C269400BEEC3F /* KenshoLuaWrapper.m */,
 			);
 			name = Utilities;
 			path = Kensho/Utilities;
@@ -504,6 +508,33 @@
 			name = Concrete;
 			sourceTree = "<group>";
 		};
+		E4638C491A30F5F10092DFB8 /* Internals */ = {
+			isa = PBXGroup;
+			children = (
+				E48DB9EB1A2E6A8200CF61E3 /* KenObservationTracking.h */,
+				E48DB9EC1A2E6A8200CF61E3 /* KenObservationTracking.m */,
+				E40EF7C5197C269400BEEC3F /* KenshoLuaWrapper.h */,
+				E40EF7C6197C269400BEEC3F /* KenshoLuaWrapper.m */,
+				E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */,
+				E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */,
+			);
+			name = Internals;
+			sourceTree = "<group>";
+		};
+		E4638C4A1A3100730092DFB8 /* Public */ = {
+			isa = PBXGroup;
+			children = (
+				E423ACF01978292500231A59 /* CustomBindings.h */,
+				E4CF9558197800F5007B6494 /* Kensho.h */,
+				E4638C4B1A31102F0092DFB8 /* Kensho+Protected.h */,
+				E4CF955A197800F5007B6494 /* Kensho.m */,
+				E423ACB51978207200231A59 /* Observables */,
+				E423AC9B1978204F00231A59 /* Bindings */,
+				E423ACE31978207E00231A59 /* Utilities */,
+			);
+			name = Public;
+			sourceTree = "<group>";
+		};
 		E4918E231979586700B167EA /* OCMock */ = {
 			isa = PBXGroup;
 			children = (
@@ -543,15 +574,6 @@
 			path = doc;
 			sourceTree = SOURCE_ROOT;
 		};
-		E4AF11AF19AEA5A10015C5A1 /* Context */ = {
-			isa = PBXGroup;
-			children = (
-				E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */,
-				E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */,
-			);
-			name = Context;
-			sourceTree = "<group>";
-		};
 		E4CF9547197800F5007B6494 = {
 			isa = PBXGroup;
 			children = (
@@ -587,13 +609,8 @@
 				E4A30D0B1A1C4EB200A15F1A /* Readme.md */,
 				E4A30D0F1A1C4FBE00A15F1A /* Documentation */,
 				E40EF7CB197C8E6300BEEC3F /* lua-5.2.3 */,
-				E423ACE31978207E00231A59 /* Utilities */,
-				E423ACB51978207200231A59 /* Observables */,
-				E4AF11AF19AEA5A10015C5A1 /* Context */,
-				E423AC9B1978204F00231A59 /* Bindings */,
-				E423ACF01978292500231A59 /* CustomBindings.h */,
-				E4CF9558197800F5007B6494 /* Kensho.h */,
-				E4CF955A197800F5007B6494 /* Kensho.m */,
+				E4638C4A1A3100730092DFB8 /* Public */,
+				E4638C491A30F5F10092DFB8 /* Internals */,
 				E4CF9556197800F5007B6494 /* Supporting Files */,
 			);
 			path = Kensho;
@@ -649,6 +666,7 @@
 				E40EF812197C8E6300BEEC3F /* lctype.h in Headers */,
 				E40EF80B197C8E6300BEEC3F /* lauxlib.h in Headers */,
 				E40EF809197C8E6300BEEC3F /* lapi.h in Headers */,
+				E4638C471A30F5910092DFB8 /* ObservableValue.h in Headers */,
 				E40EF83E197C8E6300BEEC3F /* lundump.h in Headers */,
 				E41D666E19796B9300F240D3 /* WeakProxy.h in Headers */,
 				E40EF821197C8E6300BEEC3F /* llimits.h in Headers */,
@@ -666,8 +684,9 @@
 				E49707591A265612001B75DF /* NSObject+Observable.h in Headers */,
 				E40EF80F197C8E6300BEEC3F /* lcode.h in Headers */,
 				E40EF842197C8E6300BEEC3F /* lzio.h in Headers */,
-				E423ACB41978204F00231A59 /* Binding.h in Headers */,
+				E423ACB41978204F00231A59 /* IBinding.h in Headers */,
 				E4918E211978BAA400B167EA /* Kensho.h in Headers */,
+				E4638C4D1A31102F0092DFB8 /* Kensho+Protected.h in Headers */,
 				E40EF817197C8E6300BEEC3F /* ldo.h in Headers */,
 				E40EF83B197C8E6300BEEC3F /* luaconf.h in Headers */,
 				E40EF820197C8E6300BEEC3F /* llex.h in Headers */,
@@ -839,6 +858,7 @@
 				E40EF813197C8E6300BEEC3F /* ldblib.c in Sources */,
 				E40EF826197C8E6300BEEC3F /* lobject.c in Sources */,
 				E41D666F19796B9300F240D3 /* WeakProxy.m in Sources */,
+				E4638C481A30F5910092DFB8 /* ObservableValue.m in Sources */,
 				E40EF810197C8E6300BEEC3F /* lcorolib.c in Sources */,
 				E423ACAB1978204F00231A59 /* BindingBase.m in Sources */,
 				E4CF955B197800F5007B6494 /* Kensho.m in Sources */,
@@ -931,7 +951,7 @@
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 7.1;
-				ONLY_ACTIVE_ARCH = YES;
+				ONLY_ACTIVE_ARCH = NO;
 				PUBLIC_HEADERS_FOLDER_PATH = "$(PROJECT_NAME)Headers";
 				SDKROOT = iphoneos;
 				STRIP_STYLE = "non-global";

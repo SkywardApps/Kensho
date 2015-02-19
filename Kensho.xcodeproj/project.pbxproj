@@ -85,6 +85,8 @@
 		E415BBBD1A2F86A2002A661B /* IObservable.h in Headers */ = {isa = PBXBuildFile; fileRef = E415BBBC1A2F86A2002A661B /* IObservable.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E41D666E19796B9300F240D3 /* WeakProxy.h in Headers */ = {isa = PBXBuildFile; fileRef = E41D666C19796B9300F240D3 /* WeakProxy.h */; };
 		E41D666F19796B9300F240D3 /* WeakProxy.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D666D19796B9300F240D3 /* WeakProxy.m */; };
+		E41D86F31A96798F0088BB99 /* ObservablePropertyReference.h in Headers */ = {isa = PBXBuildFile; fileRef = E41D86F11A96798F0088BB99 /* ObservablePropertyReference.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E41D86F41A96798F0088BB99 /* ObservablePropertyReference.m in Sources */ = {isa = PBXBuildFile; fileRef = E41D86F21A96798F0088BB99 /* ObservablePropertyReference.m */; };
 		E423ACAA1978204F00231A59 /* BindingBase.h in Headers */ = {isa = PBXBuildFile; fileRef = E423AC9D1978204F00231A59 /* BindingBase.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E423ACAB1978204F00231A59 /* BindingBase.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AC9E1978204F00231A59 /* BindingBase.m */; };
 		E423ACAC1978204F00231A59 /* UIButtonBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E423ACA01978204F00231A59 /* UIButtonBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -234,6 +236,8 @@
 		E415BBBC1A2F86A2002A661B /* IObservable.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = IObservable.h; sourceTree = "<group>"; };
 		E41D666C19796B9300F240D3 /* WeakProxy.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = WeakProxy.h; sourceTree = "<group>"; };
 		E41D666D19796B9300F240D3 /* WeakProxy.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = WeakProxy.m; sourceTree = "<group>"; };
+		E41D86F11A96798F0088BB99 /* ObservablePropertyReference.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservablePropertyReference.h; sourceTree = "<group>"; };
+		E41D86F21A96798F0088BB99 /* ObservablePropertyReference.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservablePropertyReference.m; sourceTree = "<group>"; };
 		E423AC9D1978204F00231A59 /* BindingBase.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = BindingBase.h; sourceTree = "<group>"; };
 		E423AC9E1978204F00231A59 /* BindingBase.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = BindingBase.m; sourceTree = "<group>"; };
 		E423ACA01978204F00231A59 /* UIButtonBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIButtonBinding.h; sourceTree = "<group>"; };
@@ -444,6 +448,8 @@
 				E49707581A265612001B75DF /* NSObject+Observable.m */,
 				E497075E1A2671D3001B75DF /* KenComputed.h */,
 				E497075F1A2671D3001B75DF /* KenComputed.m */,
+				E41D86F11A96798F0088BB99 /* ObservablePropertyReference.h */,
+				E41D86F21A96798F0088BB99 /* ObservablePropertyReference.m */,
 			);
 			name = Observables;
 			path = Kensho/Observables;
@@ -681,6 +687,7 @@
 				E48DB9ED1A2E6A8200CF61E3 /* KenObservationTracking.h in Headers */,
 				E423ACAC1978204F00231A59 /* UIButtonBinding.h in Headers */,
 				E40EF81C197C8E6300BEEC3F /* lgc.h in Headers */,
+				E41D86F31A96798F0088BB99 /* ObservablePropertyReference.h in Headers */,
 				E49707591A265612001B75DF /* NSObject+Observable.h in Headers */,
 				E40EF80F197C8E6300BEEC3F /* lcode.h in Headers */,
 				E40EF842197C8E6300BEEC3F /* lzio.h in Headers */,
@@ -833,6 +840,7 @@
 				E40EF828197C8E6300BEEC3F /* lopcodes.c in Sources */,
 				E40EF81B197C8E6300BEEC3F /* lgc.c in Sources */,
 				E40EF83D197C8E6300BEEC3F /* lundump.c in Sources */,
+				E41D86F41A96798F0088BB99 /* ObservablePropertyReference.m in Sources */,
 				E40EF83F197C8E6300BEEC3F /* lvm.c in Sources */,
 				E423ACE71978209E00231A59 /* UIView+Kensho.m in Sources */,
 				E49707611A2671D3001B75DF /* KenComputed.m in Sources */,

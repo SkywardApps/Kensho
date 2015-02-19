@@ -12,6 +12,7 @@
 #include "lauxlib.h"
 #import "IObservable.h"
 #import "NSObject+Observable.h"
+#import "ObservablePropertyReference.h"
 
 /**
  Test cases:
@@ -55,39 +56,6 @@
  So maybe we need a KVO object wrapping the context and the property name, and we use that instead of the actual value.  That way when we return the parameters array, we can actually return the bound property, not just the value
  
  */
-
-@implementation ObservablePropertyReference
-
-@synthesize value;
-
-+ (NSObject*) unwrap:(NSObject*)value
-{
-    if([value isKindOfClass:ObservablePropertyReference.class])
-    {
-        value = [(ObservablePropertyReference*)value value];
-    }
-    if([value isKindOfClass:ObservableValue.class])
-    {
-        value = [(ObservableValue*)value value];
-    }
-    return value;
-}
-
-- (id) initWithOwner:(NSObject*)owner propertyName:(NSString*)name
-{
-    if((self = [super init]))
-    {
-        _owner = owner;
-        _propertyName = name;
-    }
-    return self;
-}
-
-- (NSObject*) value {
-    return [self.owner valueForKey:self.propertyName];
-}
-
-@end
 
 @interface KenshoLuaWrapper ()
 {

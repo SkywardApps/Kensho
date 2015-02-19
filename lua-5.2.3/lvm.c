@@ -258,32 +258,60 @@ int luaV_lessequal (lua_State *L, const TValue *l, const TValue *r) {
 ** equality of Lua values. L == NULL means raw equality (no metamethods)
 */
 int luaV_equalobj_ (lua_State *L, const TValue *t1, const TValue *t2) {
-  const TValue *tm;
-  lua_assert(ttisequal(t1, t2));
-  switch (ttype(t1)) {
-    case LUA_TNIL: return 1;
-    case LUA_TNUMBER: return luai_numeq(nvalue(t1), nvalue(t2));
-    case LUA_TBOOLEAN: return bvalue(t1) == bvalue(t2);  /* true must be 1 !! */
-    case LUA_TLIGHTUSERDATA: return pvalue(t1) == pvalue(t2);
-    case LUA_TLCF: return fvalue(t1) == fvalue(t2);
-    case LUA_TSHRSTR: return eqshrstr(rawtsvalue(t1), rawtsvalue(t2));
-    case LUA_TLNGSTR: return luaS_eqlngstr(rawtsvalue(t1), rawtsvalue(t2));
-    case LUA_TUSERDATA: {
-      if (uvalue(t1) == uvalue(t2)) return 1;
-      else if (L == NULL) return 0;
-      tm = get_equalTM(L, uvalue(t1)->metatable, uvalue(t2)->metatable, TM_EQ);
-      break;  /* will try TM */
+  const TValue *tm = NULL;
+    // lua_assert(ttisequal(t1, t2));
+    // If the types are not equal, we only support the case of one being a userdata|table -
+    // basically, anything that has a meta table
+    // we'll choose the first meta table value we find and use that!
+    if(!ttisequal(t1, t2))
+    {
+      // attempt the first meta-table lookup
+        switch(ttype(t1))
+        {
+          case LUA_TUSERDATA:
+          case LUA_TTABLE:
+              tm = fasttm(L, hvalue(t1)->metatable, TM_EQ);
+              break;
+        }
+        
+        if(tm == NULL)
+        {
+            // attempt the second meta-table lookup
+            switch (ttype(t2)) {
+                case LUA_TUSERDATA:
+                case LUA_TTABLE:
+                    tm = fasttm(L, hvalue(t2)->metatable, TM_EQ);
+                    break;
+            }
+        }
     }
-    case LUA_TTABLE: {
-      if (hvalue(t1) == hvalue(t2)) return 1;
-      else if (L == NULL) return 0;
-      tm = get_equalTM(L, hvalue(t1)->metatable, hvalue(t2)->metatable, TM_EQ);
-      break;  /* will try TM */
+    else
+    {
+     switch (ttype(t1)) {
+        case LUA_TNIL: return 1;
+        case LUA_TNUMBER: return luai_numeq(nvalue(t1), nvalue(t2));
+        case LUA_TBOOLEAN: return bvalue(t1) == bvalue(t2);  /* true must be 1 !! */
+        case LUA_TLIGHTUSERDATA: return pvalue(t1) == pvalue(t2);
+        case LUA_TLCF: return fvalue(t1) == fvalue(t2);
+        case LUA_TSHRSTR: return eqshrstr(rawtsvalue(t1), rawtsvalue(t2));
+        case LUA_TLNGSTR: return luaS_eqlngstr(rawtsvalue(t1), rawtsvalue(t2));
+        case LUA_TUSERDATA: {
+          if (uvalue(t1) == uvalue(t2)) return 1;
+          else if (L == NULL) return 0;
+          tm = get_equalTM(L, uvalue(t1)->metatable, uvalue(t2)->metatable, TM_EQ);
+          break;  /* will try TM */
+        }
+        case LUA_TTABLE: {
+          if (hvalue(t1) == hvalue(t2)) return 1;
+          else if (L == NULL) return 0;
+          tm = get_equalTM(L, hvalue(t1)->metatable, hvalue(t2)->metatable, TM_EQ);
+          break;  /* will try TM */
+        }
+        default:
+          lua_assert(iscollectable(t1));
+          return gcvalue(t1) == gcvalue(t2);
+     }
     }
-    default:
-      lua_assert(iscollectable(t1));
-      return gcvalue(t1) == gcvalue(t2);
-  }
   if (tm == NULL) return 0;  /* no TM? */
   callTM(L, tm, t1, t2, L->top, 1);  /* call TM */
   return !l_isfalse(L->top);

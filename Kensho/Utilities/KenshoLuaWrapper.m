@@ -46,6 +46,49 @@
     Since each value should be used, there's probably no use in late binding.
  */
 
+
+
+/**
+ 
+ For each arithmetic operator there is a corresponding field name in a metatable. Besides __add and __mul, there are __sub (for subtraction), __div (for division), __unm (for negation), and __pow (for exponentiation). We may define also the field __concat, to define a behavior for the concatenation operator.
+ 
+ So maybe we need a KVO object wrapping the context and the property name, and we use that instead of the actual value.  That way when we return the parameters array, we can actually return the bound property, not just the value
+ 
+ */
+
+@implementation ObservablePropertyReference
+
+@synthesize value;
+
++ (NSObject*) unwrap:(NSObject*)value
+{
+    if([value isKindOfClass:ObservablePropertyReference.class])
+    {
+        value = [(ObservablePropertyReference*)value value];
+    }
+    if([value isKindOfClass:ObservableValue.class])
+    {
+        value = [(ObservableValue*)value value];
+    }
+    return value;
+}
+
+- (id) initWithOwner:(NSObject*)owner propertyName:(NSString*)name
+{
+    if((self = [super init]))
+    {
+        _owner = owner;
+        _propertyName = name;
+    }
+    return self;
+}
+
+- (NSObject*) value {
+    return [self.owner valueForKey:self.propertyName];
+}
+
+@end
+
 @interface KenshoLuaWrapper ()
 {
     // The kensho context object
@@ -58,44 +101,114 @@
 
 @end
 
+NSMutableArray* valueWrappers;
 
 int lookupKey(lua_State* L);
 int pushValue(lua_State* L, NSObject* value);
+int addValues(lua_State* L);
+int subtractValues(lua_State* L);
+int multiplyValues(lua_State* L);
+int divideValues(lua_State* L);
+int exponentValues(lua_State* L);
+int modulusValues(lua_State* L);
+int concatValues(lua_State* L);
+int equalsValues(lua_State* L);
+int lessValues(lua_State* L);
+int callValue(lua_State* L);
 
-
-int pushValue(lua_State* L, NSObject* value)
+/**
+ *  Push an NSObject-derived value onto the stack
+ *
+ *  @param L     <#L description#>
+ *  @param value <#value description#>
+ *
+ *  @return 0 on error, otherwise 1.
+ */
+int pushValue(lua_State* L, ObservablePropertyReference* valueWrapper)
 {
+    // So now, we're always pushing an object! It wraps the source, name, and value
+    // Allocate the new userdata lua-object \todo this looks redundant now?
+    NSObject* __weak *userdata = (NSObject* __weak *)lua_newuserdata(L, sizeof(NSObject*));
+    (*userdata) = valueWrapper;
+    
+    // Assign __self to refer to the value itself
+    lua_createtable(L, 0, 1);
+    lua_pushlightuserdata(L, (__bridge void *)(valueWrapper));
+    lua_setfield(L, -2, "__self");
+
+    // make sure that when LUA tries to dereference a property, it uses the lookupKey method to implement it.
+    lua_createtable(L, 0, 1);
+    lua_pushstring(L, "__index");
+    lua_pushcfunction(L, lookupKey);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__add");
+    lua_pushcfunction(L, addValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__sub");
+    lua_pushcfunction(L, subtractValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__mul");
+    lua_pushcfunction(L, multiplyValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__div");
+    lua_pushcfunction(L, divideValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__pow");
+    lua_pushcfunction(L, exponentValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__mod");
+    lua_pushcfunction(L, modulusValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__concat");
+    lua_pushcfunction(L, concatValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__eq");
+    lua_pushcfunction(L, equalsValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__lt");
+    lua_pushcfunction(L, lessValues);
+    lua_settable(L, -3);
+    lua_pushstring(L, "__call");
+    lua_pushcfunction(L, callValue);
+    lua_settable(L, -3);
+    
+    //-- set global index callback hook
+    lua_setmetatable(L, -2);
+    
+    if(!lua_istable(L, -1))
+    {
+        NSLog(@"Stack is wrong");
+    }
+    return 1;
+}
+
+int pushLuaValue(lua_State* L, NSObject* value)
+{
+    // Handle a generic number
     if([value isKindOfClass:NSNumber.class])
     {
         lua_pushnumber(L, [(NSNumber*)value doubleValue]);
-        if(!lua_isnumber(L, -1))
-        {
-            NSLog(@"Stack is wrong");
-        }
         return 1;
     }
+    // Handle a string
     else if([value isKindOfClass:NSString.class])
     {
         lua_pushstring(L, [(NSString*)value UTF8String]);
         return 1;
     }
+    // Handle a complex object of generic kind
     else if([value isKindOfClass:NSObject.class])
     {
-        /*if([value conformsToProtocol:@protocol(IObservable)])
-        {
-            NSObject<IObservable>* obs = (NSObject<IObservable>*)value;
-            //[obs value]; // access the value.  We don't do anything with it, but that does notify
-            // any tracking that it was accessed so this calculated wrapper knows there is a
-            // dependency
-        }*/
-        // do something crazy here to allow key descent (view.frame.width)??
+        // Allocate the new userdata lua-object
         NSObject* __weak *userdata = (NSObject* __weak *)lua_newuserdata(L, sizeof(NSObject*));
         (*userdata) = value;
         
+        // Assign __self to refer to the value itself
         lua_createtable(L, 0, 1);
         lua_pushlightuserdata(L, (__bridge void *)(value));
         lua_setfield(L, -2, "__self");
         
+        // make sure that when LUA tries to dereference a property, it uses the lookupKey method to implement it.
         lua_createtable(L, 0, 1);
         lua_pushstring(L, "__index");
         lua_pushcfunction(L, lookupKey);
@@ -114,6 +227,13 @@ int pushValue(lua_State* L, NSObject* value)
     return 0;
 }
 
+/**
+ *  This is executed when the LUA subsystem attempts to read data to from an index that it doesn't think exists.
+ *
+ *  @param L The LUA state object
+ *
+ *  @return 0 on error, otherwise 1.
+ */
 int lookupKey(lua_State* L)
 {
     // Stack is [tabble, key]
@@ -141,19 +261,34 @@ int lookupKey(lua_State* L)
         return 0;
     }
     
+    target = [ObservablePropertyReference unwrap:target];
+    
+    /**
+     * @todo Consider how to pass-through property references.
+     * This is important for two cases:
+     * - Tight binding to collections (eg, add an item, remove an item. re-order)
+     * - Two-way binding, to allow assignment
+     *
+     * Knockout lets you specify a property name, eg value: 'myValue' (at least for items in a list)
+     * It would be nice if we could do this automagically, eg: value = my.value;
+     */
     NSString* propertyName = [NSString stringWithUTF8String:nameRequest];
-    NSObject* value = [target valueForKey:propertyName];
+    /*NSObject* value = [target valueForKey:propertyName];
     if(value == nil)
     {
         return 0;
-    }
+    }*/
     
-    return pushValue(L, value);
+    // Push the value requested onto the stack, wrapped as appropriate
+    ObservablePropertyReference* valueWrapper = [[ObservablePropertyReference alloc] initWithOwner:target
+                                                                                      propertyName:propertyName];
+    [valueWrappers addObject:valueWrapper];
+    return pushValue(L, valueWrapper);
 }
 
 NSObject* popValue(lua_State* L, int stackLevel)
 {
-    // Now figure out the datatype of the assignement and get the data out
+    // Now figure out the datatype of the assignment and get the data out
     if(lua_isboolean(L, stackLevel))
     {
         return @(lua_toboolean(L, stackLevel));
@@ -173,12 +308,15 @@ NSObject* popValue(lua_State* L, int stackLevel)
         // This could actually be a new table, in which case this will fail.
         lua_getfield(L, stackLevel, "__self");
         NSObject* value = (__bridge id)(lua_touserdata(L, -1));
+        
+        // If this wasn't one of our wrapped objects, pop the table into a NSDictionary map.
         if(value == nil)
         {
             
             // We'll create an NSDictionary wrapper here
             NSMutableDictionary* dictionary = [[NSMutableDictionary alloc] init];
             
+            // stackLevel-1 is now the table we attempted to get
             while (lua_next(L, stackLevel-1) != 0) {
                 /* uses 'key' (at index -2) and 'value' (at index -1) */
                 printf("%s\n", lua_typename(L, lua_type(L, -2)));
@@ -205,19 +343,22 @@ NSObject* popValue(lua_State* L, int stackLevel)
                 {
                     const char* tempString = lua_tostring(L, -1);
                     printf("%s\n", tempString);
-                    
                 }
             }
             
             value = [NSDictionary dictionaryWithDictionary:dictionary];
         }
-        printf("%s\n", lua_typename(L, lua_type(L, -1)));
+        else
+        {
+            lua_pop(L, 1);
+        }
+        /*printf("%s\n", lua_typename(L, lua_type(L, -1)));
         if(lua_isstring(L, -1))
         {
             const char* tempString = lua_tostring(L, -1);
             printf("%s\n", tempString);
             
-        }
+        }*/
         return value;
     }
     
@@ -258,7 +399,7 @@ int lookupNewKey(lua_State* L)
     }
     
     // Get the pointer to the context table (the global table here)
-    // And then get it's __wrapper object, which points to the owning KenshoLuaWrapper.
+    // And then get its __wrapper object, which points to the owning KenshoLuaWrapper.
     lua_getfield(L, -3, "__wrapper");
     id target = (__bridge id)(lua_touserdata(L, -1));
     lua_pop(L, 1);
@@ -279,6 +420,123 @@ int lookupNewKey(lua_State* L)
     return 1;
 }
 
+int addValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, left.doubleValue + right.doubleValue);
+    return 1;
+}
+
+int subtractValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, left.doubleValue - right.doubleValue);
+    return 1;
+}
+
+int multiplyValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, left.doubleValue * right.doubleValue);
+    return 1;
+}
+
+int divideValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, left.doubleValue / right.doubleValue);
+    return 1;
+}
+
+int exponentValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, pow(left.doubleValue, right.doubleValue));
+    return 1;
+}
+
+int modulusValues(lua_State* L)
+{
+    NSNumber* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSNumber* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushnumber(L, left.doubleValue - floor(left.doubleValue/right.doubleValue)*right.doubleValue);
+    return 1;
+}
+
+int concatValues(lua_State* L)
+{
+    NSString* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSString* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushstring(L, [left stringByAppendingString:right].UTF8String);
+    return 1;
+}
+
+int equalsValues(lua_State* L)
+{
+    NSObject* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSObject* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    lua_pushboolean(L, [left isEqual:right]);
+    return 1;
+}
+
+int lessValues(lua_State* L)
+{
+    NSObject* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
+    NSObject* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
+    if([left respondsToSelector:@selector(compare:)])
+    {
+        lua_pushboolean(L, [(id)left compare:right] == NSOrderedAscending);
+        return 1;
+    }
+    return 0;
+}
+
+int callValue(lua_State* L)
+{
+    NSObject* parameter = popValue(L, -lua_gettop(L));
+    if(![parameter isKindOfClass:ObservablePropertyReference.class])
+    {
+        return 0;
+    }
+    ObservablePropertyReference* reference = (ObservablePropertyReference*)parameter;
+    
+    id object = reference.owner;
+    if([object isKindOfClass:KenshoContext.class])
+    {
+        object = [object context];
+    }
+    
+    NSString* selectorName = reference.propertyName;
+    SEL selector = NSSelectorFromString(selectorName);
+    if([object respondsToSelector:selector])
+    {
+        /**
+         *   \todo support native-type returns, not just NSObject*s.
+         *  This is a very complicated situation - see 'makeClassObservable' in NSObject+Observable.m
+         */
+        NSObject* result = [object performSelector:selector];
+        pushLuaValue(L, result);
+        return 1;
+    }
+    
+    selectorName = [selectorName stringByAppendingString:@":"];
+    selector = NSSelectorFromString(selectorName);
+    if([object respondsToSelector:selector])
+    {
+        NSObject* argument = popValue(L, -1);
+        NSObject* result = [object performSelector:selector withObject:argument];
+        pushLuaValue(L, result);
+        return 1;
+    }
+    
+    return 0;
+}
+
 @implementation KenshoLuaWrapper
 
 - (id) initWithKensho:(Kensho *)initken context:(id)initcontext code:(NSString *)initcode
@@ -289,6 +547,7 @@ int lookupNewKey(lua_State* L)
     {
         ken = initken;
         context = initcontext;
+        valueWrappers = [NSMutableArray array];
         _parameters = [[NSMutableDictionary alloc] initWithCapacity:1];
         self.code = initcode;
     }
@@ -349,7 +608,8 @@ int lookupNewKey(lua_State* L)
     int resultCode = lua_pcall(L, 0, 1, 0);
     if (0 == resultCode)
     {
-        return _parameters[@"__final"];
+        NSObject* result =  _parameters[@"__final"];
+        return [ObservablePropertyReference unwrap:result];
     }
     /* 
      LUA_ERRRUN: a runtime error.

@@ -21,7 +21,8 @@
 @property (readonly) NSString* readOnly;
 @property double cantDoIt;
 
-- (int) notAProperty;
+- (NSObject*) notAProperty;
+- (NSObject*)alsoNotAProperty:(NSNumber*)number;
 
 @end
 @implementation TestableLuaObject
@@ -37,10 +38,16 @@
     return self;
 }
 
-- (int)notAProperty
+- (NSObject*)notAProperty
 {
-    return 1;
+    return @1;
 }
+
+- (NSObject*)alsoNotAProperty:(NSNumber*)number
+{
+    return @(number.doubleValue + 5);
+}
+
 @end
 
 // Done
@@ -49,6 +56,15 @@
     Kensho* ken;
 }
 
+@end
+
+
+@interface SingleNest : KenModel
+@property SingleNest* nested;
+@property NSString* value;
+@end
+
+@implementation SingleNest
 @end
 
 @implementation TestKenshoLuaWrapper
@@ -71,9 +87,122 @@
 {
     NSDictionary* dictionary = @{@"first":@(2), @"second":@(52)};
     KenshoContext* context = [[KenshoContext alloc] initWithContext:dictionary parent:nil];
+    
+    // Start with addition
     KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"first + second"];
-    NSNumber* result = (NSNumber*)[wrapper evaluate:@"first + second"];
+    NSNumber* result = wrapper.currentValue;
     XCTAssertEqualObjects(result, @(54), @"Calculation was not performed correctly");
+    
+    // subtraction
+    result = (NSNumber*)[wrapper evaluate:@"second - first"];
+    XCTAssertEqualObjects(result, @(50), @"Calculation was not performed correctly");
+    
+    // multiplication
+    result = (NSNumber*)[wrapper evaluate:@"second * first"];
+    XCTAssertEqualObjects(result, @(104), @"Calculation was not performed correctly");
+    
+    // division
+    result = (NSNumber*)[wrapper evaluate:@"second / first"];
+    XCTAssertEqualObjects(result, @(26), @"Calculation was not performed correctly");
+    
+    // power
+    result = (NSNumber*)[wrapper evaluate:@"second ^ first"];
+    XCTAssertEqualObjects(result, @(2704), @"Calculation was not performed correctly");
+    
+    // modulus
+    result = (NSNumber*)[wrapper evaluate:@"second % first"];
+    XCTAssertEqualObjects(result, @(0), @"Calculation was not performed correctly");
+    
+    
+    // addition with constant
+    result = (NSNumber*)[wrapper evaluate:@"first + 1"];
+    XCTAssertEqualObjects(result, @(3), @"Calculation was not performed correctly");
+    result = (NSNumber*)[wrapper evaluate:@"1 + second"];
+    XCTAssertEqualObjects(result, @(53), @"Calculation was not performed correctly");
+    
+    
+    // equality
+    // We also test basic number equality here because we may have modified the Lua internals
+    result = (NSNumber*)[wrapper evaluate:@"1 == 1"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first == 2"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"52 == second"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first == 3"];
+    XCTAssertEqualObjects(result, @(NO), @"Calculation was not performed correctly");
+    
+    
+    result = (NSNumber*)[wrapper evaluate:@"first < 5"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first <= 2"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    
+    result = (NSNumber*)[wrapper evaluate:@"50 < second"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"52 <= second"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first > 1"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first >= 2"];
+    XCTAssertEqualObjects(result, @(YES), @"Calculation was not performed correctly");
+    
+    result = (NSNumber*)[wrapper evaluate:@"first > 2"];
+    XCTAssertEqualObjects(result, @(NO), @"Calculation was not performed correctly");
+    
+}
+
+
+- (void) testStrings
+{
+    NSDictionary* dictionary = @{@"first":@"left", @"second":@"right"};
+    KenshoContext* context = [[KenshoContext alloc] initWithContext:dictionary parent:nil];
+    
+    KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"first .. \" hand\""];
+    NSString* result = wrapper.currentValue;
+    XCTAssertEqualObjects(result, @"left hand", @"Calculation was not performed correctly");
+    
+    result = (NSString*)[wrapper evaluate:@"\"Always \" .. second"];
+    XCTAssertEqualObjects(result, @"Always right", @"Calculation was not performed correctly");
+    
+    result = (NSString*)[wrapper evaluate:@"first .. second"];
+    XCTAssertEqualObjects(result, @"leftright", @"Calculation was not performed correctly");
+    
+    result = (NSString*)[wrapper evaluate:@"first .. \" to \" .. second"];
+    XCTAssertEqualObjects(result, @"left to right", @"Calculation was not performed correctly");
+    
+    
+    // equality
+    // We also test basic string equality here because we may have modified the Lua internals
+    NSNumber* boolResult = (NSNumber*)[wrapper evaluate:@"\"hello\" == \"hello\""];
+    XCTAssertEqualObjects(boolResult, @(YES), @"Calculation was not performed correctly");
+    
+    boolResult = (NSNumber*)[wrapper evaluate:@"first == \"left\""];
+    XCTAssertEqualObjects(boolResult, @(YES), @"Calculation was not performed correctly");
+    
+    boolResult = (NSNumber*)[wrapper evaluate:@"\"right\" == second"];
+    XCTAssertEqualObjects(boolResult, @(YES), @"Calculation was not performed correctly");
+    
+}
+
+- (void) testMethodCalls
+{
+    TestableLuaObject* object = [[[TestableLuaObject alloc] init] observe:ken];
+    KenshoContext* context = [[KenshoContext alloc] initWithContext:object parent:nil];
+    KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"notAProperty()"];
+    NSNumber* result = wrapper.currentValue;
+    XCTAssertEqualObjects(result, @1, @"Calculation was not performed correctly"); 
+    
+    result = (NSNumber*)[wrapper evaluate:@"alsoNotAProperty(5)"];
+    XCTAssertEqualObjects(result, @(10), @"Calculation was not performed correctly");
 }
 
 - (void)testRecursive
@@ -131,6 +260,19 @@
     XCTAssertEqualObjects(result[@"p3"][@"test"], @"YES", @"Incorrect complex value.value");
 }
 
+- (void) testNestedObject
+{
+    SingleNest* nest1 = [[SingleNest alloc] initWithKensho:ken];
+    nest1.nested = [[SingleNest alloc] initWithKensho:ken];
+    nest1.nested.value = @"Correct";
+    
+    
+    KenshoContext* context = [[KenshoContext alloc] initWithContext:nest1 parent:nil];
+    KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"nested.value"];
+    NSString* hw = (NSString*)wrapper.currentValue;
+    XCTAssertEqualObjects(hw, @"Correct", @"Calculation was not performed correctly");
+}
+
 
 - (void) testParameters
 {
@@ -149,6 +291,27 @@
     
 }
 
+- (void) testParametersFromObservables
+{
+    SingleNest* nest1 = [[SingleNest alloc] initWithKensho:ken];
+    nest1.nested = [[SingleNest alloc] initWithKensho:ken];
+    nest1.nested.value = @"Correct";
+    
+    NSString* lineOfCode = @"\"Hello World\"; p3={test=nested.value}; p2=52";
+    KenshoContext* context = [[KenshoContext alloc] initWithContext:nest1 parent:nil];
+    KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:lineOfCode];
+    NSString* result = (NSString*)[wrapper evaluate:lineOfCode];
+    XCTAssertEqualObjects(result, @"Hello World", @"Incorrect string value");
+    
+    // THe second is a string
+    XCTAssertEqualObjects(wrapper.parameters[@"p2"], @52, @"Incorrect number value");
+    
+    // THe first is a string
+    XCTAssertEqualObjects([(ObservablePropertyReference*)wrapper.parameters[@"p3"][@"test"] value], @"Correct", @"Incorrect complex value.value");
+    
+}
+
+
 - (void) testParameterDependancy
 {
     TestableLuaObject* object = [[[TestableLuaObject alloc] init] observe:ken];
@@ -161,19 +324,19 @@
     XCTAssertEqualObjects(result, @"readOnly", @"Incorrect string value");
     
     // THe second is a string
-    XCTAssertEqualObjects(wrapper.parameters[@"p2"], @5.5, @"Incorrect number value");
+    XCTAssertEqualObjects([ObservablePropertyReference unwrap:wrapper.parameters[@"p2"]], @5.5, @"Incorrect number value");
     
     // THe first is a string
-    XCTAssertEqualObjects(wrapper.parameters[@"p3"][@"test"], @"readWrite", @"Incorrect complex value.value");
+    XCTAssertEqualObjects([ObservablePropertyReference unwrap:wrapper.parameters[@"p3"][@"test"]], @"readWrite", @"Incorrect complex value.value");
     
     object.readWrite = @"Hello World";
     object.cantDoIt = 11.5;
     
     // THe second is a string
-    XCTAssertEqualObjects(wrapper.parameters[@"p2"], @11.5, @"Incorrect number value");
+    XCTAssertEqualObjects([ObservablePropertyReference unwrap:wrapper.parameters[@"p2"]], @11.5, @"Incorrect number value");
     
     // THe first is a string
-    XCTAssertEqualObjects(wrapper.parameters[@"p3"][@"test"], @"Hello World", @"Incorrect complex value.value");
+    XCTAssertEqualObjects([ObservablePropertyReference unwrap:wrapper.parameters[@"p3"][@"test"]], @"Hello World", @"Incorrect complex value.value");
     
 }
 

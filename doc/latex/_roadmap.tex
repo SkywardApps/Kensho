@@ -1,0 +1,34 @@
+\subsubsection*{i\+O\+S Progress}
+
+\begin{TabularC}{2}
+\hline
+\rowcolor{lightgray}{\bf Status }&{\bf Item  }\\\cline{1-2}
+Completed &Lua Integration  \\\cline{1-2}
+Completed &Observable Values  \\\cline{1-2}
+Completed &Computed Values  \\\cline{1-2}
+In Progress &Observable\+Array  \\\cline{1-2}
+Todo &Observable\+Map  \\\cline{1-2}
+Todo &Bi-\/directional binding  \\\cline{1-2}
+\end{TabularC}
+
+
+
+\begin{DoxyItemize}
+\item \begin{DoxyRefDesc}{Todo}
+\item[\hyperlink{todo__todo000001}{Todo}]thoughts
+\begin{DoxyItemize}
+\item if-\/then-\/else or case method in lua, since we can't use the 'if' logic or looping at all in the current declaration code.
+\item version of 'observe' that takes a whitelist of attributes to track, so we don't wrap methods we don't care about (performance)
+\item version of Ken\+Model that can use internal dispatch rather than just using the tracker. This may be a faster method than constantly getting the attached object. Could still use K\+V\+O, or even just a system where the object itself notifies the dispatcher
+\item two-\/way bindings
+\item method or selector bindings. Ie, what happens when you click a button? Could even inline lua to execute?
+\item integrate lua more directly. Maybe a static executor? Then we have a scripting engine available anywhere.
+\item How do we do templating? Do we even want to?
+\item How to we bind to collections better, and get add/remove/move events? K\+V\+O supports this, and foreach could use it pretty effectively.
+\item Do we need other layout bindings, like 'grid'? Or are things like 'space before' 'space after' space between' sufficient?
+\item Tests
+\item Documentation
+\item Auto-\/doxygen 
+\end{DoxyItemize}\end{DoxyRefDesc}
+
+\end{DoxyItemize}

@@ -14,6 +14,7 @@
 #import "KenshoLuaWrapper.h"
 #import <Kensho/Kensho.h>
 #import "NSObject+Observable.h"
+#import "ObservablePropertyReference.h"
 
 @interface TestableLuaObject : NSObject
 

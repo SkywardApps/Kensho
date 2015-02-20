@@ -135,11 +135,10 @@
 		E4AF11B319AEA5B50015C5A1 /* KenshoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */; };
 		E4CF9554197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
 		E4CF955B197800F5007B6494 /* Kensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF955A197800F5007B6494 /* Kensho.m */; };
-		E4CF9562197800F5007B6494 /* XCTest.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9561197800F5007B6494 /* XCTest.framework */; };
 		E4CF9563197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
-		E4CF9565197800F5007B6494 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9564197800F5007B6494 /* UIKit.framework */; };
 		E4CF9568197800F5007B6494 /* libKensho.a in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9550197800F5007B6494 /* libKensho.a */; };
 		E4CF956E197800F5007B6494 /* InfoPlist.strings in Resources */ = {isa = PBXBuildFile; fileRef = E4CF956C197800F5007B6494 /* InfoPlist.strings */; };
+		FC54123D1A97977A00BB18A8 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FC54123C1A97977A00BB18A8 /* UIKit.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -302,6 +301,7 @@
 		E4CF956B197800F5007B6494 /* KenshoTests-Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; name = "KenshoTests-Info.plist"; path = "../KenshoTests/KenshoTests-Info.plist"; sourceTree = "<group>"; };
 		E4CF956D197800F5007B6494 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/InfoPlist.strings; sourceTree = "<group>"; };
 		E4CF956F197800F5007B6494 /* KenshoTests.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; name = KenshoTests.m; path = KenshoTests/KenshoTests.m; sourceTree = SOURCE_ROOT; };
+		FC54123C1A97977A00BB18A8 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -317,9 +317,8 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				E4CF9562197800F5007B6494 /* XCTest.framework in Frameworks */,
+				FC54123D1A97977A00BB18A8 /* UIKit.framework in Frameworks */,
 				E4CF9568197800F5007B6494 /* libKensho.a in Frameworks */,
-				E4CF9565197800F5007B6494 /* UIKit.framework in Frameworks */,
 				E4CF9563197800F5007B6494 /* Foundation.framework in Frameworks */,
 				E4918E2F1979587500B167EA /* libOCMock.a in Frameworks */,
 			);
@@ -602,6 +601,7 @@
 		E4CF9552197800F5007B6494 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				FC54123C1A97977A00BB18A8 /* UIKit.framework */,
 				E4CF9553197800F5007B6494 /* Foundation.framework */,
 				E4CF9561197800F5007B6494 /* XCTest.framework */,
 				E4CF9564197800F5007B6494 /* UIKit.framework */,

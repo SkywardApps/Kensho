@@ -1044,7 +1044,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/nelliott/Documents/Projects/Kensho,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "KenshoTests/KenshoTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (
@@ -1075,7 +1075,7 @@
 				HEADER_SEARCH_PATHS = (
 					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
-					/Users/nelliott/Documents/Projects/Kensho,
+					"$(PROJECT_DIR)",
 				);
 				INFOPLIST_FILE = "KenshoTests/KenshoTests-Info.plist";
 				LIBRARY_SEARCH_PATHS = (

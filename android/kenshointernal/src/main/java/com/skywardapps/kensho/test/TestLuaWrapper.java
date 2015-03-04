@@ -3,6 +3,7 @@ package com.skywardapps.kensho.test;
 import android.test.InstrumentationTestCase;
 
 import com.skywardapps.kensho.Computed;
+import com.skywardapps.kensho.Kensho;
 import com.skywardapps.kensho.LuaWrapper;
 import com.skywardapps.kensho.ObservableValue;
 import com.skywardapps.kensho.WatchableBase;
@@ -39,5 +40,12 @@ public class TestLuaWrapper extends InstrumentationTestCase {
 
         Class returnType = this.getClass().getMethod("fakeMethod", Object.class).getReturnType();
         assertEquals("i", LuaWrapper.getTypeId(returnType));
+    }
+
+    public void testBasicEvaluation()
+    {
+        Kensho ken = new Kensho();
+        LuaWrapper wrapper = new LuaWrapper(ken, this, "2+3");
+        assertEquals(wrapper.get(), new Double(5));
     }
 }

@@ -22,6 +22,10 @@ public class LuaWrapper extends Computed
         trackCompute();
     }
 
+    public Double numberFromDouble(double d)
+    {
+        return new Double(d);
+    };
 
     @Override
     protected Object compute() {

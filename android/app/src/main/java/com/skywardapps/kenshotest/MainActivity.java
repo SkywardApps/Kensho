@@ -3,8 +3,13 @@ package com.skywardapps.kenshotest;
 import android.support.v7.app.ActionBarActivity;
 import android.os.Bundle;
 import android.util.Log;
+import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+
+import com.skywardapps.kensho.AttributeParser;
+import com.skywardapps.kensho.Kensho;
 
 
 public class MainActivity extends ActionBarActivity
@@ -17,10 +22,16 @@ public class MainActivity extends ActionBarActivity
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
-        setContentView(com.skywardapps.kenshotest.R.layout.activity_main);
-
-        String j = testLua("return \"Hello \"..\"world\";");
-        Log.d("JNI", j);
+        AttributeParser.setAttributeGroupName(R.styleable.KenshoAttr);
+        LayoutInflater inflater = AttributeParser.getLayoutInflater(getLayoutInflater());
+        View view = inflater.inflate(R.layout.activity_main, null);
+        //setContentView(com.skywardapps.kenshotest.R.layout.activity_main);
+        Kensho k = new Kensho();
+        MyModel m = new MyModel();
+        m.setName("Hello");
+        k.applyBindings(view.findViewById(R.id.textView), m);
+        //String j = testLua("return \"Hello \"..\"world\";");
+        //Log.d("JNI", j);
     }
 
     /* A native method that is implemented by the
@@ -35,7 +46,7 @@ public class MainActivity extends ActionBarActivity
      * installation time by the package manager.
      */
     static {
-        System.loadLibrary("lua");
+        //System.loadLibrary("lua");
     }
 
     @Override

@@ -7,7 +7,7 @@
 #define INFO_TAG "[INFO]"
 #define LOGI(...) __android_log_print(ANDROID_LOG_INFO, INFO_TAG, __VA_ARGS__)
 
- JNIEXPORT jstring JNICALL Java_com_skyward_kenshotest_MainActivity_testLua(JNIEnv* env, jobject obj, jstring unused)
+ JNIEXPORT jstring JNICALL Java_com_skywardapps_kenshotest_MainActivity_testLua(JNIEnv* env, jobject obj, jstring unused)
 {
   jclass cls = (*env)->GetObjectClass(env, obj);
   jmethodID mid = (*env)->GetMethodID(env, cls, "callback", "()Ljava/lang/String;");

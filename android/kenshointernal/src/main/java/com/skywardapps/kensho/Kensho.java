@@ -70,13 +70,17 @@ public class Kensho
         _assignedBindings.remove(view);
     }
 
+    public void setAttributeGroup(int[] grp){
+        AttributeParser.setAttributeGroupName(grp);
+    }
+
     protected void bindToView(View currentView, Context initialContext)
     {
         Context currentContext = initialContext;
 
         _assignedBindings.put(currentView, new HashSet<IBinding>());
 
-        Dictionary<String, String> bindings = null;
+        Dictionary<String, String> bindings = AttributeParser.getAttributesForView(currentView.getId());
         Enumeration<String> keys = bindings.keys();
         while(keys.hasMoreElements())
         {

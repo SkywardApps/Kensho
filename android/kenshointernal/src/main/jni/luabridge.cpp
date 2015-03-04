@@ -20,18 +20,19 @@ class LuaWrapper {
         LuaWrapper(JNIEnv* env, jobject javaWrapper)
         {
             _env = env;
+            _wrapperObject = javaWrapper;
             _wrapperClass = env->GetObjectClass(javaWrapper);
-            _getTypeIdMethodId = env->GetMethodID(_wrapperClass, "getTypeId", "(Ljava/lang/Class;)Ljava/lang/String;");
+            _getTypeIdMethodId = env->GetStaticMethodID(_wrapperClass, "getTypeId", "(Ljava/lang/Class;)Ljava/lang/String;");
             _setParameterMethodId = env->GetMethodID(_wrapperClass, "setParameter", "(Ljava/lang/String;Ljava/lang/Object;)V");
-            _reflectMethodId = env->GetMethodID(_wrapperClass, "reflect", "(Ljava/lang/Class;)[Ljava/lang/String;");
-            _doubleToNumberMethodId = env->GetMethodID(_wrapperClass, "doubleToNumber", "(D)Ljava/lang/Double;");
+            _reflectMethodId = env->GetStaticMethodID(_wrapperClass, "reflect", "(Ljava/lang/Class;)[Ljava/lang/String;");
+            _doubleToNumberMethodId = env->GetMethodID(_wrapperClass, "numberFromDouble", "(D)Ljava/lang/Double;");
         }
 
         char getTypeId(jobject object)
         {
             // We get the class of the object, then invoke our java wrapper method (perhaps this can be written in C++?) to
             // get the type string back
-            jstring typeIdJString = (jstring)_env->CallObjectMethod(_wrapperClass, _getTypeIdMethodId, _env->GetObjectClass(object));
+            jstring typeIdJString = (jstring)_env->CallStaticObjectMethod(_wrapperClass, _getTypeIdMethodId, _env->GetObjectClass(object));
             const char* typeIdCString = _env->GetStringUTFChars(typeIdJString, NULL);
             char typeId = typeIdCString[0];
             _env->ReleaseStringUTFChars(typeIdJString, typeIdCString);
@@ -41,15 +42,16 @@ class LuaWrapper {
         void setResultParameter(const char* name, jobject value)
         {
             jstring nameJString = _env->NewStringUTF(name);
-            _env->CallObjectMethod(_wrapperClass, _setParameterMethodId, nameJString, value);
+            _env->CallVoidMethod(_wrapperObject, _setParameterMethodId, nameJString, value);
         }
 
-        jobject doubleToNumber(double value)
+        jobject doubleToNumber(jdouble value)
         {
-            return _env->CallObjectMethod(_wrapperClass, _doubleToNumberMethodId, (jdouble)value);
+            return _env->CallObjectMethod(_wrapperObject, _doubleToNumberMethodId, value);
         }
     private:
         JNIEnv* _env;
+        jobject _wrapperObject;
         jclass _wrapperClass;
         jmethodID _getTypeIdMethodId;
         jmethodID _setParameterMethodId;
@@ -167,7 +169,7 @@ int lookupNewKey(lua_State* L)
 
 }
 
-
+extern "C"{
 JNIEXPORT jobject JNICALL Java_com_skywardapps_kensho_LuaWrapper_luaEvaluate(JNIEnv* env, jobject sender, jobject context, jstring code)
 {
     if(luaWrapper == NULL)
@@ -236,5 +238,6 @@ JNIEXPORT jobject JNICALL Java_com_skywardapps_kensho_LuaWrapper_luaEvaluate(JNI
     env->ReleaseStringUTFChars(code, cstrLuaCode);
 
     return NULL;
+}
 }
 

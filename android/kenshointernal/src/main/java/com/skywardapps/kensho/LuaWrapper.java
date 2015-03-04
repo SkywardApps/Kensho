@@ -27,6 +27,10 @@ public class LuaWrapper extends Computed
         return new Double(d);
     };
 
+    static {
+        System.loadLibrary("lua");
+    }
+
     @Override
     protected Object compute() {
         _parameters = new HashMap<String, Object>();
@@ -145,7 +149,7 @@ public class LuaWrapper extends Computed
         return _parameters;
     }
 
-    private void setParameter(String key, Object value)
+    public void setParameter(String key, Object value)
     {
         _parameters.put(key, value);
     }

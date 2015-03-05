@@ -14,11 +14,11 @@
 		<string>ssh://titus/git/Kensho</string>
 	</dict>
 	<key>IDESourceControlProjectPath</key>
-	<string>Kensho.xcodeproj</string>
+	<string>ios/Kensho.xcodeproj</string>
 	<key>IDESourceControlProjectRelativeInstallPathDictionary</key>
 	<dict>
 		<key>5F2D1B16152BC3ACDAD864F3D6AFCD5E4D75144F</key>
-		<string>../..</string>
+		<string>../../..</string>
 	</dict>
 	<key>IDESourceControlProjectURL</key>
 	<string>ssh://titus/git/Kensho</string>

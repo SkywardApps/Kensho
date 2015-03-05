@@ -1,6 +1,9 @@
 package com.skywardapps.kensho;
 
+import android.util.Log;
+
 import java.lang.reflect.Field;
+import java.lang.reflect.InvocationTargetException;
 import java.lang.reflect.Method;
 import java.util.ArrayList;
 import java.util.HashMap;
@@ -22,10 +25,71 @@ public class LuaWrapper extends Computed
         trackCompute();
     }
 
-    public Double numberFromDouble(double d)
+    public static boolean booleanFromObject(Object b)
+    {
+        if(Boolean.class.isAssignableFrom(b.getClass()))
+        {
+            Boolean bool = (Boolean)b;
+            return bool.booleanValue();
+        }
+
+        if(b.getClass() == boolean.class)
+        {
+            return (boolean)b;
+        }
+
+        return false;
+    }
+
+    public static Double numberFromDouble(double d)
     {
         return new Double(d);
-    };
+    }
+
+    public static double doubleFromObject(Object d)
+    {
+        if(Number.class.isAssignableFrom(d.getClass()))
+        {
+            Number n = (Number) d;
+            return n.doubleValue();
+        }
+
+        if(d.getClass() == int.class)
+        {
+            return (int)d;
+        }
+
+        if(d.getClass() == double.class)
+        {
+            return (double)d;
+        }
+
+        if(d.getClass() == float.class)
+        {
+            return (float)d;
+        }
+
+        if(d.getClass() == long.class)
+        {
+            return (long)d;
+        }
+
+        if(d.getClass() == short.class)
+        {
+            return (short)d;
+        }
+
+        if(d.getClass() == byte.class)
+        {
+            return (byte)d;
+        }
+
+        if(d.getClass() == char.class)
+        {
+            return (char)d;
+        }
+        return 0;
+    }
 
     static {
         System.loadLibrary("lua");
@@ -49,56 +113,12 @@ public class LuaWrapper extends Computed
         return null;
     }
 
-    public static String[] reflect(Class targetClass)
-    {
-        ArrayList<String> properties = new ArrayList<>();
-
-        /// public fields too
-        for(Field field : targetClass.getFields())
-        {
-            Class fieldClass = field.getType();
-            String fieldClassId = getTypeId(fieldClass);
-
-            properties.add( "F" + "."
-                    + field.getName().toLowerCase() + "."
-                    + field.getName() + "."
-                    + field.getType());
-        }
-
-        for(Method method : targetClass.getMethods())
-        {
-            // Ignore anything that takes a parameter
-            if(method.getParameterTypes().length > 0)
-                continue;
-
-            // Ignore anything that doesn't start with 'get'
-            if(!method.getName().startsWith("get"))
-                continue;
-
-            String fragment = method.getName().substring(3);
-            Class returnClass = method.getReturnType();
-            String returnTypeId = getTypeId(returnClass);
-
-            String setterName = "";
-            try {
-                Method setter = targetClass.getMethod("set" + fragment, returnClass);
-                setterName = setter.getName();
-            }
-            catch(NoSuchMethodException ex)
-            {
-
-            }
-
-            properties.add( "M"+"."
-                            + fragment.toLowerCase() + "."
-                            + method.getName() +"."
-                            + setterName + "."
-                            + returnTypeId);
-        }
-        return properties.toArray(new String[0]);
-    }
-
     public static String getTypeId(Class typeClass) {
+        String sig = typeClass.toString();
+        String canon = typeClass.getCanonicalName();
+        String simple = typeClass.getSimpleName();
+        String name = typeClass.getName();
+
         String returnTypeId = "";
         if(typeClass.isPrimitive())
         {
@@ -113,10 +133,13 @@ public class LuaWrapper extends Computed
                builtInMap("void", Void.TYPE );
                builtInMap("short", Short.TYPE );
              */
-            returnTypeId = typeClass.getName().substring(0,1);
-            if(typeClass.equals(byte.class))
+            if(typeClass.equals(boolean.class))
             {
-                returnTypeId = "y";
+                returnTypeId = "B";
+            }
+            else
+            {
+                returnTypeId = "N";
             }
         }
         else if(IObservable.class.isAssignableFrom(typeClass))
@@ -141,6 +164,47 @@ public class LuaWrapper extends Computed
         }
 
         return returnTypeId;
+    }
+
+    public static Object getProperty(Object instance, String propertyName)
+    {
+        Class objectClass = instance.getClass();
+
+        try {
+            Field field = objectClass.getField(propertyName);
+            if(field != null)
+            {
+                return field.get(instance);
+            }
+        } catch (NoSuchFieldException e) {
+            e.printStackTrace();
+        } catch (IllegalAccessException e) {
+            e.printStackTrace();
+        }
+
+        for(Method method : objectClass.getMethods())
+        {
+            // Ignore anything that takes a parameter
+            if(method.getParameterTypes().length > 0)
+                continue;
+
+            // Ignore anything that doesn't start with 'get'
+            if(method.getReturnType() == void.class)
+                continue;
+
+            if(method.getName().toLowerCase().equals(propertyName)
+                    || method.getName().toLowerCase().equals(("get" + propertyName).toLowerCase()))
+            {
+                try {
+                    return method.invoke(instance, (Object[]) null);
+                } catch (IllegalAccessException e) {
+                    e.printStackTrace();
+                } catch (InvocationTargetException e) {
+                    e.printStackTrace();
+                }
+            }
+        }
+        return null;
     }
 
     private native Object luaEvaluate(Object context, String code);

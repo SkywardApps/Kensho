@@ -17,6 +17,13 @@
 /**
  *  An additional property exposed on views for the sole purpose of binding in interface builder
  */
-@property (readonly) NSMutableDictionary* ken;
+@property (readonly) IBInspectable NSMutableDictionary* ken;
+
+@end
+
+
+@interface UIButton (Kensho)
+
+@property IBInspectable NSString* dataBindTitle;
 
 @end

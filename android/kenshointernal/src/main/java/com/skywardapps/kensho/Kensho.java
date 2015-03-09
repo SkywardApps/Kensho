@@ -2,6 +2,7 @@ package com.skywardapps.kensho;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.TextView;
 
 import java.util.Dictionary;
 import java.util.Enumeration;
@@ -87,7 +88,27 @@ public class Kensho
             String bindType = keys.nextElement();
             String bindValue = bindings.get(bindType);
 
+
             LuaWrapper wrapper = new LuaWrapper(this, currentContext, bindValue);
+            Hashtable<String, IBindingFactory> temp = new Hashtable<>();
+            temp.put(bindType, new IBindingFactory(){
+                @Override
+                public IBinding create(final View view, String bindType, final Context context, final LuaWrapper value) {
+                    return new IBinding() {
+                        @Override
+                        public void updateValue() {
+                            Object val = value.compute();
+                            view.setTag(context.getContext().toString());
+                        }
+
+                        @Override
+                        public void unbind() {
+
+                        }
+                    };
+                }
+            });
+            _bindingFactory.put(currentContext.getContext().getClass(), temp);
 
             // Now find the binding for this view's class, for this bindType
             for(Class currentClass = currentContext.getContext().getClass();

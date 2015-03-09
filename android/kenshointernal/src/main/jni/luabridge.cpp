@@ -250,8 +250,6 @@ extern "C"
             return 0;
         }
 
-
-
         // Get the pointer to the context object
         lua_getfield(L, -2, "__self");
         jobject target = (jobject)lua_touserdata(L, -1);
@@ -388,6 +386,9 @@ extern "C"
                 __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Error handler error: %s\n%s", lua_tostring(L, -1), cstrLuaCode);
                 break;
         }
+
+        //delete luaWrapper;
+        //luaWrapper = NULL;
 
         env->ReleaseStringUTFChars(code, cstrLuaCode);
 

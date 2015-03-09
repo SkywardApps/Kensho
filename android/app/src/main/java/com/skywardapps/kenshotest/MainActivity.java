@@ -10,6 +10,7 @@ import android.view.View;
 
 import com.skywardapps.kensho.AttributeParser;
 import com.skywardapps.kensho.Kensho;
+import com.skywardapps.kensho.ObservableValue;
 
 
 public class MainActivity extends ActionBarActivity
@@ -28,8 +29,10 @@ public class MainActivity extends ActionBarActivity
         //setContentView(com.skywardapps.kenshotest.R.layout.activity_main);
         Kensho k = new Kensho();
         MyModel m = new MyModel();
+        ObservableValue ov = k.observable();
+        ov.set(m);
         m.setName("Hello");
-        k.applyBindings(view.findViewById(R.id.textView), m);
+        k.applyBindings(view.findViewById(R.id.textView), ov);
         //String j = testLua("return \"Hello \"..\"world\";");
         //Log.d("JNI", j);
     }

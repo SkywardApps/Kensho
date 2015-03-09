@@ -18,7 +18,7 @@ static const void *KenshoBinderHelperKey = &KenshoBinderHelperKey;
  *
  *  @return An editable dictionary
  */
-- (NSMutableDictionary *) ken
+- (NSMutableDictionary *) ken 
 {
     NSMutableDictionary* dict = objc_getAssociatedObject(self, KenshoBinderHelperKey);
     if(dict == nil)
@@ -27,6 +27,21 @@ static const void *KenshoBinderHelperKey = &KenshoBinderHelperKey;
         objc_setAssociatedObject(self, KenshoBinderHelperKey, dict, OBJC_ASSOCIATION_RETAIN);
     }
     return dict;
+}
+
+@end
+
+
+@implementation UIButton (Kensho)
+
+- (void) setDataBindTitle:(NSString *)kenTitle
+{
+    self.ken[@"title"] = kenTitle;
+}
+
+- (NSString *)dataBindTitle
+{
+    return self.ken[@"title"];
 }
 
 @end

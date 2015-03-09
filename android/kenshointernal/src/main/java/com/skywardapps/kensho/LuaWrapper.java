@@ -9,6 +9,11 @@ import java.util.ArrayList;
 import java.util.HashMap;
 
 /**
+ * A complex object that computes an observable value based on a LUA script
+ *
+ * This object serves double duty as both the LUA interpreter, as well as the Java -- NDK
+ * bridge.
+ *
  * Created by nelliott on 2/23/15.
  */
 public class LuaWrapper extends Computed
@@ -166,6 +171,18 @@ public class LuaWrapper extends Computed
         return returnTypeId;
     }
 
+    /**
+     * Use runtime reflection to get the value of a property set on an object.
+     *
+     * This will first look for any public fields named as the property is, case-insensitive.
+     * If there are no appropriate fields, then it will look for a method with no parameters,
+     * returning a value, that has the same name as the property (case-insensitve) or the property
+     * name prefixed with a 'get'.
+     *
+     * @param instance The object to reference.
+     * @param propertyName The name of the property to access.
+     * @return The value of the property referenced.
+     */
     public static Object getProperty(Object instance, String propertyName)
     {
         Class objectClass = instance.getClass();
@@ -207,12 +224,28 @@ public class LuaWrapper extends Computed
         return null;
     }
 
+    /**
+     * Maps to a native method that will evaluate the LUA script in the context of a data model.
+     *
+     * @param context The data model to be run in the context of
+     * @param code The LUA script to evaluate
+     * @return The resulting object calculated from the LUA script.
+     */
     private native Object luaEvaluate(Object context, String code);
 
+    /**
+     * Return the map of parameters set in the LUA script.
+     * @return
+     */
     public HashMap<String, Object> parameters(){
         return _parameters;
     }
 
+    /**
+     * Set a parameter.  Invoked by the NDK side of the bridge
+     * @param key
+     * @param value
+     */
     public void setParameter(String key, Object value)
     {
         _parameters.put(key, value);

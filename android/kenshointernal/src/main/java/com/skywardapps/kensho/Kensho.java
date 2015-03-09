@@ -11,10 +11,26 @@ import java.util.Hashtable;
 import java.util.Stack;
 
 /**
+ * The master object, responsible for managing all the interactions between observables and
+ * observers, and binding them to views.
+ *
+ * This object must typically be created first, as all binding and dependency tracking goes
+ * through here.
+ *
+ * The general workflow is:
+ *  Create Kensho object
+ *  Register any Binding factories
+ *  Create a model
+ *  Apply bindings of that model to a view hierarchy
+ *
  * Created by nelliott on 2/23/15.
  */
 public class Kensho
 {
+    private Stack<HashSet<IObservable>> _trackingStack = new Stack<>();
+    private Hashtable<Class, Hashtable<String, IBindingFactory>> _bindingFactory = new Hashtable<>();
+    private Hashtable<View, HashSet<IBinding>> _assignedBindings = new Hashtable<>();
+
     /**
      * A helper utility method to get the current object as a value, or get the value
      * from within an IObservable if it is one.
@@ -37,21 +53,46 @@ public class Kensho
         return value;
     }
 
+    /**
+     * A helper utility method to create an observable value bound to this kensho.
+     * @return A new observable value container
+     */
+    public ObservableValue observable(){
+        return new ObservableValue(this);
+    }
+
+    /**
+     * A helper utility method to create an observable value bound to this kensho.
+     * @param initialValue The initial value
+     * @return A new observable value container set to contain the initial value
+     */
+    public ObservableValue observable(Object initialValue){
+        return new ObservableValue(this, initialValue);
+    }
+
+    /**
+     * Standard constructor
+     */
     public Kensho(){
         // Do we need to do a global reflection here to find every class that implements IBindingFactory?
 
     }
 
-    private Stack<HashSet<IObservable>> _trackingStack = new Stack<>();
-    private Hashtable<Class, Hashtable<String, IBindingFactory>> _bindingFactory = new Hashtable<>();
-    private Hashtable<View, HashSet<IBinding>> _assignedBindings = new Hashtable<>();
 
-
+    /**
+     * Instruct the kensho to start tracking IObservable accesses.
+     *
+     * This is a stack based system, so you may nest calls.
+     */
     public void startTrackingReferences()
     {
         _trackingStack.push(new HashSet<IObservable>());
     }
 
+    /**
+     * Notify kensho that an observable was referenced.
+     * @param ref The observable whose value was retrieved
+     */
     public void observableReferenced(IObservable ref)
     {
         if(_trackingStack.size() > 0)
@@ -60,6 +101,11 @@ public class Kensho
         }
     }
 
+    /**
+     * Instruct the kensho to stop tracking references, and return all observables accessed
+     * since the tracking began.
+     * @return A set of Observables.
+     */
     public HashSet<IObservable> endTrackingReferences()
     {
         if(_trackingStack.size() == 0)
@@ -69,17 +115,27 @@ public class Kensho
         return _trackingStack.pop();
     }
 
-    public ObservableValue observable(){
-        return new ObservableValue(this);
-    }
 
-
+    /**
+     * Entry method to bind a model's values to a view hierarchy
+     * @param rootView The root view of the hierarchy to bind
+     * @param model The root data object of the model to bind
+     */
     public void applyBindings(View rootView, Object model)
     {
         Context coreContext = new Context(this, model, null, null);
         bindToView(rootView, coreContext);
     }
 
+    /**
+     * Unbind the model references from a view and its subviews.
+     *
+     * This can be helpful in two situations - if for some reason you are switching out a model,
+     * but re-using the same views, and
+     * If there are circular references and memory constraints.
+     *
+     * @param view The view to remove bindings from.
+     */
     public void unbind(View view)
     {
         if(!_assignedBindings.containsKey(view))
@@ -91,48 +147,46 @@ public class Kensho
         }
 
         _assignedBindings.remove(view);
+
+
+        if(view instanceof ViewGroup)
+        {
+            ViewGroup group = (ViewGroup)view;
+            int count = group.getChildCount();
+            for(int i = 0; i < count; ++i)
+            {
+                View subView = group.getChildAt(i);
+                this.unbind(subView);
+            }
+        }
     }
 
     public void setAttributeGroup(int[] grp){
         AttributeParser.setAttributeGroupName(grp);
     }
 
+    /**
+     * The internal recursive method for assigning out bindings to views.
+     * @param currentView  The current view in the hierarchy
+     * @param initialContext The context for the data binding
+     */
     protected void bindToView(View currentView, Context initialContext)
     {
         Context currentContext = initialContext;
 
+        // Make sure there's a container for the bindings on this view
         _assignedBindings.put(currentView, new HashSet<IBinding>());
 
         Dictionary<String, String> bindings = AttributeParser.getAttributesForView(currentView.getId());
         Enumeration<String> keys = bindings.keys();
         while(keys.hasMoreElements())
         {
-            String bindType = keys.nextElement();
-            String bindValue = bindings.get(bindType);
-
-
-            LuaWrapper wrapper = new LuaWrapper(this, currentContext, bindValue);
-            Hashtable<String, IBindingFactory> temp = new Hashtable<>();
-            temp.put(bindType, new IBindingFactory(){
-                @Override
-                public IBinding create(final View view, String bindType, final Context context, final LuaWrapper value) {
-                    return new IBinding() {
-                        @Override
-                        public void updateValue() {
-                            Object val = value.compute();
-                            view.setTag(context.getContext().toString());
-                        }
-
-                        @Override
-                        public void unbind() {
-
-                        }
-                    };
-                }
-            });
-            _bindingFactory.put(currentContext.getContext().getClass(), temp);
+            String bindType = keys.nextElement(); // The attribute name, eg 'title' or 'fontSize'
+            String bindValue = bindings.get(bindType); // The lua script
 
             // Now find the binding for this view's class, for this bindType
+            // We start at the most specific derived class, and ascend up the inheritance tree
+            // to try and find a match
             for(Class currentClass = currentContext.getContext().getClass();
                 currentClass != null;
                 currentClass.getSuperclass()) {
@@ -145,7 +199,18 @@ public class Kensho
 
                 // Create the binding factory, and then generate the actual binding
                 IBindingFactory factory = _bindingFactory.get(currentClass).get(bindType);
+
+                if(factory == null)
+                    continue;
+
+                // Create the lua interpreter for this script
+                LuaWrapper wrapper = new LuaWrapper(this, currentContext, bindValue);
+
+                // Create the binding for this view type
                 IBinding binding = factory.create(currentView, bindType, currentContext, wrapper);
+
+                if(binding == null)
+                    continue;
 
                 // Register this binding against this view
                 _assignedBindings.get(currentView).add(binding);
@@ -153,6 +218,7 @@ public class Kensho
             }
         }
 
+        // If this view has subviews, recursively assign them!
         if(currentView instanceof ViewGroup)
         {
             ViewGroup group = (ViewGroup)currentView;

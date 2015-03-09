@@ -38,6 +38,12 @@ public class TestLuaWrapper extends InstrumentationTestCase {
         assertEquals("N", LuaWrapper.getTypeId(returnType));
     }
 
+    public void testPassThrough(){
+        Kensho ken = new Kensho();
+        LuaWrapper wrapper = new LuaWrapper(ken, this, "5");
+        assertEquals(wrapper.get(), new Double(5));
+    }
+
     public void testBasicEvaluation()
     {
         Kensho ken = new Kensho();

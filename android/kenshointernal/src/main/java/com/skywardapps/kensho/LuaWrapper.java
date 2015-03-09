@@ -106,7 +106,7 @@ public class LuaWrapper extends Computed
         Object result = luaEvaluate(_context, "__final = "+_code+";");
         if(result == null) {
             // Success case
-            return _parameters.get("__finals");
+            return _parameters.get("__final");
         }
         // Otherwise the result is an error of some kind
 

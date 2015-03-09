@@ -5,6 +5,7 @@ package com.skywardapps.kensho;
  */
 public class ObservableValue extends WatchableBase
 {
+
     public ObservableValue(Kensho kensho)
     {
         super(kensho);

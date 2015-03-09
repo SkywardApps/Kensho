@@ -15,6 +15,28 @@ import java.util.Stack;
  */
 public class Kensho
 {
+    /**
+     * A helper utility method to get the current object as a value, or get the value
+     * from within an IObservable if it is one.
+     *
+     * This is primarily helpful in situations where we're evaluating lua, and don't know if
+     * we're getting base an observable (eg 'name') or an evaluated value ('name .. "!"' or '5')
+     * @param value The object to potentialy unwrap.
+     * @return The final value after unwrapping.
+     */
+    public static Object unwrap(Object value)
+    {
+        if(value == null)
+            return null;
+
+        if(IObservable.class.isAssignableFrom(value.getClass()))
+        {
+            return ((IObservable)value).get();
+        }
+
+        return value;
+    }
+
     public Kensho(){
         // Do we need to do a global reflection here to find every class that implements IBindingFactory?
 
@@ -127,8 +149,6 @@ public class Kensho
 
                 // Register this binding against this view
                 _assignedBindings.get(currentView).add(binding);
-
-                binding.updateValue();
                 break;
             }
         }

@@ -34,6 +34,40 @@ public abstract class BindingBase implements IBinding, IObserver
         _bindType = bindType;
         _context = context;
         _view = view;
+
+        cacheOutputValue(_value.get());
+        updateValue();
+    }
+
+    /**
+     * Internal utility method that caches the output value (if it is IObservable)
+     * and registers to observe if applicable.
+     *
+     * @param newValue The new value to cache
+     */
+    private void cacheOutputValue(Object newValue)
+    {
+        if(_valueOutput == newValue)
+            return;
+
+        // If the previous value was an observable, de-register ourselves
+        if (_valueOutput != null
+                && _valueOutput != newValue && IObservable.class.isAssignableFrom(_valueOutput.getClass())) {
+            _valueOutput.removeObserver(this);
+        }
+
+        // If the new value is an observable, we want to register for its events
+        if (newValue != null
+                && IObservable.class.isAssignableFrom(newValue.getClass()))
+        {
+            ((IObservable) newValue).addObserver(this);
+            _valueOutput = (IObservable) newValue;
+        }
+        else
+        {
+            // We don't bother storing the output if we don't observe it
+            _valueOutput = null;
+        }
     }
 
     /**
@@ -54,6 +88,11 @@ public abstract class BindingBase implements IBinding, IObserver
 
     /**
      * Access the final value to be used for this binding.
+     *
+     * This if functionally the same as calling Kensho.unwrap(_value.get())
+     * but because we're already doing the runtime type analysis in this class,
+     * this is a tiny bit more efficient.
+     *
      * @return The final value - unwrapped if necessary.
      */
     protected Object getFinalValue() {
@@ -73,26 +112,9 @@ public abstract class BindingBase implements IBinding, IObserver
     public void observedValueChanged(IObservable valueHolder, Object newValue)
     {
         // We track observables that come out of the lua script, but go no deeper.
-        if(valueHolder == _value && _valueOutput != newValue)
+        if(valueHolder == _value)
         {
-            // If the previous value was an observable, de-register ourselves
-            if (_valueOutput != null
-                    && _valueOutput != newValue && IObservable.class.isAssignableFrom(_valueOutput.getClass())) {
-                _valueOutput.removeObserver(this);
-            }
-
-            // If the new value is an observable, we want to register for its events
-            if (newValue != null
-                    && IObservable.class.isAssignableFrom(newValue.getClass()))
-            {
-                ((IObservable) newValue).addObserver(this);
-                _valueOutput = (IObservable) newValue;
-            }
-            else
-            {
-                // We don't bother storing the output if we don't observe it
-                _valueOutput = null;
-            }
+            cacheOutputValue(newValue);
         }
         this.updateValue();
     }

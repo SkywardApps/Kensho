@@ -10,10 +10,44 @@
     tools:context=".MainActivity">
 
     <TextView
-        android:id="@+id/textView"
-        kensho:text="ov.get().name"
-        tools:ignore="MissingPrefix"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content" />
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:textAppearance="?android:attr/textAppearanceLarge"
+        android:text="Large Text"
+        android:id="@+id/fullName"
+        android:layout_alignParentTop="true"
+        android:layout_alignParentRight="true"
+        android:layout_alignParentEnd="true"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        kensho:text="fullName"
+        android:height="50dp" />
 
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        kensho:value="firstName"
+        android:ems="10"
+        android:id="@+id/firstName"
+        android:layout_below="@+id/fullName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/fullName"
+        android:layout_alignEnd="@+id/fullName" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:inputType="textPersonName"
+        android:text="Name"
+        android:ems="10"
+        android:id="@+id/lastName"
+        kensho:value="lastName"
+        android:layout_below="@+id/firstName"
+        android:layout_alignParentLeft="true"
+        android:layout_alignParentStart="true"
+        android:layout_alignRight="@+id/firstName"
+        android:layout_alignEnd="@+id/firstName" />
 </RelativeLayout>

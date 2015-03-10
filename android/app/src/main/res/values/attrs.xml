@@ -2,5 +2,6 @@
 <resources>
     <declare-styleable name="KenshoAttr">
         <attr name="text" format="string"></attr>
+        <attr name="value" format="string"></attr>
     </declare-styleable>
 </resources>

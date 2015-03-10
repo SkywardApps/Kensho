@@ -15,6 +15,9 @@ import com.skywardapps.kensho.ObservableValue;
 
 public class MainActivity extends ActionBarActivity
 {
+    Kensho ken;
+    MyModel model;
+
     public String callback()
     {
         return "return \"Goodbye \"..\"cruel\"..\" world\";";
@@ -26,30 +29,11 @@ public class MainActivity extends ActionBarActivity
         AttributeParser.setAttributeGroupName(R.styleable.KenshoAttr);
         LayoutInflater inflater = AttributeParser.getLayoutInflater(getLayoutInflater());
         View view = inflater.inflate(R.layout.activity_main, null);
-        //setContentView(com.skywardapps.kenshotest.R.layout.activity_main);
-        Kensho k = new Kensho();
-        MyModel m = new MyModel();
-        ObservableValue ov = k.observable();
-        ov.set(m);
-        m.setName("Hello");
-        k.applyBindings(view.findViewById(R.id.textView), ov);
-        //String j = testLua("return \"Hello \"..\"world\";");
-        //Log.d("JNI", j);
-    }
+        this.setContentView(view);
+        Kensho ken = new Kensho();
+        model = new MyModel(ken);
 
-    /* A native method that is implemented by the
-     * 'hello-jni' native library, which is packaged
-     * with this application.
-     */
-    public native String  testLua(String loc);
-
-    /* this is used to load the 'hello-jni' library on application
-     * startup. The library has already been unpacked into
-     * /data/data/com.skywardapps.hellojni/lib/libhello-jni.so at
-     * installation time by the package manager.
-     */
-    static {
-        //System.loadLibrary("lua");
+        ken.applyBindings(view, model);
     }
 
     @Override

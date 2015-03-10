@@ -2,7 +2,11 @@ package com.skywardapps.kensho;
 
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.EditText;
 import android.widget.TextView;
+
+import com.skywardapps.kensho.bindings.EditTextBindingFactory;
+import com.skywardapps.kensho.bindings.TextViewBindingFactory;
 
 import java.util.Dictionary;
 import java.util.Enumeration;
@@ -75,9 +79,19 @@ public class Kensho
      */
     public Kensho(){
         // Do we need to do a global reflection here to find every class that implements IBindingFactory?
-
+        registerBindingFactory(TextView.class, "text", new TextViewBindingFactory());
+        registerBindingFactory(EditText.class, "value", new EditTextBindingFactory());
     }
 
+    public void registerBindingFactory(Class viewClass, String bindType, IBindingFactory factory)
+    {
+        if(!_bindingFactory.containsKey(viewClass))
+        {
+            _bindingFactory.put(viewClass, new Hashtable<String, IBindingFactory>());
+        }
+
+        _bindingFactory.get(viewClass).put(bindType, factory);
+    }
 
     /**
      * Instruct the kensho to start tracking IObservable accesses.
@@ -177,44 +191,45 @@ public class Kensho
         // Make sure there's a container for the bindings on this view
         _assignedBindings.put(currentView, new HashSet<IBinding>());
 
-        Dictionary<String, String> bindings = AttributeParser.getAttributesForView(currentView.getId());
-        Enumeration<String> keys = bindings.keys();
-        while(keys.hasMoreElements())
-        {
-            String bindType = keys.nextElement(); // The attribute name, eg 'title' or 'fontSize'
-            String bindValue = bindings.get(bindType); // The lua script
+        if(currentView.getId() > 0) {
+            Dictionary<String, String> bindings = AttributeParser.getAttributesForView(currentView.getId());
+            Enumeration<String> keys = bindings.keys();
+            while (keys.hasMoreElements()) {
+                String bindType = keys.nextElement(); // The attribute name, eg 'title' or 'fontSize'
+                String bindValue = bindings.get(bindType); // The lua script
 
-            // Now find the binding for this view's class, for this bindType
-            // We start at the most specific derived class, and ascend up the inheritance tree
-            // to try and find a match
-            for(Class currentClass = currentContext.getContext().getClass();
-                currentClass != null;
-                currentClass.getSuperclass()) {
+                // Now find the binding for this view's class, for this bindType
+                // We start at the most specific derived class, and ascend up the inheritance tree
+                // to try and find a match
+                for (Class currentClass = currentView.getClass();
+                     currentClass != null;
+                     currentClass.getSuperclass()) {
 
-                if(!_bindingFactory.containsKey(currentClass))
-                    continue;
+                    if (!_bindingFactory.containsKey(currentClass))
+                        continue;
 
-                if(!_bindingFactory.get(currentClass).containsKey(bindType))
-                    continue;
+                    if (!_bindingFactory.get(currentClass).containsKey(bindType))
+                        continue;
 
-                // Create the binding factory, and then generate the actual binding
-                IBindingFactory factory = _bindingFactory.get(currentClass).get(bindType);
+                    // Create the binding factory, and then generate the actual binding
+                    IBindingFactory factory = _bindingFactory.get(currentClass).get(bindType);
 
-                if(factory == null)
-                    continue;
+                    if (factory == null)
+                        continue;
 
-                // Create the lua interpreter for this script
-                LuaWrapper wrapper = new LuaWrapper(this, currentContext, bindValue);
+                    // Create the lua interpreter for this script
+                    LuaWrapper wrapper = new LuaWrapper(this, currentContext, bindValue);
 
-                // Create the binding for this view type
-                IBinding binding = factory.create(currentView, bindType, currentContext, wrapper);
+                    // Create the binding for this view type
+                    IBinding binding = factory.create(currentView, bindType, currentContext, wrapper);
 
-                if(binding == null)
-                    continue;
+                    if (binding == null)
+                        continue;
 
-                // Register this binding against this view
-                _assignedBindings.get(currentView).add(binding);
-                break;
+                    // Register this binding against this view
+                    _assignedBindings.get(currentView).add(binding);
+                    break;
+                }
             }
         }
 

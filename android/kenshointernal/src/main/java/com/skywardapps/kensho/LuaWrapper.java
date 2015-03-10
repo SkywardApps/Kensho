@@ -183,8 +183,22 @@ public class LuaWrapper extends Computed
      * @param propertyName The name of the property to access.
      * @return The value of the property referenced.
      */
-    public static Object getProperty(Object instance, String propertyName)
-    {
+    public static Object getProperty(Object instance, String propertyName) throws NoSuchMethodException {
+        // Do a quick hack here for the context object!
+        if(Context.class.isAssignableFrom(instance.getClass()))
+        {
+            Context context = (Context)instance;
+            // If the property starts with __, it is a special property access
+            if(propertyName.startsWith("__"))
+            {
+                propertyName = propertyName.substring(2);
+            }
+            else
+            {
+                instance = context.getContext();
+            }
+        }
+
         Class objectClass = instance.getClass();
 
         try {
@@ -194,7 +208,6 @@ public class LuaWrapper extends Computed
                 return field.get(instance);
             }
         } catch (NoSuchFieldException e) {
-            e.printStackTrace();
         } catch (IllegalAccessException e) {
             e.printStackTrace();
         }
@@ -209,7 +222,7 @@ public class LuaWrapper extends Computed
             if(method.getReturnType() == void.class)
                 continue;
 
-            if(method.getName().toLowerCase().equals(propertyName)
+            if(method.getName().toLowerCase().equals(propertyName.toLowerCase())
                     || method.getName().toLowerCase().equals(("get" + propertyName).toLowerCase()))
             {
                 try {
@@ -221,7 +234,7 @@ public class LuaWrapper extends Computed
                 }
             }
         }
-        return null;
+        throw new NoSuchMethodException("No such method "+propertyName+" on type "+instance.getClass().getName());
     }
 
     /**

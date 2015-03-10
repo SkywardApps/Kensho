@@ -38,7 +38,7 @@ public class AttributeParser {
                 int i = 0;
 
                 for(int attr : attrGrp){
-                    String attrname = context.getResources().getResourceName(attr);
+                    String attrname = context.getResources().getResourceEntryName(attr);
                     String attributeValue = attributeList.getString(i);
 
                     if(attributeValue != null)

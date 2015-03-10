@@ -118,6 +118,15 @@ public class LuaWrapper extends Computed
         return null;
     }
 
+    public static Object unwrap(Object val){
+        Object result;
+        if(val instanceof IObservable)
+            result = ((ObservableValue)val).get();
+        else
+            result = val;
+        return result == null ? "" : result;
+    }
+
     public static String getTypeId(Class typeClass) {
         String sig = typeClass.toString();
         String canon = typeClass.getCanonicalName();
@@ -205,11 +214,15 @@ public class LuaWrapper extends Computed
             Field field = objectClass.getField(propertyName);
             if(field != null)
             {
-                return field.get(instance);
+                Object obj = field.get(instance);
+                return obj;
             }
         } catch (NoSuchFieldException e) {
         } catch (IllegalAccessException e) {
             e.printStackTrace();
+        } catch (Exception e){
+            e.printStackTrace();
+
         }
 
         for(Method method : objectClass.getMethods())

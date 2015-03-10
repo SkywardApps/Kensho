@@ -18,7 +18,7 @@ import java.util.ArrayList;
 public abstract class WatchableBase implements IObservable
 {
     protected Kensho _ken;
-    protected Object _value = null;
+    public Object _value = null;
     protected ArrayList<WeakReference<IObserver>> _observers = new ArrayList<WeakReference<IObserver>>();
 
     /**

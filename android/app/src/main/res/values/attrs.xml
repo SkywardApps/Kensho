@@ -3,5 +3,7 @@
     <declare-styleable name="KenshoAttr">
         <attr name="text" format="string"></attr>
         <attr name="value" format="string"></attr>
+        <attr name="textSize" format="string"></attr>
+        <attr name="textColor" format="string"></attr>
     </declare-styleable>
 </resources>

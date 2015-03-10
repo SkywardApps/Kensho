@@ -152,7 +152,7 @@ extern "C"
             wrapper->env()->ReleaseStringUTFChars(str, cstr);
             return 1;
         }
-        else if (type == 'K')
+        else if (type == 'K' || type == 'O')
         {
              // Assign __self to refer to the value itself
              lua_createtable(L, 0, 2);
@@ -205,8 +205,6 @@ extern "C"
                  __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Stack is wrong\n");
              }
              return 1;
-        } else if (type == 'O'){
-            // ???????
         }
 
         // this shouldn't happen(?), so return error

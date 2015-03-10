@@ -28,6 +28,7 @@ public class TestBindingBase extends InstrumentationTestCase
                 evaluatedValue = (Double)this.getFinalValue();
             }
         };
+        binding.updateValue();
         assertTrue(evaluationChanged);
         assertEquals(4.0, evaluatedValue);
     }
@@ -44,6 +45,7 @@ public class TestBindingBase extends InstrumentationTestCase
                 evaluatedValue = (Double)this.getFinalValue();
             }
         };
+        binding.updateValue();
         assertTrue(evaluationChanged);
         assertEquals(4.0, evaluatedValue);
 
@@ -66,6 +68,7 @@ public class TestBindingBase extends InstrumentationTestCase
                 evaluatedValue = (Double)this.getFinalValue();
             }
         };
+        binding.updateValue();
         assertTrue(evaluationChanged);
         assertEquals(9.5, evaluatedValue);
 

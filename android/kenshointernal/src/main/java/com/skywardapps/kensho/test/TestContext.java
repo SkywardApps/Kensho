@@ -11,7 +11,7 @@ import com.skywardapps.kensho.ObservableValue;
  *
  * Created by nelliott on 3/10/15.
  */
-public class TestKenshoContext extends InstrumentationTestCase
+public class TestContext extends InstrumentationTestCase
 {
     public class ContextTestModel
     {
@@ -29,7 +29,7 @@ public class TestKenshoContext extends InstrumentationTestCase
         Context context = new Context(ken, model, null, null);
 
         LuaWrapper script = new LuaWrapper(ken, context, "testValue");
-        assertEquals(1.5, script.get());
+        assertEquals(1.5, Kensho.unwrap(script.get()));
     }
 
     public void testRoot()
@@ -42,13 +42,13 @@ public class TestKenshoContext extends InstrumentationTestCase
         Context level2 = new Context(ken, model2, root, root);
 
         ContextTestModel model3 = new ContextTestModel(ken, 3.0);
-        Context level3 = new Context(ken, model2, root, level2);
+        Context level3 = new Context(ken, model3, root, level2);
 
         LuaWrapper script = new LuaWrapper(ken, level3, "testValue");
-        assertEquals(2.0, script.get());
+        assertEquals(3.0, Kensho.unwrap(script.get()));
 
         script = new LuaWrapper(ken, level3, "__root.testValue");
-        assertEquals(1.0, script.get());
+        assertEquals(1.0, Kensho.unwrap(script.get()));
     }
 
 

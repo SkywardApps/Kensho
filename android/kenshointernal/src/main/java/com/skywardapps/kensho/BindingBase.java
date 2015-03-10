@@ -36,7 +36,6 @@ public abstract class BindingBase implements IBinding, IObserver
         _view = view;
 
         cacheOutputValue(_value.get());
-        updateValue();
     }
 
     /**

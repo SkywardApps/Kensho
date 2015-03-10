@@ -228,6 +228,9 @@ public class Kensho
 
                     // Register this binding against this view
                     _assignedBindings.get(currentView).add(binding);
+
+                    // Update the initial value of the binding
+                    binding.updateValue();
                     break;
                 }
             }

@@ -4,8 +4,6 @@ import android.test.InstrumentationTestCase;
 
 import com.skywardapps.kensho.BindingBase;
 import com.skywardapps.kensho.IBinding;
-import com.skywardapps.kensho.IObservable;
-import com.skywardapps.kensho.IObserver;
 import com.skywardapps.kensho.Kensho;
 import com.skywardapps.kensho.LuaWrapper;
 import com.skywardapps.kensho.ObservableValue;

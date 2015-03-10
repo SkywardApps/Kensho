@@ -18,18 +18,15 @@ public class MainActivity extends ActionBarActivity
     Kensho ken;
     MyModel model;
 
-    public String callback()
-    {
-        return "return \"Goodbye \"..\"cruel\"..\" world\";";
-    }
-
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
+
         AttributeParser.setAttributeGroupName(R.styleable.KenshoAttr);
         LayoutInflater inflater = AttributeParser.getLayoutInflater(getLayoutInflater());
         View view = inflater.inflate(R.layout.activity_main, null);
         this.setContentView(view);
+
         Kensho ken = new Kensho();
         model = new MyModel(ken);
 

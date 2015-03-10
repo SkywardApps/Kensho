@@ -1,5 +1,6 @@
 package com.skywardapps.kensho;
 
+import android.util.Log;
 import android.view.View;
 import android.view.ViewGroup;
 import android.widget.EditText;
@@ -172,6 +173,17 @@ public class Kensho
                 View subView = group.getChildAt(i);
                 this.unbind(subView);
             }
+        }
+    }
+
+    public void registerBinding(Class viewClass, String type, IBindingFactory factory){
+
+        if(_bindingFactory.containsKey(viewClass)){
+            _bindingFactory.get(viewClass).put(type, factory);
+        } else {
+            Hashtable<String, IBindingFactory> temp = new Hashtable<>();
+            temp.put(type, factory);
+            _bindingFactory.put(viewClass, temp);
         }
     }
 

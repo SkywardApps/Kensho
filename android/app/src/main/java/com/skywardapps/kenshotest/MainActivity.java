@@ -7,8 +7,11 @@ import android.view.LayoutInflater;
 import android.view.Menu;
 import android.view.MenuItem;
 import android.view.View;
+import android.widget.TextView;
 
 import com.skywardapps.kensho.AttributeParser;
+import com.skywardapps.kensho.IObservable;
+import com.skywardapps.kensho.IObserver;
 import com.skywardapps.kensho.Kensho;
 import com.skywardapps.kensho.ObservableValue;
 
@@ -31,23 +34,5 @@ public class MainActivity extends ActionBarActivity
         model = new MyModel(ken);
 
         ken.applyBindings(view, model);
-    }
-
-    @Override
-    public boolean onCreateOptionsMenu(Menu menu) {
-        // Inflate the menu; this adds items to the action bar if it is present.
-        getMenuInflater().inflate(com.skywardapps.kenshotest.R.menu.menu_main, menu);
-        return true;
-    }
-
-    @Override
-    public boolean onOptionsItemSelected(MenuItem item) {
-        // Handle action bar item clicks here. The action bar will
-        // automatically handle clicks on the Home/Up button, so long
-        // as you specify a parent activity in AndroidManifest.xml.
-        int id = item.getItemId();
-
-
-        return super.onOptionsItemSelected(item);
     }
 }

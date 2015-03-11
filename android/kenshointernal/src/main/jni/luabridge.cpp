@@ -421,6 +421,7 @@ extern "C"
                 jclass mapClass = wrapper->env()->FindClass("java/util/HashMap");
                 if(mapClass == NULL)
                 {
+                __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Can't Find HashMap!\n");
                     return NULL;
                 }
 

@@ -66,7 +66,8 @@ public class TestLuaWrapper extends InstrumentationTestCase {
         public int getIntNum() { return 8; }
         public long getLongNum() { return 16; }
 
-        public boolean getBooleanNum() { return true; }
+        public boolean getBooleanTrue() { return true; }
+        public boolean getBooleanFalse() { return false; }
 
         public String getStringHW() { return "Hello World"; }
 
@@ -103,8 +104,20 @@ public class TestLuaWrapper extends InstrumentationTestCase {
     {
         TestObject object = new TestObject();
         Kensho ken = new Kensho();
-        LuaWrapper wrapper = new LuaWrapper(ken, object, "!booleanNum");
+        LuaWrapper wrapper = new LuaWrapper(ken, object, "not booleanTrue");
         assertEquals(false, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanTrue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanFalse");
+        assertEquals(false, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "not booleanFalse");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanTrue and not booleanFalse");
+        assertEquals(true, wrapper.get());
     }
 
     public void testFloatingPointNumbers()

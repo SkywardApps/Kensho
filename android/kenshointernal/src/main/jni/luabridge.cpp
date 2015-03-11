@@ -339,6 +339,9 @@ extern "C"
         rightObject = wrapper->unwrap(getValue(L, -1, wrapper));
         leftObject = wrapper->unwrap(getValue(L, -2, wrapper));
 
+        lua_pop(L, 1);
+        lua_pop(L, 1);
+
         if(!wrapper->isComparable(leftObject)) return 0;
         if(!wrapper->isComparable(rightObject)) return 0;
 
@@ -346,9 +349,7 @@ extern "C"
 
         jint less = wrapper->compare(leftObject, rightObject);
 
-        lua_pop(L, 1);
-        lua_pop(L, 1);
-        if(less)
+        if(less<0)
             lua_pushboolean(L, true); // return true
         else
             lua_pushboolean(L, false); // return false

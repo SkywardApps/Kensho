@@ -52,4 +52,17 @@
         android:layout_alignRight="@+id/firstName"
         android:layout_alignEnd="@+id/firstName" />
 
+    <TextView
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        kensho:text="firstNameLength % 2 == 0 and 'Hello' or 'World'"
+        kensho:animateIn="shouldShowHidden"
+        kensho:animateOut="shouldHideHidden"
+        tools:text="Dummy Text"
+        android:textAppearance="@android:style/TextAppearance.Large"
+        android:id="@+id/hiddenTextView"
+        android:layout_below="@+id/lastName"
+        android:gravity="center_horizontal"
+        android:paddingTop="30dp" />
+
 </RelativeLayout>

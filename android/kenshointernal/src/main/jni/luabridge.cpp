@@ -134,12 +134,12 @@ extern "C"
     int pushValue(lua_State* L, jobject value, LuaWrapper* wrapper)
     {
         __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "pushValue\n");
-
         char type = wrapper->getTypeId(value);
         __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Type: %c\n", type );
         if(type == 'N')
         {
             double d = wrapper->doubleFromObject(value);
+            __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Double value: %f\n", d );
             lua_pushnumber(L, d);
             return 1;
         }
@@ -335,7 +335,7 @@ extern "C"
 
         lua_pop(L, 1);
         lua_pop(L, 1);
-        if(less)
+        if(less < 0)
             lua_pushboolean(L, true); // return true
         else
             lua_pushboolean(L, false); // return false
@@ -349,7 +349,7 @@ extern "C"
         LuaWrapper* wrapper = findWrapper(L);
         rightObject = wrapper->unwrap(getValue(L, -1, wrapper));
         leftObject = wrapper->unwrap(getValue(L, -2, wrapper));
-
+        __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "after equals method...\n");
         // call the java equals method
         jmethodID equalsMethodID = wrapper->env()->GetMethodID(wrapper->env()->GetObjectClass(leftObject), "equals", "(Ljava/lang/Object;)Z");
         jboolean isEqual = wrapper->env()->CallBooleanMethod(leftObject, equalsMethodID, rightObject);

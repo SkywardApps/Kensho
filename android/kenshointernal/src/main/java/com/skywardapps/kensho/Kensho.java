@@ -7,6 +7,7 @@ import android.widget.EditText;
 import android.widget.TextView;
 
 import com.skywardapps.kensho.bindings.EditTextBindingFactory;
+import com.skywardapps.kensho.bindings.TextViewBinding;
 import com.skywardapps.kensho.bindings.TextViewBindingFactory;
 
 import java.util.Dictionary;
@@ -32,9 +33,9 @@ import java.util.Stack;
  */
 public class Kensho
 {
-    private Stack<HashSet<IObservable>> _trackingStack = new Stack<>();
-    private Hashtable<Class, Hashtable<String, IBindingFactory>> _bindingFactory = new Hashtable<>();
-    private Hashtable<View, HashSet<IBinding>> _assignedBindings = new Hashtable<>();
+    private Stack<HashSet<IObservable>> _trackingStack = new Stack<HashSet<IObservable>>();
+    private Hashtable<Class, Hashtable<String, IBindingFactory>> _bindingFactory = new Hashtable<Class, Hashtable<String, IBindingFactory>>();
+    private Hashtable<View, HashSet<IBinding>> _assignedBindings = new Hashtable<View, HashSet<IBinding>>();
 
     /**
      * A helper utility method to get the current object as a value, or get the value
@@ -80,7 +81,11 @@ public class Kensho
      */
     public Kensho(){
         // Do we need to do a global reflection here to find every class that implements IBindingFactory?
-        registerBindingFactory(TextView.class, "text", new TextViewBindingFactory());
+        TextViewBindingFactory tvbf = new TextViewBindingFactory();
+        registerBindingFactory(TextView.class, "text", tvbf);
+        registerBindingFactory(TextView.class, "visible", tvbf);
+        registerBindingFactory(TextView.class, "animateIn", tvbf);
+        registerBindingFactory(TextView.class, "animateOut", tvbf);
         registerBindingFactory(EditText.class, "value", new EditTextBindingFactory());
     }
 
@@ -181,7 +186,7 @@ public class Kensho
         if(_bindingFactory.containsKey(viewClass)){
             _bindingFactory.get(viewClass).put(type, factory);
         } else {
-            Hashtable<String, IBindingFactory> temp = new Hashtable<>();
+            Hashtable<String, IBindingFactory> temp = new Hashtable<String, IBindingFactory>();
             temp.put(type, factory);
             _bindingFactory.put(viewClass, temp);
         }

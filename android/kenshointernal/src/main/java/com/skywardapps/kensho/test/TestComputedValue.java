@@ -34,7 +34,7 @@ public class TestComputedValue extends InstrumentationTestCase implements IObser
         final Computed computed = new Computed(ken) {
             @Override
             protected Object compute() {
-                return (int)value.get() + 5;
+                return Integer.parseInt(value.get().toString()) + 5;
             }
         };
         assertEquals(10, computed.get());
@@ -56,10 +56,10 @@ public class TestComputedValue extends InstrumentationTestCase implements IObser
         final Computed computed = new Computed(ken) {
             @Override
             protected Object compute() {
-                if((boolean)logicGate.get())
-                {
-                    return value2.get();
-                }
+//                if((boolean)logicGate.get())
+//                {
+//                    return value2.get();
+//                }
                 return value1.get();
             }
         };

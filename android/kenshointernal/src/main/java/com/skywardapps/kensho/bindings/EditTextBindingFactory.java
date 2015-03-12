@@ -42,7 +42,7 @@ public class EditTextBindingFactory implements IBindingFactory {
                 @Override
                 public void updateValue() {
                     if(!textView.getText().toString().equals(this.getFinalValue())) {
-                        textView.setText((String) this.getFinalValue());
+                        textView.setText(this.getFinalValue().toString());
                     }
                 }
             };

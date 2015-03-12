@@ -16,7 +16,7 @@ import java.util.Set;
  */
 public class ObservableMap extends ObservableValue implements Map
 {
-    public interface IMapObserver
+    public interface IMapObserver extends IObserver
     {
         public void elementWasAddedToMap(ObservableMap collection, Object key, Object value);
         public void elementWasRemovedFromMap(ObservableMap collection, Object key);

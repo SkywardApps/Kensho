@@ -18,7 +18,7 @@ import java.util.ListIterator;
  */
 public class ObservableList extends ObservableValue implements List
 {
-    public interface IListObserver
+    public interface IListObserver extends IObserver
     {
         public void elementWasAddedToList(ObservableList collection, int index, Object value);
         public void elementWasRemovedFromList(ObservableList collection, int index, Object oldValue);
@@ -39,13 +39,14 @@ public class ObservableList extends ObservableValue implements List
 
     public ObservableList(Kensho ken)
     {
-        super(ken);
+        super(ken, new ArrayList());
+        _size = new ObservableValue(ken, 0);
     }
 
     public ObservableList(Kensho ken, List initialValue)
     {
         super(ken, initialValue);
-        updateSize();
+        _size = new ObservableValue(ken, initialValue.size());
     }
 
     @Override public void set(Object newValue)

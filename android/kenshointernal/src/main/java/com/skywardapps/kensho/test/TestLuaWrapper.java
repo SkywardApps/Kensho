@@ -9,6 +9,7 @@ import com.skywardapps.kensho.ObservableValue;
 import com.skywardapps.kensho.WatchableBase;
 
 import java.util.ArrayList;
+import java.util.HashMap;
 
 /**
  * Created by nelliott on 2/23/15.
@@ -66,7 +67,8 @@ public class TestLuaWrapper extends InstrumentationTestCase {
         public int getIntNum() { return 8; }
         public long getLongNum() { return 16; }
 
-        public boolean getBooleanNum() { return true; }
+        public boolean getBooleanTrue() { return true; }
+        public boolean getBooleanFalse() { return false; }
 
         public String getStringHW() { return "Hello World"; }
 
@@ -103,8 +105,20 @@ public class TestLuaWrapper extends InstrumentationTestCase {
     {
         TestObject object = new TestObject();
         Kensho ken = new Kensho();
-        LuaWrapper wrapper = new LuaWrapper(ken, object, "!booleanNum");
+        LuaWrapper wrapper = new LuaWrapper(ken, object, "not booleanTrue");
         assertEquals(false, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanTrue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanFalse");
+        assertEquals(false, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "not booleanFalse");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "booleanTrue and not booleanFalse");
+        assertEquals(true, wrapper.get());
     }
 
     public void testFloatingPointNumbers()
@@ -159,5 +173,108 @@ public class TestLuaWrapper extends InstrumentationTestCase {
 
         object.observableValue.set(9.2);
         assertEquals(9.2 + 5, wrapper.get());
+    }
+
+    public void testAdditionOperation()
+    {
+        Kensho ken = new Kensho();
+
+        TestObject object = new TestObject();
+        object.observableValue = new ObservableValue(ken, 4.5);
+
+        LuaWrapper wrapper;
+
+        wrapper = new LuaWrapper(ken, object, "5 + 4.5");
+        assertEquals(4.5+5, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue + 5");
+        assertEquals(4.5+5, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "5 + observableValue");
+        assertEquals(4.5+5, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue + observableValue");
+        assertEquals(4.5+4.5, wrapper.get());
+    }
+
+    public void testConcatenation()
+    {
+        Kensho ken = new Kensho();
+
+        TestObject object = new TestObject();
+        object.observableValue = new ObservableValue(ken, "AA");
+
+        LuaWrapper wrapper;
+
+        wrapper = new LuaWrapper(ken, object, "'AA'..'BB'");
+        assertEquals("AABB", wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue .. 'BB'");
+        assertEquals("AABB", wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "'BB' .. observableValue");
+        assertEquals("BBAA", wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue .. observableValue");
+        assertEquals("AAAA", wrapper.get());
+    }
+
+    public void testEquals()
+    {
+        Kensho ken = new Kensho();
+
+        TestObject object = new TestObject();
+        object.observableValue = new ObservableValue(ken, "AA");
+
+        LuaWrapper wrapper;
+
+        wrapper = new LuaWrapper(ken, object, "'AA' == 'AA'");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue == 'AA'");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "'AA' == observableValue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue == observableValue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue == 'BB'");
+        assertEquals(false, wrapper.get());
+    }
+
+    public void testLessThan()
+    {
+        Kensho ken = new Kensho();
+
+        TestObject object = new TestObject();
+        object.observableValue = new ObservableValue(ken, 4.5);
+
+        LuaWrapper wrapper;
+
+        wrapper = new LuaWrapper(ken, object, "4.5 < 5");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue < 5");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "4 < observableValue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue <= observableValue");
+        assertEquals(true, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "observableValue < 3");
+        assertEquals(false, wrapper.get());
+    }
+
+    public void testConstructedObject()
+    {
+        Kensho ken = new Kensho();
+
+        TestObject object = new TestObject();
+        LuaWrapper wrapper = new LuaWrapper(ken, object, "{ name:'myname', value:4.5, yes:true, no:false, sub:{value:1} }");
+        assertTrue(HashMap.class.isAssignableFrom(wrapper.get().getClass()));
     }
 }

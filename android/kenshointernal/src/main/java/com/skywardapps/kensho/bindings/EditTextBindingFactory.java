@@ -18,34 +18,10 @@ import com.skywardapps.kensho.LuaWrapper;
  */
 public class EditTextBindingFactory implements IBindingFactory {
     @Override
-    public IBinding create(final View view, final String bindType, final Context context, final LuaWrapper value) {
+    public IBinding create(View view, String bindType, Context context, LuaWrapper value) {
 
         if(bindType.equals("value")) {
-            final EditText textView = (EditText) view;
-            textView.addTextChangedListener(new TextWatcher() {
-                @Override
-                public void beforeTextChanged(CharSequence s, int start, int count, int after) {}
-
-                @Override
-                public void onTextChanged(CharSequence s, int start, int before, int count) {}
-
-                @Override
-                public void afterTextChanged(Editable s) {
-                    if(IWritableObservable.class.isAssignableFrom(value.get().getClass()))
-                    {
-                        IWritableObservable o = (IWritableObservable)value.get();
-                        o.set(textView.getText().toString());
-                    }
-                }
-            });
-            return new BindingBase(view, bindType, context, value) {
-                @Override
-                public void updateValue() {
-                    if(!textView.getText().toString().equals(this.getFinalValue())) {
-                        textView.setText(this.getFinalValue().toString());
-                    }
-                }
-            };
+            return new EditTextBinding(view, bindType, context, value);
         };
 
         return null;

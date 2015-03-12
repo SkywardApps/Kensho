@@ -29,6 +29,7 @@ class LuaWrapper {
             _numberFromDoubleMethodId = env->GetStaticMethodID(_wrapperClass, "numberFromDouble", "(D)Ljava/lang/Double;");
             _getPropertyMethodId = env->GetStaticMethodID(_wrapperClass, "getProperty", "(Ljava/lang/Object;Ljava/lang/String;)Ljava/lang/Object;");
             _doubleFromObjectMethodId = env->GetStaticMethodID(_wrapperClass, "doubleFromObject", "(Ljava/lang/Object;)D");
+            _booleanFromObjectMethodId = env->GetStaticMethodID(_wrapperClass, "booleanFromObject", "(Ljava/lang/Object;)Z");
             _unwrapMethodId = env->GetStaticMethodID(_wrapperClass, "unwrap", "(Ljava/lang/Object;)Ljava/lang/Object;");
         }
 
@@ -59,6 +60,11 @@ class LuaWrapper {
             return _env->CallStaticDoubleMethod(_wrapperClass, _doubleFromObjectMethodId, value);
         }
 
+        bool booleanFromObject(jobject value)
+        {
+            return _env->CallStaticBooleanMethod(_wrapperClass, _booleanFromObjectMethodId, value);
+        }
+
         jobject getProperty(jobject object, const char* name)
         {
            __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Getting Property: %s\n", name);
@@ -76,7 +82,7 @@ class LuaWrapper {
 
             // JNI reflection for instantiating a HashMap
             jmethodID init = _env->GetMethodID(booleanClass, "<init>", "(Z)V");
-            return _env->NewObject(booleanClass, init);
+            return _env->NewObject(booleanClass, init, value);
         }
 
         // returns true if obj implements the comparable interface
@@ -107,6 +113,7 @@ class LuaWrapper {
         jmethodID _setParameterMethodId;
         jmethodID _numberFromDoubleMethodId;
         jmethodID _doubleFromObjectMethodId;
+        jmethodID _booleanFromObjectMethodId;
         jmethodID _getPropertyMethodId;
         jmethodID _unwrapMethodId;
 };
@@ -143,6 +150,14 @@ extern "C"
             lua_pushnumber(L, d);
             return 1;
         }
+        else if(type == 'B')
+        {
+            bool b = wrapper->booleanFromObject(value);
+
+            __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Pushing boolean value: %s", b?"true":"false" );
+            lua_pushboolean(L, b);
+            return 1;
+        }
         else if(type == 'S')
         {
             jstring str = (jstring)value;
@@ -152,7 +167,7 @@ extern "C"
             wrapper->env()->ReleaseStringUTFChars(str, cstr);
             return 1;
         }
-        else if (type == 'K')
+        else if (type == 'K' || type == 'O')
         {
              // Assign __self to refer to the value itself
              lua_createtable(L, 0, 2);
@@ -205,8 +220,6 @@ extern "C"
                  __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Stack is wrong\n");
              }
              return 1;
-        } else if (type == 'O'){
-            // ???????
         }
 
         // this shouldn't happen(?), so return error
@@ -326,6 +339,9 @@ extern "C"
         rightObject = wrapper->unwrap(getValue(L, -1, wrapper));
         leftObject = wrapper->unwrap(getValue(L, -2, wrapper));
 
+        lua_pop(L, 1);
+        lua_pop(L, 1);
+
         if(!wrapper->isComparable(leftObject)) return 0;
         if(!wrapper->isComparable(rightObject)) return 0;
 
@@ -333,9 +349,7 @@ extern "C"
 
         jint less = wrapper->compare(leftObject, rightObject);
 
-        lua_pop(L, 1);
-        lua_pop(L, 1);
-        if(less < 0)
+        if(less<0)
             lua_pushboolean(L, true); // return true
         else
             lua_pushboolean(L, false); // return false
@@ -408,6 +422,7 @@ extern "C"
                 jclass mapClass = wrapper->env()->FindClass("java/util/HashMap");
                 if(mapClass == NULL)
                 {
+                __android_log_print(ANDROID_LOG_VERBOSE, APPNAME, "Can't Find HashMap!\n");
                     return NULL;
                 }
 

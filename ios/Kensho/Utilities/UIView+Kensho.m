@@ -45,3 +45,18 @@ static const void *KenshoBinderHelperKey = &KenshoBinderHelperKey;
 }
 
 @end
+
+
+@implementation UILabel (Kensho)
+
+- (void) setDataBindText:(NSString *)kenText
+{
+    self.ken[@"text"] = kenText;
+}
+
+- (NSString *)dataBindText
+{
+    return self.ken[@"text"];
+}
+
+@end

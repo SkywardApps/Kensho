@@ -5,5 +5,8 @@
         <attr name="value" format="string"></attr>
         <attr name="textSize" format="string"></attr>
         <attr name="textColor" format="string"></attr>
+        <attr name="visible" format="string"></attr>
+        <attr name="animateIn" format="string"></attr>
+        <attr name="animateOut" format="string"></attr>
     </declare-styleable>
 </resources>

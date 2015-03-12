@@ -34,7 +34,7 @@ public class AttributeParser {
 
                 // find all of the custom attributes defined in the given attribute group (attrGrp)
                 TypedArray attributeList = context.obtainStyledAttributes(attrs, getInstance().attrGrp);
-                HashMap<String, String> attribute = new HashMap<>();
+                HashMap<String, String> attribute = new HashMap<String, String>();
                 int i = 0;
 
                 for(int attr : attrGrp){
@@ -65,7 +65,7 @@ public class AttributeParser {
 
     // this is a singleton, so keep the constructor private.
     private AttributeParser(){
-        mAttributeList = new HashMap<>();
+        mAttributeList = new HashMap<Integer, HashMap<String, String>>();
         mFactory = new AttributeParserFactory();
     }
 
@@ -126,7 +126,7 @@ public class AttributeParser {
     }
 
     public static Dictionary<String, String> getAttributesForView(int viewId){
-        Dictionary<String, String> result = new Hashtable<>(getInstance().getAttributeList().get(viewId));
+        Dictionary<String, String> result = new Hashtable<String, String>(getInstance().getAttributeList().get(viewId));
         return result;
     }
 

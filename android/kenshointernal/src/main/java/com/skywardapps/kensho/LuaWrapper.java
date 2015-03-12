@@ -40,7 +40,7 @@ public class LuaWrapper extends Computed
 
         if(b.getClass() == boolean.class)
         {
-            return (boolean)b;
+            return Boolean.parseBoolean(b.toString());
         }
 
         return false;
@@ -61,37 +61,37 @@ public class LuaWrapper extends Computed
 
         if(d.getClass() == int.class)
         {
-            return (int)d;
+            return Integer.parseInt(d.toString());
         }
 
         if(d.getClass() == double.class)
         {
-            return (double)d;
+            return Double.parseDouble(d.toString());
         }
 
         if(d.getClass() == float.class)
         {
-            return (float)d;
+            return Float.parseFloat(d.toString());
         }
 
         if(d.getClass() == long.class)
         {
-            return (long)d;
+            return Long.parseLong(d.toString());
         }
 
         if(d.getClass() == short.class)
         {
-            return (short)d;
+            return Short.parseShort(d.toString());
         }
 
         if(d.getClass() == byte.class)
         {
-            return (byte)d;
+            return Byte.parseByte(d.toString());
         }
 
         if(d.getClass() == char.class)
         {
-            return (char)d;
+            return Short.parseShort(d.toString());
         }
         return 0;
     }
@@ -118,15 +118,26 @@ public class LuaWrapper extends Computed
         return null;
     }
 
+    /**
+     * Extracts the value from within a watchable if val is a watchable,
+     * otherwise just returns val.
+     * @param val - the value to unwrap
+     * @return - an 'unwrapped' value.
+     */
     public static Object unwrap(Object val){
         Object result;
-        if(val instanceof IObservable)
-            result = ((ObservableValue)val).get();
+        if(val instanceof WatchableBase)
+            result = ((WatchableBase)val).get();
         else
             result = val;
-        return result == null ? "" : result;
+        return result;
     }
 
+    /**
+     * Returns a typeId (single letter string) of the given class.
+     * @param typeClass - the class of the object that we want the type id for.
+     * @return - a single letter string representing the type of the given object
+     */
     public static String getTypeId(Class typeClass) {
         String sig = typeClass.toString();
         String canon = typeClass.getCanonicalName();

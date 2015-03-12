@@ -159,6 +159,12 @@ public class TestLuaWrapper extends InstrumentationTestCase {
         Kensho ken = new Kensho();
         LuaWrapper wrapper = new LuaWrapper(ken, object, "nestedObject.shortNum");
         assertEquals((double)4, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "nestedObject.nestedObject.shortNum");
+        assertEquals((double)4, wrapper.get());
+
+        wrapper = new LuaWrapper(ken, object, "string.len(nestedObject.stringHW) == 11");
+        assertEquals(true, wrapper.get());
     }
 
     public void testObservable()

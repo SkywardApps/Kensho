@@ -88,8 +88,16 @@ public abstract class WatchableBase implements IObservable
      */
     public Object get()
     {
-        _ken.observableReferenced(this);
+        wasAccessed();
         return _value;
+    }
+
+    /**
+     * Notify the owning kensho that this observable was accessed in some capacity
+     */
+    protected void wasAccessed()
+    {
+        _ken.observableReferenced(this);
     }
 
     /**
@@ -107,18 +115,28 @@ public abstract class WatchableBase implements IObservable
                 || (newValue != null && !newValue.equals(_value))) {
             _value = newValue;
 
-            // let every watcher know
-            for(int i = _observers.size()-1; i >= 0; --i)
+            emitChangeNotification();
+        }
+    }
+
+    /**
+     * Emit a change notification event.
+     *
+     * Should generally only be emitted if there was an actual change.
+     */
+    protected void emitChangeNotification()
+    {
+        // let every watcher know
+        for(int i = _observers.size()-1; i >= 0; --i)
+        {
+            IObserver observer = _observers.get(i).get();
+            if(observer == null)
             {
-                IObserver observer = _observers.get(i).get();
-                if(observer == null)
-                {
-                    _observers.remove(i);
-                }
-                else
-                {
-                    observer.observedValueChanged(this, newValue);
-                }
+                _observers.remove(i);
+            }
+            else
+            {
+                observer.observedValueChanged(this, _value);
             }
         }
     }

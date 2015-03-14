@@ -427,8 +427,8 @@ extern "C"
                 }
 
                 // JNI reflection for instantiating a HashMap
-                jmethodID init = wrapper->env()->GetMethodID(mapClass, "<init>", "(V)V");
-                jobject hashMap = wrapper->env()->NewObject(mapClass, init);
+                jmethodID init = wrapper->env()->GetMethodID(mapClass, "<init>", "(I)V");
+                jobject hashMap = wrapper->env()->NewObject(mapClass, init, 1);
 
                 // get a pointer to the put function
                 jmethodID put = wrapper->env()->GetMethodID(mapClass, "put",

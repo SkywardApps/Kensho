@@ -280,7 +280,16 @@ public class TestLuaWrapper extends InstrumentationTestCase {
         Kensho ken = new Kensho();
 
         TestObject object = new TestObject();
-        LuaWrapper wrapper = new LuaWrapper(ken, object, "{ name:'myname', value:4.5, yes:true, no:false, sub:{value:1} }");
+        LuaWrapper wrapper = new LuaWrapper(ken, object, "{ name='myname', value=4.5, yes=true, no=false, sub={value=1} }");
         assertTrue(HashMap.class.isAssignableFrom(wrapper.get().getClass()));
+        HashMap map = (HashMap)wrapper.get();
+        assertEquals("myname", map.get("name"));
+        assertEquals(4.5, map.get("value"));
+        assertEquals(true, map.get("yes"));
+        assertEquals(false, map.get("no"));
+        assertTrue(HashMap.class.isAssignableFrom(map.get("sub").getClass()));
+        HashMap subMap = (HashMap)map.get("sub");
+        assertEquals(1.0, subMap.get("value"));
+
     }
 }

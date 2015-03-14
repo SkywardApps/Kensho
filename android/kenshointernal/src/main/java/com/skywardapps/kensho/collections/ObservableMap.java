@@ -1,7 +1,5 @@
 package com.skywardapps.kensho.collections;
 
-import android.support.annotation.NonNull;
-
 import com.skywardapps.kensho.IObserver;
 import com.skywardapps.kensho.Kensho;
 import com.skywardapps.kensho.ObservableValue;
@@ -85,7 +83,6 @@ public class ObservableMap extends ObservableValue implements Map
         return getMap().containsValue(value);
     }
 
-    @NonNull
     @Override
     public Set<Entry> entrySet() {
         wasAccessed();
@@ -104,7 +101,6 @@ public class ObservableMap extends ObservableValue implements Map
         return getMap().isEmpty();
     }
 
-    @NonNull
     @Override
     public Set keySet() {
         wasAccessed();
@@ -162,10 +158,9 @@ public class ObservableMap extends ObservableValue implements Map
 
     @Override
     public int size() {
-        return (int)_size.get();
+        return (int)(Integer)_size.get();
     }
 
-    @NonNull
     @Override
     public Collection values() {
         wasAccessed();

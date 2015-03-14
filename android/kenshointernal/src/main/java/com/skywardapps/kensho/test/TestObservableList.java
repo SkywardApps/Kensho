@@ -254,7 +254,7 @@ public class TestObservableList extends InstrumentationTestCase implements Obser
         sizeWatcher.addObserver(new IObserver() {
             @Override
             public void observedValueChanged(IObservable valueHolder, Object newValue) {
-                valueChanged += (int)newValue;
+                valueChanged += (int)(Integer)newValue;
             }
         });
 

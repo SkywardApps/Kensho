@@ -1,7 +1,5 @@
 package com.skywardapps.kensho.collections;
 
-import android.support.annotation.NonNull;
-
 import com.skywardapps.kensho.IObserver;
 import com.skywardapps.kensho.Kensho;
 import com.skywardapps.kensho.ObservableValue;
@@ -161,7 +159,6 @@ public class ObservableList extends ObservableValue implements List
         return getList().isEmpty();
     }
 
-    @NonNull
     @Override
     public Iterator iterator() {
         wasAccessed();
@@ -174,14 +171,12 @@ public class ObservableList extends ObservableValue implements List
         return getList().lastIndexOf(object);
     }
 
-    @NonNull
     @Override
     public ListIterator listIterator() {
         wasAccessed();
         return getList().listIterator();
     }
 
-    @NonNull
     @Override
     public ListIterator listIterator(int location) {
         wasAccessed();
@@ -243,24 +238,21 @@ public class ObservableList extends ObservableValue implements List
 
     @Override
     public int size() {
-        return (int)_size.get();
+        return (int)(Integer)_size.get();
     }
 
-    @NonNull
     @Override
     public List subList(int start, int end) {
         wasAccessed();
         return getList().subList(start, end);
     }
 
-    @NonNull
     @Override
     public Object[] toArray() {
         wasAccessed();
         return getList().toArray();
     }
 
-    @NonNull
     @Override
     public Object[] toArray(Object[] array) {
         wasAccessed();

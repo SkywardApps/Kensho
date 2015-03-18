@@ -11,6 +11,20 @@
 #import "Kensho.h"
 #import <UIKit/UIKit.h>
 
+@implementation UILabel (Kensho)
+
+- (void) setDataBindText:(NSString *)kenText
+{
+    self.ken[@"text"] = kenText;
+}
+
+- (NSString *)dataBindText
+{
+    return self.ken[@"text"];
+}
+
+@end
+
 @implementation UILabelBinding
 
 + (void) registerFactoriesTo:(Kensho*)ken;

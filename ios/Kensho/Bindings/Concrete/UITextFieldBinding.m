@@ -7,15 +7,30 @@
 //
 
 #import "UITextFieldBinding.h"
+#import "ObservablePropertyReference.h"
+
+@implementation UITextField (Kensho)
+
+- (void) setDataBindText:(NSString *)kenText
+{
+    self.ken[@"text"] = kenText;
+}
+
+- (NSString *)dataBindText
+{
+    return self.ken[@"text"];
+}
+
+@end
 
 @implementation UITextFieldBinding
 
 + (void) registerFactoriesTo:(Kensho*)ken
 {
-    for(NSString* name in @[@"value"])
+    for(NSString* name in @[@"text"])
     {
         [BindingBase addFactoryNamed:name
-                               class:UIView.class
+                               class:UITextField.class
                           collection:ken.bindingFactories
                               method:^(UIView* view, NSString* type, NSObject<KenshoValueParameters>* observable, NSObject* context)
          {
@@ -37,13 +52,25 @@
 {
     if([self.bindingType isEqualToString:@"text"])
     {
-        [self.targetView setText:self.resultValue];
-    }    
+        if(![self.targetView.text isEqualToString:self.resultValue])
+        {
+            [self.targetView setText:self.resultValue];
+        }
+    }
 }
 
 - (void) valueDidChange
 {
+    NSLog(@"Value Changed");
     // How do we get to the Observable Reference from here?
+    NSObject* boundValue = self.observedValue.parameters[@"__final"];
+    if([boundValue isKindOfClass:[ObservablePropertyReference class]])
+    {
+        ObservablePropertyReference* reference = (ObservablePropertyReference*)boundValue;
+        NSLog(@"Assigning value to %@", reference.propertyName);
+        [reference.owner setValue:self.targetView.text forKey:reference.propertyName];
+    }
+    
 }
 
 @end

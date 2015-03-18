@@ -108,8 +108,10 @@
 		E423AD141978B2F700231A59 /* TestUILabelBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD131978B2F700231A59 /* TestUILabelBinding.m */; };
 		E423AD161978B30600231A59 /* TestUITableViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD151978B30600231A59 /* TestUITableViewBinding.m */; };
 		E423AD181978B31300231A59 /* TestUIViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E423AD171978B31300231A59 /* TestUIViewBinding.m */; };
-		E42457531AAF2C3E00778B99 /* UITextFieldBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E42457511AAF2C3E00778B99 /* UITextFieldBinding.h */; };
+		E42457531AAF2C3E00778B99 /* UITextFieldBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E42457511AAF2C3E00778B99 /* UITextFieldBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E42457541AAF2C3E00778B99 /* UITextFieldBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E42457521AAF2C3E00778B99 /* UITextFieldBinding.m */; };
+		E45AF6EE1AB7A7A800B1B77D /* UIImageViewBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E45AF6EC1AB7A7A800B1B77D /* UIImageViewBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E45AF6EF1AB7A7A800B1B77D /* UIImageViewBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E45AF6ED1AB7A7A800B1B77D /* UIImageViewBinding.m */; };
 		E4638C471A30F5910092DFB8 /* ObservableValue.h in Headers */ = {isa = PBXBuildFile; fileRef = E4638C451A30F5910092DFB8 /* ObservableValue.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		E4638C481A30F5910092DFB8 /* ObservableValue.m in Sources */ = {isa = PBXBuildFile; fileRef = E4638C461A30F5910092DFB8 /* ObservableValue.m */; };
 		E4638C4D1A31102F0092DFB8 /* Kensho+Protected.h in Headers */ = {isa = PBXBuildFile; fileRef = E4638C4B1A31102F0092DFB8 /* Kensho+Protected.h */; };
@@ -135,6 +137,8 @@
 		E4A30D271A1C544C00A15F1A /* Tutorials.md in Sources */ = {isa = PBXBuildFile; fileRef = E4A30D211A1C544C00A15F1A /* Tutorials.md */; };
 		E4AF11B219AEA5B50015C5A1 /* KenshoContext.h in Headers */ = {isa = PBXBuildFile; fileRef = E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */; };
 		E4AF11B319AEA5B50015C5A1 /* KenshoContext.m in Sources */ = {isa = PBXBuildFile; fileRef = E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */; };
+		E4CC5D741AB7B94F00794208 /* UIControlBinding.h in Headers */ = {isa = PBXBuildFile; fileRef = E4CC5D721AB7B94F00794208 /* UIControlBinding.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		E4CC5D751AB7B94F00794208 /* UIControlBinding.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CC5D731AB7B94F00794208 /* UIControlBinding.m */; };
 		E4CF9554197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
 		E4CF955B197800F5007B6494 /* Kensho.m in Sources */ = {isa = PBXBuildFile; fileRef = E4CF955A197800F5007B6494 /* Kensho.m */; };
 		E4CF9563197800F5007B6494 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E4CF9553197800F5007B6494 /* Foundation.framework */; };
@@ -262,6 +266,8 @@
 		E423AD171978B31300231A59 /* TestUIViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = TestUIViewBinding.m; path = KenshoTests/TestUIViewBinding.m; sourceTree = SOURCE_ROOT; };
 		E42457511AAF2C3E00778B99 /* UITextFieldBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UITextFieldBinding.h; sourceTree = "<group>"; };
 		E42457521AAF2C3E00778B99 /* UITextFieldBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UITextFieldBinding.m; sourceTree = "<group>"; };
+		E45AF6EC1AB7A7A800B1B77D /* UIImageViewBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIImageViewBinding.h; sourceTree = "<group>"; };
+		E45AF6ED1AB7A7A800B1B77D /* UIImageViewBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIImageViewBinding.m; sourceTree = "<group>"; };
 		E4638C451A30F5910092DFB8 /* ObservableValue.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = ObservableValue.h; sourceTree = "<group>"; };
 		E4638C461A30F5910092DFB8 /* ObservableValue.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = ObservableValue.m; sourceTree = "<group>"; };
 		E4638C4B1A31102F0092DFB8 /* Kensho+Protected.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "Kensho+Protected.h"; sourceTree = "<group>"; };
@@ -294,6 +300,8 @@
 		E4A30D211A1C544C00A15F1A /* Tutorials.md */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = net.daringfireball.markdown; path = Tutorials.md; sourceTree = "<group>"; };
 		E4AF11B019AEA5B50015C5A1 /* KenshoContext.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = KenshoContext.h; sourceTree = "<group>"; };
 		E4AF11B119AEA5B50015C5A1 /* KenshoContext.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = KenshoContext.m; sourceTree = "<group>"; };
+		E4CC5D721AB7B94F00794208 /* UIControlBinding.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = UIControlBinding.h; sourceTree = "<group>"; };
+		E4CC5D731AB7B94F00794208 /* UIControlBinding.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = UIControlBinding.m; sourceTree = "<group>"; };
 		E4CF9550197800F5007B6494 /* libKensho.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libKensho.a; sourceTree = BUILT_PRODUCTS_DIR; };
 		E4CF9553197800F5007B6494 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
 		E4CF9557197800F5007B6494 /* Kensho-Prefix.pch */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; name = "Kensho-Prefix.pch"; path = "../Kensho/Kensho-Prefix.pch"; sourceTree = "<group>"; };
@@ -429,6 +437,10 @@
 				E423ACA71978204F00231A59 /* UIViewBinding.m */,
 				E42457511AAF2C3E00778B99 /* UITextFieldBinding.h */,
 				E42457521AAF2C3E00778B99 /* UITextFieldBinding.m */,
+				E45AF6EC1AB7A7A800B1B77D /* UIImageViewBinding.h */,
+				E45AF6ED1AB7A7A800B1B77D /* UIImageViewBinding.m */,
+				E4CC5D721AB7B94F00794208 /* UIControlBinding.h */,
+				E4CC5D731AB7B94F00794208 /* UIControlBinding.m */,
 			);
 			path = Concrete;
 			sourceTree = "<group>";
@@ -666,6 +678,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				E40EF836197C8E6300BEEC3F /* ltm.h in Headers */,
+				E45AF6EE1AB7A7A800B1B77D /* UIImageViewBinding.h in Headers */,
 				E423ACB01978204F00231A59 /* UITableViewBinding.h in Headers */,
 				E40EF7C7197C269500BEEC3F /* KenshoLuaWrapper.h in Headers */,
 				E40EF829197C8E6300BEEC3F /* lopcodes.h in Headers */,
@@ -685,6 +698,7 @@
 				E40EF821197C8E6300BEEC3F /* llimits.h in Headers */,
 				E40EF824197C8E6300BEEC3F /* lmem.h in Headers */,
 				E49707551A2653B9001B75DF /* KenModel.h in Headers */,
+				E4CC5D741AB7B94F00794208 /* UIControlBinding.h in Headers */,
 				E423ACEE1978233B00231A59 /* UIView+UpdateAutoLayoutConstraints.h in Headers */,
 				E49707601A2671D3001B75DF /* KenComputed.h in Headers */,
 				E415BBBD1A2F86A2002A661B /* IObservable.h in Headers */,
@@ -854,6 +868,7 @@
 				E49707611A2671D3001B75DF /* KenComputed.m in Sources */,
 				E423ACB11978204F00231A59 /* UITableViewBinding.m in Sources */,
 				E40EF7C8197C269500BEEC3F /* KenshoLuaWrapper.m in Sources */,
+				E4CC5D751AB7B94F00794208 /* UIControlBinding.m in Sources */,
 				E4A30D221A1C544C00A15F1A /* FAQ.md in Sources */,
 				E40EF81D197C8E6300BEEC3F /* linit.c in Sources */,
 				E49707561A2653B9001B75DF /* KenModel.m in Sources */,
@@ -884,6 +899,7 @@
 				E4AF11B319AEA5B50015C5A1 /* KenshoContext.m in Sources */,
 				E40EF82B197C8E6300BEEC3F /* lparser.c in Sources */,
 				E423ACB31978204F00231A59 /* UIViewBinding.m in Sources */,
+				E45AF6EF1AB7A7A800B1B77D /* UIImageViewBinding.m in Sources */,
 				E40EF816197C8E6300BEEC3F /* ldo.c in Sources */,
 				E497075A1A265612001B75DF /* NSObject+Observable.m in Sources */,
 				E423ACAD1978204F00231A59 /* UIButtonBinding.m in Sources */,

@@ -32,31 +32,3 @@ static const void *KenshoBinderHelperKey = &KenshoBinderHelperKey;
 @end
 
 
-@implementation UIButton (Kensho)
-
-- (void) setDataBindTitle:(NSString *)kenTitle
-{
-    self.ken[@"title"] = kenTitle;
-}
-
-- (NSString *)dataBindTitle
-{
-    return self.ken[@"title"];
-}
-
-@end
-
-
-@implementation UILabel (Kensho)
-
-- (void) setDataBindText:(NSString *)kenText
-{
-    self.ken[@"text"] = kenText;
-}
-
-- (NSString *)dataBindText
-{
-    return self.ken[@"text"];
-}
-
-@end

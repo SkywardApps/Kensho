@@ -14,3 +14,10 @@
 @property (weak, readonly) UITextField* targetView;
 
 @end
+
+
+@interface UITextField (Kensho)
+
+@property IBInspectable NSString* dataBindText;
+
+@end

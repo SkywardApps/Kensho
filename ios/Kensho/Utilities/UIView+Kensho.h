@@ -20,16 +20,3 @@
 @property (readonly) IBInspectable NSMutableDictionary* ken;
 
 @end
-
-
-@interface UIButton (Kensho)
-
-@property IBInspectable NSString* dataBindTitle;
-
-@end
-
-@interface UILabel (Kensho)
-
-@property IBInspectable NSString* dataBindText;
-
-@end

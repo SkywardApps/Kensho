@@ -38,4 +38,9 @@
  */
 - (id)valueForKey:(NSString *)key;
 
+/**
+ * Setting a view model
+ */
+- (void) setValue:(id)value forKey:(NSString *)key;
+
 @end

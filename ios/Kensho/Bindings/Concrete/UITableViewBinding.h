@@ -12,11 +12,17 @@
 #import <UIKit/UIKit.h>
 
 
-@interface UITableViewBinding : BindingBase <UITableViewDataSource>
+@interface UITableViewBinding : BindingBase <UITableViewDataSource, UITableViewDelegate>
 
 - (id) initWithKensho:(Kensho*)ken target:(UIView*)target type:(NSString*)type value:(NSObject<KenshoValueParameters>*)value context:(NSObject*)context;
 
 @property (weak, readonly) UITableView* targetView;
 @property (weak, readonly) NSObject<IObservable>* targetValue;
+
+@end
+
+@interface UITableView (Kensho)
+
+@property IBInspectable NSString* dataBindForEach;
 
 @end

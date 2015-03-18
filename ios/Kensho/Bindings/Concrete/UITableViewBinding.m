@@ -72,7 +72,16 @@
         }
     }
     
-    UITableViewCell* cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    UITableViewCell* cell = nil;;
+    
+    if([self.observedValue.parameters[@"prototype"] boolValue])
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier forIndexPath:indexPath];
+    }
+    else
+    {
+        cell = [tableView dequeueReusableCellWithIdentifier:reuseIdentifier];
+    }
     
     if(cell != nil)
     {
@@ -95,6 +104,37 @@
     [self.ken bindToView:cell context:rootContext];
     
     return cell;
+}
+
+#pragma mark UITableViewDelegate
+
+- (void)tableView:(UITableView *)tableView didDeselectRowAtIndexPath:(NSIndexPath *)indexPath
+{
+    if(self.observedValue.parameters[@"selected"] != nil)
+    {
+        NSObject<IObservable>* valueItem;
+        NSEnumerator* enumerator = [self.resultValue objectEnumerator];
+        for(int i = 0; i <= indexPath.row; ++i)
+        {
+            valueItem = [enumerator nextObject];
+        }
+        [self.context setValue:valueItem forKey:self.observedValue.parameters[@"selected"]];
+    }
+}
+
+@end
+
+
+@implementation UITableView (Kensho)
+
+- (void) setDataBindForEach:(NSString *)dataBindForEach
+{
+    self.ken[@"foreach"] = dataBindForEach;
+}
+
+- (NSString *)dataBindForEach
+{
+    return self.ken[@"foreach"];
 }
 
 @end

@@ -33,3 +33,18 @@
 }
 
 @end
+
+
+@implementation UIButton (Kensho)
+
+- (void) setDataBindTitle:(NSString *)kenTitle
+{
+    self.ken[@"title"] = kenTitle;
+}
+
+- (NSString *)dataBindTitle
+{
+    return self.ken[@"title"];
+}
+
+@end

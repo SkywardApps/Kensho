@@ -15,3 +15,10 @@
 @property (weak, readonly) UIButton* targetView;
 
 @end
+
+
+@interface UIButton (Kensho)
+
+@property IBInspectable NSString* dataBindTitle;
+
+@end

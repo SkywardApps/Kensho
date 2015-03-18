@@ -155,7 +155,9 @@
             startingColumnNumber = "9223372036854775807"
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "336"
-            endingLineNumber = "336">
+            endingLineNumber = "336"
+            landmarkName = "popValue()"
+            landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -234,7 +236,7 @@
             endingColumnNumber = "9223372036854775807"
             startingLineNumber = "423"
             endingLineNumber = "423"
-            landmarkName = "exponentValues()"
+            landmarkName = "divideValues()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>
@@ -331,6 +333,22 @@
             startingLineNumber = "233"
             endingLineNumber = "233"
             landmarkName = "luaV_lessthan()"
+            landmarkType = "7">
+         </BreakpointContent>
+      </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "Kensho/Utilities/KenshoLuaWrapper.m"
+            timestampString = "448320470.968192"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "390"
+            endingLineNumber = "390"
+            landmarkName = "lookupNewKey()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

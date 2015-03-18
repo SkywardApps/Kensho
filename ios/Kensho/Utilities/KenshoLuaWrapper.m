@@ -270,6 +270,10 @@ NSObject* popValue(lua_State* L, int stackLevel)
         const char* tempString = lua_tostring(L, stackLevel);
         return [NSString stringWithUTF8String:tempString];
     }
+    else if(lua_isnoneornil(L, stackLevel))
+    {
+        return nil;
+    }
     else if(lua_istable(L, stackLevel))
     {
         // This is a bit of a special case here.  We assume this is a wrapper for an NSObject.
@@ -448,7 +452,7 @@ int equalsValues(lua_State* L)
 {
     NSObject* left = [ObservablePropertyReference unwrap:popValue(L, -2)];
     NSObject* right = [ObservablePropertyReference unwrap:popValue(L, -1)];
-    lua_pushboolean(L, [left isEqual:right]);
+    lua_pushboolean(L, (left == nil && right == nil) || [left isEqual:right]);
     return 1;
 }
 

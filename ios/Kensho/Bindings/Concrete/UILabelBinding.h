@@ -15,3 +15,10 @@
 @property (weak, readonly) UILabel* targetView;
 
 @end
+
+
+@interface UILabel (Kensho)
+
+@property IBInspectable NSString* dataBindText;
+
+@end

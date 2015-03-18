@@ -45,4 +45,13 @@
     }
 }
 
+
+/**
+ * Setting a view model
+ */
+- (void) setValue:(id)value forKey:(NSString *)key
+{
+    [_context setValue:value forKey:key];
+}
+
 @end

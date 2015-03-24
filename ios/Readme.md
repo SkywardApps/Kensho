@@ -14,6 +14,9 @@ Easily *associate view elements with model data* using a concise, readable synta
 We want - a quick overview on Kensho, the origin of the term, the project purpose, related projects.
 Talk about the coverage (ios, android) and how it will be documented
 
+
+Check out the latest documentation online on [GitHub](http://skywardapps.github.io/Kensho/index.html)
+
 [Introduction](doc/Introduction.md)
 
 [QuickStart](doc/QuickStart.md)

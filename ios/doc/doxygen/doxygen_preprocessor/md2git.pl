@@ -18,6 +18,7 @@ if($FILENAME =~ /.md$/)
 	{
 		my $altered_line = $line;
 		
+		# The below would handle code fences
 		if(my ($filetype) = $altered_line =~ /^\s*```\s*([a-zA-Z]*)\s*$/)
 		{
 			if($filetype eq "objc")
@@ -32,12 +33,23 @@ if($FILENAME =~ /.md$/)
 			else
 			{
 				$altered_line = "\\code{$filetype}";
-				
 			}
 		}
+		
+		#patch up hyperlink references
 		$altered_line =~ s/doc\/([A-Za-z0-9_-]+)\.md/\@ref $1/g;
+		
+		#remove lines hidden from doxygen
 		$altered_line =~ s/^.*\(!doxygen\)\s*$//;
+		
+		#patch up image references
 		$altered_line =~ s/!\[(.+)\]\(..\/(.+)\)/![$1]($2)/; 
+		
+		#fix up any code and endcode references where we want to hide the /** and */
+		$altered_line =~ s/^\s*(\\code[{}.a-zA-Z0-9]*)\s+\*\/\s*$/$1/;
+		$altered_line =~ s/^\s*\/\*\*\s*\\endcode\s*$/\\endcode/;
+		
+		#remove any code within a conditional
 		if($line =~ /^\\cond\s*$/)
 		{
 			$cond = 1;

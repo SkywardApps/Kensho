@@ -83,6 +83,14 @@
     [super tearDown];
 }
 
+/**
+ \page TestLua Using Kensho
+ 
+ \section Additional
+ 
+ This is a neat block talking about test Numbers, which is below. How can we include this source, and also make it compile?
+ 
+ \code */
 
 - (void)testNumbers
 {
@@ -161,6 +169,19 @@
     
 }
 
+/** \endcode
+ \page TestLua
+ \subsection part1
+ 
+ Now we're talking about testStrings below.  We repeated the page command.
+ */
+
+/**
+ \page TestLua
+ \subsection part2
+ 
+ more teststrings lah dee dah.
+ */
 
 - (void) testStrings
 {
@@ -194,6 +215,13 @@
     
 }
 
+/**
+ \page TestLua
+ \subsection testMethodCalls
+ We talk about testing Method calls here!
+ \code
+ */
+
 - (void) testMethodCalls
 {
     TestableLuaObject* object = [[[TestableLuaObject alloc] init] observe:ken];
@@ -205,6 +233,14 @@
     result = (NSNumber*)[wrapper evaluate:@"alsoNotAProperty(5)"];
     XCTAssertEqualObjects(result, @(10), @"Calculation was not performed correctly");
 }
+
+
+
+/**
+ \endcode
+ 
+ We resume talking about testing Method calls here!
+ */
 
 - (void)testRecursive
 {

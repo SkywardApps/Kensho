@@ -23,8 +23,7 @@
     heart's content, but at the end of the day both the Markdown on github and the compiler will see this file as-is.
         
  -->
-Usage {#Usage}
-=======
+# Usage {#Usage}
 
 ## Our Model
 

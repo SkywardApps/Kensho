@@ -207,15 +207,11 @@ That was very manual.  How can we do this with a little more... pazzaz?
 
 Screenshot of a xib with a two text fields, and a label.  Screenshots of the properties as set for each.
 
-![first name text field](../../Resources/firstNameTextField.png)
+![First Name UITextField](../Resources/firstNameTextField.png)
 
-![first name text field](firstNameTextField.png)
+![Last Name UITextField](../Resources/lastNameTextField.png)
 
-![first name text field](@ref firstNameTextField.png)
-
-\image html ../../Resources/lastNameTextField.png
-
-\image html ../../Resources/fullNameLabel.png
+![Full Name UILabel](../Resources/fullNameLabel.png)
 
 Bind the views automatically.
 

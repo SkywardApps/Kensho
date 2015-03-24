@@ -37,6 +37,7 @@ if($FILENAME =~ /.md$/)
 		}
 		$altered_line =~ s/doc\/([A-Za-z0-9_-]+)\.md/\@ref $1/g;
 		$altered_line =~ s/^.*\(!doxygen\)\s*$//;
+		$altered_line =~ s/!\[(.+)\]\(..\/(.+)\)/![$1]($2)/; 
 		if($line =~ /^\\cond\s*$/)
 		{
 			$cond = 1;

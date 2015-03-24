@@ -17,8 +17,10 @@
 @end
 
 
-@interface UILabel (Kensho)
+@interface UILabel (KenshoBinding)
 
 @property IBInspectable NSString* dataBindText;
+@property IBInspectable NSString* dataBindColor;
+@property IBInspectable NSString* dataBindFont;
 
 @end

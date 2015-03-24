@@ -529,7 +529,7 @@ int callValue(lua_State* L)
 - (NSObject*) evaluate:(NSString*)newCode
 {
     self.code = newCode;
-    return self.currentValue;
+    return self.value;
 }
 
 - (NSDictionary *)parameters

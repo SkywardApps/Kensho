@@ -16,8 +16,10 @@
 @end
 
 
-@interface UITextField (Kensho)
+@interface UITextField (KenshoBinding)
 
 @property IBInspectable NSString* dataBindText;
+@property IBInspectable NSString* dataBindColor;
+@property IBInspectable NSString* dataBindFont;
 
 @end

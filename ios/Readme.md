@@ -18,6 +18,8 @@ Talk about the coverage (ios, android) and how it will be documented
 
 [QuickStart](doc/QuickStart.md)
 
+[Usage](doc/Usage.md)
+
 [Tutorials](doc/Tutorials.md)
 
 [Frequently Asked Questions](doc/FAQ.md)

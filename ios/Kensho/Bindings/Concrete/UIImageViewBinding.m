@@ -45,24 +45,7 @@
 
 @implementation UIImageView (Kensho)
 
-- (void) setDataBindSource:(NSString *)kenText
-{
-    self.ken[@"source"] = kenText;
-}
-
-- (NSString *)dataBindSource
-{
-    return self.ken[@"source"];
-}
-
-- (void) setDataBindPath:(NSString *)kenText
-{
-    self.ken[@"path"] = kenText;
-}
-
-- (NSString *)dataBindPath
-{
-    return self.ken[@"path"];
-}
+KENPROP(source, Source);
+KENPROP(path, Path);
 
 @end

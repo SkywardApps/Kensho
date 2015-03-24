@@ -53,6 +53,36 @@
             endingLineNumber = "28"
             landmarkName = "-updateValue"
             landmarkType = "5">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UIButtonBinding updateValue]"
+                  moduleName = "Sample"
+                  urlString = "file:///Users/nelliott/Documents/Projects/Kensho/ios/Kensho/Bindings/Concrete/UIButtonBinding.m"
+                  timestampString = "448822551.029998"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "16">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "-[UIButtonBinding updateValue]"
+                  moduleName = "KenshoTests"
+                  urlString = "file:///Users/nelliott/Documents/Projects/Kensho/ios/Kensho/Bindings/Concrete/UIButtonBinding.m"
+                  timestampString = "448822551.250018"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "28"
+                  endingLineNumber = "28"
+                  offsetFromSymbolStart = "16">
+               </Location>
+            </Locations>
          </BreakpointContent>
       </BreakpointProxy>
       <BreakpointProxy
@@ -333,22 +363,6 @@
             startingLineNumber = "233"
             endingLineNumber = "233"
             landmarkName = "luaV_lessthan()"
-            landmarkType = "7">
-         </BreakpointContent>
-      </BreakpointProxy>
-      <BreakpointProxy
-         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
-         <BreakpointContent
-            shouldBeEnabled = "Yes"
-            ignoreCount = "0"
-            continueAfterRunningActions = "No"
-            filePath = "Kensho/Utilities/KenshoLuaWrapper.m"
-            timestampString = "448320470.968192"
-            startingColumnNumber = "9223372036854775807"
-            endingColumnNumber = "9223372036854775807"
-            startingLineNumber = "390"
-            endingLineNumber = "390"
-            landmarkName = "lookupNewKey()"
             landmarkType = "7">
          </BreakpointContent>
       </BreakpointProxy>

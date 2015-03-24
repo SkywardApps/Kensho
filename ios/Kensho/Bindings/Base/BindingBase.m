@@ -36,9 +36,9 @@
         
         [self observe:_ken];
         
-        if([_observedValue conformsToProtocol:@protocol(IObservable) ])
+        if([_observedValue respondsToSelector:@selector(addObserver:attribute:context:)])
         {
-            [_observedValue addObserver:self attribute:@"currentValue" context:@"baseValue"];
+            [_observedValue addObserver:self attribute:@"value" context:@"baseValue"];
             [_observedValue addObserver:self attribute:@"parameters" context:@"parameterValue"];
         }
         
@@ -49,7 +49,7 @@
 
 - (id)resultValue
 {
-    return self.observedValue.currentValue;
+    return self.observedValue.value;
 }
 
 - (void)observable:(NSObject *)observableOwner updated:(NSString *)attributeName context:(NSString *)context

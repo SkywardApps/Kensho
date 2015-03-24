@@ -70,7 +70,7 @@
     KenComputed* computed = [[KenComputed alloc] initWithKensho:ken calculator:^NSObject *(NSObject * this) {
         return @(1);
     }];
-    XCTAssertEqualObjects(computed.currentValue, @(1));
+    XCTAssertEqualObjects(computed.value, @(1));
 }
 
 - (void)testOneLevel
@@ -81,13 +81,13 @@
                 objectOne.readWriteOne, objectOne.readWriteTwo];
     }];
     
-    [computed addObserver:self attribute:@"currentValue" context:@""];
-    XCTAssertEqualObjects(computed.currentValue, @"One.Two");
+    [computed addObserver:self attribute:@"value" context:@""];
+    XCTAssertEqualObjects(computed.value, @"One.Two");
     
-    XCTAssert(![changedKeys containsObject:@"currentValue"]);
+    XCTAssert(![changedKeys containsObject:@"value"]);
     objectOne.readWriteTwo = @"Zero";
-    XCTAssert([changedKeys containsObject:@"currentValue"]);
-    XCTAssertEqualObjects(computed.currentValue, @"One.Zero");
+    XCTAssert([changedKeys containsObject:@"value"]);
+    XCTAssertEqualObjects(computed.value, @"One.Zero");
 }
 
 - (void)testBasicValue
@@ -96,14 +96,14 @@
     KenComputed* computed = [[KenComputed alloc] initWithKensho:ken calculator:^NSObject *(NSObject * this) {
         return [NSString stringWithFormat:@"%0.1f", objectOne.cantDoIt];
     }];
-    [computed addObserver:self attribute:@"currentValue" context:@""];
-    XCTAssertEqualObjects(computed.currentValue, @"5.5");
+    [computed addObserver:self attribute:@"value" context:@""];
+    XCTAssertEqualObjects(computed.value, @"5.5");
     
-    XCTAssert(![changedKeys containsObject:@"currentValue"]);
+    XCTAssert(![changedKeys containsObject:@"value"]);
     objectOne.cantDoIt = 300.1;
-    XCTAssert([changedKeys containsObject:@"currentValue"]);
+    XCTAssert([changedKeys containsObject:@"value"]);
     
-    XCTAssertEqualObjects(computed.currentValue, @"300.1");
+    XCTAssertEqualObjects(computed.value, @"300.1");
 }
 
 - (void) testMultipleDependencies
@@ -117,22 +117,22 @@
                            objectTwo.readWriteOne, objectTwo.readWriteTwo];
         return str;
     }];
-    [computed addObserver:self attribute:@"currentValue" context:@""];
-    XCTAssertEqualObjects(computed.currentValue, @"One.Two One.Two");
+    [computed addObserver:self attribute:@"value" context:@""];
+    XCTAssertEqualObjects(computed.value, @"One.Two One.Two");
     
-    XCTAssert(![changedKeys containsObject:@"currentValue"]);
+    XCTAssert(![changedKeys containsObject:@"value"]);
     objectOne.readWriteOne = @"Zero";
-    XCTAssert([changedKeys containsObject:@"currentValue"]);
+    XCTAssert([changedKeys containsObject:@"value"]);
     
-    XCTAssertEqualObjects(computed.currentValue, ([NSString stringWithFormat:@"%@.%@ %@.%@",
+    XCTAssertEqualObjects(computed.value, ([NSString stringWithFormat:@"%@.%@ %@.%@",
                                                              objectOne.readWriteOne, objectOne.readWriteTwo,
                                                              objectTwo.readWriteOne, objectTwo.readWriteTwo]));
     
     [changedKeys removeAllObjects];
     objectTwo.readWriteTwo = @"Four";
-    XCTAssert([changedKeys containsObject:@"currentValue"]);
+    XCTAssert([changedKeys containsObject:@"value"]);
     
-    XCTAssertEqualObjects(computed.currentValue, ([NSString stringWithFormat:@"%@.%@ %@.%@",
+    XCTAssertEqualObjects(computed.value, ([NSString stringWithFormat:@"%@.%@ %@.%@",
                                                    objectOne.readWriteOne, objectOne.readWriteTwo,
                                                    objectTwo.readWriteOne, objectTwo.readWriteTwo]));
 }
@@ -147,17 +147,17 @@
     
     KenComputed* computed2 = [[KenComputed alloc] initWithKensho:ken calculator:^NSObject *(NSObject * this) {
         return [NSString stringWithFormat:@"%@.%@",
-                computed.currentValue, @"End"];
+                computed.value, @"End"];
     }];
     
-    [computed2 addObserver:self attribute:@"currentValue" context:@""];
-    XCTAssertEqualObjects(computed2.currentValue, @"One.Two.End");
+    [computed2 addObserver:self attribute:@"value" context:@""];
+    XCTAssertEqualObjects(computed2.value, @"One.Two.End");
     
-    XCTAssert(![changedKeys containsObject:@"currentValue"]);
+    XCTAssert(![changedKeys containsObject:@"value"]);
     objectOne.readWriteTwo = @"Zero";
-    XCTAssert([changedKeys containsObject:@"currentValue"]);
+    XCTAssert([changedKeys containsObject:@"value"]);
     
-    XCTAssertEqualObjects(computed2.currentValue, @"One.Zero.End");
+    XCTAssertEqualObjects(computed2.value, @"One.Zero.End");
 }
 
 - (void) testDeallocObservableFirst
@@ -177,11 +177,11 @@
                         weakObject.readWriteTwo];
             }];
             weakComputed = computed;
-            XCTAssertEqualObjects(computed.currentValue, @"One.Two");
+            XCTAssertEqualObjects(computed.value, @"One.Two");
             
             objectOne.readWriteTwo = @"Zero";
             
-            XCTAssertEqualObjects(computed.currentValue, @"One.Zero");
+            XCTAssertEqualObjects(computed.value, @"One.Zero");
             objectOne = nil;
         }
         XCTAssert(weakObject == nil);
@@ -206,11 +206,11 @@
                         weakObject.readWriteOne, weakObject.readWriteTwo];
             }];
             weakComputed = computed;
-            XCTAssertEqualObjects(computed.currentValue, @"One.Two");
+            XCTAssertEqualObjects(computed.value, @"One.Two");
             
             objectOne.readWriteTwo = @"Zero";
             
-            XCTAssertEqualObjects(computed.currentValue, @"One.Zero");
+            XCTAssertEqualObjects(computed.value, @"One.Zero");
             computed = nil;
         }
         XCTAssert(weakComputed == nil);

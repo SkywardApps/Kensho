@@ -91,7 +91,7 @@
     
     // Start with addition
     KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"first + second"];
-    NSNumber* result = wrapper.currentValue;
+    NSNumber* result = wrapper.value;
     XCTAssertEqualObjects(result, @(54), @"Calculation was not performed correctly");
     
     // subtraction
@@ -168,7 +168,7 @@
     KenshoContext* context = [[KenshoContext alloc] initWithContext:dictionary parent:nil];
     
     KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"first .. \" hand\""];
-    NSString* result = wrapper.currentValue;
+    NSString* result = wrapper.value;
     XCTAssertEqualObjects(result, @"left hand", @"Calculation was not performed correctly");
     
     result = (NSString*)[wrapper evaluate:@"\"Always \" .. second"];
@@ -199,7 +199,7 @@
     TestableLuaObject* object = [[[TestableLuaObject alloc] init] observe:ken];
     KenshoContext* context = [[KenshoContext alloc] initWithContext:object parent:nil];
     KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"notAProperty()"];
-    NSNumber* result = wrapper.currentValue;
+    NSNumber* result = wrapper.value;
     XCTAssertEqualObjects(result, @1, @"Calculation was not performed correctly"); 
     
     result = (NSNumber*)[wrapper evaluate:@"alsoNotAProperty(5)"];
@@ -228,7 +228,7 @@
     
     // observe wrapper, make sure the change notification fires when we change cantDoIt
     object.cantDoIt = 11.5;
-    XCTAssertEqualObjects(wrapper.currentValue, @(16.5), @"Calculation was not performed correctly");
+    XCTAssertEqualObjects(wrapper.value, @(16.5), @"Calculation was not performed correctly");
     
     NSString* hw = (NSString*)[wrapper evaluate:@"readWrite"];
     XCTAssertEqualObjects(hw, @"readWrite", @"Calculation was not performed correctly");
@@ -236,7 +236,7 @@
     // observe wrapper, make sure the change notification fires when we change readWrite
     object.readWrite = @"Hello World";
     
-    XCTAssertEqualObjects(wrapper.currentValue, @"Hello World", @"Calculation was not performed correctly");
+    XCTAssertEqualObjects(wrapper.value, @"Hello World", @"Calculation was not performed correctly");
     
 }
 
@@ -270,7 +270,7 @@
     
     KenshoContext* context = [[KenshoContext alloc] initWithContext:nest1 parent:nil];
     KenshoLuaWrapper* wrapper = [[KenshoLuaWrapper alloc] initWithKensho:ken context:context code:@"nested.value"];
-    NSString* hw = (NSString*)wrapper.currentValue;
+    NSString* hw = (NSString*)wrapper.value;
     XCTAssertEqualObjects(hw, @"Correct", @"Calculation was not performed correctly");
 }
 

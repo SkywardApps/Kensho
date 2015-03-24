@@ -25,3 +25,14 @@
 + (void) addFactoryNamed:(NSString*)name class:(Class)class collection:(NSMutableDictionary*)bindingFactories method:(id)method;
 
 @end
+
+#define KENPROP(lower, upper) \
+- (void) setDataBind##upper:(NSString *)dataBind    \
+{   \
+    self.ken[@#lower] = dataBind;    \
+}   \
+\
+- (NSString *)dataBind##upper   \
+{   \
+    return self.ken[@#lower];    \
+}

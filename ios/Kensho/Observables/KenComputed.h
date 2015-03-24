@@ -7,15 +7,15 @@
 //
 
 #import <Foundation/Foundation.h>
-
+#import "IObservable.h"
+#import "ObservableValue.h"
 @class Kensho;
-@protocol IObserver;
 
-@interface KenComputed : NSObject<IObserver>
+@interface KenComputed : ObservableValue<IObserver, IObservable>
 
-- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(NSObject*))calculatorMethod;
+- (id) initWithKensho:(Kensho *)ken calculator:(NSObject*(^)(KenComputed*))calculatorMethod;
 
-@property (copy, nonatomic) NSObject*(^calculatorMethod)(NSObject*);
-@property (readonly, nonatomic) NSObject* currentValue;
+@property (copy, nonatomic) NSObject*(^calculatorMethod)(KenComputed*);
+@property (readonly) id value;
 
 @end

@@ -22,6 +22,6 @@
 
 @protocol KenshoValueParameters <IObservable>
 @property (nonatomic, readonly) NSDictionary* parameters;
-@property (nonatomic, readonly) NSObject* currentValue;
+@property (nonatomic, readonly) NSObject* value;
 @end
 

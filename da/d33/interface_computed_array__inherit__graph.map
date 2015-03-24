@@ -1,7 +1,0 @@
-<map id="ComputedArray" name="ComputedArray">
-<area shape="rect" id="node2" href="$d8/d9a/class_n_s_array.html" title="{NSArray\n||}" alt="" coords="4,459,75,541"/>
-<area shape="rect" id="node3" href="$da/dd9/protocol_i_observable-p.html" title="The IObservable protocol allows any object to be &#39;observed&#39; in the Kensho system. ..." alt="" coords="8,137,188,394"/>
-<area shape="rect" id="node4" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="146,6,240,87"/>
-<area shape="rect" id="node6" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observableUpdated:\l}" alt="" coords="213,225,365,306"/>
-<area shape="rect" id="node5" href="$de/d8a/protocol_i_collection_observer-p.html" title="{\&lt;ICollectionObserver\&gt;\n||+ observable:added:forKey:\l+ observable:removed\l:fromKey:\l}" alt="" coords="181,443,365,557"/>
-</map>

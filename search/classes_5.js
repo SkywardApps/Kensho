@@ -1,6 +1,6 @@
 var searchData=
 [
-  ['observable',['Observable',['../d2/d8f/interface_observable.html',1,'']]],
-  ['observablearray',['ObservableArray',['../d3/dd6/interface_observable_array.html',1,'']]],
-  ['observablemap',['ObservableMap',['../de/d54/interface_observable_map.html',1,'']]]
+  ['observablepropertyreference',['ObservablePropertyReference',['../d5/dbe/interface_observable_property_reference.html',1,'']]],
+  ['observabletracker',['ObservableTracker',['../d3/d4c/interface_observable_tracker.html',1,'']]],
+  ['observablevalue',['ObservableValue',['../db/da2/interface_observable_value.html',1,'']]]
 ];

@@ -1,9 +1,0 @@
-digraph "OCMMacroState"
-{
-  bgcolor="transparent";
-  edge [fontname="Helvetica",fontsize="10",labelfontname="Helvetica",labelfontsize="10"];
-  node [fontname="Helvetica",fontsize="10",shape=record];
-  Node1 [label="{OCMMacroState\n|# recorder\l|+ recorder\l+ switchToClassMethod\l+ beginStubMacro\l+ endStubMacro\l+ beginExpectMacro\l+ endExpectMacro\l+ beginVerifyMacroAtLocation:\l+ endVerifyMacro\l+ globalState\l}",height=0.2,width=0.4,color="black", fillcolor="grey75", style="filled" fontcolor="black"];
-  Node2 -> Node1 [dir="back",color="midnightblue",fontsize="10",style="solid",arrowtail="onormal",fontname="Helvetica"];
-  Node2 [label="{NSObject\n||}",height=0.2,width=0.4,color="black",URL="$d7/dc4/class_n_s_object.html"];
-}

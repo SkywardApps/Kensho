@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['matchstate',['MatchState',['../d7/d5a/struct_match_state.html',1,'']]],
-  ['mbuffer',['Mbuffer',['../d2/dd6/struct_mbuffer.html',1,'']]]
+  ['weakproxy',['WeakProxy',['../d1/d29/interface_weak_proxy.html',1,'']]]
 ];

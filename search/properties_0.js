@@ -1,5 +1,5 @@
 var searchData=
 [
-  ['bindingtype',['bindingType',['../d5/d2a/interface_binding_base.html#ae4a37b16b43c66f02d62de286777c907',1,'BindingBase::bindingType()'],['../db/dde/protocol_binding-p.html#ad588fca377d8693b8435e5546f498144',1,'Binding-p::bindingType()']]],
-  ['boundresultvalue',['boundResultValue',['../d5/d2a/interface_binding_base.html#acd2416f8c7de073beae496f61963855f',1,'BindingBase']]]
+  ['bindingfactories',['bindingFactories',['../da/d0b/interface_kensho.html#af618f15fb056e04cb9e59e82a3285c91',1,'Kensho']]],
+  ['bindingtype',['bindingType',['../d5/d2a/interface_binding_base.html#ae4a37b16b43c66f02d62de286777c907',1,'BindingBase::bindingType()'],['../d3/de6/protocol_i_binding-p.html#a64759661fe2469aa84432265538ca154',1,'IBinding-p::bindingType()']]]
 ];

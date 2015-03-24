@@ -1,0 +1,10 @@
+<map id="&lt;IBinding&gt;" name="&lt;IBinding&gt;">
+<area shape="rect" id="node2" href="$d5/d2a/interface_binding_base.html" title="{BindingBase\n|+ ken\l+ targetView\l+ observedValue\l+ resultValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ observable:updated\l:context:\l+ updateValue\l+ addFactoryNamed:class\l:collection:method:\l}" alt="" coords="521,248,698,487"/>
+<area shape="rect" id="node3" href="$d5/d04/interface_u_i_button_binding.html" title="{UIButtonBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="5,601,157,693"/>
+<area shape="rect" id="node4" href="$d2/dd4/interface_u_i_control_binding.html" title="{UIControlBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="181,601,333,693"/>
+<area shape="rect" id="node5" href="$dd/d7f/interface_u_i_image_view_binding.html" title="{UIImageViewBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="357,601,509,693"/>
+<area shape="rect" id="node6" href="$db/d01/interface_u_i_label_binding.html" title="{UILabelBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="533,601,685,693"/>
+<area shape="rect" id="node7" href="$de/d5b/interface_u_i_table_view_binding.html" title="{UITableViewBinding\n|+ targetView\l+ targetValue\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ tableView:numberOfRowsIn\lSection:\l+ tableView:cellForRowAtIndex\lPath:\l+ tableView:didDeselectRow\lAtIndexPath:\l+ registerFactoriesTo:\l}" alt="" coords="710,535,917,759"/>
+<area shape="rect" id="node8" href="$d9/d18/interface_u_i_text_field_binding.html" title="{UITextFieldBinding\n|+ targetView\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ valueDidChange\l+ registerFactoriesTo:\l}" alt="" coords="941,579,1101,715"/>
+<area shape="rect" id="node9" href="$d4/daa/interface_u_i_view_binding.html" title="{UIViewBinding\n||+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="1125,601,1277,693"/>
+</map>

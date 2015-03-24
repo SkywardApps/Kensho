@@ -1,6 +1,0 @@
-<map id="&lt;IWritableObservable&gt;" name="&lt;IWritableObservable&gt;">
-<area shape="rect" id="node4" href="$d2/d8f/interface_observable.html" title="Our base, concrete observable class. " alt="" coords="7,574,187,927"/>
-<area shape="rect" id="node2" href="$da/dd9/protocol_i_observable-p.html" title="The IObservable protocol allows any object to be &#39;observed&#39; in the Kensho system. ..." alt="" coords="7,137,187,394"/>
-<area shape="rect" id="node3" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="50,6,144,87"/>
-<area shape="rect" id="node5" href="$de/d66/interface_computed.html" title="{Computed\n|# _calculatorMethod\l|+ initWithKensho:calculator:\l+ startTracking\l+ endTracking\l+ updateCalculatedValue\l+ observableUpdated:\l}" alt="" coords="4,977,189,1122"/>
-</map>

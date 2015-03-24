@@ -1,8 +1,9 @@
 <map id="UITableViewBinding" name="UITableViewBinding">
-<area shape="rect" id="node2" href="$d5/d2a/interface_binding_base.html" title="{BindingBase\n|+ ken\l+ targetView\l+ targetValue\l+ bindingType\l+ context\l+ boundResultValue\l+ finalValue\l|+ initWithKensho:target\l:type:value:context:\l+ bindToResultsIfNeeded\l+ observableUpdated:\l+ unbind\l+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="29,526,200,799"/>
-<area shape="rect" id="node3" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="5,331,83,413"/>
-<area shape="rect" id="node4" href="$db/dde/protocol_binding-p.html" title="{\&lt;Binding\&gt;\n|+ ken\l+ targetView\l+ targetValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ unbind\l+ registerFactoriesTo:\l}" alt="" coords="107,267,265,477"/>
-<area shape="rect" id="node5" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observableUpdated:\l}" alt="" coords="111,137,263,218"/>
-<area shape="rect" id="node6" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="140,6,233,87"/>
-<area shape="rect" id="node7" href="$d7/d60/class_u_i_table_view_data_source-p.html" title="{\&lt;UITableViewDataSource\&gt;\n||}" alt="" coords="225,622,407,703"/>
+<area shape="rect" id="node2" href="$d5/d2a/interface_binding_base.html" title="{BindingBase\n|+ ken\l+ targetView\l+ observedValue\l+ resultValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ observable:updated\l:context:\l+ updateValue\l+ addFactoryNamed:class\l:collection:method:\l}" alt="" coords="100,373,277,612"/>
+<area shape="rect" id="node3" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="5,189,84,267"/>
+<area shape="rect" id="node4" href="$d3/de6/protocol_i_binding-p.html" title="{\&lt;IBinding\&gt;\n|+ ken\l+ targetView\l+ observedValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ unbind\l+ registerFactoriesTo:\l}" alt="" coords="109,131,269,325"/>
+<area shape="rect" id="node5" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="293,167,463,289"/>
+<area shape="rect" id="node6" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="331,5,425,83"/>
+<area shape="rect" id="node7" href="$d7/d60/class_u_i_table_view_data_source-p.html" title="{\&lt;UITableViewDataSource\&gt;\n||}" alt="" coords="302,454,486,531"/>
+<area shape="rect" id="node8" href="$d0/d02/class_u_i_table_view_delegate-p.html" title="{\&lt;UITableViewDelegate\&gt;\n||}" alt="" coords="511,454,677,531"/>
 </map>

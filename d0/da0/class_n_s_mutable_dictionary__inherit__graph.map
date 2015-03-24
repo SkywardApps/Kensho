@@ -1,3 +1,0 @@
-<map id="NSMutableDictionary" name="NSMutableDictionary">
-<area shape="rect" id="node2" href="$de/d54/interface_observable_map.html" title="{ObservableMap\n|# innerMap\l# observers\l# ken\l|+ initWithKensho:\l+ addKenshoObserver:\l+ removeKenshoObserver:\l+ initWithObjects:forKeys\l:count:\l+ count\l+ objectForKey:\l+ keyEnumerator\l+ setObject:forKey:\l+ removeObjectForKey:\l+ initWithKensho:objects\l:forKeys:count:\l+ hash\l+ value\l+ stringValue\l+ numberValue\l+ objectValue\l+ isNull\l+ isNumber\l+ isString\l+ isObject\l+ isList\l+ isMap\l+ isCollection\l+ enumeratorValue\l+ triggerChangeEvent\l+ triggerAddEventFor:at:\l+ triggerRemoveEventFor:at:\l+ valueForKey:\l}" alt="" coords="5,137,197,698"/>
-</map>

@@ -1,8 +1,0 @@
-<map id="resume_error" name="resume_error">
-<area shape="rect" id="node2" href="$d3/d08/ldo_8c.html#abd7632c715de5db6e7797b7fa3f7010f" title="resume" alt="" coords="147,31,209,57"/>
-<area shape="rect" id="node3" href="$da/dd2/lua_8h.html#a434479f022eda738b99000aad5ddd929" title="lua_resume" alt="" coords="257,31,344,57"/>
-<area shape="rect" id="node4" href="$df/d2d/lcorolib_8c.html#aaa37b3a30ab0c6daef7fae8951fef3e7" title="auxresume" alt="" coords="392,31,477,57"/>
-<area shape="rect" id="node5" href="$df/d2d/lcorolib_8c.html#a777abb20385a69ce4787f72bd90375a7" title="luaB_auxwrap" alt="" coords="527,5,633,32"/>
-<area shape="rect" id="node7" href="$df/d2d/lcorolib_8c.html#a76f5d80387eeb1c7d31eb5f9cb6c9392" title="luaB_coresume" alt="" coords="525,56,635,83"/>
-<area shape="rect" id="node6" href="$df/d2d/lcorolib_8c.html#a1c0429e27f504b08e25f437f733edad1" title="luaB_cowrap" alt="" coords="683,5,781,32"/>
-</map>

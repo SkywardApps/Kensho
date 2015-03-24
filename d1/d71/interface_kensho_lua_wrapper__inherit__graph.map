@@ -1,5 +1,10 @@
 <map id="KenshoLuaWrapper" name="KenshoLuaWrapper">
-<area shape="rect" id="node2" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="5,137,83,218"/>
-<area shape="rect" id="node3" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observableUpdated:\l}" alt="" coords="107,137,259,218"/>
-<area shape="rect" id="node4" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="136,6,229,87"/>
+<area shape="rect" id="node2" href="$d5/dc8/interface_ken_computed.html" title="{KenComputed\n|+ calculatorMethod\l+ value\l# _calculatorMethod\l# ken\l# observing\l|+ initWithKensho:calculator:\l+ liveValue\l+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="141,425,327,635"/>
+<area shape="rect" id="node3" href="$db/da2/interface_observable_value.html" title="{ObservableValue\n|+ value\l|}" alt="" coords="7,278,131,355"/>
+<area shape="rect" id="node4" href="$d4/dbb/interface_ken_model.html" title="{KenModel\n||+ initWithKensho:\l}" alt="" coords="5,131,132,208"/>
+<area shape="rect" id="node5" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="29,5,108,83"/>
+<area shape="rect" id="node6" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="155,256,324,377"/>
+<area shape="rect" id="node7" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="292,131,387,208"/>
+<area shape="rect" id="node8" href="$da/dd9/protocol_i_observable-p.html" title="{\&lt;IObservable\&gt;\n||+ addObserver:attribute\l:context:\l+ removeObserver:attribute\l:context:\l}" alt="" coords="349,256,533,377"/>
+<area shape="rect" id="node9" href="$d5/da9/protocol_kensho_value_parameters-p.html" title="{\&lt;KenshoValueParameters\&gt;\n|+ parameters\l+ value\l|}" alt="" coords="352,484,537,576"/>
 </map>

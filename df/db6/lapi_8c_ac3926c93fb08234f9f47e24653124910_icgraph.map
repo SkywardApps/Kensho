@@ -1,5 +1,0 @@
-<map id="f_call" name="f_call">
-<area shape="rect" id="node2" href="$da/dd2/lua_8h.html#a3c4de08aa665eaee4aabd330aa99a441" title="lua_pcallk" alt="" coords="104,31,183,57"/>
-<area shape="rect" id="node3" href="$d8/dd3/lbaselib_8c.html#a1fb2725eed679431d070b2e9e7abc223" title="luaB_pcall" alt="" coords="234,5,315,32"/>
-<area shape="rect" id="node4" href="$d8/dd3/lbaselib_8c.html#a5fbb0094fa1a56f0a4c2547f1ec4c5ab" title="luaB_xpcall" alt="" coords="231,56,319,83"/>
-</map>

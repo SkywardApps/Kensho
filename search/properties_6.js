@@ -1,4 +1,5 @@
 var searchData=
 [
-  ['numbervalue',['numberValue',['../d2/d8f/interface_observable.html#a5d5bd9572fb86e17951ac3a8062abf43',1,'Observable::numberValue()'],['../da/dd9/protocol_i_observable-p.html#aa824501838312c7d9ed4bfa303909f81',1,'IObservable-p::numberValue()']]]
+  ['observedvalue',['observedValue',['../d5/d2a/interface_binding_base.html#af709ed171fbaeeec08669f3ef424c19d',1,'BindingBase::observedValue()'],['../d3/de6/protocol_i_binding-p.html#ac8f36ac10cdc12d48bafc047ecd0f8ec',1,'IBinding-p::observedValue()']]],
+  ['owner',['owner',['../d5/dbe/interface_observable_property_reference.html#ad21996bfed903da31841d6019f8e7516',1,'ObservablePropertyReference']]]
 ];

@@ -1,7 +1,0 @@
-<map id="findvararg" name="findvararg">
-<area shape="rect" id="node2" href="$d6/ddf/ldebug_8c.html#a3083297f104dce6d3810facafad1c4e9" title="findlocal" alt="" coords="131,31,197,57"/>
-<area shape="rect" id="node3" href="$da/dd2/lua_8h.html#afab4c753a151dd222a3de6ca5daf4ce2" title="lua_getlocal" alt="" coords="245,5,333,32"/>
-<area shape="rect" id="node5" href="$da/dd2/lua_8h.html#a009cbda7b68bd7047677d280db4ea064" title="lua_setlocal" alt="" coords="245,56,333,83"/>
-<area shape="rect" id="node4" href="$d8/d97/ldblib_8c.html#ae802ce7397e9ebb08a90b69976578ecc" title="db_getlocal" alt="" coords="381,5,468,32"/>
-<area shape="rect" id="node6" href="$d8/d97/ldblib_8c.html#a11cfe90e96e7ea907a767f5109f7ef4b" title="db_setlocal" alt="" coords="381,56,468,83"/>
-</map>

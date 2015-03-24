@@ -1,0 +1,7 @@
+<map id="UITextFieldBinding" name="UITextFieldBinding">
+<area shape="rect" id="node2" href="$d5/d2a/interface_binding_base.html" title="{BindingBase\n|+ ken\l+ targetView\l+ observedValue\l+ resultValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ observable:updated\l:context:\l+ updateValue\l+ addFactoryNamed:class\l:collection:method:\l}" alt="" coords="100,373,277,612"/>
+<area shape="rect" id="node3" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="5,189,84,267"/>
+<area shape="rect" id="node4" href="$d3/de6/protocol_i_binding-p.html" title="{\&lt;IBinding\&gt;\n|+ ken\l+ targetView\l+ observedValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ unbind\l+ registerFactoriesTo:\l}" alt="" coords="109,131,269,325"/>
+<area shape="rect" id="node5" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="293,167,463,289"/>
+<area shape="rect" id="node6" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="331,5,425,83"/>
+</map>

@@ -1,0 +1,6 @@
+<map id="KenObservationTracking" name="KenObservationTracking">
+<area shape="rect" id="node2" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="5,153,84,230"/>
+<area shape="rect" id="node3" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="108,131,277,252"/>
+<area shape="rect" id="node4" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="245,5,340,83"/>
+<area shape="rect" id="node5" href="$da/dd9/protocol_i_observable-p.html" title="{\&lt;IObservable\&gt;\n||+ addObserver:attribute\l:context:\l+ removeObserver:attribute\l:context:\l}" alt="" coords="302,131,486,252"/>
+</map>

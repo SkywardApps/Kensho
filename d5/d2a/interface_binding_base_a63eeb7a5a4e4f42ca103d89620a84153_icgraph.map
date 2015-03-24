@@ -1,0 +1,9 @@
+<map id="+[BindingBase addFactoryNamed:class:collection:method:]" name="+[BindingBase addFactoryNamed:class:collection:method:]">
+<area shape="rect" id="node2" href="$d2/dd4/interface_u_i_control_binding.html#a35cae6867ee297e2b8df2e5c30b12268" title="+[UIControlBinding\l registerFactoriesTo:]" alt="" coords="247,5,395,47"/>
+<area shape="rect" id="node3" href="$d5/d04/interface_u_i_button_binding.html#acaf8a6be63a66da276ee457a7b710445" title="+[UIButtonBinding register\lFactoriesTo:]" alt="" coords="232,71,411,112"/>
+<area shape="rect" id="node4" href="$dd/d7f/interface_u_i_image_view_binding.html#a8f54ea613b4cd8c94599957cc51e4d54" title="+[UIImageViewBinding\l registerFactoriesTo:]" alt="" coords="243,136,400,177"/>
+<area shape="rect" id="node5" href="$d9/d18/interface_u_i_text_field_binding.html#a81ae73c13db31c0a46fd75b5811ad2b1" title="+[UITextFieldBinding\l registerFactoriesTo:]" alt="" coords="247,201,395,243"/>
+<area shape="rect" id="node6" href="$db/d01/interface_u_i_label_binding.html#abc2f3defd6d14d2e72d8a81170cd079b" title="+[UILabelBinding register\lFactoriesTo:]" alt="" coords="235,267,407,308"/>
+<area shape="rect" id="node7" href="$de/d5b/interface_u_i_table_view_binding.html#a37d1c49a51ee34e76541c9eba5e098b9" title="+[UITableViewBinding\l registerFactoriesTo:]" alt="" coords="245,332,398,373"/>
+<area shape="rect" id="node8" href="$d4/daa/interface_u_i_view_binding.html#a4f657c7646c05027907b947cd23e8829" title="+[UIViewBinding register\lFactoriesTo:]" alt="" coords="237,397,405,439"/>
+</map>

@@ -1,5 +1,6 @@
 var searchData=
 [
-  ['innerarray',['innerArray',['../de/d3c/interface_computed_array.html#a71fe361666ab2e99b840aa2e2d042e8a',1,'ComputedArray::innerArray()'],['../d3/dd6/interface_observable_array.html#ad84f779721a9b0a2bfb141cd88acd9db',1,'ObservableArray::innerArray()']]],
-  ['innermap',['innerMap',['../de/d54/interface_observable_map.html#a76f7576ba9ed6472915451d6f1a3efdf',1,'ObservableMap']]]
+  ['observableclasshelperkey',['ObservableClassHelperKey',['../da/d01/_n_s_object_09_observable_8m.html#a9ab733b8d1874f9676de2a2a5b4d798e',1,'NSObject+Observable.m']]],
+  ['observableinstancehelperkey',['ObservableInstanceHelperKey',['../da/d01/_n_s_object_09_observable_8m.html#ac4121f4de51d9888d5e44502e891192b',1,'NSObject+Observable.m']]],
+  ['observing',['observing',['../d5/dc8/interface_ken_computed.html#aba0ed43008827066aa35b02b0bd62f61',1,'KenComputed']]]
 ];

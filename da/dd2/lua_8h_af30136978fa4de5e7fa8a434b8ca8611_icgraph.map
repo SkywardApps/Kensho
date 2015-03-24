@@ -1,5 +1,0 @@
-<map id="lua_getupvalue" name="lua_getupvalue">
-<area shape="rect" id="node2" href="$d8/d97/ldblib_8c.html#a31ebacb3668352430584fe277ac74923" title="auxupvalue" alt="" coords="163,31,253,57"/>
-<area shape="rect" id="node3" href="$d8/d97/ldblib_8c.html#a7a4124c791de7d76bd4fa752eb1569b6" title="db_getupvalue" alt="" coords="301,5,408,32"/>
-<area shape="rect" id="node4" href="$d8/d97/ldblib_8c.html#acd61487bdd057d6c668ec0bd88728670" title="db_setupvalue" alt="" coords="301,56,408,83"/>
-</map>

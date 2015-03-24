@@ -1,6 +1,0 @@
-<map id="lua_pushthread" name="lua_pushthread">
-<area shape="rect" id="node2" href="$d8/d97/ldblib_8c.html#a6a624ae8d8ff673e72a317b280ed008d" title="db_gethook" alt="" coords="320,5,408,32"/>
-<area shape="rect" id="node3" href="$d8/d97/ldblib_8c.html#aa0c362d361f8f9bd8a002c34c393e2b0" title="db_sethook" alt="" coords="320,68,408,95"/>
-<area shape="rect" id="node4" href="$d8/d97/ldblib_8c.html#a5caaa985f31fc5cbd014f831833205e7" title="hookf" alt="" coords="192,31,244,57"/>
-<area shape="rect" id="node5" href="$df/d2d/lcorolib_8c.html#ad5fa6e6f20235e61b3ba56ea3dc973d2" title="luaB_corunning" alt="" coords="164,132,272,159"/>
-</map>

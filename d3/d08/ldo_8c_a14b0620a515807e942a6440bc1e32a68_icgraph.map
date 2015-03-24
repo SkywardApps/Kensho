@@ -1,6 +1,0 @@
-<map id="lua_resume" name="lua_resume">
-<area shape="rect" id="node2" href="$df/d2d/lcorolib_8c.html#aaa37b3a30ab0c6daef7fae8951fef3e7" title="auxresume" alt="" coords="140,31,225,57"/>
-<area shape="rect" id="node3" href="$df/d2d/lcorolib_8c.html#a777abb20385a69ce4787f72bd90375a7" title="luaB_auxwrap" alt="" coords="275,5,381,32"/>
-<area shape="rect" id="node5" href="$df/d2d/lcorolib_8c.html#a76f5d80387eeb1c7d31eb5f9cb6c9392" title="luaB_coresume" alt="" coords="273,56,383,83"/>
-<area shape="rect" id="node4" href="$df/d2d/lcorolib_8c.html#a1c0429e27f504b08e25f437f733edad1" title="luaB_cowrap" alt="" coords="431,5,529,32"/>
-</map>

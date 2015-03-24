@@ -1,8 +1,0 @@
-<map id="&#45;[Observable addKenshoObserver:]" name="&#45;[Observable addKenshoObserver:]">
-<area shape="rect" id="node2" href="$dd/dcf/interface_test_calculated_observable.html#a764e86a364f31e01a91202aa4d0460ad" title="&#45;[TestCalculatedObservable\l testObserve]" alt="" coords="280,5,461,47"/>
-<area shape="rect" id="node3" href="$d6/d94/interface_test_observable_base.html#a1cda1c282511544e1e84ad81060a50fb" title="&#45;[TestObservableBase\l testObserve]" alt="" coords="295,71,447,112"/>
-<area shape="rect" id="node4" href="$d6/d94/interface_test_observable_base.html#ab57fce0013f544dea04adf7c16e84004" title="&#45;[TestObservableBase\l testRelease]" alt="" coords="295,136,447,177"/>
-<area shape="rect" id="node5" href="$dd/dcf/interface_test_calculated_observable.html#ae423da8220b30f913a636c36673b516a" title="&#45;[TestCalculatedObservable\l testRelease]" alt="" coords="280,201,461,243"/>
-<area shape="rect" id="node6" href="$dd/dcf/interface_test_calculated_observable.html#ae1acbdd3c72e6bfcea395bf91bbc7ea3" title="&#45;[TestCalculatedObservable\l testUnobserve]" alt="" coords="280,267,461,308"/>
-<area shape="rect" id="node7" href="$d6/d94/interface_test_observable_base.html#a9d3ff8806de4ee47dd445f572750bbc2" title="&#45;[TestObservableBase\l testUnobserve]" alt="" coords="295,332,447,373"/>
-</map>

@@ -1,5 +1,4 @@
 var searchData=
 [
-  ['target',['target',['../d1/d29/interface_weak_proxy.html#a2084efc7f694e33b78f83eac60adfdfc',1,'WeakProxy']]],
-  ['trackings',['trackings',['../da/d0b/interface_kensho.html#a0368e722de34a2e999a91809664616a0',1,'Kensho']]]
+  ['valuewrappers',['valueWrappers',['../d1/dc2/_kensho_lua_wrapper_8m.html#a19ad54eb336b677cac1c45dae875ebab',1,'KenshoLuaWrapper.m']]]
 ];

@@ -1,8 +1,4 @@
 <map id="&#45;[Kensho endTracking]" name="&#45;[Kensho endTracking]">
-<area shape="rect" id="node2" href="$dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2" title="&#45;[KenshoLuaWrapper\l evaluate]" alt="" coords="211,89,359,133"/>
-<area shape="rect" id="node3" href="$dc/de7/interface_kensho_lua_wrapper.html#af6db46358f8858a18b55388aa3af211d" title="&#45;[KenshoLuaWrapper\l initWithKensho:context\l:code:]" alt="" coords="408,5,568,65"/>
-<area shape="rect" id="node4" href="$dc/de7/interface_kensho_lua_wrapper.html#a5555e0979799446611baee70104555c6" title="&#45;[KenshoLuaWrapper\l evaluate:]" alt="" coords="414,89,562,133"/>
-<area shape="rect" id="node7" href="$dc/de7/interface_kensho_lua_wrapper.html#a0bb5e125d727942726d707f8b59009dc" title="&#45;[KenshoLuaWrapper\l observableUpdated:]" alt="" coords="414,157,562,201"/>
-<area shape="rect" id="node5" href="$da/d0b/interface_kensho.html#a07b4d14db676108e1a94a1f10e100fb4" title="&#45;[Kensho bindToView\l:context:]" alt="" coords="617,89,765,133"/>
-<area shape="rect" id="node6" href="$da/d0b/interface_kensho.html#a1019e8223ee907bab87501ae483e609f" title="&#45;[Kensho applyBindings\l:viewModel:]" alt="" coords="814,89,975,133"/>
+<area shape="rect" id="node2" href="$dc/d34/interface_test_observable_proxy.html#ab60debd679087180baf0aa580e7b2778" title="&#45;[TestObservableProxy\l endTracking]" alt="" coords="219,5,377,47"/>
+<area shape="rect" id="node3" href="$d9/dcc/interface_ken_observation_tracking.html#ac04d158b7cb204b05542f206116d9d8d" title="This is invoked after a READ has resolved for a property. " alt="" coords="209,71,387,112"/>
 </map>

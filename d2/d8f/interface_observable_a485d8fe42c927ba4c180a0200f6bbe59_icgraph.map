@@ -1,6 +1,0 @@
-<map id="&#45;[Observable removeKenshoObserver:]" name="&#45;[Observable removeKenshoObserver:]">
-<area shape="rect" id="node2" href="$dd/dcf/interface_test_calculated_observable.html#ae423da8220b30f913a636c36673b516a" title="&#45;[TestCalculatedObservable\l testRelease]" alt="" coords="240,5,421,47"/>
-<area shape="rect" id="node3" href="$d6/d94/interface_test_observable_base.html#ab57fce0013f544dea04adf7c16e84004" title="&#45;[TestObservableBase\l testRelease]" alt="" coords="255,71,407,112"/>
-<area shape="rect" id="node4" href="$d6/d94/interface_test_observable_base.html#a9d3ff8806de4ee47dd445f572750bbc2" title="&#45;[TestObservableBase\l testUnobserve]" alt="" coords="255,136,407,177"/>
-<area shape="rect" id="node5" href="$dd/dcf/interface_test_calculated_observable.html#ae1acbdd3c72e6bfcea395bf91bbc7ea3" title="&#45;[TestCalculatedObservable\l testUnobserve]" alt="" coords="240,201,421,243"/>
-</map>

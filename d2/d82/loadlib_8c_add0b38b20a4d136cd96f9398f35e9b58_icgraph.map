@@ -1,9 +1,0 @@
-<map id="ll_checkclib" name="ll_checkclib">
-<area shape="rect" id="node2" href="$d2/d82/loadlib_8c.html#a21b83479d4a62aa393b19bcb08e71889" title="ll_loadfunc" alt="" coords="136,31,216,57"/>
-<area shape="rect" id="node3" href="$d2/d82/loadlib_8c.html#aac7e69bc5b4403e49e2609425f0fb7b0" title="ll_loadlib" alt="" coords="264,5,333,32"/>
-<area shape="rect" id="node4" href="$d2/d82/loadlib_8c.html#a91ac5b5231cf039af46226806dcc3884" title="loadfunc" alt="" coords="264,56,333,83"/>
-<area shape="rect" id="node5" href="$d2/d82/loadlib_8c.html#a9a915ea950c831cee2f1e7b0a3bd9005" title="searcher_C" alt="" coords="391,31,478,57"/>
-<area shape="rect" id="node8" href="$d2/d82/loadlib_8c.html#a1ec05cd98a045c271aeda9f9c6041e1c" title="searcher_Croot" alt="" coords="381,81,488,108"/>
-<area shape="rect" id="node6" href="$d2/d82/loadlib_8c.html#a8fc66c8b852ee2960dc20797521d1d9e" title="createsearcherstable" alt="" coords="536,56,675,83"/>
-<area shape="rect" id="node7" href="$d6/d07/lualib_8h.html#a05e0befc0439f926b6152129ab4f8dea" title="luaopen_package" alt="" coords="723,56,848,83"/>
-</map>

@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['_5fcalculatormethod',['_calculatorMethod',['../de/d66/interface_computed.html#a152d99ae40c24abb8d60be4056760846',1,'Computed']]]
+  ['_5fcalculatormethod',['_calculatorMethod',['../d5/dc8/interface_ken_computed.html#ab257507e64aa787122ca74a67f1cf0d8',1,'KenComputed']]]
 ];

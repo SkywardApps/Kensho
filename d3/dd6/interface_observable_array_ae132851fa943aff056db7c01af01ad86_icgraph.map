@@ -1,6 +1,0 @@
-<map id="&#45;[ObservableArray triggerChangeEvent]" name="&#45;[ObservableArray triggerChangeEvent]">
-<area shape="rect" id="node2" href="$d3/dd6/interface_observable_array.html#aacbd59c287edb91abb55fd39226b1afa" title="&#45;[ObservableArray insert\lObject:atIndex:]" alt="" coords="230,5,396,49"/>
-<area shape="rect" id="node3" href="$d3/dd6/interface_observable_array.html#ad36f5ea6ab3ff240853864bfdc90d59a" title="&#45;[ObservableArray remove\lLastObject]" alt="" coords="225,73,402,117"/>
-<area shape="rect" id="node4" href="$d3/dd6/interface_observable_array.html#ac44749b946f824a349bc856a6f324102" title="&#45;[ObservableArray remove\lObjectAtIndex:]" alt="" coords="225,141,402,185"/>
-<area shape="rect" id="node5" href="$d3/dd6/interface_observable_array.html#acb70b828689bd033b3216e0c625cab4e" title="&#45;[ObservableArray replace\lObjectAtIndex:withObject:]" alt="" coords="224,209,403,253"/>
-</map>

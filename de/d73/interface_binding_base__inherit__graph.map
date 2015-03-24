@@ -1,10 +1,13 @@
 <map id="BindingBase" name="BindingBase">
-<area shape="rect" id="node6" href="$d5/d04/interface_u_i_button_binding.html" title="{UIButtonBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="4,905,155,1002"/>
-<area shape="rect" id="node7" href="$db/d01/interface_u_i_label_binding.html" title="{UILabelBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="180,905,331,1002"/>
-<area shape="rect" id="node8" href="$de/d5b/interface_u_i_table_view_binding.html" title="{UITableViewBinding\n|+ targetView\l+ targetValue\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ tableView:numberOfRowsIn\lSection:\l+ tableView:cellForRowAtIndex\lPath:\l+ registerFactoriesTo:\l}" alt="" coords="356,849,561,1058"/>
-<area shape="rect" id="node9" href="$d4/daa/interface_u_i_view_binding.html" title="{UIViewBinding\n||+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="586,905,736,1002"/>
-<area shape="rect" id="node2" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="247,331,325,413"/>
-<area shape="rect" id="node3" href="$db/dde/protocol_binding-p.html" title="{\&lt;Binding\&gt;\n|+ ken\l+ targetView\l+ targetValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ unbind\l+ registerFactoriesTo:\l}" alt="" coords="350,267,508,477"/>
-<area shape="rect" id="node4" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observableUpdated:\l}" alt="" coords="353,137,505,218"/>
-<area shape="rect" id="node5" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="382,6,476,87"/>
+<area shape="rect" id="node6" href="$d5/d04/interface_u_i_button_binding.html" title="{UIButtonBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="5,726,157,818"/>
+<area shape="rect" id="node7" href="$d2/dd4/interface_u_i_control_binding.html" title="{UIControlBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="181,726,333,818"/>
+<area shape="rect" id="node8" href="$dd/d7f/interface_u_i_image_view_binding.html" title="{UIImageViewBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="357,726,509,818"/>
+<area shape="rect" id="node9" href="$db/d01/interface_u_i_label_binding.html" title="{UILabelBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="533,726,685,818"/>
+<area shape="rect" id="node10" href="$de/d5b/interface_u_i_table_view_binding.html" title="{UITableViewBinding\n|+ targetView\l+ targetValue\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ tableView:numberOfRowsIn\lSection:\l+ tableView:cellForRowAtIndex\lPath:\l+ tableView:didDeselectRow\lAtIndexPath:\l+ registerFactoriesTo:\l}" alt="" coords="710,660,917,884"/>
+<area shape="rect" id="node11" href="$d9/d18/interface_u_i_text_field_binding.html" title="{UITextFieldBinding\n|+ targetView\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ valueDidChange\l+ registerFactoriesTo:\l}" alt="" coords="941,704,1101,840"/>
+<area shape="rect" id="node12" href="$d4/daa/interface_u_i_view_binding.html" title="{UIViewBinding\n||+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="1125,726,1277,818"/>
+<area shape="rect" id="node2" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="426,189,505,267"/>
+<area shape="rect" id="node3" href="$d3/de6/protocol_i_binding-p.html" title="{\&lt;IBinding\&gt;\n|+ ken\l+ targetView\l+ observedValue\l+ bindingType\l+ context\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ unbind\l+ registerFactoriesTo:\l}" alt="" coords="529,131,689,325"/>
+<area shape="rect" id="node4" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="714,167,883,289"/>
+<area shape="rect" id="node5" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="751,5,846,83"/>
 </map>

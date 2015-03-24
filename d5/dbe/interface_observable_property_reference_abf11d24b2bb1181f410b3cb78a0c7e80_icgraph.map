@@ -1,0 +1,19 @@
+<map id="+[ObservablePropertyReference unwrap:]" name="+[ObservablePropertyReference unwrap:]">
+<area shape="rect" id="node2" href="$d1/dc2/_kensho_lua_wrapper_8m.html#ad4ec1756dc838fde84bf674b20ea183d" title="addValues" alt="" coords="731,20,816,47"/>
+<area shape="rect" id="node4" href="$d1/dc2/_kensho_lua_wrapper_8m.html#af35f10620b5df12ba80bb5ed6e7ed3f2" title="concatValues" alt="" coords="541,71,643,97"/>
+<area shape="rect" id="node5" href="$d1/dc2/_kensho_lua_wrapper_8m.html#aa1693ca60b5f576dcc535ebaa0b6a33c" title="divideValues" alt="" coords="725,121,822,148"/>
+<area shape="rect" id="node6" href="$d1/dc2/_kensho_lua_wrapper_8m.html#a3cbaccbe91a35240e808b34470d99e0c" title="equalsValues" alt="" coords="541,172,643,199"/>
+<area shape="rect" id="node7" href="$d1/dc2/_kensho_lua_wrapper_8m.html#a7a32b0a0ae71cdc6f8305475593f845f" title="exponentValues" alt="" coords="715,223,832,249"/>
+<area shape="rect" id="node8" href="$dc/de7/interface_kensho_lua_wrapper.html#a1989098903d831e652ed79f4c59819c4" title="&#45;[KenshoLuaWrapper\l finalValue]" alt="" coords="517,325,667,366"/>
+<area shape="rect" id="node9" href="$d1/dc2/_kensho_lua_wrapper_8m.html#aae830fdaed146b07b106c5f3dd19d7e0" title="lessValues" alt="" coords="549,273,635,300"/>
+<area shape="rect" id="node10" href="$d1/dc2/_kensho_lua_wrapper_8m.html#ad10bf0ff4feac9642e7477e282be41fe" title="This is executed when the LUA subsystem attempts to read data to from an index that it doesn&#39;t think ..." alt="" coords="326,388,410,415"/>
+<area shape="rect" id="node13" href="$d1/dc2/_kensho_lua_wrapper_8m.html#aa0638d3a82be50019cfc96d5b6210de1" title="modulusValues" alt="" coords="717,492,830,519"/>
+<area shape="rect" id="node14" href="$d1/dc2/_kensho_lua_wrapper_8m.html#a3fb147f422ee40b945a94487d7bb1f88" title="multiplyValues" alt="" coords="538,543,646,569"/>
+<area shape="rect" id="node15" href="$d1/dc2/_kensho_lua_wrapper_8m.html#af89158f75bf75285ea8e88c735ea0f1f" title="subtractValues" alt="" coords="313,567,423,593"/>
+<area shape="rect" id="node16" href="$d9/d18/interface_u_i_text_field_binding.html#a0c9ec88af68ac58bfacfc484a822b75c" title="&#45;[UITextFieldBinding\l updateValue]" alt="" coords="297,618,439,659"/>
+<area shape="rect" id="node17" href="$db/d01/interface_u_i_label_binding.html#aa1802ad3eb384656bf64f42fef74b878" title="&#45;[UILabelBinding updateValue]" alt="" coords="267,684,469,711"/>
+<area shape="rect" id="node18" href="$d4/daa/interface_u_i_view_binding.html#a872e98f2270d5c011d21960379dffec3" title="&#45;[UIViewBinding updateValue]" alt="" coords="269,735,467,761"/>
+<area shape="rect" id="node3" href="$d1/dc2/_kensho_lua_wrapper_8m.html#a93fd0d7971f83880a0e78fa9135be350" title="Push an NSObject&#45;derived value onto the stack. " alt="" coords="880,273,965,300"/>
+<area shape="rect" id="node11" href="$d1/dc2/_kensho_lua_wrapper_8m.html#ae20c13d330105f8c52090bfb26cd13bc" title="pushLuaValue" alt="" coords="539,441,645,468"/>
+<area shape="rect" id="node12" href="$d1/dc2/_kensho_lua_wrapper_8m.html#a2ec319dc108404370bd6dfcd0268d45b" title="callValue" alt="" coords="735,441,811,468"/>
+</map>

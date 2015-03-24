@@ -1,9 +1,0 @@
-<map id="luaY_parser" name="luaY_parser">
-<area shape="rect" id="node2" href="$d3/d08/ldo_8c.html#a14df0fa118ab124dfcc6d227bdd38ca5" title="f_parser" alt="" coords="144,56,212,83"/>
-<area shape="rect" id="node3" href="$d2/dd9/ldo_8h.html#a5dffa85d966f14d3f3464db580f5b3fa" title="luaD_protectedparser" alt="" coords="260,56,403,83"/>
-<area shape="rect" id="node4" href="$da/dd2/lua_8h.html#a3f4c1ed5e0bd437dc527d62c5768b463" title="lua_load" alt="" coords="451,56,521,83"/>
-<area shape="rect" id="node5" href="$da/d29/lauxlib_8h.html#a8c38c6dcf9db7e110e525b46742bacf8" title="luaL_loadfilex" alt="" coords="577,5,676,32"/>
-<area shape="rect" id="node7" href="$da/d29/lauxlib_8h.html#a3ab1955dd9322cf03e2d3626ebfae669" title="luaL_loadbufferx" alt="" coords="569,56,684,83"/>
-<area shape="rect" id="node8" href="$d8/dd3/lbaselib_8c.html#a4a9a3613fcf80fe033e044f7e19bed69" title="luaB_load" alt="" coords="739,81,818,108"/>
-<area shape="rect" id="node6" href="$d8/dd3/lbaselib_8c.html#aeb4cb83db820979bbdd7710109b52957" title="luaB_loadfile" alt="" coords="732,5,825,32"/>
-</map>

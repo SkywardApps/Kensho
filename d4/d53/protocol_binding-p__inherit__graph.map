@@ -1,9 +1,0 @@
-<map id="&lt;Binding&gt;" name="&lt;Binding&gt;">
-<area shape="rect" id="node4" href="$d5/d2a/interface_binding_base.html" title="{BindingBase\n|+ ken\l+ targetView\l+ targetValue\l+ bindingType\l+ context\l+ boundResultValue\l+ finalValue\l|+ initWithKensho:target\l:type:value:context:\l+ bindToResultsIfNeeded\l+ observableUpdated:\l+ unbind\l+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="271,526,443,799"/>
-<area shape="rect" id="node2" href="$d4/d36/protocol_i_observer-p.html" title="{\&lt;IObserver\&gt;\n||+ observableUpdated:\l}" alt="" coords="281,137,433,218"/>
-<area shape="rect" id="node3" href="$d0/d10/class_n_s_object-p.html" title="{\&lt;NSObject\&gt;\n||}" alt="" coords="310,6,404,87"/>
-<area shape="rect" id="node5" href="$d5/d04/interface_u_i_button_binding.html" title="{UIButtonBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="4,905,155,1002"/>
-<area shape="rect" id="node6" href="$db/d01/interface_u_i_label_binding.html" title="{UILabelBinding\n|+ targetView\l|+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="180,905,331,1002"/>
-<area shape="rect" id="node7" href="$de/d5b/interface_u_i_table_view_binding.html" title="{UITableViewBinding\n|+ targetView\l+ targetValue\l|+ initWithKensho:target\l:type:value:context:\l+ updateValue\l+ tableView:numberOfRowsIn\lSection:\l+ tableView:cellForRowAtIndex\lPath:\l+ registerFactoriesTo:\l}" alt="" coords="356,849,561,1058"/>
-<area shape="rect" id="node8" href="$d4/daa/interface_u_i_view_binding.html" title="{UIViewBinding\n||+ updateValue\l+ registerFactoriesTo:\l}" alt="" coords="586,905,736,1002"/>
-</map>

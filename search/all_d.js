@@ -1,21 +1,12 @@
 var searchData=
 [
-  ['objectatindex_3a',['objectAtIndex:',['../de/d3c/interface_computed_array.html#ace748f3304d0c00eb0206694a2e1c717',1,'ComputedArray::objectAtIndex:()'],['../d3/dd6/interface_observable_array.html#a0e9613fe8a5b091b1ce809247e31b7af',1,'ObservableArray::objectAtIndex:()']]],
-  ['objectenumerator',['objectEnumerator',['../de/d3c/interface_computed_array.html#a2e627982e835aaeabe01d1736b6f982c',1,'ComputedArray::objectEnumerator()'],['../d3/dd6/interface_observable_array.html#ad7ec82522f73f5ddaec6673565152d32',1,'ObservableArray::objectEnumerator()']]],
-  ['objectforkey_3a',['objectForKey:',['../de/d54/interface_observable_map.html#aede3a45af4f4f65b25225dc89ac943a0',1,'ObservableMap']]],
-  ['objectvalue',['objectValue',['../d2/d8f/interface_observable.html#acaa9c886d4d5ed1a2c4b335be2b9fe8b',1,'Observable::objectValue()'],['../da/dd9/protocol_i_observable-p.html#a6cdb07f18316c4f366b83ca7ce8fb824',1,'IObservable-p::objectValue()'],['../de/d3c/interface_computed_array.html#adf6b5130520025d56d4969235a16699b',1,'ComputedArray::objectValue()'],['../d3/dd6/interface_observable_array.html#aff027369d9df6acebbd2d02f81292dd7',1,'ObservableArray::objectValue()'],['../de/d54/interface_observable_map.html#ab047ccc58bd7e3b9df0c47079c19bb47',1,'ObservableMap::objectValue()']]],
-  ['observable',['Observable',['../d2/d8f/interface_observable.html',1,'']]],
-  ['observable_2eh',['Observable.h',['../d8/db2/_observable_8h.html',1,'']]],
-  ['observable_2em',['Observable.m',['../dc/dbf/_observable_8m.html',1,'']]],
-  ['observable_3aadded_3aforkey_3a',['observable:added:forKey:',['../de/d8a/protocol_i_collection_observer-p.html#a8046cb6d4a39987ab19b545ef39171d5',1,'ICollectionObserver-p::observable:added:forKey:()'],['../de/d3c/interface_computed_array.html#a7543e2d3f477dea3c1abc96800a6cb76',1,'ComputedArray::observable:added:forKey:()'],['../dc/de7/interface_kensho_lua_wrapper.html#a526ec2fb069507e990664bd76474edd3',1,'KenshoLuaWrapper::observable:added:forKey:()']]],
-  ['observable_3aremoved_3afromkey_3a',['observable:removed:fromKey:',['../de/d8a/protocol_i_collection_observer-p.html#a7f3dc82c540f77e4c8c5c698ba403889',1,'ICollectionObserver-p::observable:removed:fromKey:()'],['../de/d3c/interface_computed_array.html#ab849a81c5db6c3ec1083f3e9a4c13c58',1,'ComputedArray::observable:removed:fromKey:()'],['../dc/de7/interface_kensho_lua_wrapper.html#aa630177bc8c61451c9748b3f252bd03b',1,'KenshoLuaWrapper::observable:removed:fromKey:()']]],
-  ['observableaccessed_3a',['observableAccessed:',['../da/d0b/interface_kensho.html#abeee1ac72ff61ef0debee8d8a32c6bc9',1,'Kensho']]],
-  ['observablearray',['ObservableArray',['../d3/dd6/interface_observable_array.html',1,'']]],
-  ['observablearray_2eh',['ObservableArray.h',['../d5/dd8/_observable_array_8h.html',1,'']]],
-  ['observablearray_2em',['ObservableArray.m',['../dc/d86/_observable_array_8m.html',1,'']]],
-  ['observablemap',['ObservableMap',['../de/d54/interface_observable_map.html',1,'']]],
-  ['observablemap_2eh',['ObservableMap.h',['../dc/d91/_observable_map_8h.html',1,'']]],
-  ['observablemap_2em',['ObservableMap.m',['../d6/ded/_observable_map_8m.html',1,'']]],
-  ['observableupdated_3a',['observableUpdated:',['../d4/d36/protocol_i_observer-p.html#a109f8ddbcd90346e8984a2029a86cdbd',1,'IObserver-p::observableUpdated:()'],['../d5/d2a/interface_binding_base.html#acda3fcbe8a080cd00cad312ee9eaf825',1,'BindingBase::observableUpdated:()'],['../de/d66/interface_computed.html#a5aad223dfde2480acc08eadf76c1f638',1,'Computed::observableUpdated:()'],['../de/d3c/interface_computed_array.html#ac6a5235ea7fc64b41aea2a8ad100e68e',1,'ComputedArray::observableUpdated:()'],['../dc/de7/interface_kensho_lua_wrapper.html#a0bb5e125d727942726d707f8b59009dc',1,'KenshoLuaWrapper::observableUpdated:()']]],
-  ['observers',['observers',['../d2/d8f/interface_observable.html#a959608be60d296afbdafd72ab8714189',1,'Observable::observers()'],['../de/d3c/interface_computed_array.html#a501540ad3cfd3999aadc58c02dc06518',1,'ComputedArray::observers()'],['../d3/dd6/interface_observable_array.html#a0795f44a6bfcde677bffdf9cffc47021',1,'ObservableArray::observers()'],['../de/d54/interface_observable_map.html#abf0d5595b08b8966069bf904b6face69',1,'ObservableMap::observers()']]]
+  ['nested',['nested',['../d1/dd7/interface_single_nest.html#ae812eb4bc65209842163d07fe2df97b1',1,'SingleNest']]],
+  ['notaproperty',['notAProperty',['../dd/d81/interface_testable_lua_object.html#a076121e47d8c8b9110f2653ca659f1ff',1,'TestableLuaObject::notAProperty()'],['../d2/df7/interface_testable_object.html#a5fb88999f772fc157d6483a2fff5e6b5',1,'TestableObject::notAProperty()']]],
+  ['nsobject',['NSObject',['../d7/dc4/class_n_s_object.html',1,'']]],
+  ['nsobject_28observable_29',['NSObject(Observable)',['../d9/de6/category_n_s_object_07_observable_08.html',1,'']]],
+  ['nsobject_28weakproxy_29',['NSObject(WeakProxy)',['../d7/dd7/category_n_s_object_07_weak_proxy_08.html',1,'']]],
+  ['nsobject_2bobservable_2eh',['NSObject+Observable.h',['../d1/d27/_n_s_object_09_observable_8h.html',1,'']]],
+  ['nsobject_2bobservable_2em',['NSObject+Observable.m',['../da/d01/_n_s_object_09_observable_8m.html',1,'']]],
+  ['nsobject_2dp',['NSObject-p',['../d0/d10/class_n_s_object-p.html',1,'']]],
+  ['nsproxy',['NSProxy',['../d1/d9b/class_n_s_proxy.html',1,'']]]
 ];

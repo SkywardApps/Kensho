@@ -1,6 +1,0 @@
-<map id="findlocal" name="findlocal">
-<area shape="rect" id="node2" href="$da/dd2/lua_8h.html#afab4c753a151dd222a3de6ca5daf4ce2" title="lua_getlocal" alt="" coords="120,5,208,32"/>
-<area shape="rect" id="node4" href="$da/dd2/lua_8h.html#a009cbda7b68bd7047677d280db4ea064" title="lua_setlocal" alt="" coords="120,56,208,83"/>
-<area shape="rect" id="node3" href="$d8/d97/ldblib_8c.html#ae802ce7397e9ebb08a90b69976578ecc" title="db_getlocal" alt="" coords="256,5,343,32"/>
-<area shape="rect" id="node5" href="$d8/d97/ldblib_8c.html#a11cfe90e96e7ea907a767f5109f7ef4b" title="db_setlocal" alt="" coords="256,56,343,83"/>
-</map>

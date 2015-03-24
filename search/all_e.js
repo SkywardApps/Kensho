@@ -1,10 +1,21 @@
 var searchData=
 [
-  ['parameters',['parameters',['../dc/de7/interface_kensho_lua_wrapper.html#a8bd4cd174397f8f4987c5e90f10346c0',1,'KenshoLuaWrapper']]],
-  ['parent',['parent',['../d1/d10/interface_kensho_context.html#a45738c18d358dd974a0e9b555bad3ac7',1,'KenshoContext']]],
-  ['popvalue',['popValue',['../d1/dc2/_kensho_lua_wrapper_8m.html#a659a5a25271d0c7e4f5478f828a93b41',1,'KenshoLuaWrapper.m']]],
-  ['proxied',['proxied',['../de/d3c/interface_computed_array.html#a8a7b82874a4c181d229221012c899bca',1,'ComputedArray']]],
-  ['proxy',['proxy',['../de/d3c/interface_computed_array.html#ae2bfa029f047c700d743f77c0b7c4f6e',1,'ComputedArray']]],
-  ['proxymethod',['ProxyMethod',['../db/d4d/_computed_array_8h.html#a032a6fc817c6016f8cbbea94f7a4e4ff',1,'ComputedArray.h']]],
-  ['pushvalue',['pushValue',['../d1/dc2/_kensho_lua_wrapper_8m.html#ac812f3eb3f83c6ada24f2dadeced6d68',1,'KenshoLuaWrapper.m']]]
+  ['observable_3aupdated_3acontext_3a',['observable:updated:context:',['../d4/d36/protocol_i_observer-p.html#a14ea14120daea15e12ca4104bf2b4d1f',1,'IObserver-p::observable:updated:context:()'],['../d5/d2a/interface_binding_base.html#aae62cc24cef9abc7dc9784d05f782d77',1,'BindingBase::observable:updated:context:()'],['../d5/dc8/interface_ken_computed.html#ab41ad38e872241f4672698faf8f45e52',1,'KenComputed::observable:updated:context:()'],['../d9/dcc/interface_ken_observation_tracking.html#a1f1e081645c396d0b31b5913e55364ac',1,'KenObservationTracking::observable:updated:context:()'],['../de/daa/interface_test_ken_computed.html#a8073e8a08a040d12caad322a52d3d92e',1,'TestKenComputed::observable:updated:context:()'],['../dc/d34/interface_test_observable_proxy.html#ab2f011a309cf81444b2e0180332c9366',1,'TestObservableProxy::observable:updated:context:()'],['../d3/d4c/interface_observable_tracker.html#a28e29e9ea7436230563852f4fdf0ab65',1,'ObservableTracker::observable:updated:context:()']]],
+  ['observableaccessed_3a',['observableAccessed:',['../da/d0b/interface_kensho.html#abeee1ac72ff61ef0debee8d8a32c6bc9',1,'Kensho']]],
+  ['observableclasshelperkey',['ObservableClassHelperKey',['../da/d01/_n_s_object_09_observable_8m.html#a9ab733b8d1874f9676de2a2a5b4d798e',1,'NSObject+Observable.m']]],
+  ['observabledeallocated_3acontext_3a',['observableDeallocated:context:',['../d4/d36/protocol_i_observer-p.html#a8afbdc4998005c7bc6150602fa2eed75',1,'IObserver-p::observableDeallocated:context:()'],['../d5/dc8/interface_ken_computed.html#afa3a2bcbe52be77bf3eada5242190b80',1,'KenComputed::observableDeallocated:context:()'],['../d9/dcc/interface_ken_observation_tracking.html#a4853bc9451446bd0b2639dc5baab77e4',1,'KenObservationTracking::observableDeallocated:context:()'],['../de/daa/interface_test_ken_computed.html#aa81a4b15d0441b5c8cc29ccb695b3bde',1,'TestKenComputed::observableDeallocated:context:()'],['../dc/d34/interface_test_observable_proxy.html#a2ee3b671358e0866db6f9439c52dda88',1,'TestObservableProxy::observableDeallocated:context:()'],['../d3/d4c/interface_observable_tracker.html#a55f71d2224f003baad986b4d984d616a',1,'ObservableTracker::observableDeallocated:context:()']]],
+  ['observableinstancehelperkey',['ObservableInstanceHelperKey',['../da/d01/_n_s_object_09_observable_8m.html#ac4121f4de51d9888d5e44502e891192b',1,'NSObject+Observable.m']]],
+  ['observablepropertyreference',['ObservablePropertyReference',['../d5/dbe/interface_observable_property_reference.html',1,'']]],
+  ['observablepropertyreference_2eh',['ObservablePropertyReference.h',['../dc/d8d/_observable_property_reference_8h.html',1,'']]],
+  ['observablepropertyreference_2em',['ObservablePropertyReference.m',['../d9/d84/_observable_property_reference_8m.html',1,'']]],
+  ['observabletracker',['ObservableTracker',['../d3/d4c/interface_observable_tracker.html',1,'']]],
+  ['observablevalue',['ObservableValue',['../db/da2/interface_observable_value.html',1,'']]],
+  ['observablevalue_2eh',['ObservableValue.h',['../db/da2/_observable_value_8h.html',1,'']]],
+  ['observablevalue_2em',['ObservableValue.m',['../d9/d66/_observable_value_8m.html',1,'']]],
+  ['observe_3a',['observe:',['../d9/de6/category_n_s_object_07_observable_08.html#a347828082fdc79b2a561a728b633d591',1,'NSObject(Observable)']]],
+  ['observeall_3a',['observeAll:',['../dc/d34/interface_test_observable_proxy.html#ad97b7f8b4fe797112c6c17aa7e96d880',1,'TestObservableProxy']]],
+  ['observedvalue',['observedValue',['../d5/d2a/interface_binding_base.html#af709ed171fbaeeec08669f3ef424c19d',1,'BindingBase::observedValue()'],['../d3/de6/protocol_i_binding-p.html#ac8f36ac10cdc12d48bafc047ecd0f8ec',1,'IBinding-p::observedValue()']]],
+  ['observevalueforkeypath_3aofobject_3achange_3acontext_3a',['observeValueForKeyPath:ofObject:change:context:',['../d9/dcc/interface_ken_observation_tracking.html#a7677f45a2270e10c97c2cfe6b1f6c24c',1,'KenObservationTracking::observeValueForKeyPath:ofObject:change:context:()'],['../dc/d34/interface_test_observable_proxy.html#aa96c2662c93d9e832d164d8961b0ecc5',1,'TestObservableProxy::observeValueForKeyPath:ofObject:change:context:()']]],
+  ['observing',['observing',['../d5/dc8/interface_ken_computed.html#aba0ed43008827066aa35b02b0bd62f61',1,'KenComputed']]],
+  ['owner',['owner',['../d5/dbe/interface_observable_property_reference.html#ad21996bfed903da31841d6019f8e7516',1,'ObservablePropertyReference']]]
 ];

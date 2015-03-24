@@ -1,4 +1,4 @@
 var searchData=
 [
-  ['bindingfactorymethod',['bindingFactoryMethod',['../d4/d18/_kensho_8m.html#a0e59663cf3f863347e2b375854c7a874',1,'Kensho.m']]]
+  ['bindingfactorymethod',['bindingFactoryMethod',['../d4/d18/_kensho_8m.html#a09b652b37f8a70cd711494e338293542',1,'Kensho.m']]]
 ];

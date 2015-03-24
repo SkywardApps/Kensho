@@ -1,7 +1,6 @@
 var searchData=
 [
-  ['endtracking',['endTracking',['../da/d0b/interface_kensho.html#afbed7bd0fa88dba99296dd37565ddcf9',1,'Kensho::endTracking()'],['../de/d66/interface_computed.html#a9f63b6564407606e669cc52987f7e618',1,'Computed::endTracking()']]],
-  ['enumeratorvalue',['enumeratorValue',['../de/d3c/interface_computed_array.html#a604210e0f6152275502ab84226497958',1,'ComputedArray::enumeratorValue()'],['../d3/dd6/interface_observable_array.html#a58701366b93ed8f6fc6d66a1891d0456',1,'ObservableArray::enumeratorValue()'],['../de/d54/interface_observable_map.html#ae87f81c5c3b6d1ea446a179023aafca3',1,'ObservableMap::enumeratorValue()']]],
-  ['evaluate',['evaluate',['../dc/de7/interface_kensho_lua_wrapper.html#a7d10aa0242861cdd109d3da9383882a2',1,'KenshoLuaWrapper']]],
-  ['evaluate_3a',['evaluate:',['../dc/de7/interface_kensho_lua_wrapper.html#a5555e0979799446611baee70104555c6',1,'KenshoLuaWrapper']]]
+  ['databindtext',['dataBindText',['../d9/db4/category_u_i_label_07_kensho_08.html#acdc00bfc64187c8aac5f3c56d17c1670',1,'UILabel(Kensho)::dataBindText()'],['../dd/da9/category_u_i_text_field_07_kensho_08.html#a19c1b293d9011ae6c4a9e40385c3eee8',1,'UITextField(Kensho)::dataBindText()']]],
+  ['dealloc',['dealloc',['../d9/dcc/interface_ken_observation_tracking.html#a64b1ec3892612b60b8302e610af8b1ed',1,'KenObservationTracking']]],
+  ['dividevalues',['divideValues',['../d1/dc2/_kensho_lua_wrapper_8m.html#aa1693ca60b5f576dcc535ebaa0b6a33c',1,'KenshoLuaWrapper.m']]]
 ];

@@ -1,8 +1,27 @@
 var searchData=
 [
-  ['unbind',['unbind',['../db/dde/protocol_binding-p.html#a47d7abc08a92bda643c02723d3bda09b',1,'Binding-p::unbind()'],['../d5/d2a/interface_binding_base.html#a11195dd5f81b5bd41329c9e467f8cfd4',1,'BindingBase::unbind()']]],
-  ['unwrapobservable_3a',['unwrapObservable:',['../da/d0b/interface_kensho.html#ae5f8c383f3d3a4376c4592f5b4a746d1',1,'Kensho']]],
-  ['updatecalculatedvalue',['updateCalculatedValue',['../de/d66/interface_computed.html#a81f611498570e74653756f910d6f8eed',1,'Computed']]],
-  ['updatesizes',['updateSizes',['../de/ddf/category_u_i_view_07_update_auto_layout_constraints_08.html#a1dc8a62d162f2b4e8ecdf2475a47e0da',1,'UIView(UpdateAutoLayoutConstraints)']]],
-  ['updatevalue',['updateValue',['../db/dde/protocol_binding-p.html#a85d466a7d193d726665ea2945298cf7e',1,'Binding-p::updateValue()'],['../d5/d2a/interface_binding_base.html#a9c09a868f13aee8790f50a56560899ea',1,'BindingBase::updateValue()'],['../d5/d04/interface_u_i_button_binding.html#a1c981af6fd09361b987e8ff60251b1ad',1,'UIButtonBinding::updateValue()'],['../db/d01/interface_u_i_label_binding.html#aa1802ad3eb384656bf64f42fef74b878',1,'UILabelBinding::updateValue()'],['../de/d5b/interface_u_i_table_view_binding.html#a0fc671e263bbf4ee3ebb0a67fb4329a2',1,'UITableViewBinding::updateValue()'],['../d4/daa/interface_u_i_view_binding.html#a872e98f2270d5c011d21960379dffec3',1,'UIViewBinding::updateValue()']]]
+  ['tableview_3acellforrowatindexpath_3a',['tableView:cellForRowAtIndexPath:',['../de/d5b/interface_u_i_table_view_binding.html#a5874a91d5319b4c76bc924a5c248104f',1,'UITableViewBinding']]],
+  ['tableview_3adiddeselectrowatindexpath_3a',['tableView:didDeselectRowAtIndexPath:',['../de/d5b/interface_u_i_table_view_binding.html#a772e578881b1325d3f2a7ad24499715f',1,'UITableViewBinding']]],
+  ['tableview_3anumberofrowsinsection_3a',['tableView:numberOfRowsInSection:',['../de/d5b/interface_u_i_table_view_binding.html#aefc153c2ea1cbd620dae6e29d28bc0f8',1,'UITableViewBinding']]],
+  ['teardown',['tearDown',['../de/daa/interface_test_ken_computed.html#a3707f4f20a4ea5f3bb7ebda511dc4b09',1,'TestKenComputed::tearDown()'],['../d3/df8/interface_test_kensho_lua_wrapper.html#afd959f00528d304594c95f4edbb51508',1,'TestKenshoLuaWrapper::tearDown()'],['../dc/d34/interface_test_observable_proxy.html#ae67371cbaff7903b9d0e1135f7267464',1,'TestObservableProxy::tearDown()'],['../d6/d16/interface_test_u_i_table_view_binding.html#a0856d0cf9b176f70d17e22ae9c2191c7',1,'TestUITableViewBinding::tearDown()'],['../d0/d7f/interface_test_u_i_view_binding.html#ae638bd3c582b28bda10c00ddd021e7c0',1,'TestUIViewBinding::tearDown()']]],
+  ['testbasicvalue',['testBasicValue',['../de/daa/interface_test_ken_computed.html#a9636e893d86471efaa36b10b3db2b75b',1,'TestKenComputed']]],
+  ['testcomplexobject',['testComplexObject',['../d3/df8/interface_test_kensho_lua_wrapper.html#a7dd0f4519233f9d7e7e2626c5e177687',1,'TestKenshoLuaWrapper']]],
+  ['testdealloccomputedfirst',['testDeallocComputedFirst',['../de/daa/interface_test_ken_computed.html#ae6b7d6e66c75bebeca2bf52aa1c3e5a0',1,'TestKenComputed']]],
+  ['testdeallocobservablefirst',['testDeallocObservableFirst',['../de/daa/interface_test_ken_computed.html#a3978caa83fb7b6b0848f5c3c56642678',1,'TestKenComputed']]],
+  ['testmultipledependencies',['testMultipleDependencies',['../de/daa/interface_test_ken_computed.html#a6828432ed9ab564d8c583271ab88e63d',1,'TestKenComputed']]],
+  ['testnestedobject',['testNestedObject',['../d3/df8/interface_test_kensho_lua_wrapper.html#a729cae1786a68238cff6c930d9280e76',1,'TestKenshoLuaWrapper']]],
+  ['testobservablecalled',['testObservableCalled',['../dc/d34/interface_test_observable_proxy.html#a058f40c0fb9c8cf5c61683d5a66123a8',1,'TestObservableProxy']]],
+  ['testobservables',['testObservables',['../d3/df8/interface_test_kensho_lua_wrapper.html#a7b675099883ba2a8ea0f80acb01057ed',1,'TestKenshoLuaWrapper']]],
+  ['testonelevel',['testOneLevel',['../de/daa/interface_test_ken_computed.html#a242148a320b98ea80bc21a9088a0d9fe',1,'TestKenComputed']]],
+  ['testotherreflectingproperty',['testOtherReflectingProperty',['../dc/d34/interface_test_observable_proxy.html#af6dfcd91a159f0844000113c1cd891f3',1,'TestObservableProxy']]],
+  ['testparameterdependancy',['testParameterDependancy',['../d3/df8/interface_test_kensho_lua_wrapper.html#ad8dd3013521d07931b7d5445ff23dae7',1,'TestKenshoLuaWrapper']]],
+  ['testparameters',['testParameters',['../d3/df8/interface_test_kensho_lua_wrapper.html#a41d1dcf86bd726a334944b8b257059a2',1,'TestKenshoLuaWrapper']]],
+  ['testparametersfromobservables',['testParametersFromObservables',['../d3/df8/interface_test_kensho_lua_wrapper.html#ab33187210b159a574e4c5cb253f7d002',1,'TestKenshoLuaWrapper']]],
+  ['testparent',['testParent',['../d3/df8/interface_test_kensho_lua_wrapper.html#a1f6ddf7ab9781e8ac11d0693e2460f4d',1,'TestKenshoLuaWrapper']]],
+  ['testrecursive',['testRecursive',['../d3/df8/interface_test_kensho_lua_wrapper.html#a4be2c496105a74bacc482dc33527d9ff',1,'TestKenshoLuaWrapper']]],
+  ['testroot',['testRoot',['../d3/df8/interface_test_kensho_lua_wrapper.html#aca4e047eb6a434e2e0b8b04829a0a40f',1,'TestKenshoLuaWrapper']]],
+  ['testselfreflectingproperty',['testSelfReflectingProperty',['../dc/d34/interface_test_observable_proxy.html#ab517b3496907e631e254daf2a2753f2c',1,'TestObservableProxy']]],
+  ['testsimplecomputed',['testSimpleComputed',['../de/daa/interface_test_ken_computed.html#abd0ca9d4f99e3efa4218b8a37cf00db0',1,'TestKenComputed']]],
+  ['teststrings',['testStrings',['../d3/df8/interface_test_kensho_lua_wrapper.html#a10a66900fde7e525576aa4009fa0fd0e',1,'TestKenshoLuaWrapper']]],
+  ['testtwolevels',['testTwoLevels',['../de/daa/interface_test_ken_computed.html#ac2004e57bc316ded5912dbf92a31107a',1,'TestKenComputed']]]
 ];

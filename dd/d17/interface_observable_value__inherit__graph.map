@@ -1,0 +1,6 @@
+<map id="ObservableValue" name="ObservableValue">
+<area shape="rect" id="node4" href="$d5/dc8/interface_ken_computed.html" title="{KenComputed\n|+ calculatorMethod\l+ value\l# _calculatorMethod\l# ken\l# observing\l|+ initWithKensho:calculator:\l+ liveValue\l+ observable:updated\l:context:\l+ observableDeallocated\l:context:\l}" alt="" coords="5,381,192,591"/>
+<area shape="rect" id="node2" href="$d4/dbb/interface_ken_model.html" title="{KenModel\n||+ initWithKensho:\l}" alt="" coords="35,131,162,208"/>
+<area shape="rect" id="node3" href="$d7/dc4/class_n_s_object.html" title="{NSObject\n||}" alt="" coords="59,5,138,83"/>
+<area shape="rect" id="node5" href="$dc/de7/interface_kensho_lua_wrapper.html" title="{KenshoLuaWrapper\n|+ parameters\l+ code\l# context\l# ken\l|+ initWithKensho:context\l:code:\l+ evaluate:\l+ initWithKensho:context\l:code:\l+ finalValue\l}" alt="" coords="14,639,183,833"/>
+</map>

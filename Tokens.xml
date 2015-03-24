@@ -2610,15 +2610,6 @@
   </Token>
   <Token>
     <TokenIdentifier>
-      <Name>TestUsage</Name>
-      <APILanguage>markdown</APILanguage>
-      <Type>cl</Type>
-      <Scope>TestUsage</Scope>
-    </TokenIdentifier>
-    <Path>dc/d8f/interface_test_usage.html</Path>
-  </Token>
-  <Token>
-    <TokenIdentifier>
       <Name>UIButton(Kensho)</Name>
       <APILanguage>c</APILanguage>
       <Type>cat</Type>

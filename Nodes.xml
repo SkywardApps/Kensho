@@ -1062,10 +1062,6 @@
             </Subnodes>
            </Node>
            <Node>
-            <Name>TestUsage</Name>
-            <Path>dc/d8f/interface_test_usage.html</Path>
-           </Node>
-           <Node>
             <Name>UIButton(Kensho)</Name>
             <Path>d0/dcb/category_u_i_button_07_kensho_08.html</Path>
             <Subnodes>
@@ -1780,10 +1776,6 @@
               <Path>d1/d29/interface_weak_proxy.html</Path>
              </Node>
             </Subnodes>
-           </Node>
-           <Node>
-            <Name>TestUsage</Name>
-            <Path>dc/d8f/interface_test_usage.html</Path>
            </Node>
            <Node>
             <Name>UIButton(Kensho)</Name>

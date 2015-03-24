@@ -42,7 +42,6 @@ var searchData=
   ['testuitableviewbinding_2em',['TestUITableViewBinding.m',['../d7/d52/_test_u_i_table_view_binding_8m.html',1,'']]],
   ['testuiviewbinding',['TestUIViewBinding',['../d0/d7f/interface_test_u_i_view_binding.html',1,'']]],
   ['testuiviewbinding_2em',['TestUIViewBinding.m',['../db/d26/_test_u_i_view_binding_8m.html',1,'']]],
-  ['testusage',['TestUsage',['../dc/d8f/interface_test_usage.html',1,'']]],
   ['testusage_2em',['TestUsage.m',['../da/dff/_test_usage_8m.html',1,'']]],
   ['todo_20list',['Todo List',['../dd/da0/todo.html',1,'']]],
   ['trackings',['trackings',['../da/d0b/interface_kensho.html#a0368e722de34a2e999a91809664616a0',1,'Kensho']]],

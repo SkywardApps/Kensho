@@ -86,12 +86,187 @@ var searchBox = new SearchBox("searchBox", "../../search",false,'Search');
 Usage</h1>
 <h2>Our Model</h2>
 <p>Blurb about our model and the properties</p>
-<p>```objc </p>
+<div class="fragment"><div class="line"><span class="keyword">@interface </span>Person : <a class="code" href="../../d7/dc4/class_n_s_object.html">NSObject</a></div>
+<div class="line"></div>
+<div class="line">    <span class="keyword">@property</span> (readonly) <a class="code" href="../../db/da2/interface_observable_value.html">ObservableValue</a>* firstName;</div>
+<div class="line">    <span class="keyword">@property</span> (readonly) <a class="code" href="../../db/da2/interface_observable_value.html">ObservableValue</a>* lastName;</div>
+<div class="line">    <span class="keyword">@property</span> (readonly) <a class="code" href="../../d5/dc8/interface_ken_computed.html">KenComputed</a>* fullName;</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">@end</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">@implementation </span>Person</div>
+<div class="line"></div>
+<div class="line">- (id)initWithKensho:(<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> *)ken</div>
+<div class="line">{</div>
+<div class="line">    <span class="keywordflow">if</span>((<span class="keyword">self</span> = [super init]))</div>
+<div class="line">    {</div>
+<div class="line">        _firstName = [[<a class="code" href="../../db/da2/interface_observable_value.html">ObservableValue</a> alloc] initWithKensho:ken];</div>
+<div class="line">        _lastName = [[<a class="code" href="../../db/da2/interface_observable_value.html">ObservableValue</a> alloc] initWithKensho:ken];</div>
+<div class="line">        _fullName = [[<a class="code" href="../../d5/dc8/interface_ken_computed.html">KenComputed</a> alloc] initWithKensho:ken</div>
+<div class="line">            calculator:^NSString *(KenComputed* computed) {</div>
+<div class="line">                return [NSString stringWithFormat:@&quot;%@ %@&quot;, _firstName.value, _lastName.value];</div>
+<div class="line">            }</div>
+<div class="line">        ];</div>
+<div class="line">    }</div>
+<div class="line">    <span class="keywordflow">return</span> <span class="keyword">self</span>;</div>
+<div class="line">}</div>
+<div class="line"></div>
+<div class="line"><span class="keyword">@end</span></div>
+</div><!-- fragment --><p> Discuss the calculator aspect.</p>
+<div class="fragment"><div class="line"><span class="keyword">@interface </span>TestUsage : <a class="code" href="../../dd/d05/class_x_c_test_case.html">XCTestCase</a></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">@end</span></div>
+<div class="line"></div>
+<div class="line"><span class="keyword">@implementation </span>TestUsage</div>
+</div><!-- fragment --><p> Lets make sure that the observables fire the notification event when they are changed.</p>
+<div class="fragment"><div class="line">- (void) testObservableSendsNotification </div>
+<div class="line">{    </div>
+<div class="line">    <span class="comment">// Create our kensho manager object, and a Person to be our data model.</span></div>
+<div class="line">    <a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a>* ken = [[<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> alloc] init];</div>
+<div class="line">    Person* person = [[Person alloc] initWithKensho:ken];</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Create a tester object to track if the notification is sent.</span></div>
+<div class="line">    <a class="code" href="../../d3/d4c/interface_observable_tracker.html">ObservableTracker</a>* tracker = [[<a class="code" href="../../d3/d4c/interface_observable_tracker.html">ObservableTracker</a> alloc] init];</div>
+<div class="line">    [person.firstName addObserver:tracker attribute:@&quot;value&quot; context:@&quot;value&quot;];</div>
+<div class="line"></div>
+<div class="line">    XCTAssertFalse(tracker.<a class="code" href="../../d3/d4c/interface_observable_tracker.html#a64dd52458970c3c965995c5b5aac9045">wasUpdated</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Now update the value, and verify the tracker saw the update.</span></div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;David&quot;</span>;</div>
+<div class="line">    XCTAssertTrue(tracker.<a class="code" href="../../d3/d4c/interface_observable_tracker.html#a64dd52458970c3c965995c5b5aac9045">wasUpdated</a>);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> No biggie, right? Well, use a computed and see a bit more magic...</p>
+<div class="fragment"><div class="line">- (void) testComputedSendsNotification</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Create our kensho manager object, and a Person to be our data model.</span></div>
+<div class="line">    <a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a>* ken = [[<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> alloc] init];</div>
+<div class="line">    Person* person = [[Person alloc] initWithKensho:ken];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Verify our full name calculates correctly</span></div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;David&quot;</span>;</div>
+<div class="line">    person.lastName.value = <span class="stringliteral">@&quot;Blaine&quot;</span>;</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;David Blaine&quot;</span>, person.fullName.value);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Create a tester object to track if the notification is sent.</span></div>
+<div class="line">    <a class="code" href="../../d3/d4c/interface_observable_tracker.html">ObservableTracker</a>* tracker = [[<a class="code" href="../../d3/d4c/interface_observable_tracker.html">ObservableTracker</a> alloc] init];</div>
+<div class="line">    [person.fullName addObserver:tracker attribute:@&quot;value&quot; context:@&quot;value&quot;];</div>
+<div class="line">    XCTAssertFalse(tracker.<a class="code" href="../../d3/d4c/interface_observable_tracker.html#a64dd52458970c3c965995c5b5aac9045">wasUpdated</a>);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Now update the value, and verify the tracker saw the update.</span></div>
+<div class="line">    person.lastName.value = <span class="stringliteral">@&quot;Hasselhoff&quot;</span>;</div>
+<div class="line">    XCTAssertTrue(tracker.<a class="code" href="../../d3/d4c/interface_observable_tracker.html#a64dd52458970c3c965995c5b5aac9045">wasUpdated</a>);</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;David Hasselhoff&quot;</span>, person.fullName.value);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Automatic change propogation, even for a method? Woah. This works for as many computeds as we can throw at it, as deep as we want.</p>
+<p>Still, the read magic comes from the bindings. Lets demonstrate with a text field.</p>
+<div class="fragment"><div class="line">- (void) testTextFieldBinding</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Create our kensho manager object, and a Person to be our data model.</span></div>
+<div class="line">    <a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a>* ken = [[<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> alloc] init];</div>
+<div class="line">    Person* person = [[Person alloc] initWithKensho:ken];</div>
+<div class="line"></div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;David&quot;</span>;</div>
+<div class="line">    person.lastName.value = <span class="stringliteral">@&quot;Blaine&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    UITextField* textField = [[UITextField alloc] init];</div>
+<div class="line">    textField.text = <span class="stringliteral">@&quot;&lt;unset&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a>* lua = [[<a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a> alloc] initWithKensho:ken context:person code:@&quot;firstName&quot;];</div>
+<div class="line">    <a class="code" href="../../d9/d18/interface_u_i_text_field_binding.html">UITextFieldBinding</a>* binding = [[<a class="code" href="../../d9/d18/interface_u_i_text_field_binding.html">UITextFieldBinding</a> alloc] initWithKensho:ken target:textField type:@&quot;text&quot; value:lua context:person];</div>
+<div class="line">    </div>
+<div class="line">    <span class="comment">// Verify the text field was set upon binding</span></div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;David&quot;</span>, textField.text);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Verify the text field automatically updates</span></div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;James G.&quot;</span>;</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;James G.&quot;</span>, textField.text);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Nice, the text field value auto updated. Wait - what about typing into the field?</p>
+<div class="fragment"><div class="line">- (void) testTextFieldReverseBinding</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Create our kensho manager object, and a Person to be our data model.</span></div>
+<div class="line">    <a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a>* ken = [[<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> alloc] init];</div>
+<div class="line">    Person* person = [[Person alloc] initWithKensho:ken];</div>
+<div class="line"></div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;David&quot;</span>;</div>
+<div class="line">    person.lastName.value = <span class="stringliteral">@&quot;Blaine&quot;</span>;</div>
+<div class="line">    </div>
+<div class="line">    UITextField* textField = [[UITextField alloc] initWithFrame:CGRectMake(10,10,100,100)];</div>
+<div class="line">    textField.text = <span class="stringliteral">@&quot;&lt;unset&gt;&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    <a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a>* lua = [[<a class="code" href="../../dc/de7/interface_kensho_lua_wrapper.html">KenshoLuaWrapper</a> alloc] initWithKensho:ken context:person code:@&quot;firstName&quot;];</div>
+<div class="line">    <a class="code" href="../../d9/d18/interface_u_i_text_field_binding.html">UITextFieldBinding</a>* binding = [[<a class="code" href="../../d9/d18/interface_u_i_text_field_binding.html">UITextFieldBinding</a> alloc] initWithKensho:ken target:textField type:@&quot;text&quot; value:lua context:person];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Verify the text field was set upon binding</span></div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;David&quot;</span>, textField.text);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Verify the text field updates the observable as well</span></div>
+<div class="line">    <span class="comment">// We have to simulate the event of someone entering this</span></div>
+<div class="line">    textField.text = <span class="stringliteral">@&quot;Michael&quot;</span>;</div>
+<div class="line">    [textField sendActionsForControlEvents:UIControlEventEditingChanged];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Did the value update?</span></div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Michael&quot;</span>, person.firstName.value);</div>
+<div class="line">}</div>
+</div><!-- fragment --><p>Awesome, the value updated! Cool!</p>
+<p>That was very manual. How can we do this with a little more... pazzaz?</p>
+<p>Screenshot of a xib with a two text fields, and a label. Screenshots of the properties as set for each.</p>
+<div class="image">
+<img src="../../firstNameTextField.png" alt="firstNameTextField.png"/>
+<div class="caption">
+First Name UITextField</div></div>
+ <div class="image">
+<img src="../../lastNameTextField.png" alt="lastNameTextField.png"/>
+<div class="caption">
+Last Name UITextField</div></div>
+ <div class="image">
+<img src="../../fullNameLabel.png" alt="fullNameLabel.png"/>
+<div class="caption">
+Full Name UILabel</div></div>
+<p> Bind the views automatically.</p>
+<div class="fragment"><div class="line">- (void) testAutomaticViewBinding</div>
+<div class="line">{</div>
+<div class="line">    <span class="comment">// Get the application kensho manager</span></div>
+<div class="line">    <a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a>* ken = [[<a class="code" href="../../da/d0b/interface_kensho.html">Kensho</a> alloc] init];</div>
+<div class="line"></div>
+<div class="line">    Person* person = [[Person alloc] initWithKensho:ken];</div>
+<div class="line">    person.firstName.value = <span class="stringliteral">@&quot;Roger&quot;</span>;</div>
+<div class="line">    person.lastName.value = <span class="stringliteral">@&quot;Moore&quot;</span>;</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Get the main view controller</span></div>
+<div class="line">    UIViewController* mainController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];</div>
+<div class="line">    UIView* rootView = mainController.view;</div>
+<div class="line"></div>
+<div class="line">    [ken <a class="code" href="../../da/d0b/interface_kensho.html#a0735afa1b11207e58bfda2f6f16ec4f7">applyBindings</a>:rootView <a class="code" href="../../da/d0b/interface_kensho.html#a0735afa1b11207e58bfda2f6f16ec4f7">viewModel</a>:person];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Find all the views we care about and make sure they got the right values</span></div>
+<div class="line">    UITextField* firstNameField = [rootView viewWithTag:1];</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Roger&quot;</span>, firstNameField.text);</div>
+<div class="line"></div>
+<div class="line">    UITextField* lastNameField = [rootView viewWithTag:2];</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Moore&quot;</span>, lastNameField.text);</div>
+<div class="line"></div>
+<div class="line">    UILabel* fullNameLabel = [rootView viewWithTag:3];</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Hello, Roger Moore&quot;</span>, fullNameLabel.text);</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// Update the first name and emit the event</span></div>
+<div class="line">    firstNameField.text = <span class="stringliteral">@&quot;Bobbie&quot;</span>;</div>
+<div class="line">    [firstNameField sendActionsForControlEvents:UIControlEventEditingChanged];</div>
+<div class="line"></div>
+<div class="line">    <span class="comment">// And make sure this &#39;user input&#39; propogated as needed!</span></div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Bobbie&quot;</span>, person.firstName.value);</div>
+<div class="line">    XCTAssertEqualObjects(<span class="stringliteral">@&quot;Hello, Bobbie Moore&quot;</span>, fullNameLabel.text);</div>
+<div class="line"></div>
+<div class="line">}</div>
+</div><!-- fragment --><p> Nice. Now we start to see it coming together.</p>
+<p>More complicated scenario - tables and cells.</p>
+<p>Themeing</p>
+<p>Dynamic localization! </p>
 </div></div><!-- contents -->
 <!-- HTML footer for doxygen 1.8.5-->
 <!-- start footer part -->
 <hr class="footer"/><address class="footer"><small>
-Generated on Tue Mar 24 2015 10:55:30 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
+Generated on Tue Mar 24 2015 11:07:00 for Kensho by &#160;<a href="http://www.doxygen.org/index.html">
 <img class="footer" src="../../doxygen.png" alt="doxygen"/>
 </a> 1.8.9.1
 </small></address>

@@ -207,23 +207,53 @@ That was very manual.  How can we do this with a little more... pazzaz?
 
 Screenshot of a xib with a two text fields, and a label.  Screenshots of the properties as set for each.
 
+![first name text field](../../Resources/firstNameTextField.png)
+
+![first name text field](firstNameTextField.png)
+
+![first name text field](@ref firstNameTextField.png)
+
+\image html ../../Resources/lastNameTextField.png
+
+\image html ../../Resources/fullNameLabel.png
+
 Bind the views automatically.
 
 ```objc
 #endif   //(!doxygen)
 
-- (Kensho*) ken{return nil;}
-
 - (void) testAutomaticViewBinding
 {
     // Get the application kensho manager
-    Kensho* ken = [(id)[[UIApplication sharedApplication] delegate] ken];
+    Kensho* ken = [[Kensho alloc] init];
 
     Person* person = [[Person alloc] initWithKensho:ken];
     person.firstName.value = @"Roger";
     person.lastName.value = @"Moore";
 
     // Get the main view controller
+    UIViewController* mainController = [[[[UIApplication sharedApplication] delegate] window] rootViewController];
+    UIView* rootView = mainController.view;
+
+    [ken applyBindings:rootView viewModel:person];
+
+    // Find all the views we care about and make sure they got the right values
+    UITextField* firstNameField = [rootView viewWithTag:1];
+    XCTAssertEqualObjects(@"Roger", firstNameField.text);
+
+    UITextField* lastNameField = [rootView viewWithTag:2];
+    XCTAssertEqualObjects(@"Moore", lastNameField.text);
+
+    UILabel* fullNameLabel = [rootView viewWithTag:3];
+    XCTAssertEqualObjects(@"Hello, Roger Moore", fullNameLabel.text);
+
+    // Update the first name and emit the event
+    firstNameField.text = @"Bobbie";
+    [firstNameField sendActionsForControlEvents:UIControlEventEditingChanged];
+
+    // And make sure this 'user input' propogated as needed!
+    XCTAssertEqualObjects(@"Bobbie", person.firstName.value);
+    XCTAssertEqualObjects(@"Hello, Bobbie Moore", fullNameLabel.text);
 
 }
 

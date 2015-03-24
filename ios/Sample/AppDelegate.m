@@ -22,7 +22,7 @@
 
 - (BOOL)application:(UIApplication *)application didFinishLaunchingWithOptions:(NSDictionary *)launchOptions {
     // Override point for customization after application launch.
-    _ken = [[Kensho alloc] init];
+    //_ken = [[Kensho alloc] init];
     
     
     return YES;
